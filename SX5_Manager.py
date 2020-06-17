@@ -17,7 +17,7 @@ class SX5_Manager(object):
                  num_loop=None,
                  num_frame=None,
                  num_save_files=None,
-                 pull_dir=None,
+                 adb_pull_dir=None,
                  frame_storage_dir=None):
         """ Constructor"""
 
@@ -29,7 +29,7 @@ class SX5_Manager(object):
 
         # Directory Variables
         self._frame_storage_dir = frame_storage_dir
-        self._pull_dir = pull_dir
+        self._pull_dir = adb_pull_dir
 
     # ************************************************* #
     # **************** Public Methods ***************** #
@@ -82,7 +82,7 @@ class SX5_Manager(object):
 if __name__ == "__main__":
     # Get Current working directory and set the pull directory
     current_dir = os.getcwd()
-    pull_dir='\"{current_dir}/download\"'.format(current_dir=current_dir)
+    adb_pull_dir= '\"{current_dir}/test_download\"'.format(current_dir=current_dir)
     #print(pull_dir)
 
     test = SX5_Manager(scan_engine='halogen',
@@ -90,6 +90,6 @@ if __name__ == "__main__":
                        num_loop=2,
                        num_save_files=2,
                        frame_storage_dir='data/local/tmp',
-                       pull_dir=pull_dir)
+                       adb_pull_dir=adb_pull_dir)
     test.run_scan_engine()
     test.pull_images()

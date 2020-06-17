@@ -1,5 +1,6 @@
 # User-Defined
 tmp/
+test_download/
 .idea/
 
 # Byte-compiled / optimized / DLL files
