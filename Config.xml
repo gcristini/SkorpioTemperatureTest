@@ -2,7 +2,7 @@
 <!-- Body -->
 <GlobalParams>
     <SX5>
-        <scan_engine>halogen</scan_engine>
+        <scan_engine>halogen1</scan_engine>
         <num_of_frame>10</num_of_frame>
         <num_of_loop>10</num_of_loop>
         <num_of_save_files>100</num_of_save_files>
@@ -17,10 +17,10 @@
         <adb_pull_base_dir>test_download</adb_pull_base_dir>
     </SX5>
 
-    <TermalChamber>
+    <ThermalChamber>
         <att1>  </att1>
         <att2>  </att2>
         <att3>  </att3>
-    </TermalChamber>
+    </ThermalChamber>
 
 </GlobalParams>

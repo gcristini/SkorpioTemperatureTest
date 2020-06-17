@@ -33,7 +33,9 @@ class TemperatureTestSx5(object):
         sx5_config_dict = self._config_dict['SX5']
         sx5_config_dict['adb_pull_base_dir'] = '\"{cwd}/{dir}\"'.format(cwd=os.getcwd(),
                                                                         dir=sx5_config_dict['adb_pull_base_dir'])
+        print (sx5_config_dict['adb_pull_base_dir'])
 
+        # Init an SX5 instance
         self._SX5 = SX5_Manager(scan_engine=sx5_config_dict['scan_engine'],
                                 num_frame=sx5_config_dict['num_of_frame'],
                                 num_loop=sx5_config_dict['num_of_loop'],
@@ -63,6 +65,8 @@ class TemperatureTestSx5(object):
         # ----------------- RUN ----------------- #
         self._SX5.run_scan_engine()
         self._SX5.pull_images()
+
+        #self._SX5.clear_frame_storage_dir()
 
 
 

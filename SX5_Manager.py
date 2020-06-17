@@ -4,9 +4,11 @@ import subprocess
 
 class SX5_Manager(object):
     scan_engine_dict = {
-        'halogen': 'halogen_cli2',
+        'halogen1': 'halogen_cli2',
+        'halogen2': 'halogen_cli2',
         'neon1': 'neon_mipi_cli2',
-        'neon2': 'neon_mipi_cli2'
+        'neon2': 'neon_mipi_cli2',
+        'tungsten': 'tungsten_cli2'
     }
 
     # ************************************************* #
@@ -77,6 +79,15 @@ class SX5_Manager(object):
         else:
             pass
 
+    def clear_frame_storage_dir(self):
+        """"""
+        delete_cmd = "rm -v /{dir}/*".format(dir=self._frame_storage_dir)
+
+        delete_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
+        delete_process_stdout = delete_process.communicate(delete_cmd.encode())[0].decode('ascii', errors='ignore')
+
+
+
     @property
     def pull_dir(self):
         return self._pull_dir
@@ -92,7 +103,7 @@ if __name__ == "__main__":
     adb_pull_dir= '\"{current_dir}/test_download\"'.format(current_dir=current_dir)
     #print(pull_dir)
 
-    test = SX5_Manager(scan_engine='halogen',
+    test = SX5_Manager(scan_engine='halogen1',
                        num_frame=10,
                        num_loop=2,
                        num_save_files=2,
@@ -100,3 +111,5 @@ if __name__ == "__main__":
                        adb_pull_dir=adb_pull_dir)
     test.run_scan_engine()
     test.pull_images()
+
+    test.clear_frame_storage_dir()
