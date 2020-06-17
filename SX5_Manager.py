@@ -77,6 +77,13 @@ class SX5_Manager(object):
         else:
             pass
 
+    @property
+    def pull_dir(self):
+        return self._pull_dir
+
+    @pull_dir.setter
+    def pull_dir(self, pull_dir):
+        self._pull_dir = pull_dir
 
 
 if __name__ == "__main__":

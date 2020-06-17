@@ -20,14 +20,14 @@ class XmlDictConfig(dict):
     '''
     Example usage:
 
-    >>> tree = ElementTree.parse('your_file.xml')
-    >>> root = tree.getroot()
-    >>> xmldict = XmlDictConfig(root)
+    tree = ElementTree.parse('your_file.xml')
+    root = tree.getroot()
+    xmldict = XmlDictConfig(root)
 
     Or, if you want to use an XML string:
 
-    >>> root = ElementTree.XML(xml_string)
-    >>> xmldict = XmlDictConfig(root)
+    root = ElementTree.XML(xml_string)
+    xmldict = XmlDictConfig(root)
 
     And then use xmldict for what it is... a dict.
     '''
@@ -69,7 +69,9 @@ if __name__ == '__main__':
 
     from xml.etree import ElementTree as ET
 
-    tree=ET.parse('Params.xml')
-    root = tree.getroot()
-    xmldict = XmlDictConfig(root)
-    print (xmldict)
+    # tree=ET.parse('Config.xml')
+    # root = tree.getroot()
+    # xmldict = XmlDictConfig(root)
+    # print (xmldict)
+
+    print(XmlDictConfig(ET.parse('Config.xml').getroot()))
