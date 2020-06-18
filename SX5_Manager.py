@@ -100,13 +100,13 @@ class SX5_Manager(object):
 if __name__ == "__main__":
     # Get Current working directory and set the pull directory
     current_dir = os.getcwd()
-    adb_pull_dir= '\"{current_dir}/test_download\"'.format(current_dir=current_dir)
-    #print(pull_dir)
+    adb_pull_dir = '\"{current_dir}/test/download'.format(current_dir=current_dir)
+    print(adb_pull_dir)
 
     test = SX5_Manager(scan_engine='halogen1',
                        num_frame=10,
-                       num_loop=2,
-                       num_save_files=2,
+                       num_loop=3,
+                       num_save_files=30,
                        frame_storage_dir='data/local/tmp',
                        adb_pull_dir=adb_pull_dir)
     test.run_scan_engine()
