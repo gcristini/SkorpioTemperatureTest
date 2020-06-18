@@ -1,4 +1,6 @@
+import os
 from PIL import Image
+
 
 class ImageManager(object):
     # ************************************************* #
@@ -18,6 +20,7 @@ class ImageManager(object):
         self._img_res = dict(width=img_width, height=img_height)
         self._out_ext = out_ext
 
+        # TODO: delete if not used
         self._image_list_dict = []
         """ 
             'name': None,           # Name of image, without extension
@@ -25,14 +28,6 @@ class ImageManager(object):
             'dir_path': None,       # Directory in which is stored the Image
             'res': None,            # Image resolution
             'img_data': None,       # Image data
-        """
-
-        self._output_image_list_dict = []
-        """
-            # 'name': None,         # Name of image, without extension
-            # 'ext': None,          # Image file extension
-            # 'dir_path': None,     # Directory in which will be stored the Image
-            # 'img_data': None,     # Image data
         """
 
         self._raw_images_list = None
@@ -72,7 +67,7 @@ class ImageManager(object):
             if (show == True):
                 img_data.show(title=img)
 
-            # Populate the list of dictionary
+            # Populate the list of dictionary TODO: delete if not used
             self._image_list_dict.append(
                 {
                     # ----- Input ----- #
@@ -87,6 +82,7 @@ class ImageManager(object):
                 }
             )
 
+            # Create output directory and save the images
             if (save == True):
                 try:
                     if not os.path.exists(self._output_dir):
@@ -95,18 +91,11 @@ class ImageManager(object):
                     print("Failed to create directory %s", self._output_dir)
                 else:
                     img_data.save('{out_dir}/{name}{out_ext}'.format(out_dir=self._output_dir,
-                                                                      name=name,
-                                                                      out_ext=self._out_ext))
-
-            print ('{out_dir}/{name}{out_ext}\n'.format(out_dir=self._output_dir,
-                                                                          name=name,
-                                                                          out_ext=self._out_ext))
-
+                                                                     name=name,
+                                                                     out_ext=self._out_ext))
 
 
 if __name__ == "__main__":
-
-    import os
 
     cwd = os.getcwd()
     input_dir = '{cwd}/test/download/'.format(cwd=cwd)

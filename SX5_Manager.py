@@ -31,7 +31,7 @@ class SX5_Manager(object):
 
         # Directory Variables
         self._frame_storage_dir = frame_storage_dir
-        self._pull_dir = adb_pull_dir
+        self._pull_dir = '"{pull_dir}"'.format(pull_dir=adb_pull_dir)  # insert "" for adb purpose
 
     # ************************************************* #
     # **************** Public Methods ***************** #
@@ -44,9 +44,9 @@ class SX5_Manager(object):
 
         # Concatenate the scan command
         scan_command = "{scan_engine} -l {num_loop} -n {num_frame} -s {num_save_files}".\
-            format(scan_engine=self._scan_engine, \
-                   num_loop=self._num_loop,\
-                   num_frame=self._num_frame,\
+            format(scan_engine=self._scan_engine,
+                   num_loop=self._num_loop,
+                   num_frame=self._num_frame,
                    num_save_files=self._num_save_files)
 
         # Run the scan command
@@ -100,7 +100,7 @@ class SX5_Manager(object):
 if __name__ == "__main__":
     # Get Current working directory and set the pull directory
     current_dir = os.getcwd()
-    adb_pull_dir = '\"{current_dir}/test/download'.format(current_dir=current_dir)
+    adb_pull_dir = '{current_dir}/test/download/'.format(current_dir=current_dir)
     print(adb_pull_dir)
 
     test = SX5_Manager(scan_engine='halogen1',

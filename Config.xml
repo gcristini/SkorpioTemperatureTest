@@ -2,10 +2,10 @@
 <!-- Body -->
 <GlobalParams>
     <SX5>
-        <scan_engine>halogen1</scan_engine>
+        <scan_engine>halogen2</scan_engine>
         <num_of_frame>10</num_of_frame>
-        <num_of_loop>10</num_of_loop>
-        <num_of_save_files>100</num_of_save_files>
+        <num_of_loop>2</num_of_loop>
+        <num_of_save_files>20</num_of_save_files>
         <!-- NOT USED >
         <pattern_bitmap> </pattern_bitmap>
         <wait_ms>  </wait_ms>
@@ -13,9 +13,14 @@
         <callback_delay_millisecond> </callback_delay_millisecond>
         <watchdog_test> </watchdog_test>
         -->
-        <frame_storage_dir>data/local/tmp</frame_storage_dir>
-        <adb_pull_base_dir>test_download</adb_pull_base_dir>
+        <frame_storage_dir>data/local/tmp/</frame_storage_dir>
+        <adb_pull_base_dir>test/download/</adb_pull_base_dir>
     </SX5>
+
+    <ImageManager>
+        <output_dir>test/download_converted</output_dir>
+        <img_format>.jpg</img_format>
+    </ImageManager>
 
     <ThermalChamber>
         <att1>  </att1>
