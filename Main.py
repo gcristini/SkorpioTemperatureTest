@@ -22,7 +22,7 @@ class TemperatureTestSx5(object):
         self._config_dict = None
         self._SX5 = None
         self._image_manager = None
-        self._global_var = gv().scan_engine_dict
+        self._gv_scan_engine = gv().scan_engine_dict
 
         pass
 
@@ -67,8 +67,8 @@ class TemperatureTestSx5(object):
 
         self._image_manager = ImageManager(input_dir=self._config_dict['SX5']['adb_pull_base_dir'],
                                            output_dir=self._config_dict['ImageManager']['output_dir'],
-                                           img_width=self._global_var[self._config_dict['SX5']['scan_engine']]['width'],
-                                           img_height=self._global_var[self._config_dict['SX5']['scan_engine']]['height'],
+                                           img_width=self._gv_scan_engine[self._config_dict['SX5']['scan_engine']]['width'],
+                                           img_height=self._gv_scan_engine[self._config_dict['SX5']['scan_engine']]['height'],
                                            out_ext=self._config_dict['ImageManager']['img_format'])
 
         pass

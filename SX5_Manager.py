@@ -1,15 +1,8 @@
 import os
 import subprocess
-
+from GlobalVariables import GlobalVariables as gv
 
 class SX5_Manager(object):
-    scan_engine_dict = {
-        'halogen1': 'halogen_cli2',
-        'halogen2': 'halogen_cli2',
-        'neon1': 'neon_mipi_cli2',
-        'neon2': 'neon_mipi_cli2',
-        'tungsten': 'tungsten_cli2'
-    }
 
     # ************************************************* #
     # **************** Private Methods **************** #
@@ -23,8 +16,12 @@ class SX5_Manager(object):
                  frame_storage_dir=None):
         """ Constructor"""
 
-        # Scan Engine Variables
-        self._scan_engine = self.scan_engine_dict[scan_engine]
+
+        # Import Global Variables
+        self._gv_scan_engine = gv().scan_engine_dict
+
+        # Scan Engine App Variables
+        self._scan_app = self._gv_scan_engine[scan_engine]['app']
         self._num_frame = num_frame
         self._num_save_files = num_save_files
         self._num_loop = num_loop
@@ -37,14 +34,14 @@ class SX5_Manager(object):
     # **************** Public Methods ***************** #
     # ************************************************* #
     def run_scan_engine(self):
-        """ """
+        """ Launch the scan engine app on the device """
         # Return value
         ret = False
         check_string = 'finished'
 
         # Concatenate the scan command
-        scan_command = "{scan_engine} -l {num_loop} -n {num_frame} -s {num_save_files}".\
-            format(scan_engine=self._scan_engine,
+        scan_command = "{scan_app} -l {num_loop} -n {num_frame} -s {num_save_files}".\
+            format(scan_app=self._scan_app,
                    num_loop=self._num_loop,
                    num_frame=self._num_frame,
                    num_save_files=self._num_save_files)
@@ -61,6 +58,7 @@ class SX5_Manager(object):
         return ret
 
     def pull_images(self):
+        """ Run the "adb pull" command to download all frames """
         # Return value
         ret = False
         check_string = 'pulled, 0 skipped'
@@ -80,12 +78,15 @@ class SX5_Manager(object):
             pass
 
     def clear_frame_storage_dir(self):
-        """"""
+        """ Clear the frame storage folder on the device """
+
+        # Delete command
         delete_cmd = "rm -v /{dir}/*".format(dir=self._frame_storage_dir)
 
+        # Run the delete command
         delete_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
         delete_process_stdout = delete_process.communicate(delete_cmd.encode())[0].decode('ascii', errors='ignore')
-
+        pass
 
 
     @property
