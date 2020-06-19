@@ -31,17 +31,6 @@ class TemperatureTestSx5(object):
         # Read Configuration file and store it into dictionary
         self._config_dict = XmlDictConfig(ElementTree.parse(self._config_file).getroot())
 
-        # Update the "adb_pull_dir" field
-        self._config_dict['SX5']['adb_pull_base_dir'] = \
-            '{cwd}/{dir}'.format(cwd=os.getcwd(),
-                                 dir=self._config_dict['SX5']['adb_pull_base_dir'])
-
-        # Update the "image manager output dir" field
-        self._config_dict['ImageManager']['output_dir'] = \
-            '{cwd}/{dir}'.format(cwd=os.getcwd(),
-                                 dir=self._config_dict['ImageManager']['output_dir'])
-
-
         pass
 
     def init_sx5(self):

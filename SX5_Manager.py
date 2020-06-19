@@ -102,7 +102,6 @@ if __name__ == "__main__":
     # Get Current working directory and set the pull directory
     current_dir = os.getcwd()
     adb_pull_dir = '{current_dir}/test/download/'.format(current_dir=current_dir)
-    print(adb_pull_dir)
 
     test = SX5_Manager(scan_engine='halogen1',
                        num_frame=10,

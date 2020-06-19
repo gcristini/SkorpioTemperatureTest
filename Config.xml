@@ -13,12 +13,12 @@
         <callback_delay_millisecond> </callback_delay_millisecond>
         <watchdog_test> </watchdog_test>
         -->
-        <frame_storage_dir>data/local/tmp/</frame_storage_dir>
-        <adb_pull_base_dir>test/download/</adb_pull_base_dir>
+        <frame_storage_dir>data/local/tmp</frame_storage_dir>
+        <adb_pull_base_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download/</adb_pull_base_dir>
     </SX5>
 
     <ImageManager>
-        <output_dir>test/download_converted</output_dir>
+        <output_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download_converted/</output_dir>
         <img_format>.jpg</img_format>
     </ImageManager>
 
