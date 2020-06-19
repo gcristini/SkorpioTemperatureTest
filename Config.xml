@@ -14,18 +14,18 @@
         <watchdog_test> </watchdog_test>
         -->
         <frame_storage_dir>data/local/tmp</frame_storage_dir>
-        <adb_pull_base_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download/</adb_pull_base_dir>
+        <adb_pull_base_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download</adb_pull_base_dir>
     </SX5>
 
     <ImageManager>
-        <output_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download_converted/</output_dir>
+        <output_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download_converted</output_dir>
         <img_format>.jpg</img_format>
     </ImageManager>
 
     <ThermalChamber>
-        <att1>  </att1>
-        <att2>  </att2>
-        <att3>  </att3>
+        <temp_start>-40</temp_start>
+        <temp_stop>40</temp_stop>
+        <steps>10</steps>
     </ThermalChamber>
 
 </GlobalParams>

@@ -1,7 +1,7 @@
 class GlobalSettings(object):
     def __init__(self):
         self.__global_settings = {
-            'debug': True
+            'debug': False
         }
 
     @property
@@ -42,6 +42,20 @@ class GlobalVariables(object):
         return self.__scan_engine_dict
 
 
+class Enumerations:
+    """ Enumerations """
+    class TempTestStatesEnum:
+        """ Status of Temperature Test machine """
+        TT_INIT = "Init"
+        TT_RUN_SCAN_ENGINE_APP = "RunScanEngineApp"
+        TT_PULL_IMAGES = "PullImages"
+        TT_ERROR = "Error"
+        TT_STOP = "Stop"
+        TT_MAX_ENUM = ""
+
+    class MainStatesEnum:
+        """ Status of Main Applicative """
+        pass
 
 
 

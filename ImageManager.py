@@ -70,7 +70,7 @@ class ImageManager(object):
             (name, ext) = os.path.splitext(img)
 
             # Read raw data
-            img_data = self._read_raw(self._input_dir + img)
+            img_data = self._read_raw(self._input_dir +'/' +img)
 
             # Show Raw data
             if (show == True):
@@ -103,6 +103,21 @@ class ImageManager(object):
                                                                      name=name,
                                                                      out_ext=self._out_ext))
 
+    @property
+    def input_dir(self):
+        return self._input_dir
+
+    @input_dir.setter
+    def input_dir(self, directory):
+        self._input_dir = directory
+
+    @property
+    def output_dir(self):
+        return self._output_dir
+
+    @output_dir.setter
+    def output_dir(self, directory):
+        self._output_dir = directory
 
 if __name__ == "__main__":
 

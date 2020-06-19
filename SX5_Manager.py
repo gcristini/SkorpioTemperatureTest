@@ -2,8 +2,9 @@ import os
 import subprocess
 from GlobalVariables import GlobalVariables as gv
 
-class SX5_Manager(object):
 
+class SX5_Manager(object):
+    """ """
     # ************************************************* #
     # **************** Private Methods **************** #
     # ************************************************* #
@@ -12,7 +13,7 @@ class SX5_Manager(object):
                  num_loop=None,
                  num_frame=None,
                  num_save_files=None,
-                 adb_pull_dir=None,
+                 pull_dir=None,
                  frame_storage_dir=None):
         """ Constructor"""
 
@@ -28,12 +29,12 @@ class SX5_Manager(object):
 
         # Directory Variables
         self._frame_storage_dir = frame_storage_dir
-        self._pull_dir = '"{pull_dir}"'.format(pull_dir=adb_pull_dir)  # insert "" for adb purpose
+        self._pull_dir = '"{pull_dir}"'.format(pull_dir=pull_dir)  # insert "" for adb purpose
 
     # ************************************************* #
     # **************** Public Methods ***************** #
     # ************************************************* #
-    def run_scan_engine(self):
+    def run_scan_engine_app(self):
         """ Launch the scan engine app on the device """
         # Return value
         ret = False
@@ -59,9 +60,8 @@ class SX5_Manager(object):
 
     def pull_images(self):
         """ Run the "adb pull" command to download all frames """
-        # Return value
-        ret = False
-        check_string = 'pulled, 0 skipped'
+        # Variables
+        check_string = 'pulled, 0 skipped'  # Control string
 
         # Concatenate Pull command
         pull_command = "adb pull {frame_storage_dir} {pull_dir}".\
@@ -77,16 +77,25 @@ class SX5_Manager(object):
         else:
             pass
 
+        return ret
+
     def clear_frame_storage_dir(self):
         """ Clear the frame storage folder on the device """
+        # Variables
+        check_string = "No such file or directory"  # Control string
+        ret = False  # return value
 
-        # Delete command
-        delete_cmd = "rm -v /{dir}/*".format(dir=self._frame_storage_dir)
+        # Concatenate Delete Command
+        delete_cmd = "rm -v /{dir}/*".format(dir=self._frame_storage_dir)  # Delete command
 
         # Run the delete command
         delete_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
         delete_process_stdout = delete_process.communicate(delete_cmd.encode())[0].decode('ascii', errors='ignore')
-        pass
+
+        if (delete_process_stdout.find(check_string) == -1):
+            ret = True
+
+        return ret
 
 
     @property
@@ -94,8 +103,8 @@ class SX5_Manager(object):
         return self._pull_dir
 
     @pull_dir.setter
-    def pull_dir(self, pull_dir):
-        self._pull_dir = pull_dir
+    def pull_dir(self, directory):
+        self._pull_dir = '"{pull_dir}"'.format(pull_dir=directory)  # insert "" for adb purpose
 
 
 if __name__ == "__main__":
@@ -108,8 +117,8 @@ if __name__ == "__main__":
                        num_loop=3,
                        num_save_files=30,
                        frame_storage_dir='data/local/tmp',
-                       adb_pull_dir=adb_pull_dir)
-    test.run_scan_engine()
+                       pull_dir=adb_pull_dir)
+    test.run_scan_engine_app()
     test.pull_images()
 
     test.clear_frame_storage_dir()
