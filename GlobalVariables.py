@@ -1,12 +1,13 @@
-# class GlobalSettings(object):
-#     def __init__(self):
-#         self.__global_settings = {
-#             'debug': False
-#         }
-#
-#     @property
-#     def global_settings(self):
-#         return self.__global_settings
+class GlobalSettings(object):
+    def __init__(self):
+        self.__global_settings = {
+            'debug': True
+        }
+
+    @property
+    def global_settings(self):
+        return self.__global_settings
+
 
 class GlobalVariables(object):
     def __init__(self):

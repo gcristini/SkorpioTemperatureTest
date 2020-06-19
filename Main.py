@@ -8,6 +8,8 @@ from ParseXml import XmlDictConfig
 from xml.etree import ElementTree
 from ImageManager import ImageManager
 from GlobalVariables import GlobalVariables as gv
+from GlobalVariables import GlobalSettings as gs
+from Debug import Debug as dbg
 
 
 
@@ -18,11 +20,14 @@ class TemperatureTestSx5(object):
     # **************** Private Methods **************** #
     # ************************************************* #
     def __init__(self):
+        # Global settings/variables
+        self._gv_scan_engine = gv().scan_engine_dict
+        self._gs = gs().global_settings
+
         self._config_file = 'Config.xml'
         self._config_dict = None
         self._SX5 = None
         self._image_manager = None
-        self._gv_scan_engine = gv().scan_engine_dict
 
         pass
 
@@ -36,8 +41,7 @@ class TemperatureTestSx5(object):
     def init_sx5(self):
         """ """
 
-
-        #print (self._config_dict['SX5']['adb_pull_base_dir'])
+        dbg.debug(print, self._config_dict['SX5']['adb_pull_base_dir'], debug=self._gs['debug'])
 
         # Init an SX5 instance
         self._SX5 = SX5_Manager(scan_engine=self._config_dict['SX5']['scan_engine'],
