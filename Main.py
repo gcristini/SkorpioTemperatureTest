@@ -7,7 +7,7 @@ from SX5_Manager import SX5_Manager
 from ParseXml import XmlDictConfig
 from xml.etree import ElementTree
 from ImageManager import ImageManager
-from GlobalDictionary import GlobalVariables as gv
+from GlobalVariables import GlobalVariables as gv
 
 
 

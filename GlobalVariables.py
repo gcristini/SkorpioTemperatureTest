@@ -1,3 +1,12 @@
+# class GlobalSettings(object):
+#     def __init__(self):
+#         self.__global_settings = {
+#             'debug': False
+#         }
+#
+#     @property
+#     def global_settings(self):
+#         return self.__global_settings
 
 class GlobalVariables(object):
     def __init__(self):
@@ -32,7 +41,11 @@ class GlobalVariables(object):
         return self.__scan_engine_dict
 
 
+
+
+
 if __name__ == "__main__":
 
     test = GlobalVariables().scan_engine_dict
+
     print(test)
