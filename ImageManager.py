@@ -30,18 +30,22 @@ class ImageManager(object):
             'img_data': None,       # Image data
         """
 
-        self._raw_images_list = None
+        self._raw_images_list = []
 
         pass
 
     def _search_raw_images(self):
-        """ """
-        # List all files in the directory
-        self._raw_images_list = os.listdir(self._input_dir)
+        """ Search for raw images into directory """
+
+        # List all .raw files in the directory
+        for file in os.listdir(self._input_dir):
+            if os.path.splitext(file)[1] == '.raw':
+                self._raw_images_list.append(file)
 
         pass
 
     def _read_raw(self, file):
+        """ Read a raw image """
         raw_data = open(file, 'rb').read()
         img_data = Image.frombytes('L', (self._img_res['width'], self._img_res['height']), raw_data)
 
@@ -53,6 +57,11 @@ class ImageManager(object):
     # ************************************************* #
 
     def convert_images(self, show=False, save=False):
+        """ Convert all raw images and convert them with the specified extension
+            - show: if True show the raw image
+            - save: if True svae the image in the specified format
+        """
+
         # List all raw images
         self._search_raw_images()
 
