@@ -1,7 +1,7 @@
 class GlobalSettings(object):
     def __init__(self):
         self.__global_settings = {
-            'debug': False,
+            'debug': True,
             'Config File': 'Config.xml'
         }
 

@@ -96,7 +96,9 @@ class TemperatureTestSx5(object):
 
     # ----------- State Machine Methods -----------
     def _init_state_manager(self):
-        print ("Init State")
+        """"""
+        dbg.debug(print, "Init State", debug=self._gs['debug'])
+
         # Parse config file
         self._parse_config_file()
         # Init SX5
@@ -113,7 +115,9 @@ class TemperatureTestSx5(object):
         return
 
     def _run_scan_engine_app_state_manager(self):
-        print("Scan Engine App State")
+        """"""
+        dbg.debug(print, "Run Scan Engine App ", debug=self._gs['debug'])
+
         # Run Scan Engine App
         ret = self._SX5.run_scan_engine_app()
 
@@ -126,11 +130,12 @@ class TemperatureTestSx5(object):
             return
 
     def _pull_images_state_manager(self):
-        print("Pull Images State")
-        # Pull image from device and clear the directory
+        """"""
+        dbg.debug(print, "Pull Images", debug=self._gs['debug'])
 
         # TODO: aggiungere la gestione degli errori
 
+        # Pull image from device and clear the directory
         ret = self._SX5.pull_images()
         self._SX5.clear_frame_storage_dir()
 
@@ -147,15 +152,17 @@ class TemperatureTestSx5(object):
         return
 
     def _error_state_manager(self):
-        print ("ERROR state")
+        """"""
+        dbg.debug(print, "Error State", debug=self._gs['debug'])
         self._temp_test_state = enum.TempTestStatesEnum.TT_STOP
         pass
 
     def _stop_state_manager(self):
-        print ("STOP state")
+        """"""
+        dbg.debug(print, "Stop State", debug=self._gs['debug'])
         pass
 
-    def _temperature_test_state_machine_manager(self, machine_state):
+    def _temperature_test_state_machine_manager(self):
         # Get function from dictionary
         fun = self._temp_test_fun_dict.get(self._temp_test_state)
 
@@ -182,21 +189,21 @@ class TemperatureTestSx5(object):
     def run_test(self):
         """ """
         # Initialize all
-        self._temperature_test_state_machine_manager(self._temp_test_state)
+        self._temperature_test_state_machine_manager()
 
-
-        #for step in range (int(self._config_dict['ThermalChamber']['steps'])):
+        # Loop over temperature step dictionary
         for step in self._step_dict:
-            #print ("Step n° " + str(step))
+            dbg.debug(print, '\n-- {step_key}: T={step_value}°C --'.format(step_key=step, step_value=self._step_dict[step]),
+                      debug=self._gs['debug'])
 
             while not (self._temp_test_state == enum.TempTestStatesEnum.TT_STOP and
                        self._last_temp_test_state == self._temp_test_state):
 
-                # Execute the state machine at the current state
-                self._temperature_test_state_machine_manager(self._temp_test_state)
-
                 # Store the last state machine state
                 self._last_temp_test_state = self._temp_test_state
+
+                # Execute the state machine at the current state
+                self._temperature_test_state_machine_manager()
 
             # From the second iteration bypass the initialization and go to "run_scan_engine_app" state
             self._temp_test_state = enum.TempTestStatesEnum.TT_RUN_SCAN_ENGINE_APP
