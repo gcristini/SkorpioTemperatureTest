@@ -17,7 +17,6 @@ class SX5_Manager(object):
                  frame_storage_dir=None):
         """ Constructor"""
 
-
         # Import Global Variables
         self._gv_scan_engine = gv().scan_engine_dict
 

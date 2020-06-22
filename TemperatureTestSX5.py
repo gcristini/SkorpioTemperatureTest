@@ -11,7 +11,7 @@ from GlobalVariables import GlobalVariables as gv
 from GlobalVariables import GlobalSettings as gs
 from GlobalVariables import Enumerations as enum
 from Debug import Debug as dbg
-
+import colorama as cm
 
 
 class TemperatureTestSx5(object):
@@ -47,6 +47,9 @@ class TemperatureTestSx5(object):
         self._temp_test_state = enum.TempTestStatesEnum.TT_INIT
         self._last_temp_test_state = None
 
+        # Initialize Colorama library
+        cm.init(autoreset=True)
+
         pass
 
     def _parse_config_file(self):
@@ -72,6 +75,7 @@ class TemperatureTestSx5(object):
         pass
 
     def _init_thermal_chamber(self):
+        """"""
         start_temp = int(self._config_dict['ThermalChamber']['temp_start'])
         stop_temp = int(self._config_dict['ThermalChamber']['temp_stop'])
         steps = int( self._config_dict['ThermalChamber']['steps'])
@@ -81,7 +85,6 @@ class TemperatureTestSx5(object):
         for i in range(steps):
             self._step_dict['Step ' + str(i)] = start_temp + (step_size*i)
             
-        #print (self._step_dict)
         pass
 
     def _init_image_manager(self):
@@ -116,6 +119,7 @@ class TemperatureTestSx5(object):
 
     def _run_scan_engine_app_state_manager(self):
         """"""
+        print ("-Run Scan Engine App")
         dbg.debug(print, "Run Scan Engine App ", debug=self._gs['debug'])
 
         # Run Scan Engine App
@@ -132,6 +136,7 @@ class TemperatureTestSx5(object):
     def _pull_images_state_manager(self):
         """"""
         dbg.debug(print, "Pull Images", debug=self._gs['debug'])
+        print("-Pull images")
 
         # TODO: aggiungere la gestione degli errori
 
@@ -160,6 +165,7 @@ class TemperatureTestSx5(object):
     def _stop_state_manager(self):
         """"""
         dbg.debug(print, "Stop State", debug=self._gs['debug'])
+        print("-Finished!")
         pass
 
     def _temperature_test_state_machine_manager(self):
@@ -193,8 +199,12 @@ class TemperatureTestSx5(object):
 
         # Loop over temperature step dictionary
         for step in self._step_dict:
-            dbg.debug(print, '\n-- {step_key}: T={step_value}°C --'.format(step_key=step, step_value=self._step_dict[step]),
-                      debug=self._gs['debug'])
+            # Update Directories
+            self._update_directories(self._step_dict[step])
+
+            print(cm.Fore.BLUE + '-- {step_key}: T={step_value}°C --'.format(step_key=step,
+                                                                             step_value=self._step_dict[step]))
+
 
             while not (self._temp_test_state == enum.TempTestStatesEnum.TT_STOP and
                        self._last_temp_test_state == self._temp_test_state):
@@ -211,7 +221,6 @@ class TemperatureTestSx5(object):
 
             # Update Directories
             self._update_directories(self._step_dict[step])
-
 
 
 

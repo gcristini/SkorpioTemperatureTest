@@ -6,10 +6,11 @@ from Parser import Parser
 from TemperatureTestSX5 import TemperatureTestSx5
 from Debug import Debug as dbg
 from GlobalVariables import GlobalSettings as gs
+from GlobalVariables import Enumerations as enum
+import colorama as cm
 
 class Main(object):
     """ """
-
 
     # ************************************************* #
     # **************** Private Methods **************** #
@@ -18,42 +19,106 @@ class Main(object):
         """ Constructor """
 
         # Dictionary for input line command.
-        self._parse_dict = {
-            '-a': self._parse_fun_a,
-            '-b': self._parse_fun_b,
+        self._main_state_fun_dict = {
+            enum.MainAppStatesEnum.MAS_INIT: self._init_state_manager,
+            enum.MainAppStatesEnum.MAS_WAIT: self._wait_state_manager,
+            enum.MainAppStatesEnum.MAS_RUN: self._run_state_manager,
+            enum.MainAppStatesEnum.MAS_HELP: self._help_state_manager,
+            enum.MainAppStatesEnum.MAS_EXIT: self._exit_state_manager
         }
-
-        # Initialize Parser with input arguments and parser dictionary
-        self._parser = Parser(input_args=sys.argv[1:],
-                              parse_dict=self._parse_dict)
 
         self._TemperatureTestSX5 = TemperatureTestSx5()
 
-        self._gs = gs().global_settings
+        self._init_state_manager_gs = gs().global_settings
 
-    # ******** Parser Dictionary Functions ******** #
-    def _parse_fun_a(self, argv):
-        """ Parser function [-id]: set input directory of ImageManager """
-        if argv:
-            pass
-        else:
-            pass
+        self._main_state = enum.MainAppStatesEnum.MAS_INIT
+        self._last_main_state = enum.MainAppStatesEnum.MAS_INIT
 
-    def _parse_fun_b(self, argv):
-        """ Parser function [-id]: set input directory of ImageManager """
-        if argv:
-            pass
+    # ******** State Machine Functions ******** #
+    def _init_state_manager(self):
+        """"""
+        # Initialize Colorama
+        cm.init(autoreset=True)
+
+        print(cm.Fore.GREEN + " ---------- WELCOME! ---------- ")
+
+        # Go to Wait State
+        self._main_state = enum.MainAppStatesEnum.MAS_WAIT
+        pass
+
+    def _wait_state_manager(self):
+        """"""
+
+        cmd = input("Please enter a command: ")
+        print('\n')
+
+        if cmd == enum.MainAppCommands.MAC_RUN:
+            # Go to run state
+            self._main_state=enum.MainAppStatesEnum.MAS_RUN
+
+        elif cmd == enum.MainAppCommands.MAC_HELP:
+            # Go to wait state
+            self._main_state = enum.MainAppStatesEnum.MAS_HELP
+
+        elif cmd == enum.MainAppCommands.MAC_EXIT:
+            # Go to exit state
+            self._main_state = enum.MainAppStatesEnum.MAS_EXIT
+
         else:
-            pass
+            # Go to help state
+            self._main_state = enum.MainAppStatesEnum.MAS_HELP
+        pass
+
+    def _run_state_manager(self):
+        """"""
+        print(cm.Fore.CYAN + cm.Style.DIM + "Run Test\n")
+        self._TemperatureTestSX5.run_test()
+
+        # Go to Wait state
+        self._main_state = enum.MainAppStatesEnum.MAS_WAIT
+
+        pass
+
+    def _help_state_manager(self):
+        """"""
+        print("HELP USAGE")
+
+        # Go to wait state
+        self._main_state = enum.MainAppStatesEnum.MAS_WAIT
+        pass
+
+    def _exit_state_manager(self):
+        """"""
+        print (cm.Fore.LIGHTGREEN_EX + "Exiting...")
+        sys.exit()
+        pass
+
+    def _main_state_machine_manager(self):
+        """"""
+        # Get function from dictionary
+        fun = self._main_state_fun_dict.get(self._main_state)
+        # Execute function
+        fun()
+
+        pass
 
     # ************************************************ #
     # **************** Public Methods **************** #
     # ************************************************ #
     def main(self):
-        """ """
-        dbg.debug(print, "Start Main", debug=self._gs['debug'])
-        self._TemperatureTestSX5.run_test()
+        """ Main Application """
+
+        # Init
+        self._init_state_manager()
+
+        while not(self._main_state == enum.MainAppStatesEnum.MAS_EXIT and
+                  self._last_main_state == enum.MainAppStatesEnum.MAS_EXIT):
+
+            # Store the last state machine state
+            self._last_main_state = self._main_state
+
+            # Run state machine at current state
+            self._main_state_machine_manager()
 
 
 Main().main()
-

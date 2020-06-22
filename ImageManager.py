@@ -119,6 +119,7 @@ class ImageManager(object):
     def output_dir(self, directory):
         self._output_dir = directory
 
+
 if __name__ == "__main__":
 
     cwd = os.getcwd()

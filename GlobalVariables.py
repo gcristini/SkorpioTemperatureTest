@@ -1,7 +1,7 @@
 class GlobalSettings(object):
     def __init__(self):
         self.__global_settings = {
-            'debug': True,
+            'debug': False,
             'Config File': 'Config.xml'
         }
 
@@ -12,6 +12,7 @@ class GlobalSettings(object):
 
 class GlobalVariables(object):
     def __init__(self):
+        # Scan Engine Parameters
         self.__scan_engine_dict = {
             'halogen1': {
                 'app': 'halogen_cli2',
@@ -38,6 +39,7 @@ class GlobalVariables(object):
             },
         }
 
+
     @property
     def scan_engine_dict(self):
         return self.__scan_engine_dict
@@ -46,7 +48,7 @@ class GlobalVariables(object):
 class Enumerations:
     """ Enumerations """
     class TempTestStatesEnum:
-        """ Status of Temperature Test machine """
+        """ Status of Temperature Test machine (TemperatureTestSX5.py) """
         TT_INIT = "Init"
         TT_RUN_SCAN_ENGINE_APP = "RunScanEngineApp"
         TT_PULL_IMAGES = "PullImages"
@@ -54,10 +56,21 @@ class Enumerations:
         TT_STOP = "Stop"
         TT_MAX_ENUM = ""
 
-    class MainStatesEnum:
-        """ Status of Main Applicative """
-        pass
+    class MainAppStatesEnum:
+        """ Status of Main Applicative (Main.py)"""
+        MAS_INIT = "Init"
+        MAS_WAIT = "Wait"
+        MAS_RUN = "Run"
+        MAS_HELP = "Help"
+        MAS_EXIT = "Exit"
+        MAS_MAX_ENUM = ""
 
+    class MainAppCommands:
+        """ Commands of Main Applicative State Machine (Main.py)"""
+        MAC_RUN = "run"
+        MAC_STOP = "stop"
+        MAC_HELP = "wait"
+        MAC_EXIT = "exit"
 
 
 if __name__ == "__main__":
