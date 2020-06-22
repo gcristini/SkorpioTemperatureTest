@@ -24,12 +24,17 @@ class TemperatureTestSx5(object):
         # Global settings/variables
         self._gv_scan_engine = gv().scan_engine_dict
         self._gs = gs().global_settings
+        self._config_dict = {}
 
-        self._config_file = 'Config.xml'
-        self._config_dict = None
+        # Modules Manager
         self._SX5 = None
         self._image_manager = None
+        self._thermal_chamber = None
 
+        # Dictionary for steps of iterations
+        self._step_dict = {}
+
+        # Dictionary with state and "pointer to function" for the state machine
         self._temp_test_fun_dict = {
             enum.TempTestStatesEnum.TT_INIT: self._init_state_manager,
             enum.TempTestStatesEnum.TT_RUN_SCAN_ENGINE_APP: self._run_scan_engine_app_state_manager,
@@ -42,14 +47,12 @@ class TemperatureTestSx5(object):
         self._temp_test_state = enum.TempTestStatesEnum.TT_INIT
         self._last_temp_test_state = None
 
-        self._num_iter = 10 #TODO DELETE
-
         pass
 
     def _parse_config_file(self):
         """ """
         # Read Configuration file and store it into dictionary
-        self._config_dict = XmlDictConfig(ElementTree.parse(self._config_file).getroot())
+        self._config_dict = XmlDictConfig(ElementTree.parse(self._gs['Config File']).getroot())
 
         pass
 
@@ -69,6 +72,16 @@ class TemperatureTestSx5(object):
         pass
 
     def _init_thermal_chamber(self):
+        start_temp = int(self._config_dict['ThermalChamber']['temp_start'])
+        stop_temp = int(self._config_dict['ThermalChamber']['temp_stop'])
+        steps = int( self._config_dict['ThermalChamber']['steps'])
+
+        step_size = (stop_temp - start_temp) / (steps-1)
+
+        for i in range(steps):
+            self._step_dict['Step ' + str(i)] = start_temp + (step_size*i)
+            
+        #print (self._step_dict)
         pass
 
     def _init_image_manager(self):
@@ -88,6 +101,10 @@ class TemperatureTestSx5(object):
         self._parse_config_file()
         # Init SX5
         self._init_sx5()
+
+        # Init Thermal Chamber
+        self._init_thermal_chamber()
+
         # Init Image Manager
         self._init_image_manager()
 
@@ -147,14 +164,16 @@ class TemperatureTestSx5(object):
         return
 
     def _update_directories(self, step):
-        self._SX5.pull_dir = '{base_dir}{num}'.format(base_dir=self._config_dict['SX5']['adb_pull_base_dir'],
-                                                      num=step)
-        self._image_manager.input_dir = '{base_dir}{num}'.format(base_dir=self._config_dict['SX5']['adb_pull_base_dir'],
-                                                                 num=step)
+        # Update ADB pull directory
+        self._SX5.pull_dir = '{base_dir}_T={step}°C'.format(base_dir=self._config_dict['SX5']['adb_pull_base_dir'],
+                                                            step=step)
+        self._image_manager.input_dir = '{base_dir}_T={step}°C'.format(base_dir=self._config_dict['SX5']['adb_pull_base_dir'],
+                                                                       step=step)
 
-        self._image_manager.output_dir = '{base_dir}{num}'.format(
+        # Update the converted images directory
+        self._image_manager.output_dir = '{base_dir}_T={step}°C'.format(
             base_dir=self._config_dict['ImageManager']['output_dir'],
-            num=step)
+            step=step)
 
 
     # ************************************************ #
@@ -166,8 +185,9 @@ class TemperatureTestSx5(object):
         self._temperature_test_state_machine_manager(self._temp_test_state)
 
 
-        for step in range (int(self._config_dict['ThermalChamber']['steps'])):
-            print ("Step n° " + str(step))
+        #for step in range (int(self._config_dict['ThermalChamber']['steps'])):
+        for step in self._step_dict:
+            #print ("Step n° " + str(step))
 
             while not (self._temp_test_state == enum.TempTestStatesEnum.TT_STOP and
                        self._last_temp_test_state == self._temp_test_state):
@@ -183,10 +203,11 @@ class TemperatureTestSx5(object):
             self._last_temp_test_state = enum.TempTestStatesEnum.TT_RUN_SCAN_ENGINE_APP
 
             # Update Directories
-            self._update_directories(step+1)
+            self._update_directories(self._step_dict[step])
+
 
 
 
 if __name__ == '__main__':
-    test=TemperatureTestSx5()
+    test = TemperatureTestSx5()
     test.run_test()
