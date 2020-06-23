@@ -54,7 +54,7 @@ class Main(object):
 
         if cmd == enum.MainAppCommands.MAC_RUN:
             # Go to run state
-            self._main_state=enum.MainAppStatesEnum.MAS_RUN
+            self._main_state = enum.MainAppStatesEnum.MAS_RUN
 
         elif cmd == enum.MainAppCommands.MAC_HELP:
             # Go to wait state
@@ -81,7 +81,7 @@ class Main(object):
 
     def _help_state_manager(self):
         """"""
-        print("HELP USAGE")
+        print("HELP USAGE\n\n")
 
         # Go to wait state
         self._main_state = enum.MainAppStatesEnum.MAS_WAIT
@@ -110,6 +110,7 @@ class Main(object):
 
         # Init
         self._init_state_manager()
+
 
         while not(self._main_state == enum.MainAppStatesEnum.MAS_EXIT and
                   self._last_main_state == enum.MainAppStatesEnum.MAS_EXIT):
