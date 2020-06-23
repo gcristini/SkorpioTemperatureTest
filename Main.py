@@ -111,9 +111,8 @@ class Main(object):
         # Init
         self._init_state_manager()
 
-
-        while not(self._main_state == enum.MainAppStatesEnum.MAS_EXIT and
-                  self._last_main_state == enum.MainAppStatesEnum.MAS_EXIT):
+        while not (self._main_state == enum.MainAppStatesEnum.MAS_EXIT and
+                   self._last_main_state == enum.MainAppStatesEnum.MAS_EXIT):
 
             # Store the last state machine state
             self._last_main_state = self._main_state

@@ -78,9 +78,15 @@ class TemperatureTestSx5(object):
         """"""
         start_temp = int(self._config_dict['ThermalChamber']['temp_start'])
         stop_temp = int(self._config_dict['ThermalChamber']['temp_stop'])
-        steps = int( self._config_dict['ThermalChamber']['steps'])
+        steps = int(self._config_dict['ThermalChamber']['steps'])
+        step_size = 0
 
-        step_size = (stop_temp - start_temp) / (steps-1)
+        if steps > 1:
+            step_size = (stop_temp - start_temp) / (steps-1)
+        elif steps == 1:
+            step_size = 0
+        else:
+            print("Number of steps must be equal or greater than 1")
 
         for i in range(steps):
             self._step_dict['Step ' + str(i)] = start_temp + (step_size*i)

@@ -51,7 +51,6 @@ class ImageManager(object):
 
         return img_data
 
-
     # ************************************************* #
     # ***************** Public Methods **************** #
     # ************************************************* #
@@ -59,7 +58,7 @@ class ImageManager(object):
     def convert_images(self, show=False, save=False):
         """ Convert all raw images and convert them with the specified extension
             - show: if True show the raw image
-            - save: if True svae the image in the specified format
+            - save: if True save the image in the specified format
         """
 
         # List all raw images

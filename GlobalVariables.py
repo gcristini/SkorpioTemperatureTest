@@ -18,21 +18,25 @@ class GlobalVariables(object):
                 'app': 'halogen_cli2',
                 'width': 752,
                 'height': 480,
+                'hw_acc_pixels': 128,
             },
             'halogen2': {
                 'app': 'halogen_cli2',
                 'width': 1408,
                 'height': 960,
+                'hw_acc_pixels': 128,
             },
             'neon1': {
                 'app': 'neon_mipi_cli2',
                 'width': 1408,
                 'height': 964,
+                'hw_acc_pixels': 128,
             },
             'neon2': {
                 'app': 'neon_mipi_cli2',
                 'width': 1408,
                 'height': 804,
+                'hw_acc_pixels': 128,
             },
             'tungsten': {
                 'app': 'tungsten_cli2',
