@@ -11,7 +11,7 @@ from Debug import Debug as dbg
 import colorama as cm
 
 
-class TemperatureTestSx5_TC(object):
+class TemperatureTestSx5_TS(object):
     """ """
 
     # ************************************************* #
