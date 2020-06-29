@@ -193,7 +193,7 @@ class TemperatureTestSx5(object):
         self._image_manager.output_dir = '{base_dir}_T={step}°C'.format(
             base_dir=self._config_dict['ImageManager']['output_dir'],
             step=step)
-
+        return
 
     # ************************************************ #
     # **************** Public Methods **************** #
@@ -211,7 +211,6 @@ class TemperatureTestSx5(object):
             print(cm.Fore.BLUE + '-- {step_key}: T={step_value}°C --'.format(step_key=step,
                                                                              step_value=self._step_dict[step]))
 
-
             while not (self._temp_test_state == enum.TempTestStatesEnum.TT_STOP and
                        self._last_temp_test_state == self._temp_test_state):
 
@@ -227,7 +226,6 @@ class TemperatureTestSx5(object):
 
             # Update Directories
             self._update_directories(self._step_dict[step])
-
 
 
 if __name__ == '__main__':

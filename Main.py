@@ -89,7 +89,7 @@ class Main(object):
 
     def _exit_state_manager(self):
         """"""
-        print (cm.Fore.LIGHTGREEN_EX + "Exiting...")
+        print(cm.Fore.LIGHTGREEN_EX + "Exiting...")
         sys.exit()
         pass
 
@@ -122,3 +122,4 @@ class Main(object):
 
 
 Main().main()
+
