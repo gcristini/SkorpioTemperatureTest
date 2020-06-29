@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-import sys
-import os
-from Parser import Parser
 from SX5_Manager import SX5_Manager
 from ParseXml import XmlDictConfig
 from xml.etree import ElementTree
@@ -14,7 +11,7 @@ from Debug import Debug as dbg
 import colorama as cm
 
 
-class TemperatureTestSx5(object):
+class TemperatureTestSx5_TC(object):
     """ """
 
     # ************************************************* #
@@ -55,7 +52,7 @@ class TemperatureTestSx5(object):
     def _parse_config_file(self):
         """ """
         # Read Configuration file and store it into dictionary
-        self._config_dict = XmlDictConfig(ElementTree.parse(self._gs['Config File']).getroot())
+        self._config_dict = XmlDictConfig(ElementTree.parse(self._gs['ConfigFile_TC_Test']).getroot())
 
         pass
 
@@ -88,8 +85,9 @@ class TemperatureTestSx5(object):
         else:
             print("Number of steps must be equal or greater than 1")
 
+        # Create Dictionary rounding temperature to two decimal digits
         for i in range(steps):
-            self._step_dict['Step ' + str(i)] = start_temp + (step_size*i)
+            self._step_dict['Step ' + str(i)] = round(start_temp + (step_size*i), 2)
             
         pass
 
@@ -229,5 +227,5 @@ class TemperatureTestSx5(object):
 
 
 if __name__ == '__main__':
-    test = TemperatureTestSx5()
+    test = TemperatureTestSx5_TC()
     test.run_test()

@@ -25,7 +25,7 @@
     <ThermalChamber>
         <temp_start>10</temp_start>
         <temp_stop>40</temp_stop>
-        <steps>1</steps>
+        <steps>10</steps>
     </ThermalChamber>
 
 </GlobalParams>
