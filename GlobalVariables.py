@@ -53,10 +53,20 @@ class GlobalVariables(object):
 class Enumerations:
     """ Enumerations """
     class TempTestStatesEnum:
-        """ Status of Temperature Test machine (TemperatureTestSX5_TC.py) """
+        """ Status of Temperature Test machine using thermal chamber (TemperatureTestSX5_TC.py) """
         TT_INIT = "Init"
         TT_RUN_SCAN_ENGINE_APP = "RunScanEngineApp"
         TT_PULL_IMAGES = "PullImages"
+        TT_ERROR = "Error"
+        TT_STOP = "Stop"
+        TT_MAX_ENUM = ""
+
+    class TempTestTS_StatesEnum:
+        """ Status of Temperature Test machine using temperature sensor (TemperatureTestSX5_TS.py) """
+        TT_INIT = "Init"
+        TT_RUN_SCAN_ENGINE_APP = "RunScanEngineApp"
+        TT_PULL_IMAGES = "PullImages"
+        TT_READ_TEMP = "ReadTemperature"
         TT_ERROR = "Error"
         TT_STOP = "Stop"
         TT_MAX_ENUM = ""
