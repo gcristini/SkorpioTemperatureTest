@@ -34,6 +34,6 @@ class Timer:
 if __name__ == '__main__':
     test = Timer()
     test.start()
-    time.sleep(5)
+    time.sleep(0.002)
     print (test.elapsed_time)
     test.stop()

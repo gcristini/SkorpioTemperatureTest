@@ -1,7 +1,7 @@
 class GlobalSettings(object):
     def __init__(self):
         self.__global_settings = {
-            'debug': False,
+            'debug': True,
             'ConfigFile_TC_Test': 'Config_TC.xml',
             'ConfigFile_TS_Test': 'Config_TS.xml'
         }
@@ -67,6 +67,8 @@ class Enumerations:
         TT_RUN_SCAN_ENGINE_APP = "RunScanEngineApp"
         TT_PULL_IMAGES = "PullImages"
         TT_READ_TEMP = "ReadTemperature"
+        TT_WAIT = "Wait"
+        TT_UPDATE = "Update"
         TT_ERROR = "Error"
         TT_STOP = "Stop"
         TT_MAX_ENUM = ""
