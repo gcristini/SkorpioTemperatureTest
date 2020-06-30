@@ -25,6 +25,11 @@ class Timer:
         self._start_time = None
         print(f"Elapsed time: {elapsed_time:0.4f} seconds")
 
+    def reset(self):
+        if self._start_time is None:
+            raise TimerError(f"Timer is not running. Use .start() to start it")
+        self._start_time = time.perf_counter()
+
     @property
     def elapsed_time(self):
         return time.perf_counter() - self._start_time
@@ -32,8 +37,23 @@ class Timer:
 
 
 if __name__ == '__main__':
-    test = Timer()
-    test.start()
-    time.sleep(0.002)
-    print (test.elapsed_time)
-    test.stop()
+    # Init and start timer
+    test_timer = Timer()
+    test_timer.start()
+
+    # Pause 2 seconds
+    time.sleep(2)
+    print("1) Timer elapsed: {time}".format(time=test_timer.elapsed_time))
+
+    print("--- Reset Timer...")
+
+    #Reset timer and wait 5 second
+    test_timer.reset()
+    time.sleep(5)
+
+    print("2) Timer elapsed: {time}".format(time=test_timer.elapsed_time))
+
+    test_timer.stop()
+
+    print ("Finished")
+

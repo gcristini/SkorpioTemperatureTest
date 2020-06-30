@@ -4,7 +4,7 @@
     <SX5>
         <scan_engine>halogen2</scan_engine>
         <num_of_frame>10</num_of_frame>
-        <num_of_loop>20</num_of_loop>
+        <num_of_loop>200000</num_of_loop>
         <!-- NOT USED >
         <num_of_save_files>20</num_of_save_files>
         <pattern_bitmap> </pattern_bitmap>
@@ -38,8 +38,8 @@
     </ThermalChamber>
 
     <Acquisition>
-        <wait_to_acq_time_s>10</wait_to_acq_time_s>
-        <frame_acquisition_time_s>10</frame_acquisition_time_s>
+        <wait_to_acq_time_s>1</wait_to_acq_time_s>
+        <frame_acquisition_time_s>1</frame_acquisition_time_s>
     </Acquisition>
 
 </GlobalParams>

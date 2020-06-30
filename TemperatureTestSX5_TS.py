@@ -52,6 +52,7 @@ class TemperatureTestSx5_TS(object):
             enum.TempTestTS_StatesEnum.TT_RUN_SCAN_ENGINE_APP: self._run_scan_engine_app_state_manager,
             enum.TempTestTS_StatesEnum.TT_READ_TEMP: self._read_temperature_state_manager,
             enum.TempTestTS_StatesEnum.TT_WAIT: self._wait_state_manager,
+            enum.TempTestTS_StatesEnum.TT_UPDATE: self._update_target_temp_state_manager,
             enum.TempTestTS_StatesEnum.TT_PULL_IMAGES: self._pull_images_state_manager,
             enum.TempTestTS_StatesEnum.TT_ERROR: self._error_state_manager,
             enum.TempTestTS_StatesEnum.TT_STOP: self._stop_state_manager
@@ -77,6 +78,8 @@ class TemperatureTestSx5_TS(object):
         """ """
 
         dbg.debug(print, self._config_dict['SX5']['adb_pull_base_dir'], debug=self._gs['debug'])
+        print (int(self._config_dict['SX5']['num_of_frame']) * int(
+                                    self._config_dict['SX5']['num_of_loop']))
 
         # Init an SX5 instance
         self._SX5 = SX5_Manager(scan_engine=self._config_dict['SX5']['scan_engine'],
@@ -143,9 +146,8 @@ class TemperatureTestSx5_TS(object):
                                                                        temp=temp)
 
         # Update the converted images directory
-        self._image_manager.output_dir = '{base_dir}_T={temp}°C'.format(
-            base_dir=self._config_dict['ImageManager']['output_dir'],
-            temp=temp)
+        self._image_manager.output_dir = '{base_dir}_T={temp}°C'.format(base_dir=self._config_dict['ImageManager']['output_dir'],
+                                                                        temp=temp)
 
         return
 
@@ -187,13 +189,12 @@ class TemperatureTestSx5_TS(object):
     def _run_scan_engine_app_state_manager(self):
         """"""
         print("-Run Scan Engine App")
-        dbg.debug(print, "Run Scan Engine App ", debug=self._gs['debug'])
 
         # Start Timer and run and run Scan Engine App Thread
         self._global_timer.start()
         self._scan_engine_app_thread = CustomThread(runnable=self._SX5.run_scan_engine_app,
                                                     num_of_iter=1)
-        # self._scan_engine_app_thread.start()
+        self._scan_engine_app_thread.start()
 
         # Store the last state
         self._store_last_state()
@@ -219,10 +220,10 @@ class TemperatureTestSx5_TS(object):
         else:
             if (self._read_temp_timer.elapsed_time >= int(self._config_dict['TempSensor']['sample_time_s'])):
 
-                dbg.debug(print, self._read_temp_timer.elapsed_time, debug=self._gs['debug'])
-
                 # Read temperature
-                self._room_temperature = 30  # serial read
+                self._room_temperature = 50  # serial read
+
+                print("Temperature: {temp}°C".format(temp=self._room_temperature))
 
                 if (self._room_temperature >= self._target_temp[0]):
 
@@ -231,12 +232,18 @@ class TemperatureTestSx5_TS(object):
 
                     # Go to wait state
                     self._temp_test_state = enum.TempTestTS_StatesEnum.TT_WAIT
+                else:
+                    # Reset timer
+                    self._read_temp_timer.reset()
+
         return
 
     def _wait_state_manager(self):
         """ """
         if (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_WAIT and
             self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_WAIT):
+
+            print("Wait...{time}s".format(time=self._config_dict['Acquisition']['wait_to_acq_time_s']))
 
             # Create and start the timer to wait the frame acquisition
             self._wait_to_acq_timer = Timer()
@@ -264,6 +271,8 @@ class TemperatureTestSx5_TS(object):
         if (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_PULL_IMAGES and
             self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_PULL_IMAGES):
 
+            print("Wait...{time}s".format(time=self._config_dict['Acquisition']['frame_acquisition_time_s']))
+
             # Create and start the timer to wait the frame acquisition
             self._frame_acquisition_timer = Timer()
             self._frame_acquisition_timer.start()
@@ -282,7 +291,7 @@ class TemperatureTestSx5_TS(object):
                 self._SX5.clear_frame_storage_dir()
 
                 # Convert the pulled images
-                self._image_manager.convert_images(show=False, save=True)
+                #self._image_manager.convert_images(show=False, save=True)
 
                 if ret == True:
                     # Store the last state
@@ -338,6 +347,8 @@ class TemperatureTestSx5_TS(object):
     def _stop_state_manager(self):
         """"""
         dbg.debug(print, "Stop State", debug=self._gs['debug'])
+        # Store the last state
+        self._store_last_state()
         print("-Finished!")
 
         # TODO: Kill app process ???
@@ -363,37 +374,8 @@ class TemperatureTestSx5_TS(object):
         while not (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_STOP and
                    self._last_temp_test_state == self._temp_test_state):
 
-
             # Execute the state machine at the current state
             self._temperature_test_state_machine_manager()
-
-
-
-
-
-        # # Loop over temperature step dictionary
-        # for step in self._step_dict:
-        #     # Update Directories
-        #     self._update_directories(self._step_dict[step])
-        #
-        #     print(cm.Fore.BLUE + '-- {step_key}: T={step_value}°C --'.format(step_key=step,
-        #                                                                      step_value=self._step_dict[step]))
-        #
-        #     while not (self._temp_test_state == enum.TempTestStatesEnum.TT_STOP and
-        #                self._last_temp_test_state == self._temp_test_state):
-        #
-        #         # Store the last state machine state
-        #         self._last_temp_test_state = self._temp_test_state
-        #
-        #         # Execute the state machine at the current state
-        #         self._temperature_test_state_machine_manager()
-        #
-        #     # From the second iteration bypass the initialization and go to "run_scan_engine_app" state
-        #     self._temp_test_state = enum.TempTestStatesEnum.TT_RUN_SCAN_ENGINE_APP
-        #     self._last_temp_test_state = enum.TempTestStatesEnum.TT_RUN_SCAN_ENGINE_APP
-        #
-        #     # Update Directories
-        #     self._update_directories(self._step_dict[step])
 
 
 if __name__ == '__main__':
