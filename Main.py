@@ -28,8 +28,8 @@ class Main(object):
             enum.MainAppStatesEnum.MAS_EXIT: self._exit_state_manager
         }
 
-        self._TemperatureTestSX5_TC = TemperatureTestSx5_TC()
-        #self._TemperatureTestSX5_TS = TemperatureTestSx5_TS()
+        #self._TemperatureTestSX5_TC = TemperatureTestSx5_TC()
+        self._TemperatureTestSX5_TS = TemperatureTestSx5_TS()
 
         self._init_state_manager_gs = gs().global_settings
 
@@ -74,8 +74,8 @@ class Main(object):
     def _run_state_manager(self):
         """"""
         print(cm.Fore.CYAN + cm.Style.DIM + "Run Test\n")
-        self._TemperatureTestSX5_TC.run_test()
-        #  self._TemperatureTestSX5_TS.run_test()
+        #self._TemperatureTestSX5_TC.run_test()
+        self._TemperatureTestSX5_TS.run_test()
 
         # Go to Wait state
         self._main_state = enum.MainAppStatesEnum.MAS_WAIT

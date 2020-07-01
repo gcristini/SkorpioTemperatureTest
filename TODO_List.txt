@@ -1,0 +1,4 @@
+- fix image conversion --> at the end of script for each test
+- select the type of test by command line
+- reorganize folders of sources
+- close scan engine process --> dummy run
