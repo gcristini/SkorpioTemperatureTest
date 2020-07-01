@@ -69,9 +69,9 @@ if __name__ == '__main__':
 
     from xml.etree import ElementTree as ET
 
-    # tree=ET.parse('Config_TC.xml')
+    # tree=ET.parse('Config.xml')
     # root = tree.getroot()
     # xmldict = XmlDictConfig(root)
     # print (xmldict)
 
-    print(XmlDictConfig(ET.parse('Config_TC.xml').getroot()))
+    print(XmlDictConfig(ET.parse('Config.xml').getroot()))

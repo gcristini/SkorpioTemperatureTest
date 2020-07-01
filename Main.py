@@ -3,7 +3,11 @@
 import sys
 import os
 from Parser import Parser
+<<<<<<< HEAD
 from TemperatureTestSX5_TS import TemperatureTestSx5_TS
+=======
+from TemperatureTestSX5 import TemperatureTestSx5
+>>>>>>> parent of 53ea072... TemperatureTestSX5 --> TemperatureTestSX5_TC
 from Debug import Debug as dbg
 from GlobalVariables import GlobalSettings as gs
 from GlobalVariables import Enumerations as enum
@@ -27,7 +31,11 @@ class Main(object):
             enum.MainAppStatesEnum.MAS_EXIT: self._exit_state_manager
         }
 
+<<<<<<< HEAD
         self._TemperatureTestSX5_TS = TemperatureTestSx5_TS()
+=======
+        self._TemperatureTestSX5 = TemperatureTestSx5()
+>>>>>>> parent of 53ea072... TemperatureTestSX5 --> TemperatureTestSX5_TC
 
         self._init_state_manager_gs = gs().global_settings
 
@@ -72,7 +80,11 @@ class Main(object):
     def _run_state_manager(self):
         """"""
         print(cm.Fore.CYAN + cm.Style.DIM + "Run Test\n")
+<<<<<<< HEAD
         self._TemperatureTestSX5_TS.run_test()
+=======
+        self._TemperatureTestSX5.run_test()
+>>>>>>> parent of 53ea072... TemperatureTestSX5 --> TemperatureTestSX5_TC
 
         # Go to Wait state
         self._main_state = enum.MainAppStatesEnum.MAS_WAIT

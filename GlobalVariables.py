@@ -2,8 +2,7 @@ class GlobalSettings(object):
     def __init__(self):
         self.__global_settings = {
             'debug': False,
-            'ConfigFile_TC_Test': 'Config_TC.xml',
-            'ConfigFile_TS_Test': 'Config_TS.xml'
+            'Config File': 'Config.xml'
         }
 
     @property
@@ -53,7 +52,11 @@ class GlobalVariables(object):
 class Enumerations:
     """ Enumerations """
     class TempTestStatesEnum:
+<<<<<<< HEAD
         """ Status of Temperature Test machine using thermal chamber (TemperatureTestSX5_TC.py) """
+=======
+        """ Status of Temperature Test machine (TemperatureTestSX5.py) """
+>>>>>>> parent of 53ea072... TemperatureTestSX5 --> TemperatureTestSX5_TC
         TT_INIT = "Init"
         TT_RUN_SCAN_ENGINE_APP = "RunScanEngineApp"
         TT_PULL_IMAGES = "PullImages"
