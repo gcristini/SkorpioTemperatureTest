@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Body -->
+<GlobalParams>
+    <SX5>
+        <scan_engine>halogen2</scan_engine>
+        <num_of_frame>10</num_of_frame>
+        <num_of_loop>2</num_of_loop>
+        <num_of_save_files>20</num_of_save_files>
+        <!-- NOT USED >
+        <pattern_bitmap> </pattern_bitmap>
+        <wait_ms>  </wait_ms>
+        <show_mean_fps> </show_mean_fps>
+        <callback_delay_millisecond> </callback_delay_millisecond>
+        <watchdog_test> </watchdog_test>
+        -->
+        <frame_storage_dir>data/local/tmp</frame_storage_dir>
+        <adb_pull_base_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download</adb_pull_base_dir>
+    </SX5>
+
+    <ImageManager>
+        <output_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download_converted</output_dir>
+        <img_format>.jpg</img_format>
+    </ImageManager>
+
+    <ThermalChamber>
+        <temp_start>10</temp_start>
+        <temp_stop>40</temp_stop>
+        <steps>10</steps>
+    </ThermalChamber>
+
+</GlobalParams>
