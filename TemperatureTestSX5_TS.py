@@ -11,7 +11,7 @@ from Debug import Debug as dbg
 import colorama as cm
 from Timer import Timer
 from CustomThread import CustomThread
-
+import CustomSerial as cs
 
 class TemperatureTestSx5_TS(object):
     """ """
@@ -29,6 +29,7 @@ class TemperatureTestSx5_TS(object):
         self._SX5 = None
         self._image_manager = None
         self._thermal_chamber = None
+        self._serial = None
 
         # Timers
         self._global_timer = None
@@ -93,6 +94,13 @@ class TemperatureTestSx5_TS(object):
         pass
 
     def _init_temperature_sensor(self):
+        """"""
+        # try except.... serial.serialutil.SerialException
+        self._serial = cs.CustomSerial(port=self._config_dict['TempSensor']['port'],
+                                       baudrate=self._config_dict['TempSensor']['baudrate'])
+        self._serial.serial_init()
+        self._serial.serial_write("init")
+
         pass
 
     def _init_step_dictionary(self):
@@ -220,8 +228,12 @@ class TemperatureTestSx5_TS(object):
         else:
             if (self._read_temp_timer.elapsed_time >= int(self._config_dict['TempSensor']['sample_time_s'])):
 
-                # Read temperature
-                self._room_temperature = 50  # serial read
+                # # Read temperature
+                self._serial.serial_write("read_temp")
+                while not (self._serial.bytes_available_rx):
+                    pass
+                x = self._serial.serial_read()
+                self._room_temperature = int(ord(x))
 
                 print("Temperature: {temp}°C".format(temp=self._room_temperature))
 
