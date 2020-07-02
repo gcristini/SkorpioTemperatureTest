@@ -1,0 +1,611 @@
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"ADC_Temp_INIT.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	ADC_Temp_allConfigs
+  20              		.section	.rodata
+  21              		.align	2
+  22              		.type	ADC_Temp_allConfigs, %object
+  23              		.size	ADC_Temp_allConfigs, 56
+  24              	ADC_Temp_allConfigs:
+  25 0000 00000000 		.word	0
+  26 0004 01000000 		.word	1
+  27 0008 C00E2050 		.word	1344278208
+  28 000c 1C010490 		.word	-1878785764
+  29 0010 6A000200 		.word	131178
+  30 0014 02000200 		.word	131074
+  31 0018 0002000E 		.word	234881536
+  32 001c 00000000 		.word	0
+  33 0020 01000000 		.word	1
+  34 0024 00000000 		.word	0
+  35 0028 00000000 		.word	0
+  36 002c B0040000 		.word	1200
+  37 0030 01000000 		.word	1
+  38 0034 0100     		.short	1
+  39 0036 0000     		.space	2
+  40              		.text
+  41              	.Letext0:
+  42              		.file 1 "Generated_Source\\PSoC4\\cytypes.h"
+  43              		.file 2 "Generated_Source\\PSoC4\\ADC_Temp.h"
+  44              		.file 3 "Generated_Source\\PSoC4\\ADC_Temp_INIT.c"
+  45              		.section	.debug_info,"",%progbits
+  46              	.Ldebug_info0:
+  47 0000 8E010000 		.4byte	0x18e
+  48 0004 0400     		.2byte	0x4
+  49 0006 00000000 		.4byte	.Ldebug_abbrev0
+  50 000a 04       		.byte	0x4
+  51 000b 01       		.uleb128 0x1
+  52 000c 37000000 		.4byte	.LASF32
+  53 0010 0C       		.byte	0xc
+  54 0011 F3000000 		.4byte	.LASF33
+  55 0015 1A010000 		.4byte	.LASF34
+  56 0019 00000000 		.4byte	.Ldebug_line0
+  57 001d 02       		.uleb128 0x2
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 2
+
+
+  58 001e 01       		.byte	0x1
+  59 001f 06       		.byte	0x6
+  60 0020 A9020000 		.4byte	.LASF0
+  61 0024 02       		.uleb128 0x2
+  62 0025 01       		.byte	0x1
+  63 0026 08       		.byte	0x8
+  64 0027 E5000000 		.4byte	.LASF1
+  65 002b 02       		.uleb128 0x2
+  66 002c 02       		.byte	0x2
+  67 002d 05       		.byte	0x5
+  68 002e 67020000 		.4byte	.LASF2
+  69 0032 02       		.uleb128 0x2
+  70 0033 02       		.byte	0x2
+  71 0034 07       		.byte	0x7
+  72 0035 24000000 		.4byte	.LASF3
+  73 0039 02       		.uleb128 0x2
+  74 003a 04       		.byte	0x4
+  75 003b 05       		.byte	0x5
+  76 003c 7D020000 		.4byte	.LASF4
+  77 0040 02       		.uleb128 0x2
+  78 0041 04       		.byte	0x4
+  79 0042 07       		.byte	0x7
+  80 0043 A0010000 		.4byte	.LASF5
+  81 0047 02       		.uleb128 0x2
+  82 0048 08       		.byte	0x8
+  83 0049 05       		.byte	0x5
+  84 004a 4D020000 		.4byte	.LASF6
+  85 004e 02       		.uleb128 0x2
+  86 004f 08       		.byte	0x8
+  87 0050 07       		.byte	0x7
+  88 0051 09020000 		.4byte	.LASF7
+  89 0055 03       		.uleb128 0x3
+  90 0056 04       		.byte	0x4
+  91 0057 05       		.byte	0x5
+  92 0058 696E7400 		.ascii	"int\000"
+  93 005c 02       		.uleb128 0x2
+  94 005d 04       		.byte	0x4
+  95 005e 07       		.byte	0x7
+  96 005f F0010000 		.4byte	.LASF8
+  97 0063 04       		.uleb128 0x4
+  98 0064 D7010000 		.4byte	.LASF9
+  99 0068 01       		.byte	0x1
+ 100 0069 F801     		.2byte	0x1f8
+ 101 006b 32000000 		.4byte	0x32
+ 102 006f 04       		.uleb128 0x4
+ 103 0070 DE010000 		.4byte	.LASF10
+ 104 0074 01       		.byte	0x1
+ 105 0075 F901     		.2byte	0x1f9
+ 106 0077 40000000 		.4byte	0x40
+ 107 007b 04       		.uleb128 0x4
+ 108 007c B2010000 		.4byte	.LASF11
+ 109 0080 01       		.byte	0x1
+ 110 0081 FC01     		.2byte	0x1fc
+ 111 0083 39000000 		.4byte	0x39
+ 112 0087 02       		.uleb128 0x2
+ 113 0088 04       		.byte	0x4
+ 114 0089 04       		.byte	0x4
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 3
+
+
+ 115 008a DF000000 		.4byte	.LASF12
+ 116 008e 02       		.uleb128 0x2
+ 117 008f 08       		.byte	0x8
+ 118 0090 04       		.byte	0x4
+ 119 0091 D0010000 		.4byte	.LASF13
+ 120 0095 02       		.uleb128 0x2
+ 121 0096 01       		.byte	0x1
+ 122 0097 08       		.byte	0x8
+ 123 0098 5B020000 		.4byte	.LASF14
+ 124 009c 02       		.uleb128 0x2
+ 125 009d 08       		.byte	0x8
+ 126 009e 04       		.byte	0x4
+ 127 009f 86020000 		.4byte	.LASF15
+ 128 00a3 02       		.uleb128 0x2
+ 129 00a4 04       		.byte	0x4
+ 130 00a5 07       		.byte	0x7
+ 131 00a6 30020000 		.4byte	.LASF16
+ 132 00aa 05       		.uleb128 0x5
+ 133 00ab 38       		.byte	0x38
+ 134 00ac 02       		.byte	0x2
+ 135 00ad 5D       		.byte	0x5d
+ 136 00ae 5B010000 		.4byte	0x15b
+ 137 00b2 06       		.uleb128 0x6
+ 138 00b3 B5020000 		.4byte	.LASF17
+ 139 00b7 02       		.byte	0x2
+ 140 00b8 5F       		.byte	0x5f
+ 141 00b9 6F000000 		.4byte	0x6f
+ 142 00bd 00       		.byte	0
+ 143 00be 06       		.uleb128 0x6
+ 144 00bf 71020000 		.4byte	.LASF18
+ 145 00c3 02       		.byte	0x2
+ 146 00c4 60       		.byte	0x60
+ 147 00c5 6F000000 		.4byte	0x6f
+ 148 00c9 04       		.byte	0x4
+ 149 00ca 06       		.uleb128 0x6
+ 150 00cb 2B020000 		.4byte	.LASF19
+ 151 00cf 02       		.byte	0x2
+ 152 00d0 61       		.byte	0x61
+ 153 00d1 6F000000 		.4byte	0x6f
+ 154 00d5 08       		.byte	0x8
+ 155 00d6 06       		.uleb128 0x6
+ 156 00d7 E5010000 		.4byte	.LASF20
+ 157 00db 02       		.byte	0x2
+ 158 00dc 64       		.byte	0x64
+ 159 00dd 6F000000 		.4byte	0x6f
+ 160 00e1 0C       		.byte	0xc
+ 161 00e2 06       		.uleb128 0x6
+ 162 00e3 0A000000 		.4byte	.LASF21
+ 163 00e7 02       		.byte	0x2
+ 164 00e8 65       		.byte	0x65
+ 165 00e9 6F000000 		.4byte	0x6f
+ 166 00ed 10       		.byte	0x10
+ 167 00ee 06       		.uleb128 0x6
+ 168 00ef 17000000 		.4byte	.LASF22
+ 169 00f3 02       		.byte	0x2
+ 170 00f4 66       		.byte	0x66
+ 171 00f5 6F000000 		.4byte	0x6f
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 4
+
+
+ 172 00f9 14       		.byte	0x14
+ 173 00fa 06       		.uleb128 0x6
+ 174 00fb 20020000 		.4byte	.LASF23
+ 175 00ff 02       		.byte	0x2
+ 176 0100 67       		.byte	0x67
+ 177 0101 6F000000 		.4byte	0x6f
+ 178 0105 18       		.byte	0x18
+ 179 0106 06       		.uleb128 0x6
+ 180 0107 00000000 		.4byte	.LASF24
+ 181 010b 02       		.byte	0x2
+ 182 010c 68       		.byte	0x68
+ 183 010d 6F000000 		.4byte	0x6f
+ 184 0111 1C       		.byte	0x1c
+ 185 0112 06       		.uleb128 0x6
+ 186 0113 60020000 		.4byte	.LASF25
+ 187 0117 02       		.byte	0x2
+ 188 0118 69       		.byte	0x69
+ 189 0119 6F000000 		.4byte	0x6f
+ 190 011d 20       		.byte	0x20
+ 191 011e 06       		.uleb128 0x6
+ 192 011f B8010000 		.4byte	.LASF26
+ 193 0123 02       		.byte	0x2
+ 194 0124 6A       		.byte	0x6a
+ 195 0125 6F000000 		.4byte	0x6f
+ 196 0129 24       		.byte	0x24
+ 197 012a 06       		.uleb128 0x6
+ 198 012b D4000000 		.4byte	.LASF27
+ 199 012f 02       		.byte	0x2
+ 200 0130 6B       		.byte	0x6b
+ 201 0131 6F000000 		.4byte	0x6f
+ 202 0135 28       		.byte	0x28
+ 203 0136 06       		.uleb128 0x6
+ 204 0137 FD010000 		.4byte	.LASF28
+ 205 013b 02       		.byte	0x2
+ 206 013c 6C       		.byte	0x6c
+ 207 013d 7B000000 		.4byte	0x7b
+ 208 0141 2C       		.byte	0x2c
+ 209 0142 06       		.uleb128 0x6
+ 210 0143 C9000000 		.4byte	.LASF29
+ 211 0147 02       		.byte	0x2
+ 212 0148 6E       		.byte	0x6e
+ 213 0149 6F000000 		.4byte	0x6f
+ 214 014d 30       		.byte	0x30
+ 215 014e 06       		.uleb128 0x6
+ 216 014f C5010000 		.4byte	.LASF30
+ 217 0153 02       		.byte	0x2
+ 218 0154 75       		.byte	0x75
+ 219 0155 63000000 		.4byte	0x63
+ 220 0159 34       		.byte	0x34
+ 221 015a 00       		.byte	0
+ 222 015b 07       		.uleb128 0x7
+ 223 015c 92020000 		.4byte	.LASF31
+ 224 0160 02       		.byte	0x2
+ 225 0161 7C       		.byte	0x7c
+ 226 0162 AA000000 		.4byte	0xaa
+ 227 0166 08       		.uleb128 0x8
+ 228 0167 76010000 		.4byte	0x176
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 5
+
+
+ 229 016b 76010000 		.4byte	0x176
+ 230 016f 09       		.uleb128 0x9
+ 231 0170 A3000000 		.4byte	0xa3
+ 232 0174 00       		.byte	0
+ 233 0175 00       		.byte	0
+ 234 0176 0A       		.uleb128 0xa
+ 235 0177 5B010000 		.4byte	0x15b
+ 236 017b 0B       		.uleb128 0xb
+ 237 017c 39020000 		.4byte	.LASF35
+ 238 0180 03       		.byte	0x3
+ 239 0181 2A       		.byte	0x2a
+ 240 0182 8C010000 		.4byte	0x18c
+ 241 0186 05       		.uleb128 0x5
+ 242 0187 03       		.byte	0x3
+ 243 0188 00000000 		.4byte	ADC_Temp_allConfigs
+ 244 018c 0A       		.uleb128 0xa
+ 245 018d 66010000 		.4byte	0x166
+ 246 0191 00       		.byte	0
+ 247              		.section	.debug_abbrev,"",%progbits
+ 248              	.Ldebug_abbrev0:
+ 249 0000 01       		.uleb128 0x1
+ 250 0001 11       		.uleb128 0x11
+ 251 0002 01       		.byte	0x1
+ 252 0003 25       		.uleb128 0x25
+ 253 0004 0E       		.uleb128 0xe
+ 254 0005 13       		.uleb128 0x13
+ 255 0006 0B       		.uleb128 0xb
+ 256 0007 03       		.uleb128 0x3
+ 257 0008 0E       		.uleb128 0xe
+ 258 0009 1B       		.uleb128 0x1b
+ 259 000a 0E       		.uleb128 0xe
+ 260 000b 10       		.uleb128 0x10
+ 261 000c 17       		.uleb128 0x17
+ 262 000d 00       		.byte	0
+ 263 000e 00       		.byte	0
+ 264 000f 02       		.uleb128 0x2
+ 265 0010 24       		.uleb128 0x24
+ 266 0011 00       		.byte	0
+ 267 0012 0B       		.uleb128 0xb
+ 268 0013 0B       		.uleb128 0xb
+ 269 0014 3E       		.uleb128 0x3e
+ 270 0015 0B       		.uleb128 0xb
+ 271 0016 03       		.uleb128 0x3
+ 272 0017 0E       		.uleb128 0xe
+ 273 0018 00       		.byte	0
+ 274 0019 00       		.byte	0
+ 275 001a 03       		.uleb128 0x3
+ 276 001b 24       		.uleb128 0x24
+ 277 001c 00       		.byte	0
+ 278 001d 0B       		.uleb128 0xb
+ 279 001e 0B       		.uleb128 0xb
+ 280 001f 3E       		.uleb128 0x3e
+ 281 0020 0B       		.uleb128 0xb
+ 282 0021 03       		.uleb128 0x3
+ 283 0022 08       		.uleb128 0x8
+ 284 0023 00       		.byte	0
+ 285 0024 00       		.byte	0
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 6
+
+
+ 286 0025 04       		.uleb128 0x4
+ 287 0026 16       		.uleb128 0x16
+ 288 0027 00       		.byte	0
+ 289 0028 03       		.uleb128 0x3
+ 290 0029 0E       		.uleb128 0xe
+ 291 002a 3A       		.uleb128 0x3a
+ 292 002b 0B       		.uleb128 0xb
+ 293 002c 3B       		.uleb128 0x3b
+ 294 002d 05       		.uleb128 0x5
+ 295 002e 49       		.uleb128 0x49
+ 296 002f 13       		.uleb128 0x13
+ 297 0030 00       		.byte	0
+ 298 0031 00       		.byte	0
+ 299 0032 05       		.uleb128 0x5
+ 300 0033 13       		.uleb128 0x13
+ 301 0034 01       		.byte	0x1
+ 302 0035 0B       		.uleb128 0xb
+ 303 0036 0B       		.uleb128 0xb
+ 304 0037 3A       		.uleb128 0x3a
+ 305 0038 0B       		.uleb128 0xb
+ 306 0039 3B       		.uleb128 0x3b
+ 307 003a 0B       		.uleb128 0xb
+ 308 003b 01       		.uleb128 0x1
+ 309 003c 13       		.uleb128 0x13
+ 310 003d 00       		.byte	0
+ 311 003e 00       		.byte	0
+ 312 003f 06       		.uleb128 0x6
+ 313 0040 0D       		.uleb128 0xd
+ 314 0041 00       		.byte	0
+ 315 0042 03       		.uleb128 0x3
+ 316 0043 0E       		.uleb128 0xe
+ 317 0044 3A       		.uleb128 0x3a
+ 318 0045 0B       		.uleb128 0xb
+ 319 0046 3B       		.uleb128 0x3b
+ 320 0047 0B       		.uleb128 0xb
+ 321 0048 49       		.uleb128 0x49
+ 322 0049 13       		.uleb128 0x13
+ 323 004a 38       		.uleb128 0x38
+ 324 004b 0B       		.uleb128 0xb
+ 325 004c 00       		.byte	0
+ 326 004d 00       		.byte	0
+ 327 004e 07       		.uleb128 0x7
+ 328 004f 16       		.uleb128 0x16
+ 329 0050 00       		.byte	0
+ 330 0051 03       		.uleb128 0x3
+ 331 0052 0E       		.uleb128 0xe
+ 332 0053 3A       		.uleb128 0x3a
+ 333 0054 0B       		.uleb128 0xb
+ 334 0055 3B       		.uleb128 0x3b
+ 335 0056 0B       		.uleb128 0xb
+ 336 0057 49       		.uleb128 0x49
+ 337 0058 13       		.uleb128 0x13
+ 338 0059 00       		.byte	0
+ 339 005a 00       		.byte	0
+ 340 005b 08       		.uleb128 0x8
+ 341 005c 01       		.uleb128 0x1
+ 342 005d 01       		.byte	0x1
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 7
+
+
+ 343 005e 49       		.uleb128 0x49
+ 344 005f 13       		.uleb128 0x13
+ 345 0060 01       		.uleb128 0x1
+ 346 0061 13       		.uleb128 0x13
+ 347 0062 00       		.byte	0
+ 348 0063 00       		.byte	0
+ 349 0064 09       		.uleb128 0x9
+ 350 0065 21       		.uleb128 0x21
+ 351 0066 00       		.byte	0
+ 352 0067 49       		.uleb128 0x49
+ 353 0068 13       		.uleb128 0x13
+ 354 0069 2F       		.uleb128 0x2f
+ 355 006a 0B       		.uleb128 0xb
+ 356 006b 00       		.byte	0
+ 357 006c 00       		.byte	0
+ 358 006d 0A       		.uleb128 0xa
+ 359 006e 26       		.uleb128 0x26
+ 360 006f 00       		.byte	0
+ 361 0070 49       		.uleb128 0x49
+ 362 0071 13       		.uleb128 0x13
+ 363 0072 00       		.byte	0
+ 364 0073 00       		.byte	0
+ 365 0074 0B       		.uleb128 0xb
+ 366 0075 34       		.uleb128 0x34
+ 367 0076 00       		.byte	0
+ 368 0077 03       		.uleb128 0x3
+ 369 0078 0E       		.uleb128 0xe
+ 370 0079 3A       		.uleb128 0x3a
+ 371 007a 0B       		.uleb128 0xb
+ 372 007b 3B       		.uleb128 0x3b
+ 373 007c 0B       		.uleb128 0xb
+ 374 007d 49       		.uleb128 0x49
+ 375 007e 13       		.uleb128 0x13
+ 376 007f 3F       		.uleb128 0x3f
+ 377 0080 19       		.uleb128 0x19
+ 378 0081 02       		.uleb128 0x2
+ 379 0082 18       		.uleb128 0x18
+ 380 0083 00       		.byte	0
+ 381 0084 00       		.byte	0
+ 382 0085 00       		.byte	0
+ 383              		.section	.debug_aranges,"",%progbits
+ 384 0000 14000000 		.4byte	0x14
+ 385 0004 0200     		.2byte	0x2
+ 386 0006 00000000 		.4byte	.Ldebug_info0
+ 387 000a 04       		.byte	0x4
+ 388 000b 00       		.byte	0
+ 389 000c 0000     		.2byte	0
+ 390 000e 0000     		.2byte	0
+ 391 0010 00000000 		.4byte	0
+ 392 0014 00000000 		.4byte	0
+ 393              		.section	.debug_line,"",%progbits
+ 394              	.Ldebug_line0:
+ 395 0000 5E000000 		.section	.debug_str,"MS",%progbits,1
+ 395      02005800 
+ 395      00000201 
+ 395      FB0E0D00 
+ 395      01010101 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 8
+
+
+ 396              	.LASF24:
+ 397 0000 72616E67 		.ascii	"rangeCond\000"
+ 397      65436F6E 
+ 397      6400
+ 398              	.LASF21:
+ 399 000a 73616D70 		.ascii	"sampleTime01\000"
+ 399      6C655469 
+ 399      6D653031 
+ 399      00
+ 400              	.LASF22:
+ 401 0017 73616D70 		.ascii	"sampleTime23\000"
+ 401      6C655469 
+ 401      6D653233 
+ 401      00
+ 402              	.LASF3:
+ 403 0024 73686F72 		.ascii	"short unsigned int\000"
+ 403      7420756E 
+ 403      7369676E 
+ 403      65642069 
+ 403      6E7400
+ 404              	.LASF32:
+ 405 0037 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 405      43313120 
+ 405      352E342E 
+ 405      31203230 
+ 405      31363036 
+ 406 006a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 406      20726576 
+ 406      6973696F 
+ 406      6E203233 
+ 406      37373135 
+ 407 009d 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 407      67202D66 
+ 407      66756E63 
+ 407      74696F6E 
+ 407      2D736563 
+ 408              	.LASF29:
+ 409 00c9 6D697363 		.ascii	"miscConfig\000"
+ 409      436F6E66 
+ 409      696700
+ 410              	.LASF27:
+ 411 00d4 73617449 		.ascii	"satIntMask\000"
+ 411      6E744D61 
+ 411      736B00
+ 412              	.LASF12:
+ 413 00df 666C6F61 		.ascii	"float\000"
+ 413      7400
+ 414              	.LASF1:
+ 415 00e5 756E7369 		.ascii	"unsigned char\000"
+ 415      676E6564 
+ 415      20636861 
+ 415      7200
+ 416              	.LASF33:
+ 417 00f3 47656E65 		.ascii	"Generated_Source\\PSoC4\\ADC_Temp_INIT.c\000"
+ 417      72617465 
+ 417      645F536F 
+ 417      75726365 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 9
+
+
+ 417      5C50536F 
+ 418              	.LASF34:
+ 419 011a 433A5C55 		.ascii	"C:\\Users\\gcristini\\OneDrive - Datalogic S.p.a\\D"
+ 419      73657273 
+ 419      5C676372 
+ 419      69737469 
+ 419      6E695C4F 
+ 420 0149 6174615C 		.ascii	"ata\\PhytonWorkspace\\SkorpioTemperatureTest\\PSOC-"
+ 420      50687974 
+ 420      6F6E576F 
+ 420      726B7370 
+ 420      6163655C 
+ 421 0179 4669726D 		.ascii	"Firmware\\SerialTemperatureSensor.cydsn\000"
+ 421      77617265 
+ 421      5C536572 
+ 421      69616C54 
+ 421      656D7065 
+ 422              	.LASF5:
+ 423 01a0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 423      20756E73 
+ 423      69676E65 
+ 423      6420696E 
+ 423      7400
+ 424              	.LASF11:
+ 425 01b2 696E7433 		.ascii	"int32\000"
+ 425      3200
+ 426              	.LASF26:
+ 427 01b8 72616E67 		.ascii	"rangeIntMask\000"
+ 427      65496E74 
+ 427      4D61736B 
+ 427      00
+ 428              	.LASF30:
+ 429 01c5 636C6B44 		.ascii	"clkDivider\000"
+ 429      69766964 
+ 429      657200
+ 430              	.LASF13:
+ 431 01d0 646F7562 		.ascii	"double\000"
+ 431      6C6500
+ 432              	.LASF9:
+ 433 01d7 75696E74 		.ascii	"uint16\000"
+ 433      313600
+ 434              	.LASF10:
+ 435 01de 75696E74 		.ascii	"uint32\000"
+ 435      333200
+ 436              	.LASF20:
+ 437 01e5 73616D70 		.ascii	"sampleCtrl\000"
+ 437      6C654374 
+ 437      726C00
+ 438              	.LASF8:
+ 439 01f0 756E7369 		.ascii	"unsigned int\000"
+ 439      676E6564 
+ 439      20696E74 
+ 439      00
+ 440              	.LASF28:
+ 441 01fd 76726566 		.ascii	"vrefMvValue\000"
+ 441      4D765661 
+ 441      6C756500 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 10
+
+
+ 442              	.LASF7:
+ 443 0209 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 443      206C6F6E 
+ 443      6720756E 
+ 443      7369676E 
+ 443      65642069 
+ 444              	.LASF23:
+ 445 0220 72616E67 		.ascii	"rangeThres\000"
+ 445      65546872 
+ 445      657300
+ 446              	.LASF19:
+ 447 022b 6374726C 		.ascii	"ctrl\000"
+ 447      00
+ 448              	.LASF16:
+ 449 0230 73697A65 		.ascii	"sizetype\000"
+ 449      74797065 
+ 449      00
+ 450              	.LASF35:
+ 451 0239 4144435F 		.ascii	"ADC_Temp_allConfigs\000"
+ 451      54656D70 
+ 451      5F616C6C 
+ 451      436F6E66 
+ 451      69677300 
+ 452              	.LASF6:
+ 453 024d 6C6F6E67 		.ascii	"long long int\000"
+ 453      206C6F6E 
+ 453      6720696E 
+ 453      7400
+ 454              	.LASF14:
+ 455 025b 63686172 		.ascii	"char\000"
+ 455      00
+ 456              	.LASF25:
+ 457 0260 6368616E 		.ascii	"chanEn\000"
+ 457      456E00
+ 458              	.LASF2:
+ 459 0267 73686F72 		.ascii	"short int\000"
+ 459      7420696E 
+ 459      7400
+ 460              	.LASF18:
+ 461 0271 6E756D43 		.ascii	"numChannels\000"
+ 461      68616E6E 
+ 461      656C7300 
+ 462              	.LASF4:
+ 463 027d 6C6F6E67 		.ascii	"long int\000"
+ 463      20696E74 
+ 463      00
+ 464              	.LASF15:
+ 465 0286 6C6F6E67 		.ascii	"long double\000"
+ 465      20646F75 
+ 465      626C6500 
+ 466              	.LASF31:
+ 467 0292 4144435F 		.ascii	"ADC_Temp_CONFIG_STRUCT\000"
+ 467      54656D70 
+ 467      5F434F4E 
+ 467      4649475F 
+ 467      53545255 
+ 468              	.LASF0:
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cccdbgOc.s 			page 11
+
+
+ 469 02a9 7369676E 		.ascii	"signed char\000"
+ 469      65642063 
+ 469      68617200 
+ 470              	.LASF17:
+ 471 02b5 6368616E 		.ascii	"channelBase\000"
+ 471      6E656C42 
+ 471      61736500 
+ 472              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

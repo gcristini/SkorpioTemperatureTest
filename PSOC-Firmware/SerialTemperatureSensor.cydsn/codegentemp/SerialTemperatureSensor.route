@@ -2,6 +2,8 @@ net ClockBlock_HFClk
 	term   ":m0s8clockblockcell.hfclk"
 	switch ":m0s8clockblockcell.hfclk==>:interrupt_9.clock"
 	term   ":interrupt_9.clock"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_15.clock"
+	term   ":interrupt_15.clock"
 end ClockBlock_HFClk
 net Net_3
 	term   ":m0s8scbcell_1.interrupt"
@@ -9,6 +11,12 @@ net Net_3
 	switch ":interrupt_idmux_9.interrupt_idmux_9__out==>:interrupt_9.interrupt"
 	term   ":interrupt_9.interrupt"
 end Net_3
+net \ADC_Temp:Net_423\
+	term   ":p4sarcell.irq"
+	switch ":p4sarcell.irq==>:interrupt_idmux_15.in_0"
+	switch ":interrupt_idmux_15.interrupt_idmux_15__out==>:interrupt_15.interrupt"
+	term   ":interrupt_15.interrupt"
+end \ADC_Temp:Net_423\
 net \UART_PC:rx_wire\
 	term   ":ioport0:pin4.fb"
 	switch ":ioport0:pin4.fb==>:ioport0:smartio_mux_out4.direct_in"

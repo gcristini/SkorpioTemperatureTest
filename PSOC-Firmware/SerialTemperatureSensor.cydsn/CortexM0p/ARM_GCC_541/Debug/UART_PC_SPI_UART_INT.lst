@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
   28:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c **** *  Handles the Interrupt Service Routine for the SCB SPI or UART modes.
   29:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c **** *
   30:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c **** *******************************************************************************/
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 2
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 2
 
 
   31:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c **** CY_ISR(UART_PC_SPI_UART_ISR)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
   68:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c ****                 {
   69:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c ****                     locHead = 0u;
   70:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c ****                 }
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 3
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 3
 
 
   71:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
  125:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c ****                     {
  126:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c ****                         locTail = 0u;
  127:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c ****                     }
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 4
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 4
 
 
  128:Generated_Source\PSoC4/UART_PC_SPI_UART_INT.c **** 
@@ -228,40 +228,40 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
   63 0006 00000000 		.4byte	.Ldebug_abbrev0
   64 000a 04       		.byte	0x4
   65 000b 01       		.uleb128 0x1
-  66 000c 7B010000 		.4byte	.LASF14
+  66 000c 92010000 		.4byte	.LASF14
   67 0010 0C       		.byte	0xc
-  68 0011 18010000 		.4byte	.LASF15
-  69 0015 5F000000 		.4byte	.LASF16
+  68 0011 2F010000 		.4byte	.LASF15
+  69 0015 1B000000 		.4byte	.LASF16
   70 0019 00000000 		.4byte	.Ldebug_ranges0+0
   71 001d 00000000 		.4byte	0
   72 0021 00000000 		.4byte	.Ldebug_line0
   73 0025 02       		.uleb128 0x2
   74 0026 01       		.byte	0x1
   75 0027 06       		.byte	0x6
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 5
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 5
 
 
-  76 0028 59010000 		.4byte	.LASF0
+  76 0028 70010000 		.4byte	.LASF0
   77 002c 02       		.uleb128 0x2
   78 002d 01       		.byte	0x1
   79 002e 08       		.byte	0x8
-  80 002f E8000000 		.4byte	.LASF1
+  80 002f FF000000 		.4byte	.LASF1
   81 0033 02       		.uleb128 0x2
   82 0034 02       		.byte	0x2
   83 0035 05       		.byte	0x5
-  84 0036 71010000 		.4byte	.LASF2
+  84 0036 88010000 		.4byte	.LASF2
   85 003a 02       		.uleb128 0x2
   86 003b 02       		.byte	0x2
   87 003c 07       		.byte	0x7
-  88 003d 46010000 		.4byte	.LASF3
+  88 003d 5D010000 		.4byte	.LASF3
   89 0041 02       		.uleb128 0x2
   90 0042 04       		.byte	0x4
   91 0043 05       		.byte	0x5
-  92 0044 FB000000 		.4byte	.LASF4
+  92 0044 12010000 		.4byte	.LASF4
   93 0048 02       		.uleb128 0x2
   94 0049 04       		.byte	0x4
   95 004a 07       		.byte	0x7
-  96 004b 30000000 		.4byte	.LASF5
+  96 004b B6000000 		.4byte	.LASF5
   97 004f 02       		.uleb128 0x2
   98 0050 08       		.byte	0x8
   99 0051 05       		.byte	0x5
@@ -269,7 +269,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
  101 0056 02       		.uleb128 0x2
  102 0057 08       		.byte	0x8
  103 0058 07       		.byte	0x7
- 104 0059 42000000 		.4byte	.LASF7
+ 104 0059 C8000000 		.4byte	.LASF7
  105 005d 03       		.uleb128 0x3
  106 005e 04       		.byte	0x4
  107 005f 05       		.byte	0x5
@@ -281,37 +281,37 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
  113 006b 02       		.uleb128 0x2
  114 006c 04       		.byte	0x4
  115 006d 04       		.byte	0x4
- 116 006e 59000000 		.4byte	.LASF9
+ 116 006e DF000000 		.4byte	.LASF9
  117 0072 02       		.uleb128 0x2
  118 0073 08       		.byte	0x8
  119 0074 04       		.byte	0x4
- 120 0075 11010000 		.4byte	.LASF10
+ 120 0075 28010000 		.4byte	.LASF10
  121 0079 02       		.uleb128 0x2
  122 007a 01       		.byte	0x1
  123 007b 08       		.byte	0x8
- 124 007c F6000000 		.4byte	.LASF11
+ 124 007c 0D010000 		.4byte	.LASF11
  125 0080 04       		.uleb128 0x4
- 126 0081 04010000 		.4byte	.LASF17
+ 126 0081 1B010000 		.4byte	.LASF17
  127 0085 02       		.byte	0x2
  128 0086 B302     		.2byte	0x2b3
  129 0088 8C000000 		.4byte	0x8c
  130 008c 05       		.uleb128 0x5
  131 008d 04       		.byte	0x4
  132 008e 92000000 		.4byte	0x92
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 6
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 6
 
 
  133 0092 06       		.uleb128 0x6
  134 0093 02       		.uleb128 0x2
  135 0094 08       		.byte	0x8
  136 0095 04       		.byte	0x4
- 137 0096 65010000 		.4byte	.LASF12
+ 137 0096 7C010000 		.4byte	.LASF12
  138 009a 02       		.uleb128 0x2
  139 009b 04       		.byte	0x4
  140 009c 07       		.byte	0x7
- 141 009d 0D020000 		.4byte	.LASF13
+ 141 009d 24020000 		.4byte	.LASF13
  142 00a1 07       		.uleb128 0x7
- 143 00a2 1B000000 		.4byte	.LASF18
+ 143 00a2 A1000000 		.4byte	.LASF18
  144 00a6 01       		.byte	0x1
  145 00a7 1F       		.byte	0x1f
  146 00a8 00000000 		.4byte	.LFB1
@@ -319,7 +319,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
  148 00b0 01       		.uleb128 0x1
  149 00b1 9C       		.byte	0x9c
  150 00b2 08       		.uleb128 0x8
- 151 00b3 CE000000 		.4byte	.LASF19
+ 151 00b3 E5000000 		.4byte	.LASF19
  152 00b7 03       		.byte	0x3
  153 00b8 3B       		.byte	0x3b
  154 00b9 80000000 		.4byte	0x80
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
  187 001d 00       		.byte	0
  188 001e 03       		.uleb128 0x3
  189 001f 24       		.uleb128 0x24
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 7
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 7
 
 
  190 0020 00       		.byte	0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
  244 0056 06       		.uleb128 0x6
  245 0057 40       		.uleb128 0x40
  246 0058 18       		.uleb128 0x18
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 8
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 8
 
 
  247 0059 9642     		.uleb128 0x2116
@@ -478,116 +478,117 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 1
  293      676E6564 
  293      20696E74 
  293      00
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 9
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 9
 
 
- 294              	.LASF18:
- 295 001b 55415254 		.ascii	"UART_PC_SPI_UART_ISR\000"
- 295      5F50435F 
- 295      5350495F 
- 295      55415254 
- 295      5F495352 
- 296              	.LASF5:
- 297 0030 6C6F6E67 		.ascii	"long unsigned int\000"
- 297      20756E73 
- 297      69676E65 
- 297      6420696E 
- 297      7400
- 298              	.LASF7:
- 299 0042 6C6F6E67 		.ascii	"long long unsigned int\000"
- 299      206C6F6E 
- 299      6720756E 
- 299      7369676E 
- 299      65642069 
- 300              	.LASF9:
- 301 0059 666C6F61 		.ascii	"float\000"
+ 294              	.LASF16:
+ 295 001b 433A5C55 		.ascii	"C:\\Users\\gcristini\\OneDrive - Datalogic S.p.a\\D"
+ 295      73657273 
+ 295      5C676372 
+ 295      69737469 
+ 295      6E695C4F 
+ 296 004a 6174615C 		.ascii	"ata\\PhytonWorkspace\\SkorpioTemperatureTest\\PSOC-"
+ 296      50687974 
+ 296      6F6E576F 
+ 296      726B7370 
+ 296      6163655C 
+ 297 007a 4669726D 		.ascii	"Firmware\\SerialTemperatureSensor.cydsn\000"
+ 297      77617265 
+ 297      5C536572 
+ 297      69616C54 
+ 297      656D7065 
+ 298              	.LASF18:
+ 299 00a1 55415254 		.ascii	"UART_PC_SPI_UART_ISR\000"
+ 299      5F50435F 
+ 299      5350495F 
+ 299      55415254 
+ 299      5F495352 
+ 300              	.LASF5:
+ 301 00b6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 301      20756E73 
+ 301      69676E65 
+ 301      6420696E 
  301      7400
- 302              	.LASF16:
- 303 005f 433A5C55 		.ascii	"C:\\Users\\gcristini\\OneDrive - Datalogic S.p.a\\D"
- 303      73657273 
- 303      5C676372 
- 303      69737469 
- 303      6E695C4F 
- 304 008e 6F63756D 		.ascii	"ocuments\\PSoC Creator\\Workspace01\\SerialTemperat"
- 304      656E7473 
- 304      5C50536F 
- 304      43204372 
- 304      6561746F 
- 305 00be 75726553 		.ascii	"ureSensor.cydsn\000"
- 305      656E736F 
- 305      722E6379 
- 305      64736E00 
+ 302              	.LASF7:
+ 303 00c8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 303      206C6F6E 
+ 303      6720756E 
+ 303      7369676E 
+ 303      65642069 
+ 304              	.LASF9:
+ 305 00df 666C6F61 		.ascii	"float\000"
+ 305      7400
  306              	.LASF19:
- 307 00ce 55415254 		.ascii	"UART_PC_customIntrHandler\000"
+ 307 00e5 55415254 		.ascii	"UART_PC_customIntrHandler\000"
  307      5F50435F 
  307      63757374 
  307      6F6D496E 
  307      74724861 
  308              	.LASF1:
- 309 00e8 756E7369 		.ascii	"unsigned char\000"
+ 309 00ff 756E7369 		.ascii	"unsigned char\000"
  309      676E6564 
  309      20636861 
  309      7200
  310              	.LASF11:
- 311 00f6 63686172 		.ascii	"char\000"
+ 311 010d 63686172 		.ascii	"char\000"
  311      00
  312              	.LASF4:
- 313 00fb 6C6F6E67 		.ascii	"long int\000"
+ 313 0112 6C6F6E67 		.ascii	"long int\000"
  313      20696E74 
  313      00
  314              	.LASF17:
- 315 0104 63796973 		.ascii	"cyisraddress\000"
+ 315 011b 63796973 		.ascii	"cyisraddress\000"
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccb89sh4.s 			page 10
+
+
  315      72616464 
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccukkRcx.s 			page 10
-
-
  315      72657373 
  315      00
  316              	.LASF10:
- 317 0111 646F7562 		.ascii	"double\000"
+ 317 0128 646F7562 		.ascii	"double\000"
  317      6C6500
  318              	.LASF15:
- 319 0118 47656E65 		.ascii	"Generated_Source\\PSoC4\\UART_PC_SPI_UART_INT.c\000"
+ 319 012f 47656E65 		.ascii	"Generated_Source\\PSoC4\\UART_PC_SPI_UART_INT.c\000"
  319      72617465 
  319      645F536F 
  319      75726365 
  319      5C50536F 
  320              	.LASF3:
- 321 0146 73686F72 		.ascii	"short unsigned int\000"
+ 321 015d 73686F72 		.ascii	"short unsigned int\000"
  321      7420756E 
  321      7369676E 
  321      65642069 
  321      6E7400
  322              	.LASF0:
- 323 0159 7369676E 		.ascii	"signed char\000"
+ 323 0170 7369676E 		.ascii	"signed char\000"
  323      65642063 
  323      68617200 
  324              	.LASF12:
- 325 0165 6C6F6E67 		.ascii	"long double\000"
+ 325 017c 6C6F6E67 		.ascii	"long double\000"
  325      20646F75 
  325      626C6500 
  326              	.LASF2:
- 327 0171 73686F72 		.ascii	"short int\000"
+ 327 0188 73686F72 		.ascii	"short int\000"
  327      7420696E 
  327      7400
  328              	.LASF14:
- 329 017b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 329 0192 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  329      43313120 
  329      352E342E 
  329      31203230 
  329      31363036 
- 330 01ae 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 330 01c5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
  330      20726576 
  330      6973696F 
  330      6E203233 
  330      37373135 
- 331 01e1 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 331 01f8 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
  331      67202D66 
  331      66756E63 
  331      74696F6E 
  331      2D736563 
  332              	.LASF13:
- 333 020d 73697A65 		.ascii	"sizetype\000"
+ 333 0224 73697A65 		.ascii	"sizetype\000"
  333      74797065 
  333      00
  334              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

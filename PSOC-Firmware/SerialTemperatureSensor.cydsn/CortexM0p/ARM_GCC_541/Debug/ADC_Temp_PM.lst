@@ -1,0 +1,1030 @@
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"ADC_Temp_PM.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.ADC_Temp_Sleep,"ax",%progbits
+  20              		.align	2
+  21              		.global	ADC_Temp_Sleep
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	ADC_Temp_Sleep, %function
+  25              	ADC_Temp_Sleep:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC4\\ADC_Temp_PM.c"
+   1:Generated_Source\PSoC4/ADC_Temp_PM.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \file ADC_Temp_PM.c
+   3:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \version 3.10
+   4:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+   5:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \brief
+   6:Generated_Source\PSoC4/ADC_Temp_PM.c **** *  This file provides the power manager source code to the API for
+   7:Generated_Source\PSoC4/ADC_Temp_PM.c **** *  ADC_Temp component.
+   8:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+   9:Generated_Source\PSoC4/ADC_Temp_PM.c **** ********************************************************************************
+  10:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \copyright
+  11:Generated_Source\PSoC4/ADC_Temp_PM.c **** * (c) 2015-2018, Cypress Semiconductor Corporation. All rights reserved.
+  12:Generated_Source\PSoC4/ADC_Temp_PM.c **** * This software, including source code, documentation and related
+  13:Generated_Source\PSoC4/ADC_Temp_PM.c **** * materials ("Software"), is owned by Cypress Semiconductor
+  14:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Corporation ("Cypress") and is protected by and subject to worldwide
+  15:Generated_Source\PSoC4/ADC_Temp_PM.c **** * patent protection (United States and foreign), United States copyright
+  16:Generated_Source\PSoC4/ADC_Temp_PM.c **** * laws and international treaty provisions. Therefore, you may use this
+  17:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Software only as provided in the license agreement accompanying the
+  18:Generated_Source\PSoC4/ADC_Temp_PM.c **** * software package from which you obtained this Software ("EULA").
+  19:Generated_Source\PSoC4/ADC_Temp_PM.c **** * If no EULA applies, Cypress hereby grants you a personal, nonexclusive,
+  20:Generated_Source\PSoC4/ADC_Temp_PM.c **** * non-transferable license to copy, modify, and compile the
+  21:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Software source code solely for use in connection with Cypress's
+  22:Generated_Source\PSoC4/ADC_Temp_PM.c **** * integrated circuit products. Any reproduction, modification, translation,
+  23:Generated_Source\PSoC4/ADC_Temp_PM.c **** * compilation, or representation of this Software except as specified
+  24:Generated_Source\PSoC4/ADC_Temp_PM.c **** * above is prohibited without the express written permission of Cypress.
+  25:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO
+  26:Generated_Source\PSoC4/ADC_Temp_PM.c **** * WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING,
+  27:Generated_Source\PSoC4/ADC_Temp_PM.c **** * BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED
+  28:Generated_Source\PSoC4/ADC_Temp_PM.c **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  29:Generated_Source\PSoC4/ADC_Temp_PM.c **** * PARTICULAR PURPOSE. Cypress reserves the right to make
+  30:Generated_Source\PSoC4/ADC_Temp_PM.c **** * changes to the Software without notice. Cypress does not assume any
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 2
+
+
+  31:Generated_Source\PSoC4/ADC_Temp_PM.c **** * liability arising out of the application or use of the Software or any
+  32:Generated_Source\PSoC4/ADC_Temp_PM.c **** * product or circuit described in the Software. Cypress does not
+  33:Generated_Source\PSoC4/ADC_Temp_PM.c **** * authorize its products for use in any products where a malfunction or
+  34:Generated_Source\PSoC4/ADC_Temp_PM.c **** * failure of the Cypress product may reasonably be expected to result in
+  35:Generated_Source\PSoC4/ADC_Temp_PM.c **** * significant property damage, injury or death ("High Risk Product"). By
+  36:Generated_Source\PSoC4/ADC_Temp_PM.c **** * including Cypress's product in a High Risk Product, the manufacturer
+  37:Generated_Source\PSoC4/ADC_Temp_PM.c **** * of such system or application assumes all risk of such use and in doing
+  38:Generated_Source\PSoC4/ADC_Temp_PM.c **** * so agrees to indemnify Cypress against all liability.
+  39:Generated_Source\PSoC4/ADC_Temp_PM.c **** *******************************************************************************/
+  40:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+  41:Generated_Source\PSoC4/ADC_Temp_PM.c **** #include "ADC_Temp.h"
+  42:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+  43:Generated_Source\PSoC4/ADC_Temp_PM.c **** /**
+  44:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \addtogroup group_globals
+  45:Generated_Source\PSoC4/ADC_Temp_PM.c **** * @{
+  46:Generated_Source\PSoC4/ADC_Temp_PM.c **** */
+  47:Generated_Source\PSoC4/ADC_Temp_PM.c **** /** Contains configuration of ADC_Temp before sleep. Enable state is the
+  48:Generated_Source\PSoC4/ADC_Temp_PM.c **** *   only data required to be preserved. */
+  49:Generated_Source\PSoC4/ADC_Temp_PM.c **** static ADC_Temp_BACKUP_STRUCT  ADC_Temp_backup =
+  50:Generated_Source\PSoC4/ADC_Temp_PM.c **** {
+  51:Generated_Source\PSoC4/ADC_Temp_PM.c ****     0u,
+  52:Generated_Source\PSoC4/ADC_Temp_PM.c **** };
+  53:Generated_Source\PSoC4/ADC_Temp_PM.c **** /** @} globals */
+  54:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+  55:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+  56:Generated_Source\PSoC4/ADC_Temp_PM.c **** /*******************************************************************************
+  57:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Function Name: ADC_Temp_Sleep
+  58:Generated_Source\PSoC4/ADC_Temp_PM.c **** ****************************************************************************//**
+  59:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+  60:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \brief This is the preferred routine to prepare the component for sleep. The
+  61:Generated_Source\PSoC4/ADC_Temp_PM.c **** * ADC_Temp_Sleep() routine saves the current component state. Then it
+  62:Generated_Source\PSoC4/ADC_Temp_PM.c **** * calls the ADC_Temp_Stop() function and calls
+  63:Generated_Source\PSoC4/ADC_Temp_PM.c **** * ADC_Temp_SaveConfig() to save the hardware configuration.
+  64:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+  65:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Call the ADC_Temp_Sleep() function before calling the
+  66:Generated_Source\PSoC4/ADC_Temp_PM.c **** * CySysPmDeepSleep() or the CySysPmHibernate() function. See the PSoC Creator
+  67:Generated_Source\PSoC4/ADC_Temp_PM.c **** * System Reference Guide for more information about power-management functions.
+  68:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+  69:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \param None
+  70:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+  71:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \return None
+  72:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+  73:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \sideeffect If this function is called twice in the enable state of the
+  74:Generated_Source\PSoC4/ADC_Temp_PM.c **** * component, the disabled state of the component will be stored. So
+  75:Generated_Source\PSoC4/ADC_Temp_PM.c **** * ADC_Temp_Enable() and ADC_Temp_StartConvert() must be called
+  76:Generated_Source\PSoC4/ADC_Temp_PM.c **** * after ADC_Temp_Wakeup() in this case.
+  77:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+  78:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \globalvars
+  79:Generated_Source\PSoC4/ADC_Temp_PM.c **** *  \ref ADC_Temp_backup (W)
+  80:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+  81:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \globalvars
+  82:Generated_Source\PSoC4/ADC_Temp_PM.c **** *  \ref ADC_Temp_backup
+  83:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+  84:Generated_Source\PSoC4/ADC_Temp_PM.c **** *******************************************************************************/
+  85:Generated_Source\PSoC4/ADC_Temp_PM.c **** void ADC_Temp_Sleep(void)
+  86:Generated_Source\PSoC4/ADC_Temp_PM.c **** {
+  28              		.loc 1 86 0
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 3
+
+
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  87:Generated_Source\PSoC4/ADC_Temp_PM.c ****     ADC_Temp_backup.enableState = 0u;
+  36              		.loc 1 87 0
+  37 0002 0022     		movs	r2, #0
+  38 0004 114B     		ldr	r3, .L5
+  39 0006 1A70     		strb	r2, [r3]
+  88:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+  89:Generated_Source\PSoC4/ADC_Temp_PM.c ****     if((ADC_Temp_SAR_CTRL_REG  & ADC_Temp_SAR_CTRL_ENABLED_MSK) != 0u)
+  40              		.loc 1 89 0
+  41 0008 114B     		ldr	r3, .L5+4
+  42 000a 1B68     		ldr	r3, [r3]
+  43 000c 002B     		cmp	r3, #0
+  44 000e 0DDA     		bge	.L2
+  90:Generated_Source\PSoC4/ADC_Temp_PM.c ****     {
+  91:Generated_Source\PSoC4/ADC_Temp_PM.c ****         ADC_Temp_backup.enableState |= ADC_Temp_ENABLED;
+  45              		.loc 1 91 0
+  46 0010 0132     		adds	r2, r2, #1
+  47 0012 0E4B     		ldr	r3, .L5
+  48 0014 1A70     		strb	r2, [r3]
+  92:Generated_Source\PSoC4/ADC_Temp_PM.c ****         if((ADC_Temp_SAR_SAMPLE_CTRL_REG & ADC_Temp_SAR_SAMPLE_CTRL_CONTINUOUS_MSK) != 0u)
+  49              		.loc 1 92 0
+  50 0016 0F4B     		ldr	r3, .L5+8
+  51 0018 1B68     		ldr	r3, [r3]
+  52 001a DB03     		lsls	r3, r3, #15
+  53 001c 02D5     		bpl	.L3
+  93:Generated_Source\PSoC4/ADC_Temp_PM.c ****         {
+  94:Generated_Source\PSoC4/ADC_Temp_PM.c ****             ADC_Temp_backup.enableState |= ADC_Temp_STARTED;
+  54              		.loc 1 94 0
+  55 001e 0232     		adds	r2, r2, #2
+  56 0020 0A4B     		ldr	r3, .L5
+  57 0022 1A70     		strb	r2, [r3]
+  58              	.L3:
+  95:Generated_Source\PSoC4/ADC_Temp_PM.c ****         }
+  96:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+  97:Generated_Source\PSoC4/ADC_Temp_PM.c ****         ADC_Temp_StopConvert();
+  59              		.loc 1 97 0
+  60 0024 FFF7FEFF 		bl	ADC_Temp_StopConvert
+  61              	.LVL0:
+  98:Generated_Source\PSoC4/ADC_Temp_PM.c ****         ADC_Temp_Stop();
+  62              		.loc 1 98 0
+  63 0028 FFF7FEFF 		bl	ADC_Temp_Stop
+  64              	.LVL1:
+  65              	.L2:
+  99:Generated_Source\PSoC4/ADC_Temp_PM.c ****     }
+ 100:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+ 101:Generated_Source\PSoC4/ADC_Temp_PM.c ****     /* Disable the SAR internal pump before entering the chip low power mode */
+ 102:Generated_Source\PSoC4/ADC_Temp_PM.c ****     if((ADC_Temp_SAR_CTRL_REG & ADC_Temp_SAR_CTRL_BOOSTPUMP_EN_MSK) != 0u)
+  66              		.loc 1 102 0
+  67 002c 084B     		ldr	r3, .L5+4
+  68 002e 1B68     		ldr	r3, [r3]
+  69 0030 DB02     		lsls	r3, r3, #11
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 4
+
+
+  70 0032 09D5     		bpl	.L1
+ 103:Generated_Source\PSoC4/ADC_Temp_PM.c ****     {
+ 104:Generated_Source\PSoC4/ADC_Temp_PM.c ****         ADC_Temp_SAR_CTRL_REG &= (uint32)~ADC_Temp_SAR_CTRL_BOOSTPUMP_EN_MSK;
+  71              		.loc 1 104 0
+  72 0034 064A     		ldr	r2, .L5+4
+  73 0036 1168     		ldr	r1, [r2]
+  74 0038 074B     		ldr	r3, .L5+12
+  75 003a 0B40     		ands	r3, r1
+  76 003c 1360     		str	r3, [r2]
+ 105:Generated_Source\PSoC4/ADC_Temp_PM.c ****         ADC_Temp_backup.enableState |= ADC_Temp_BOOSTPUMP_ENABLED;
+  77              		.loc 1 105 0
+  78 003e 034A     		ldr	r2, .L5
+  79 0040 1178     		ldrb	r1, [r2]
+  80 0042 0423     		movs	r3, #4
+  81 0044 0B43     		orrs	r3, r1
+  82 0046 1370     		strb	r3, [r2]
+  83              	.L1:
+ 106:Generated_Source\PSoC4/ADC_Temp_PM.c ****     }
+ 107:Generated_Source\PSoC4/ADC_Temp_PM.c **** }
+  84              		.loc 1 107 0
+  85              		@ sp needed
+  86 0048 10BD     		pop	{r4, pc}
+  87              	.L6:
+  88 004a C046     		.align	2
+  89              	.L5:
+  90 004c 00000000 		.word	.LANCHOR0
+  91 0050 00003A40 		.word	1077542912
+  92 0054 04003A40 		.word	1077542916
+  93 0058 FFFFEFFF 		.word	-1048577
+  94              		.cfi_endproc
+  95              	.LFE1:
+  96              		.size	ADC_Temp_Sleep, .-ADC_Temp_Sleep
+  97              		.section	.text.ADC_Temp_Wakeup,"ax",%progbits
+  98              		.align	2
+  99              		.global	ADC_Temp_Wakeup
+ 100              		.code	16
+ 101              		.thumb_func
+ 102              		.type	ADC_Temp_Wakeup, %function
+ 103              	ADC_Temp_Wakeup:
+ 104              	.LFB2:
+ 108:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+ 109:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+ 110:Generated_Source\PSoC4/ADC_Temp_PM.c **** /*******************************************************************************
+ 111:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Function Name: ADC_Temp_Wakeup
+ 112:Generated_Source\PSoC4/ADC_Temp_PM.c **** ****************************************************************************//**
+ 113:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 114:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \brief This is the preferred routine to restore the component to the state when
+ 115:Generated_Source\PSoC4/ADC_Temp_PM.c **** * ADC_Temp_Sleep() was called. The ADC_Temp_Wakeup() function
+ 116:Generated_Source\PSoC4/ADC_Temp_PM.c **** * calls the ADC_Temp_RestoreConfig() function to restore the
+ 117:Generated_Source\PSoC4/ADC_Temp_PM.c **** * configuration. If the component was enabled before the ADC_Temp_Sleep()
+ 118:Generated_Source\PSoC4/ADC_Temp_PM.c **** * function was called, the ADC_Temp_Wakeup() function also re-enables the
+ 119:Generated_Source\PSoC4/ADC_Temp_PM.c **** * component.
+ 120:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 121:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \param None
+ 122:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 123:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \return None
+ 124:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 5
+
+
+ 125:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \sideeffect
+ 126:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Calling this function without previously calling ADC_Temp_Sleep() may lead to
+ 127:Generated_Source\PSoC4/ADC_Temp_PM.c **** * unpredictable results.
+ 128:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 129:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \globalvars
+ 130:Generated_Source\PSoC4/ADC_Temp_PM.c **** *  \ref ADC_Temp_backup (R)
+ 131:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 132:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \globalvars
+ 133:Generated_Source\PSoC4/ADC_Temp_PM.c **** *  \ref ADC_Temp_backup
+ 134:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 135:Generated_Source\PSoC4/ADC_Temp_PM.c **** *******************************************************************************/
+ 136:Generated_Source\PSoC4/ADC_Temp_PM.c **** void ADC_Temp_Wakeup(void)
+ 137:Generated_Source\PSoC4/ADC_Temp_PM.c **** {
+ 105              		.loc 1 137 0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 0
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109 0000 10B5     		push	{r4, lr}
+ 110              		.cfi_def_cfa_offset 8
+ 111              		.cfi_offset 4, -8
+ 112              		.cfi_offset 14, -4
+ 138:Generated_Source\PSoC4/ADC_Temp_PM.c ****     if((ADC_Temp_backup.enableState & ADC_Temp_ENABLED) != 0u)
+ 113              		.loc 1 138 0
+ 114 0002 0A4B     		ldr	r3, .L10
+ 115 0004 1B78     		ldrb	r3, [r3]
+ 116 0006 DA07     		lsls	r2, r3, #31
+ 117 0008 0FD5     		bpl	.L7
+ 139:Generated_Source\PSoC4/ADC_Temp_PM.c ****     {
+ 140:Generated_Source\PSoC4/ADC_Temp_PM.c ****         /* Enable the SAR internal pump  */
+ 141:Generated_Source\PSoC4/ADC_Temp_PM.c ****         if((ADC_Temp_backup.enableState & ADC_Temp_BOOSTPUMP_ENABLED) != 0u)
+ 118              		.loc 1 141 0
+ 119 000a 5B07     		lsls	r3, r3, #29
+ 120 000c 05D5     		bpl	.L9
+ 142:Generated_Source\PSoC4/ADC_Temp_PM.c ****         {
+ 143:Generated_Source\PSoC4/ADC_Temp_PM.c ****             ADC_Temp_SAR_CTRL_REG |= ADC_Temp_SAR_CTRL_BOOSTPUMP_EN_MSK;
+ 121              		.loc 1 143 0
+ 122 000e 084A     		ldr	r2, .L10+4
+ 123 0010 1368     		ldr	r3, [r2]
+ 124 0012 8021     		movs	r1, #128
+ 125 0014 4903     		lsls	r1, r1, #13
+ 126 0016 0B43     		orrs	r3, r1
+ 127 0018 1360     		str	r3, [r2]
+ 128              	.L9:
+ 144:Generated_Source\PSoC4/ADC_Temp_PM.c ****         }
+ 145:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+ 146:Generated_Source\PSoC4/ADC_Temp_PM.c ****         ADC_Temp_Enable();
+ 129              		.loc 1 146 0
+ 130 001a FFF7FEFF 		bl	ADC_Temp_Enable
+ 131              	.LVL2:
+ 147:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+ 148:Generated_Source\PSoC4/ADC_Temp_PM.c ****         if((ADC_Temp_backup.enableState & ADC_Temp_STARTED) != 0u)
+ 132              		.loc 1 148 0
+ 133 001e 034B     		ldr	r3, .L10
+ 134 0020 1B78     		ldrb	r3, [r3]
+ 135 0022 9B07     		lsls	r3, r3, #30
+ 136 0024 01D5     		bpl	.L7
+ 149:Generated_Source\PSoC4/ADC_Temp_PM.c ****         {
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 6
+
+
+ 150:Generated_Source\PSoC4/ADC_Temp_PM.c ****             ADC_Temp_StartConvert();
+ 137              		.loc 1 150 0
+ 138 0026 FFF7FEFF 		bl	ADC_Temp_StartConvert
+ 139              	.LVL3:
+ 140              	.L7:
+ 151:Generated_Source\PSoC4/ADC_Temp_PM.c ****         }
+ 152:Generated_Source\PSoC4/ADC_Temp_PM.c ****     }
+ 153:Generated_Source\PSoC4/ADC_Temp_PM.c **** }
+ 141              		.loc 1 153 0
+ 142              		@ sp needed
+ 143 002a 10BD     		pop	{r4, pc}
+ 144              	.L11:
+ 145              		.align	2
+ 146              	.L10:
+ 147 002c 00000000 		.word	.LANCHOR0
+ 148 0030 00003A40 		.word	1077542912
+ 149              		.cfi_endproc
+ 150              	.LFE2:
+ 151              		.size	ADC_Temp_Wakeup, .-ADC_Temp_Wakeup
+ 152              		.section	.text.ADC_Temp_SaveConfig,"ax",%progbits
+ 153              		.align	2
+ 154              		.global	ADC_Temp_SaveConfig
+ 155              		.code	16
+ 156              		.thumb_func
+ 157              		.type	ADC_Temp_SaveConfig, %function
+ 158              	ADC_Temp_SaveConfig:
+ 159              	.LFB3:
+ 154:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+ 155:Generated_Source\PSoC4/ADC_Temp_PM.c **** /* ****************************************************************************
+ 156:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Function Name: ADC_Temp_SaveConfig
+ 157:Generated_Source\PSoC4/ADC_Temp_PM.c **** ****************************************************************************//*
+ 158:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 159:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \brief Saves the current configuration of ADC_Temp non-retention registers.
+ 160:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 161:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \param None
+ 162:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 163:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \return None
+ 164:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 165:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \sideeffect None
+ 166:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 167:Generated_Source\PSoC4/ADC_Temp_PM.c **** *******************************************************************************/
+ 168:Generated_Source\PSoC4/ADC_Temp_PM.c **** void ADC_Temp_SaveConfig(void)
+ 169:Generated_Source\PSoC4/ADC_Temp_PM.c **** {
+ 160              		.loc 1 169 0
+ 161              		.cfi_startproc
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164              		@ link register save eliminated.
+ 170:Generated_Source\PSoC4/ADC_Temp_PM.c ****      /* All configuration registers are marked as [reset_all_retention] */
+ 171:Generated_Source\PSoC4/ADC_Temp_PM.c **** }
+ 165              		.loc 1 171 0
+ 166              		@ sp needed
+ 167 0000 7047     		bx	lr
+ 168              		.cfi_endproc
+ 169              	.LFE3:
+ 170              		.size	ADC_Temp_SaveConfig, .-ADC_Temp_SaveConfig
+ 171 0002 C046     		.section	.text.ADC_Temp_RestoreConfig,"ax",%progbits
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 7
+
+
+ 172              		.align	2
+ 173              		.global	ADC_Temp_RestoreConfig
+ 174              		.code	16
+ 175              		.thumb_func
+ 176              		.type	ADC_Temp_RestoreConfig, %function
+ 177              	ADC_Temp_RestoreConfig:
+ 178              	.LFB4:
+ 172:Generated_Source\PSoC4/ADC_Temp_PM.c **** 
+ 173:Generated_Source\PSoC4/ADC_Temp_PM.c **** /* ****************************************************************************
+ 174:Generated_Source\PSoC4/ADC_Temp_PM.c **** * Function Name: ADC_Temp_RestoreConfig
+ 175:Generated_Source\PSoC4/ADC_Temp_PM.c **** ****************************************************************************//*
+ 176:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 177:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \brief Restores the configuration of ADC_Temp non-retention registers.
+ 178:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 179:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \param None
+ 180:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 181:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \return None
+ 182:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 183:Generated_Source\PSoC4/ADC_Temp_PM.c **** * \sideeffect Calling this function without previously calling
+ 184:Generated_Source\PSoC4/ADC_Temp_PM.c **** * ADC_Temp_SaveConfig() or ADC_Temp_Sleep will lead to
+ 185:Generated_Source\PSoC4/ADC_Temp_PM.c **** * unpredictable results.
+ 186:Generated_Source\PSoC4/ADC_Temp_PM.c **** *
+ 187:Generated_Source\PSoC4/ADC_Temp_PM.c **** *******************************************************************************/
+ 188:Generated_Source\PSoC4/ADC_Temp_PM.c **** void ADC_Temp_RestoreConfig(void)
+ 189:Generated_Source\PSoC4/ADC_Temp_PM.c **** {
+ 179              		.loc 1 189 0
+ 180              		.cfi_startproc
+ 181              		@ args = 0, pretend = 0, frame = 0
+ 182              		@ frame_needed = 0, uses_anonymous_args = 0
+ 183              		@ link register save eliminated.
+ 190:Generated_Source\PSoC4/ADC_Temp_PM.c ****     /* All configuration registers are marked as [reset_all_retention] */
+ 191:Generated_Source\PSoC4/ADC_Temp_PM.c **** }
+ 184              		.loc 1 191 0
+ 185              		@ sp needed
+ 186 0000 7047     		bx	lr
+ 187              		.cfi_endproc
+ 188              	.LFE4:
+ 189              		.size	ADC_Temp_RestoreConfig, .-ADC_Temp_RestoreConfig
+ 190 0002 C046     		.bss
+ 191              		.align	2
+ 192              		.set	.LANCHOR0,. + 0
+ 193              		.type	ADC_Temp_backup, %object
+ 194              		.size	ADC_Temp_backup, 1
+ 195              	ADC_Temp_backup:
+ 196 0000 00       		.space	1
+ 197              		.text
+ 198              	.Letext0:
+ 199              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+ 200              		.file 3 "Generated_Source\\PSoC4\\ADC_Temp.h"
+ 201              		.section	.debug_info,"",%progbits
+ 202              	.Ldebug_info0:
+ 203 0000 83010000 		.4byte	0x183
+ 204 0004 0400     		.2byte	0x4
+ 205 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 206 000a 04       		.byte	0x4
+ 207 000b 01       		.uleb128 0x1
+ 208 000c 23020000 		.4byte	.LASF26
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 8
+
+
+ 209 0010 0C       		.byte	0xc
+ 210 0011 37010000 		.4byte	.LASF27
+ 211 0015 74000000 		.4byte	.LASF28
+ 212 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 213 001d 00000000 		.4byte	0
+ 214 0021 00000000 		.4byte	.Ldebug_line0
+ 215 0025 02       		.uleb128 0x2
+ 216 0026 01       		.byte	0x1
+ 217 0027 06       		.byte	0x6
+ 218 0028 B5020000 		.4byte	.LASF0
+ 219 002c 02       		.uleb128 0x2
+ 220 002d 01       		.byte	0x1
+ 221 002e 08       		.byte	0x8
+ 222 002f 66000000 		.4byte	.LASF1
+ 223 0033 02       		.uleb128 0x2
+ 224 0034 02       		.byte	0x2
+ 225 0035 05       		.byte	0x5
+ 226 0036 F8010000 		.4byte	.LASF2
+ 227 003a 02       		.uleb128 0x2
+ 228 003b 02       		.byte	0x2
+ 229 003c 07       		.byte	0x7
+ 230 003d 1A000000 		.4byte	.LASF3
+ 231 0041 02       		.uleb128 0x2
+ 232 0042 04       		.byte	0x4
+ 233 0043 05       		.byte	0x5
+ 234 0044 02020000 		.4byte	.LASF4
+ 235 0048 02       		.uleb128 0x2
+ 236 0049 04       		.byte	0x4
+ 237 004a 07       		.byte	0x7
+ 238 004b FA000000 		.4byte	.LASF5
+ 239 004f 02       		.uleb128 0x2
+ 240 0050 08       		.byte	0x8
+ 241 0051 05       		.byte	0x5
+ 242 0052 CE010000 		.4byte	.LASF6
+ 243 0056 02       		.uleb128 0x2
+ 244 0057 08       		.byte	0x8
+ 245 0058 07       		.byte	0x7
+ 246 0059 87010000 		.4byte	.LASF7
+ 247 005d 03       		.uleb128 0x3
+ 248 005e 04       		.byte	0x4
+ 249 005f 05       		.byte	0x5
+ 250 0060 696E7400 		.ascii	"int\000"
+ 251 0064 02       		.uleb128 0x2
+ 252 0065 04       		.byte	0x4
+ 253 0066 07       		.byte	0x7
+ 254 0067 6A010000 		.4byte	.LASF8
+ 255 006b 04       		.uleb128 0x4
+ 256 006c 0C010000 		.4byte	.LASF9
+ 257 0070 02       		.byte	0x2
+ 258 0071 F701     		.2byte	0x1f7
+ 259 0073 2C000000 		.4byte	0x2c
+ 260 0077 04       		.uleb128 0x4
+ 261 0078 63010000 		.4byte	.LASF10
+ 262 007c 02       		.byte	0x2
+ 263 007d F901     		.2byte	0x1f9
+ 264 007f 48000000 		.4byte	0x48
+ 265 0083 02       		.uleb128 0x2
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 9
+
+
+ 266 0084 04       		.byte	0x4
+ 267 0085 04       		.byte	0x4
+ 268 0086 60000000 		.4byte	.LASF11
+ 269 008a 02       		.uleb128 0x2
+ 270 008b 08       		.byte	0x8
+ 271 008c 04       		.byte	0x4
+ 272 008d 5C010000 		.4byte	.LASF12
+ 273 0091 02       		.uleb128 0x2
+ 274 0092 01       		.byte	0x1
+ 275 0093 08       		.byte	0x8
+ 276 0094 DC010000 		.4byte	.LASF13
+ 277 0098 04       		.uleb128 0x4
+ 278 0099 00000000 		.4byte	.LASF14
+ 279 009d 02       		.byte	0x2
+ 280 009e A302     		.2byte	0x2a3
+ 281 00a0 A4000000 		.4byte	0xa4
+ 282 00a4 05       		.uleb128 0x5
+ 283 00a5 77000000 		.4byte	0x77
+ 284 00a9 02       		.uleb128 0x2
+ 285 00aa 08       		.byte	0x8
+ 286 00ab 04       		.byte	0x4
+ 287 00ac 17020000 		.4byte	.LASF15
+ 288 00b0 02       		.uleb128 0x2
+ 289 00b1 04       		.byte	0x4
+ 290 00b2 07       		.byte	0x7
+ 291 00b3 C5010000 		.4byte	.LASF16
+ 292 00b7 06       		.uleb128 0x6
+ 293 00b8 01       		.byte	0x1
+ 294 00b9 03       		.byte	0x3
+ 295 00ba 57       		.byte	0x57
+ 296 00bb CC000000 		.4byte	0xcc
+ 297 00bf 07       		.uleb128 0x7
+ 298 00c0 0B020000 		.4byte	.LASF29
+ 299 00c4 03       		.byte	0x3
+ 300 00c5 5A       		.byte	0x5a
+ 301 00c6 6B000000 		.4byte	0x6b
+ 302 00ca 00       		.byte	0
+ 303 00cb 00       		.byte	0
+ 304 00cc 08       		.uleb128 0x8
+ 305 00cd 9E010000 		.4byte	.LASF17
+ 306 00d1 03       		.byte	0x3
+ 307 00d2 5B       		.byte	0x5b
+ 308 00d3 B7000000 		.4byte	0xb7
+ 309 00d7 09       		.uleb128 0x9
+ 310 00d8 12010000 		.4byte	.LASF18
+ 311 00dc 01       		.byte	0x1
+ 312 00dd 55       		.byte	0x55
+ 313 00de 00000000 		.4byte	.LFB1
+ 314 00e2 5C000000 		.4byte	.LFE1-.LFB1
+ 315 00e6 01       		.uleb128 0x1
+ 316 00e7 9C       		.byte	0x9c
+ 317 00e8 FF000000 		.4byte	0xff
+ 318 00ec 0A       		.uleb128 0xa
+ 319 00ed 28000000 		.4byte	.LVL0
+ 320 00f1 5A010000 		.4byte	0x15a
+ 321 00f5 0A       		.uleb128 0xa
+ 322 00f6 2C000000 		.4byte	.LVL1
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 10
+
+
+ 323 00fa 65010000 		.4byte	0x165
+ 324 00fe 00       		.byte	0
+ 325 00ff 09       		.uleb128 0x9
+ 326 0100 B5010000 		.4byte	.LASF19
+ 327 0104 01       		.byte	0x1
+ 328 0105 88       		.byte	0x88
+ 329 0106 00000000 		.4byte	.LFB2
+ 330 010a 34000000 		.4byte	.LFE2-.LFB2
+ 331 010e 01       		.uleb128 0x1
+ 332 010f 9C       		.byte	0x9c
+ 333 0110 27010000 		.4byte	0x127
+ 334 0114 0A       		.uleb128 0xa
+ 335 0115 1E000000 		.4byte	.LVL2
+ 336 0119 70010000 		.4byte	0x170
+ 337 011d 0A       		.uleb128 0xa
+ 338 011e 2A000000 		.4byte	.LVL3
+ 339 0122 7B010000 		.4byte	0x17b
+ 340 0126 00       		.byte	0
+ 341 0127 0B       		.uleb128 0xb
+ 342 0128 06000000 		.4byte	.LASF20
+ 343 012c 01       		.byte	0x1
+ 344 012d A8       		.byte	0xa8
+ 345 012e 00000000 		.4byte	.LFB3
+ 346 0132 02000000 		.4byte	.LFE3-.LFB3
+ 347 0136 01       		.uleb128 0x1
+ 348 0137 9C       		.byte	0x9c
+ 349 0138 0B       		.uleb128 0xb
+ 350 0139 E1010000 		.4byte	.LASF21
+ 351 013d 01       		.byte	0x1
+ 352 013e BC       		.byte	0xbc
+ 353 013f 00000000 		.4byte	.LFB4
+ 354 0143 02000000 		.4byte	.LFE4-.LFB4
+ 355 0147 01       		.uleb128 0x1
+ 356 0148 9C       		.byte	0x9c
+ 357 0149 0C       		.uleb128 0xc
+ 358 014a 77010000 		.4byte	.LASF30
+ 359 014e 01       		.byte	0x1
+ 360 014f 31       		.byte	0x31
+ 361 0150 CC000000 		.4byte	0xcc
+ 362 0154 05       		.uleb128 0x5
+ 363 0155 03       		.byte	0x3
+ 364 0156 00000000 		.4byte	ADC_Temp_backup
+ 365 015a 0D       		.uleb128 0xd
+ 366 015b 2D000000 		.4byte	.LASF22
+ 367 015f 2D000000 		.4byte	.LASF22
+ 368 0163 03       		.byte	0x3
+ 369 0164 B5       		.byte	0xb5
+ 370 0165 0D       		.uleb128 0xd
+ 371 0166 42000000 		.4byte	.LASF23
+ 372 016a 42000000 		.4byte	.LASF23
+ 373 016e 03       		.byte	0x3
+ 374 016f B3       		.byte	0xb3
+ 375 0170 0D       		.uleb128 0xd
+ 376 0171 50000000 		.4byte	.LASF24
+ 377 0175 50000000 		.4byte	.LASF24
+ 378 0179 03       		.byte	0x3
+ 379 017a A9       		.byte	0xa9
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 11
+
+
+ 380 017b 0D       		.uleb128 0xd
+ 381 017c 21010000 		.4byte	.LASF25
+ 382 0180 21010000 		.4byte	.LASF25
+ 383 0184 03       		.byte	0x3
+ 384 0185 B4       		.byte	0xb4
+ 385 0186 00       		.byte	0
+ 386              		.section	.debug_abbrev,"",%progbits
+ 387              	.Ldebug_abbrev0:
+ 388 0000 01       		.uleb128 0x1
+ 389 0001 11       		.uleb128 0x11
+ 390 0002 01       		.byte	0x1
+ 391 0003 25       		.uleb128 0x25
+ 392 0004 0E       		.uleb128 0xe
+ 393 0005 13       		.uleb128 0x13
+ 394 0006 0B       		.uleb128 0xb
+ 395 0007 03       		.uleb128 0x3
+ 396 0008 0E       		.uleb128 0xe
+ 397 0009 1B       		.uleb128 0x1b
+ 398 000a 0E       		.uleb128 0xe
+ 399 000b 55       		.uleb128 0x55
+ 400 000c 17       		.uleb128 0x17
+ 401 000d 11       		.uleb128 0x11
+ 402 000e 01       		.uleb128 0x1
+ 403 000f 10       		.uleb128 0x10
+ 404 0010 17       		.uleb128 0x17
+ 405 0011 00       		.byte	0
+ 406 0012 00       		.byte	0
+ 407 0013 02       		.uleb128 0x2
+ 408 0014 24       		.uleb128 0x24
+ 409 0015 00       		.byte	0
+ 410 0016 0B       		.uleb128 0xb
+ 411 0017 0B       		.uleb128 0xb
+ 412 0018 3E       		.uleb128 0x3e
+ 413 0019 0B       		.uleb128 0xb
+ 414 001a 03       		.uleb128 0x3
+ 415 001b 0E       		.uleb128 0xe
+ 416 001c 00       		.byte	0
+ 417 001d 00       		.byte	0
+ 418 001e 03       		.uleb128 0x3
+ 419 001f 24       		.uleb128 0x24
+ 420 0020 00       		.byte	0
+ 421 0021 0B       		.uleb128 0xb
+ 422 0022 0B       		.uleb128 0xb
+ 423 0023 3E       		.uleb128 0x3e
+ 424 0024 0B       		.uleb128 0xb
+ 425 0025 03       		.uleb128 0x3
+ 426 0026 08       		.uleb128 0x8
+ 427 0027 00       		.byte	0
+ 428 0028 00       		.byte	0
+ 429 0029 04       		.uleb128 0x4
+ 430 002a 16       		.uleb128 0x16
+ 431 002b 00       		.byte	0
+ 432 002c 03       		.uleb128 0x3
+ 433 002d 0E       		.uleb128 0xe
+ 434 002e 3A       		.uleb128 0x3a
+ 435 002f 0B       		.uleb128 0xb
+ 436 0030 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 12
+
+
+ 437 0031 05       		.uleb128 0x5
+ 438 0032 49       		.uleb128 0x49
+ 439 0033 13       		.uleb128 0x13
+ 440 0034 00       		.byte	0
+ 441 0035 00       		.byte	0
+ 442 0036 05       		.uleb128 0x5
+ 443 0037 35       		.uleb128 0x35
+ 444 0038 00       		.byte	0
+ 445 0039 49       		.uleb128 0x49
+ 446 003a 13       		.uleb128 0x13
+ 447 003b 00       		.byte	0
+ 448 003c 00       		.byte	0
+ 449 003d 06       		.uleb128 0x6
+ 450 003e 13       		.uleb128 0x13
+ 451 003f 01       		.byte	0x1
+ 452 0040 0B       		.uleb128 0xb
+ 453 0041 0B       		.uleb128 0xb
+ 454 0042 3A       		.uleb128 0x3a
+ 455 0043 0B       		.uleb128 0xb
+ 456 0044 3B       		.uleb128 0x3b
+ 457 0045 0B       		.uleb128 0xb
+ 458 0046 01       		.uleb128 0x1
+ 459 0047 13       		.uleb128 0x13
+ 460 0048 00       		.byte	0
+ 461 0049 00       		.byte	0
+ 462 004a 07       		.uleb128 0x7
+ 463 004b 0D       		.uleb128 0xd
+ 464 004c 00       		.byte	0
+ 465 004d 03       		.uleb128 0x3
+ 466 004e 0E       		.uleb128 0xe
+ 467 004f 3A       		.uleb128 0x3a
+ 468 0050 0B       		.uleb128 0xb
+ 469 0051 3B       		.uleb128 0x3b
+ 470 0052 0B       		.uleb128 0xb
+ 471 0053 49       		.uleb128 0x49
+ 472 0054 13       		.uleb128 0x13
+ 473 0055 38       		.uleb128 0x38
+ 474 0056 0B       		.uleb128 0xb
+ 475 0057 00       		.byte	0
+ 476 0058 00       		.byte	0
+ 477 0059 08       		.uleb128 0x8
+ 478 005a 16       		.uleb128 0x16
+ 479 005b 00       		.byte	0
+ 480 005c 03       		.uleb128 0x3
+ 481 005d 0E       		.uleb128 0xe
+ 482 005e 3A       		.uleb128 0x3a
+ 483 005f 0B       		.uleb128 0xb
+ 484 0060 3B       		.uleb128 0x3b
+ 485 0061 0B       		.uleb128 0xb
+ 486 0062 49       		.uleb128 0x49
+ 487 0063 13       		.uleb128 0x13
+ 488 0064 00       		.byte	0
+ 489 0065 00       		.byte	0
+ 490 0066 09       		.uleb128 0x9
+ 491 0067 2E       		.uleb128 0x2e
+ 492 0068 01       		.byte	0x1
+ 493 0069 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 13
+
+
+ 494 006a 19       		.uleb128 0x19
+ 495 006b 03       		.uleb128 0x3
+ 496 006c 0E       		.uleb128 0xe
+ 497 006d 3A       		.uleb128 0x3a
+ 498 006e 0B       		.uleb128 0xb
+ 499 006f 3B       		.uleb128 0x3b
+ 500 0070 0B       		.uleb128 0xb
+ 501 0071 27       		.uleb128 0x27
+ 502 0072 19       		.uleb128 0x19
+ 503 0073 11       		.uleb128 0x11
+ 504 0074 01       		.uleb128 0x1
+ 505 0075 12       		.uleb128 0x12
+ 506 0076 06       		.uleb128 0x6
+ 507 0077 40       		.uleb128 0x40
+ 508 0078 18       		.uleb128 0x18
+ 509 0079 9742     		.uleb128 0x2117
+ 510 007b 19       		.uleb128 0x19
+ 511 007c 01       		.uleb128 0x1
+ 512 007d 13       		.uleb128 0x13
+ 513 007e 00       		.byte	0
+ 514 007f 00       		.byte	0
+ 515 0080 0A       		.uleb128 0xa
+ 516 0081 898201   		.uleb128 0x4109
+ 517 0084 00       		.byte	0
+ 518 0085 11       		.uleb128 0x11
+ 519 0086 01       		.uleb128 0x1
+ 520 0087 31       		.uleb128 0x31
+ 521 0088 13       		.uleb128 0x13
+ 522 0089 00       		.byte	0
+ 523 008a 00       		.byte	0
+ 524 008b 0B       		.uleb128 0xb
+ 525 008c 2E       		.uleb128 0x2e
+ 526 008d 00       		.byte	0
+ 527 008e 3F       		.uleb128 0x3f
+ 528 008f 19       		.uleb128 0x19
+ 529 0090 03       		.uleb128 0x3
+ 530 0091 0E       		.uleb128 0xe
+ 531 0092 3A       		.uleb128 0x3a
+ 532 0093 0B       		.uleb128 0xb
+ 533 0094 3B       		.uleb128 0x3b
+ 534 0095 0B       		.uleb128 0xb
+ 535 0096 27       		.uleb128 0x27
+ 536 0097 19       		.uleb128 0x19
+ 537 0098 11       		.uleb128 0x11
+ 538 0099 01       		.uleb128 0x1
+ 539 009a 12       		.uleb128 0x12
+ 540 009b 06       		.uleb128 0x6
+ 541 009c 40       		.uleb128 0x40
+ 542 009d 18       		.uleb128 0x18
+ 543 009e 9742     		.uleb128 0x2117
+ 544 00a0 19       		.uleb128 0x19
+ 545 00a1 00       		.byte	0
+ 546 00a2 00       		.byte	0
+ 547 00a3 0C       		.uleb128 0xc
+ 548 00a4 34       		.uleb128 0x34
+ 549 00a5 00       		.byte	0
+ 550 00a6 03       		.uleb128 0x3
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 14
+
+
+ 551 00a7 0E       		.uleb128 0xe
+ 552 00a8 3A       		.uleb128 0x3a
+ 553 00a9 0B       		.uleb128 0xb
+ 554 00aa 3B       		.uleb128 0x3b
+ 555 00ab 0B       		.uleb128 0xb
+ 556 00ac 49       		.uleb128 0x49
+ 557 00ad 13       		.uleb128 0x13
+ 558 00ae 02       		.uleb128 0x2
+ 559 00af 18       		.uleb128 0x18
+ 560 00b0 00       		.byte	0
+ 561 00b1 00       		.byte	0
+ 562 00b2 0D       		.uleb128 0xd
+ 563 00b3 2E       		.uleb128 0x2e
+ 564 00b4 00       		.byte	0
+ 565 00b5 3F       		.uleb128 0x3f
+ 566 00b6 19       		.uleb128 0x19
+ 567 00b7 3C       		.uleb128 0x3c
+ 568 00b8 19       		.uleb128 0x19
+ 569 00b9 6E       		.uleb128 0x6e
+ 570 00ba 0E       		.uleb128 0xe
+ 571 00bb 03       		.uleb128 0x3
+ 572 00bc 0E       		.uleb128 0xe
+ 573 00bd 3A       		.uleb128 0x3a
+ 574 00be 0B       		.uleb128 0xb
+ 575 00bf 3B       		.uleb128 0x3b
+ 576 00c0 0B       		.uleb128 0xb
+ 577 00c1 00       		.byte	0
+ 578 00c2 00       		.byte	0
+ 579 00c3 00       		.byte	0
+ 580              		.section	.debug_aranges,"",%progbits
+ 581 0000 34000000 		.4byte	0x34
+ 582 0004 0200     		.2byte	0x2
+ 583 0006 00000000 		.4byte	.Ldebug_info0
+ 584 000a 04       		.byte	0x4
+ 585 000b 00       		.byte	0
+ 586 000c 0000     		.2byte	0
+ 587 000e 0000     		.2byte	0
+ 588 0010 00000000 		.4byte	.LFB1
+ 589 0014 5C000000 		.4byte	.LFE1-.LFB1
+ 590 0018 00000000 		.4byte	.LFB2
+ 591 001c 34000000 		.4byte	.LFE2-.LFB2
+ 592 0020 00000000 		.4byte	.LFB3
+ 593 0024 02000000 		.4byte	.LFE3-.LFB3
+ 594 0028 00000000 		.4byte	.LFB4
+ 595 002c 02000000 		.4byte	.LFE4-.LFB4
+ 596 0030 00000000 		.4byte	0
+ 597 0034 00000000 		.4byte	0
+ 598              		.section	.debug_ranges,"",%progbits
+ 599              	.Ldebug_ranges0:
+ 600 0000 00000000 		.4byte	.LFB1
+ 601 0004 5C000000 		.4byte	.LFE1
+ 602 0008 00000000 		.4byte	.LFB2
+ 603 000c 34000000 		.4byte	.LFE2
+ 604 0010 00000000 		.4byte	.LFB3
+ 605 0014 02000000 		.4byte	.LFE3
+ 606 0018 00000000 		.4byte	.LFB4
+ 607 001c 02000000 		.4byte	.LFE4
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 15
+
+
+ 608 0020 00000000 		.4byte	0
+ 609 0024 00000000 		.4byte	0
+ 610              		.section	.debug_line,"",%progbits
+ 611              	.Ldebug_line0:
+ 612 0000 B0000000 		.section	.debug_str,"MS",%progbits,1
+ 612      02005600 
+ 612      00000201 
+ 612      FB0E0D00 
+ 612      01010101 
+ 613              	.LASF14:
+ 614 0000 72656733 		.ascii	"reg32\000"
+ 614      3200
+ 615              	.LASF20:
+ 616 0006 4144435F 		.ascii	"ADC_Temp_SaveConfig\000"
+ 616      54656D70 
+ 616      5F536176 
+ 616      65436F6E 
+ 616      66696700 
+ 617              	.LASF3:
+ 618 001a 73686F72 		.ascii	"short unsigned int\000"
+ 618      7420756E 
+ 618      7369676E 
+ 618      65642069 
+ 618      6E7400
+ 619              	.LASF22:
+ 620 002d 4144435F 		.ascii	"ADC_Temp_StopConvert\000"
+ 620      54656D70 
+ 620      5F53746F 
+ 620      70436F6E 
+ 620      76657274 
+ 621              	.LASF23:
+ 622 0042 4144435F 		.ascii	"ADC_Temp_Stop\000"
+ 622      54656D70 
+ 622      5F53746F 
+ 622      7000
+ 623              	.LASF24:
+ 624 0050 4144435F 		.ascii	"ADC_Temp_Enable\000"
+ 624      54656D70 
+ 624      5F456E61 
+ 624      626C6500 
+ 625              	.LASF11:
+ 626 0060 666C6F61 		.ascii	"float\000"
+ 626      7400
+ 627              	.LASF1:
+ 628 0066 756E7369 		.ascii	"unsigned char\000"
+ 628      676E6564 
+ 628      20636861 
+ 628      7200
+ 629              	.LASF28:
+ 630 0074 433A5C55 		.ascii	"C:\\Users\\gcristini\\OneDrive - Datalogic S.p.a\\D"
+ 630      73657273 
+ 630      5C676372 
+ 630      69737469 
+ 630      6E695C4F 
+ 631 00a3 6174615C 		.ascii	"ata\\PhytonWorkspace\\SkorpioTemperatureTest\\PSOC-"
+ 631      50687974 
+ 631      6F6E576F 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 16
+
+
+ 631      726B7370 
+ 631      6163655C 
+ 632 00d3 4669726D 		.ascii	"Firmware\\SerialTemperatureSensor.cydsn\000"
+ 632      77617265 
+ 632      5C536572 
+ 632      69616C54 
+ 632      656D7065 
+ 633              	.LASF5:
+ 634 00fa 6C6F6E67 		.ascii	"long unsigned int\000"
+ 634      20756E73 
+ 634      69676E65 
+ 634      6420696E 
+ 634      7400
+ 635              	.LASF9:
+ 636 010c 75696E74 		.ascii	"uint8\000"
+ 636      3800
+ 637              	.LASF18:
+ 638 0112 4144435F 		.ascii	"ADC_Temp_Sleep\000"
+ 638      54656D70 
+ 638      5F536C65 
+ 638      657000
+ 639              	.LASF25:
+ 640 0121 4144435F 		.ascii	"ADC_Temp_StartConvert\000"
+ 640      54656D70 
+ 640      5F537461 
+ 640      7274436F 
+ 640      6E766572 
+ 641              	.LASF27:
+ 642 0137 47656E65 		.ascii	"Generated_Source\\PSoC4\\ADC_Temp_PM.c\000"
+ 642      72617465 
+ 642      645F536F 
+ 642      75726365 
+ 642      5C50536F 
+ 643              	.LASF12:
+ 644 015c 646F7562 		.ascii	"double\000"
+ 644      6C6500
+ 645              	.LASF10:
+ 646 0163 75696E74 		.ascii	"uint32\000"
+ 646      333200
+ 647              	.LASF8:
+ 648 016a 756E7369 		.ascii	"unsigned int\000"
+ 648      676E6564 
+ 648      20696E74 
+ 648      00
+ 649              	.LASF30:
+ 650 0177 4144435F 		.ascii	"ADC_Temp_backup\000"
+ 650      54656D70 
+ 650      5F626163 
+ 650      6B757000 
+ 651              	.LASF7:
+ 652 0187 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 652      206C6F6E 
+ 652      6720756E 
+ 652      7369676E 
+ 652      65642069 
+ 653              	.LASF17:
+ 654 019e 4144435F 		.ascii	"ADC_Temp_BACKUP_STRUCT\000"
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 17
+
+
+ 654      54656D70 
+ 654      5F424143 
+ 654      4B55505F 
+ 654      53545255 
+ 655              	.LASF19:
+ 656 01b5 4144435F 		.ascii	"ADC_Temp_Wakeup\000"
+ 656      54656D70 
+ 656      5F57616B 
+ 656      65757000 
+ 657              	.LASF16:
+ 658 01c5 73697A65 		.ascii	"sizetype\000"
+ 658      74797065 
+ 658      00
+ 659              	.LASF6:
+ 660 01ce 6C6F6E67 		.ascii	"long long int\000"
+ 660      206C6F6E 
+ 660      6720696E 
+ 660      7400
+ 661              	.LASF13:
+ 662 01dc 63686172 		.ascii	"char\000"
+ 662      00
+ 663              	.LASF21:
+ 664 01e1 4144435F 		.ascii	"ADC_Temp_RestoreConfig\000"
+ 664      54656D70 
+ 664      5F526573 
+ 664      746F7265 
+ 664      436F6E66 
+ 665              	.LASF2:
+ 666 01f8 73686F72 		.ascii	"short int\000"
+ 666      7420696E 
+ 666      7400
+ 667              	.LASF4:
+ 668 0202 6C6F6E67 		.ascii	"long int\000"
+ 668      20696E74 
+ 668      00
+ 669              	.LASF29:
+ 670 020b 656E6162 		.ascii	"enableState\000"
+ 670      6C655374 
+ 670      61746500 
+ 671              	.LASF15:
+ 672 0217 6C6F6E67 		.ascii	"long double\000"
+ 672      20646F75 
+ 672      626C6500 
+ 673              	.LASF26:
+ 674 0223 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 674      43313120 
+ 674      352E342E 
+ 674      31203230 
+ 674      31363036 
+ 675 0256 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 675      20726576 
+ 675      6973696F 
+ 675      6E203233 
+ 675      37373135 
+ 676 0289 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 676      67202D66 
+ 676      66756E63 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccvISCIe.s 			page 18
+
+
+ 676      74696F6E 
+ 676      2D736563 
+ 677              	.LASF0:
+ 678 02b5 7369676E 		.ascii	"signed char\000"
+ 678      65642063 
+ 678      68617200 
+ 679              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

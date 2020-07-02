@@ -12,11 +12,20 @@
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0p" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
 <file name=".\CortexM0p\ARM_GCC_541\Debug\main.o">
+<dep name=".\Generated_Source\PSoC4\ADC_Temp.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_FILTER.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intSarClock.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intUabClock.h" />
 <dep name=".\Generated_Source\PSoC4\CyDMA.h" />
 <dep name=".\Generated_Source\PSoC4\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
 <dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\PGA.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_PVT.h" />
 <dep name=".\Generated_Source\PSoC4\Thermocouple_1.h" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_P.h" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_P_aliases.h" />
 <dep name=".\Generated_Source\PSoC4\UART_PC.h" />
 <dep name=".\Generated_Source\PSoC4\UART_PC_BOOT.h" />
 <dep name=".\Generated_Source\PSoC4\UART_PC_PINS.h" />
@@ -45,11 +54,20 @@
 <dep name=".\Generated_Source\PSoC4\project.h" />
 <dep name=".\main.c" />
 </file>
+<file name=".\Generated_Source\PSoC4\ADC_Temp.h" />
+<file name=".\Generated_Source\PSoC4\ADC_Temp_FILTER.h" />
+<file name=".\Generated_Source\PSoC4\ADC_Temp_IRQ.h" />
+<file name=".\Generated_Source\PSoC4\ADC_Temp_intSarClock.h" />
+<file name=".\Generated_Source\PSoC4\ADC_Temp_intUabClock.h" />
 <file name=".\Generated_Source\PSoC4\CyDMA.h" />
 <file name=".\Generated_Source\PSoC4\CyFlash.h" />
 <file name=".\Generated_Source\PSoC4\CyLFClk.h" />
 <file name=".\Generated_Source\PSoC4\CyLib.h" />
+<file name=".\Generated_Source\PSoC4\PGA.h" />
+<file name=".\Generated_Source\PSoC4\PGA_PVT.h" />
 <file name=".\Generated_Source\PSoC4\Thermocouple_1.h" />
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_P.h" />
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_P_aliases.h" />
 <file name=".\Generated_Source\PSoC4\UART_PC.h" />
 <file name=".\Generated_Source\PSoC4\UART_PC_BOOT.h" />
 <file name=".\Generated_Source\PSoC4\UART_PC_PINS.h" />
@@ -77,6 +95,91 @@
 <file name=".\Generated_Source\PSoC4\cytypes.h" />
 <file name=".\Generated_Source\PSoC4\project.h" />
 <file name=".\main.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp.o">
+<dep name=".\Generated_Source\PSoC4\ADC_Temp.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_FILTER.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intSarClock.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intUabClock.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_Temp.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_INIT.o">
+<dep name=".\Generated_Source\PSoC4\ADC_Temp.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_FILTER.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_INIT.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intSarClock.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intUabClock.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_Temp_INIT.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_INT.o">
+<dep name=".\Generated_Source\PSoC4\ADC_Temp.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_FILTER.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_INT.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intSarClock.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intUabClock.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_Temp_INT.c" />
+<file name=".\cyapicallbacks.h" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_IRQ.o">
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_IRQ.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_Temp_IRQ.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_PM.o">
+<dep name=".\Generated_Source\PSoC4\ADC_Temp.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_FILTER.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_PM.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intSarClock.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intUabClock.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_Temp_PM.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_intSarClock.o">
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intSarClock.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intSarClock.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_Temp_intSarClock.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_intUabClock.o">
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intUabClock.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_Temp_intUabClock.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_Temp_intUabClock.c" />
 <file name=".\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o">
 <dep name=".\Generated_Source\PSoC4\Cm0plusStart.c" />
 <dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
@@ -88,7 +191,6 @@
 <dep name=".\cyapicallbacks.h" />
 </file>
 <file name=".\Generated_Source\PSoC4\Cm0plusStart.c" />
-<file name=".\cyapicallbacks.h" />
 <file name=".\CortexM0p\ARM_GCC_541\Debug\CyDMA.o">
 <dep name=".\Generated_Source\PSoC4\CyDMA.c" />
 <dep name=".\Generated_Source\PSoC4\CyDMA.h" />
@@ -128,6 +230,24 @@
 <dep name=".\Generated_Source\PSoC4\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC4\CyLib.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\PGA.o">
+<dep name=".\Generated_Source\PSoC4\PGA.c" />
+<dep name=".\Generated_Source\PSoC4\PGA.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PGA.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\PGA_PM.o">
+<dep name=".\Generated_Source\PSoC4\PGA.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_PM.c" />
+<dep name=".\Generated_Source\PSoC4\PGA_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PGA_PM.c" />
 <file name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_1.o">
 <dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
 <dep name=".\Generated_Source\PSoC4\CyLib.h" />
@@ -138,6 +258,26 @@
 <dep name=".\Generated_Source\PSoC4\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC4\Thermocouple_1.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_Input_P.o">
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_P.c" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_P.h" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_P.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_Input_P_PM.o">
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_P.h" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_P_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_P_PM.c" />
 <file name=".\CortexM0p\ARM_GCC_541\Debug\UART_PC.o">
 <dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
 <dep name=".\Generated_Source\PSoC4\CyLib.h" />
@@ -388,6 +528,50 @@
 <file name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
 <file name=".\Generated_Source\PSoC4\cydevicegnu_trm.inc" />
 <file name=".\Generated_Source\PSoC4\cyfittergnu.inc" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_Input_N.o">
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_N.c" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_N.h" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_N_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_N.c" />
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_N.h" />
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_N_aliases.h" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_Input_N_PM.o">
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_N.h" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_N_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_N_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_N_PM.c" />
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input.h" />
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_aliases.h" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_Input.o">
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input.c" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input.h" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input.c" />
+<file name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_Input_PM.o">
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input.h" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Thermocouple_Input_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Thermocouple_Input_PM.c" />
 <file name=".\CortexM0p\ARM_GCC_541\Debug\cymetadata.o">
 <dep name=".\Generated_Source\PSoC4\cymetadata.c" />
 </file>
@@ -427,6 +611,17 @@
 <dep name=".\CortexM0p\ARM_GCC_541\Debug\cy_em_eeprom.o" />
 <dep name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_1.o" />
 <dep name=".\CortexM0p\ARM_GCC_541\Debug\UART_PC_SCB_IRQ.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\PGA.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\PGA_PM.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_INIT.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_INT.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_PM.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_intSarClock.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_IRQ.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\ADC_Temp_intUabClock.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_Input_P.o" />
+<dep name=".\CortexM0p\ARM_GCC_541\Debug\Thermocouple_Input_P_PM.o" />
 <dep name=".\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a" />
 </file>
 </CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
@@ -466,9 +661,25 @@
 <name_val_pair name="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.hex" v="-mcpu=cortex-m0plus -mthumb -L Generated_Source\PSoC4 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC4\cm0plusgcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name="Generated_Source\PSoC4\Thermocouple_1.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC4\UART_PC_SCB_IRQ.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\Thermocouple_Input.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\Thermocouple_Input_PM.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\PGA.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\PGA_PM.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_Temp.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_Temp_INIT.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_Temp_INT.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_Temp_PM.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_Temp_intSarClock.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_Temp_IRQ.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_Temp_intUabClock.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.hex" v="-mcpu=cortex-m0plus -mthumb -L Generated_Source\PSoC4 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC4\cm0plusgcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Thermocouple_Input_P.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\Thermocouple_Input_P_PM.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\Thermocouple_Input_N.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC4\Thermocouple_Input_N_PM.c" v="-mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 </name>
 </genericCmdLineData>
-<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\gcristini\AppData\Local\Cypress Semiconductor\PSoC Creator\4.3&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p &quot;C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn\SerialTemperatureSensor.cyprj&quot; -d CY8C4145LQI-PS433 -s &quot;C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn\Generated_Source\PSoC4&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
+<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\gcristini\AppData\Local\Cypress Semiconductor\PSoC Creator\4.3&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p &quot;C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn\SerialTemperatureSensor.cyprj&quot; -d CY8C4145LQI-PS433 -s &quot;C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn\Generated_Source\PSoC4&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
 </CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
 </dataGuid>
 <dataGuid v="597c5b74-0c46-4204-8b7f-96f3570671dc">
@@ -483,17 +694,18 @@
 <v>Off-Chip</v>
 </tree_states_tab_names>
 <tree_states>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\Thermal Management\Thermocouple Calculator [v1.20]">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\Ports and Pins\Analog Pin [v2.20]">
 <ExpandedNodeIds>
 <v>Cypress Component Catalog</v>
 <v>Cypress Component Catalog\Analog</v>
+<v>Cypress Component Catalog\Analog\ADC</v>
 <v>Cypress Component Catalog\Analog\Amplifiers</v>
-<v>Cypress Component Catalog\Thermal Management</v>
+<v>Cypress Component Catalog\Ports and Pins</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>Cypress Component Catalog</v>
-<v>Cypress Component Catalog\Analog</v>
 <v>Cypress Component Catalog\Analog\ADC</v>
+<v>Cypress Component Catalog\Analog\ADC\10-bit ADC (CSD) [v7.0]</v>
+<v>Cypress Component Catalog\Analog\ADC\Scanning SAR ADC [v3.10]</v>
 <v>Cypress Component Catalog\Analog\Amplifiers</v>
 <v>Cypress Component Catalog\Analog\Amplifiers\Opamp [v1.20]</v>
 <v>Cypress Component Catalog\Analog\Amplifiers\PGA [v1.10]</v>
@@ -508,12 +720,12 @@
 <v>Cypress Component Catalog\Digital</v>
 <v>Cypress Component Catalog\Display</v>
 <v>Cypress Component Catalog\Ports and Pins</v>
+<v>Cypress Component Catalog\Ports and Pins\Analog Pin [v2.20]</v>
+<v>Cypress Component Catalog\Ports and Pins\Digital Bidirectional Pin [v2.20]</v>
+<v>Cypress Component Catalog\Ports and Pins\Digital Input Pin [v2.20]</v>
+<v>Cypress Component Catalog\Ports and Pins\Digital Output Pin [v2.20]</v>
 <v>Cypress Component Catalog\Power Supervision</v>
 <v>Cypress Component Catalog\System</v>
-<v>Cypress Component Catalog\Thermal Management</v>
-<v>Cypress Component Catalog\Thermal Management\RTD Calculator [v1.20]</v>
-<v>Cypress Component Catalog\Thermal Management\Thermistor Calculator [v1.20]</v>
-<v>Cypress Component Catalog\Thermal Management\Thermocouple Calculator [v1.20]</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -703,6 +915,58 @@
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ThermocoupleCalc_v1_20\version.cypatch</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ThermocoupleCalc_v1_20\API\ThermocoupleCalc.h</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ThermocoupleCalc_v1_20\API\ThermocoupleCalc.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PGA_P4_v1_10.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PGA_P4_v1_10.cystate</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PGA_P4_v1_10.dll</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PGA_P4_v1_10.pdf</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PGA_P4_v1_10.cycdx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PSoC4\PGA_P4_v1_10.cysch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PSoC4\API\PGA_P4.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PSoC4\API\PGA_P4_PM.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PSoC4\API\PGA_P4.h</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PGA_P4_v1_10\PSoC4\API\PGA_P4_PVT.h</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc4_abuf_v1_0\cy_psoc4_abuf_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc4_abuf_v1_0\PSoC4\cy_psoc4_abuf_v1_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\Custom\cy_analog_virtualmux_v1_0.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\cy_analog_noconnect_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\cy_analog_noconnect_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\cy_analog_noconnect_v1_0.primitive</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\Scan_ADC_v3_10.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\Scan_ADC_v3_10.cystate</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\Scan_ADC_v3_10.dll</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\Scan_ADC_v3_10.pdf</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\PSoC4\API\Scan_ADC.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\PSoC4\API\Scan_ADC_INIT.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\PSoC4\API\Scan_ADC_INT.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\PSoC4\API\Scan_ADC_PM.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\PSoC4\API\Scan_ADC.h</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\PSoC4\API\Scan_ADC_FILTER.h</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\PSoC4\PSoC 4100PS\Scan_ADC_v3_10.cysch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Scan_ADC_v3_10\PSoC4\PSoC 4100PS\Scan_ADC_v3_10.cycdx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Bus_Connect_v2_50\Bus_Connect_v2_50.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Bus_Connect_v2_50\Bus_Connect_v2_50.v</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Bus_Connect_v2_50\Custom\cycustomizer.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc4_sar_v1_0\cy_psoc4_sar_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc4_sar_v1_0\PSoC4\cy_psoc4_sar_v1_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.cystate</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.cyprimitive</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\Custom\cyvrefidcontrol.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\Custom\cyvrefidcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\Custom\Resources.Designer.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\Custom\cyvrefidcontrol.resx</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\Custom\Resources.resx</v>
 <v>.\SerialTemperatureSensor.cydwr</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\cy_boot_v5_90\PSoC4\API\cm0gcc.ld</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\cy_boot_v5_90\PSoC4\API\Cm0RealView.scat</v>
@@ -809,13 +1073,55 @@
 <v>Generated_Source\PSoC4\Thermocouple_1.c</v>
 <v>Generated_Source\PSoC4\UART_PC_SCB_IRQ.c</v>
 <v>Generated_Source\PSoC4\UART_PC_SCB_IRQ.h</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input.c</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input.h</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_aliases.h</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_PM.c</v>
+<v>Generated_Source\PSoC4\PGA.c</v>
+<v>Generated_Source\PSoC4\PGA_PM.c</v>
+<v>Generated_Source\PSoC4\PGA.h</v>
+<v>Generated_Source\PSoC4\PGA_PVT.h</v>
+<v>Generated_Source\PSoC4\ADC.c</v>
+<v>Generated_Source\PSoC4\ADC_INIT.c</v>
+<v>Generated_Source\PSoC4\ADC_INT.c</v>
+<v>Generated_Source\PSoC4\ADC_PM.c</v>
+<v>Generated_Source\PSoC4\ADC.h</v>
+<v>Generated_Source\PSoC4\ADC_FILTER.h</v>
+<v>Generated_Source\PSoC4\ADC_intSarClock.c</v>
+<v>Generated_Source\PSoC4\ADC_intSarClock.h</v>
+<v>Generated_Source\PSoC4\ADC_IRQ.c</v>
+<v>Generated_Source\PSoC4\ADC_IRQ.h</v>
+<v>Generated_Source\PSoC4\ADC_intUabClock.c</v>
+<v>Generated_Source\PSoC4\ADC_intUabClock.h</v>
+<v>Generated_Source\PSoC4\ADC_Temp.c</v>
+<v>Generated_Source\PSoC4\ADC_Temp_INIT.c</v>
+<v>Generated_Source\PSoC4\ADC_Temp_INT.c</v>
+<v>Generated_Source\PSoC4\ADC_Temp_PM.c</v>
+<v>Generated_Source\PSoC4\ADC_Temp.h</v>
+<v>Generated_Source\PSoC4\ADC_Temp_FILTER.h</v>
+<v>Generated_Source\PSoC4\ADC_Temp_intSarClock.c</v>
+<v>Generated_Source\PSoC4\ADC_Temp_intSarClock.h</v>
+<v>Generated_Source\PSoC4\ADC_Temp_IRQ.c</v>
+<v>Generated_Source\PSoC4\ADC_Temp_IRQ.h</v>
+<v>Generated_Source\PSoC4\ADC_Temp_intUabClock.c</v>
+<v>Generated_Source\PSoC4\ADC_Temp_intUabClock.h</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_P.c</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_P.h</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_P_aliases.h</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_P_PM.c</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_N.c</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_N.h</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_N_aliases.h</v>
+<v>Generated_Source\PSoC4\Thermocouple_Input_N_PM.c</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\cypress.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="132381613964316879" />
+<deps_time v="132381751637740034" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 <pdl_path v="" />
@@ -825,18 +1131,21 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0p" v="132381671524272018" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0p" v="132381755426883599" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="237c8ed1-e161-4c9d-af97-582eda6d6952">
-<CyGuid_d442b0b8-dd66-4eee-b5be-1cb213792b31 type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyCustomAnalogDevData" version="1" ZoomToPage="True" ZoomScale="0.369017541" ScrollX="500" ScrollY="196">
+<CyGuid_d442b0b8-dd66-4eee-b5be-1cb213792b31 type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyCustomAnalogDevData" version="1" ZoomToPage="False" ZoomScale="0.498684883" ScrollX="804" ScrollY="272">
 <ComponentStates />
 </CyGuid_d442b0b8-dd66-4eee-b5be-1cb213792b31>
 </dataGuid>
 <dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">
 <CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469 type_name="CyDesigner.Common.Debugger.CyBreakpointList" version="1">
-<debugger_breakpoint_list />
+<debugger_breakpoint_list>
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\main.c" linenumber="84" />
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\main.c" linenumber="81" />
+</debugger_breakpoint_list>
 </CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469>
 </dataGuid>
 </userData>

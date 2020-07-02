@@ -11,6 +11,7 @@
 */
 #include "project.h"
 #include <unistd.h>
+#include <stdio.h>
 #define BUFFER_SIZE 100u
 
 void init(void);
@@ -21,6 +22,7 @@ uint8 ch;
 uint8 rxData[BUFFER_SIZE];
 uint8 rxDataIndex = 0u;
 uint8 *command;
+//int32 temp = 0u;
 
 int main(void)
 {
@@ -44,10 +46,19 @@ void init (void)
     
     /* Init UART */
     UART_PC_Start();
+    
+    PGA_Start();
+    
+    ADC_Temp_Start();
+    ADC_Temp_StartConvert();
+    
 }
 
 void pollUart(void)
 {
+    int temp = 0;
+    int voltage = 0;
+    char str[12];
      /* Get received character or zero if nothing has been received yet */
         ch = UART_PC_UartGetChar();
         if (0u != ch)
@@ -64,9 +75,17 @@ void pollUart(void)
                /* Point to buffer */
                command = rxData;
                UART_PC_UartPutString((const char*) command);
+                
+              voltage=ADC_Temp_GetResult32(0);
+              temp=Thermocouple_1_GetTemperature(voltage);
+              sprintf(str, "%d", (int)temp);
+            
+            
+              UART_PC_UartPutString(str);
+            
             
                 /* Clear buffer and index */
-                for (rxDataIndex=0; rxDataIndex <= BUFFER_SIZE; rxDataIndex++)
+                for (rxDataIndex=0; rxDataIndex < BUFFER_SIZE; rxDataIndex++)
                 {
                     rxData[rxDataIndex] = 0u;
                 }               
@@ -78,5 +97,10 @@ void pollUart(void)
             rxDataIndex++;
             
         }
+}
+
+void getTemp(void)
+{
+    
 }
 /* [] END OF FILE */

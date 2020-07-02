@@ -25,7 +25,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="SerialTemperatureSensor" Path="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" Version="5.90" Type="Normal">
+  <Project Name="SerialTemperatureSensor" Path="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" Version="5.90" Type="Normal">
     <CMSIS_SVD_File>SerialTemperatureSensor.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -34,14 +34,14 @@
       <LinkerFile Toolchain="ARM IAR Generic">.\Generated_Source\PSoC4\Cm0plusIar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="STRICT" Path="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn">
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn\Generated_Source\PSoC4">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn\Generated_Source\PSoC4">
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cymetadata.c</File>
@@ -114,37 +114,57 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Thermocouple_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\UART_PC_SCB_IRQ.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\UART_PC_SCB_IRQ.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PGA.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PGA_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PGA.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PGA_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_INIT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_FILTER.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_intSarClock.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_intSarClock.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_IRQ.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_IRQ.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_intUabClock.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_Temp_intUabClock.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Thermocouple_Input_P.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Thermocouple_Input_P.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Thermocouple_Input_P_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Thermocouple_Input_P_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0p">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM4">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM7">
-        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn" />
+        <Files Root="C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn" />
       </Folder>
     </Folders>
   </Project>

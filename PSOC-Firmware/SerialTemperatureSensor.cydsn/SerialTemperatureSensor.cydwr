@@ -12,8 +12,12 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
+      <Data key="0b4959b9-355c-4cab-b82c-45add88837c1/77715107-f8d5-47e5-a629-0fb83101ac6b" value="ADC_Temp_Bypass" />
+      <Data key="8e2d3cea-dea1-4cc1-b5cd-2ebe987c30e6/30182841-2754-4aee-9532-9ff02059dfef" value="Thermocouple_ADC_AdcInput" />
+      <Data key="16aa4133-cfdd-46fc-bb15-8a65d97cf6c3" value="Thermocouple_Input_N" />
       <Data key="43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/23b8206d-1c77-4e61-be4a-b4037d5de5fc" value="UART_PC_tx" />
       <Data key="43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/78e33e5d-45ea-4b75-88d5-73274e8a7ce4" value="UART_PC_rx" />
+      <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="Thermocouple_Input_P" />
     </Group>
   </Group>
   <Group key="FlashSecurity">
@@ -1083,6 +1087,19 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="8e2d3cea-dea1-4cc1-b5cd-2ebe987c30e6/30182841-2754-4aee-9532-9ff02059dfef">
+      <Group key="0">
+        <Data key="Port Format" value="0,2" />
+      </Group>
+      <Group key="1">
+        <Data key="Port Format" value="0,3" />
+      </Group>
+    </Group>
+    <Group key="16aa4133-cfdd-46fc-bb15-8a65d97cf6c3">
+      <Group key="0">
+        <Data key="Port Format" value="3,3" />
+      </Group>
+    </Group>
     <Group key="43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/23b8206d-1c77-4e61-be4a-b4037d5de5fc">
       <Group key="0">
         <Data key="Port Format" value="0,5" />
@@ -1093,6 +1110,12 @@
         <Data key="Port Format" value="0,4" />
       </Group>
     </Group>
+    <Group key="77715107-f8d5-47e5-a629-0fb83101ac6b">
+      <Group key="0">
+        <Data key="Port Format" value="3,2" />
+      </Group>
+    </Group>
+    <Group key="UnAssigned Pins" />
   </Group>
   <Group key="PlaceDir">
     <Data key="count" value="0" />

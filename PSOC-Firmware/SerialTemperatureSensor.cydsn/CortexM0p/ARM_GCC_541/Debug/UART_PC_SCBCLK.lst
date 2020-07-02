@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
   28:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** * Summary:
   29:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** *  Starts the clock, aligned to the specified running clock.
   30:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** *
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 2
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 2
 
 
   31:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** * Parameters:
@@ -111,14 +111,14 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
   53              	.L4:
   54              		.align	2
   55              	.L3:
-  56 0018 40000080 		.word	-2147483584
+  56 0018 42000080 		.word	-2147483582
   57              		.cfi_endproc
   58              	.LFE0:
   59              		.size	UART_PC_SCBCLK_StartEx, .-UART_PC_SCBCLK_StartEx
   60              		.section	.text.UART_PC_SCBCLK_Stop,"ax",%progbits
   61              		.align	2
   62              		.global	UART_PC_SCBCLK_Stop
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 3
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 3
 
 
   63              		.code	16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
   72              		@ link register save eliminated.
   73              	.L6:
   97:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** #if defined CYREG_PERI_DIV_CMD
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 4
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 4
 
 
   98:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** 
@@ -216,7 +216,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
   88              	.L8:
   89              		.align	2
   90              	.L7:
-  91 0014 40000040 		.word	1073741888
+  91 0014 42000040 		.word	1073741890
   92              		.cfi_endproc
   93              	.LFE1:
   94              		.size	UART_PC_SCBCLK_Stop, .-UART_PC_SCBCLK_Stop
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  123:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** *  Modifies the clock divider and the fractional divider.
  124:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** *
  125:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** * Parameters:
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 5
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 5
 
 
  126:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** *  clkDivider:  Divider register value (0-65535). This value is NOT the
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  149:Generated_Source\PSoC4/UART_PC_SCBCLK.c **** #else
  150:Generated_Source\PSoC4/UART_PC_SCBCLK.c ****     /* get all but integer divider bits */
  151:Generated_Source\PSoC4/UART_PC_SCBCLK.c ****     maskVal = UART_PC_SCBCLK_DIV_REG & (uint32)(~(uint32)UART_PC_SCBCLK__DIVIDER_MASK);
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 6
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 6
 
 
  152:Generated_Source\PSoC4/UART_PC_SCBCLK.c ****     /* combine mask and new divider val into 32-bit value */
@@ -316,7 +316,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  137              	.L11:
  138 001a C046     		.align	2
  139              	.L10:
- 140 001c 00030040 		.word	1073742592
+ 140 001c 08030040 		.word	1073742600
  141              		.cfi_endproc
  142              	.LFE2:
  143              		.size	UART_PC_SCBCLK_SetFractionalDividerRegister, .-UART_PC_SCBCLK_SetFractionalDividerRegister
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  159 0002 1868     		ldr	r0, [r3]
  160 0004 000A     		lsrs	r0, r0, #8
  161 0006 80B2     		uxth	r0, r0
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 7
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 7
 
 
  179:Generated_Source\PSoC4/UART_PC_SCBCLK.c ****         >> UART_PC_SCBCLK_DIV_INT_SHIFT);
@@ -369,7 +369,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  165              	.L14:
  166 000a C046     		.align	2
  167              	.L13:
- 168 000c 00030040 		.word	1073742592
+ 168 000c 08030040 		.word	1073742600
  169              		.cfi_endproc
  170              	.LFE3:
  171              		.size	UART_PC_SCBCLK_GetDividerRegister, .-UART_PC_SCBCLK_GetDividerRegister
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  187              		@ sp needed
  188 0002 7047     		bx	lr
  189              		.cfi_endproc
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 8
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 8
 
 
  190              	.LFE4:
@@ -433,83 +433,83 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  199 0006 00000000 		.4byte	.Ldebug_abbrev0
  200 000a 04       		.byte	0x4
  201 000b 01       		.uleb128 0x1
- 202 000c 65010000 		.4byte	.LASF25
+ 202 000c EB010000 		.4byte	.LASF25
  203 0010 0C       		.byte	0xc
- 204 0011 30000000 		.4byte	.LASF26
- 205 0015 2F020000 		.4byte	.LASF27
+ 204 0011 B6000000 		.4byte	.LASF26
+ 205 0015 06000000 		.4byte	.LASF27
  206 0019 00000000 		.4byte	.Ldebug_ranges0+0
  207 001d 00000000 		.4byte	0
  208 0021 00000000 		.4byte	.Ldebug_line0
  209 0025 02       		.uleb128 0x2
  210 0026 01       		.byte	0x1
  211 0027 06       		.byte	0x6
- 212 0028 F7010000 		.4byte	.LASF0
+ 212 0028 7D020000 		.4byte	.LASF0
  213 002c 02       		.uleb128 0x2
  214 002d 01       		.byte	0x1
  215 002e 08       		.byte	0x8
- 216 002f 75000000 		.4byte	.LASF1
+ 216 002f FB000000 		.4byte	.LASF1
  217 0033 02       		.uleb128 0x2
  218 0034 02       		.byte	0x2
  219 0035 05       		.byte	0x5
- 220 0036 4C010000 		.4byte	.LASF2
+ 220 0036 D2010000 		.4byte	.LASF2
  221 003a 02       		.uleb128 0x2
  222 003b 02       		.byte	0x2
  223 003c 07       		.byte	0x7
- 224 003d 95000000 		.4byte	.LASF3
+ 224 003d 1B010000 		.4byte	.LASF3
  225 0041 02       		.uleb128 0x2
  226 0042 04       		.byte	0x4
  227 0043 05       		.byte	0x5
- 228 0044 5C010000 		.4byte	.LASF4
+ 228 0044 E2010000 		.4byte	.LASF4
  229 0048 02       		.uleb128 0x2
  230 0049 04       		.byte	0x4
  231 004a 07       		.byte	0x7
- 232 004b 83000000 		.4byte	.LASF5
+ 232 004b 09010000 		.4byte	.LASF5
  233 004f 02       		.uleb128 0x2
  234 0050 08       		.byte	0x8
  235 0051 05       		.byte	0x5
- 236 0052 39010000 		.4byte	.LASF6
+ 236 0052 BF010000 		.4byte	.LASF6
  237 0056 02       		.uleb128 0x2
  238 0057 08       		.byte	0x8
  239 0058 07       		.byte	0x7
- 240 0059 F6000000 		.4byte	.LASF7
+ 240 0059 7C010000 		.4byte	.LASF7
  241 005d 03       		.uleb128 0x3
  242 005e 04       		.byte	0x4
  243 005f 05       		.byte	0x5
  244 0060 696E7400 		.ascii	"int\000"
  245 0064 02       		.uleb128 0x2
  246 0065 04       		.byte	0x4
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 9
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 9
 
 
  247 0066 07       		.byte	0x7
- 248 0067 E9000000 		.4byte	.LASF8
+ 248 0067 6F010000 		.4byte	.LASF8
  249 006b 04       		.uleb128 0x4
- 250 006c 56010000 		.4byte	.LASF9
+ 250 006c DC010000 		.4byte	.LASF9
  251 0070 02       		.byte	0x2
  252 0071 F701     		.2byte	0x1f7
  253 0073 2C000000 		.4byte	0x2c
  254 0077 04       		.uleb128 0x4
- 255 0078 DB000000 		.4byte	.LASF10
+ 255 0078 61010000 		.4byte	.LASF10
  256 007c 02       		.byte	0x2
  257 007d F801     		.2byte	0x1f8
  258 007f 3A000000 		.4byte	0x3a
  259 0083 04       		.uleb128 0x4
- 260 0084 E2000000 		.4byte	.LASF11
+ 260 0084 68010000 		.4byte	.LASF11
  261 0088 02       		.byte	0x2
  262 0089 F901     		.2byte	0x1f9
  263 008b 48000000 		.4byte	0x48
  264 008f 02       		.uleb128 0x2
  265 0090 04       		.byte	0x4
  266 0091 04       		.byte	0x4
- 267 0092 6F000000 		.4byte	.LASF12
+ 267 0092 F5000000 		.4byte	.LASF12
  268 0096 02       		.uleb128 0x2
  269 0097 08       		.byte	0x8
  270 0098 04       		.byte	0x4
- 271 0099 B3000000 		.4byte	.LASF13
+ 271 0099 39010000 		.4byte	.LASF13
  272 009d 02       		.uleb128 0x2
  273 009e 01       		.byte	0x1
  274 009f 08       		.byte	0x8
- 275 00a0 47010000 		.4byte	.LASF14
+ 275 00a0 CD010000 		.4byte	.LASF14
  276 00a4 04       		.uleb128 0x4
  277 00a5 00000000 		.4byte	.LASF15
  278 00a9 02       		.byte	0x2
@@ -518,7 +518,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  281 00b0 05       		.uleb128 0x5
  282 00b1 83000000 		.4byte	0x83
  283 00b5 06       		.uleb128 0x6
- 284 00b6 58000000 		.4byte	.LASF16
+ 284 00b6 DE000000 		.4byte	.LASF16
  285 00ba 01       		.byte	0x1
  286 00bb 27       		.byte	0x27
  287 00bc 00000000 		.4byte	.LFB0
@@ -527,25 +527,25 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  290 00c5 9C       		.byte	0x9c
  291 00c6 DA000000 		.4byte	0xda
  292 00ca 07       		.uleb128 0x7
- 293 00cb C1000000 		.4byte	.LASF18
+ 293 00cb 47010000 		.4byte	.LASF18
  294 00cf 01       		.byte	0x1
  295 00d0 27       		.byte	0x27
  296 00d1 83000000 		.4byte	0x83
  297 00d5 00000000 		.4byte	.LLST0
  298 00d9 00       		.byte	0
  299 00da 08       		.uleb128 0x8
- 300 00db 9E020000 		.4byte	.LASF28
+ 300 00db B5020000 		.4byte	.LASF28
  301 00df 01       		.byte	0x1
  302 00e0 5F       		.byte	0x5f
  303 00e1 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 10
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 10
 
 
  304 00e5 18000000 		.4byte	.LFE1-.LFB1
  305 00e9 01       		.uleb128 0x1
  306 00ea 9C       		.byte	0x9c
  307 00eb 06       		.uleb128 0x6
- 308 00ec 03020000 		.4byte	.LASF17
+ 308 00ec 89020000 		.4byte	.LASF17
  309 00f0 01       		.byte	0x1
  310 00f1 86       		.byte	0x86
  311 00f2 00000000 		.4byte	.LFB2
@@ -554,25 +554,25 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  314 00fb 9C       		.byte	0x9c
  315 00fc 3B010000 		.4byte	0x13b
  316 0100 07       		.uleb128 0x7
- 317 0101 A8000000 		.4byte	.LASF19
+ 317 0101 2E010000 		.4byte	.LASF19
  318 0105 01       		.byte	0x1
  319 0106 86       		.byte	0x86
  320 0107 77000000 		.4byte	0x77
  321 010b 21000000 		.4byte	.LLST1
  322 010f 07       		.uleb128 0x7
- 323 0110 CD000000 		.4byte	.LASF20
+ 323 0110 53010000 		.4byte	.LASF20
  324 0114 01       		.byte	0x1
  325 0115 86       		.byte	0x86
  326 0116 6B000000 		.4byte	0x6b
  327 011a 42000000 		.4byte	.LLST2
  328 011e 09       		.uleb128 0x9
- 329 011f 06000000 		.4byte	.LASF21
+ 329 011f 8C000000 		.4byte	.LASF21
  330 0123 01       		.byte	0x1
  331 0124 88       		.byte	0x88
  332 0125 83000000 		.4byte	0x83
  333 0129 63000000 		.4byte	.LLST3
  334 012d 0A       		.uleb128 0xa
- 335 012e BA000000 		.4byte	.LASF22
+ 335 012e 40010000 		.4byte	.LASF22
  336 0132 01       		.byte	0x1
  337 0133 89       		.byte	0x89
  338 0134 83000000 		.4byte	0x83
@@ -580,7 +580,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  340 0139 51       		.byte	0x51
  341 013a 00       		.byte	0
  342 013b 0B       		.uleb128 0xb
- 343 013c 0E000000 		.4byte	.LASF23
+ 343 013c 94000000 		.4byte	.LASF23
  344 0140 01       		.byte	0x1
  345 0141 B0       		.byte	0xb0
  346 0142 77000000 		.4byte	0x77
@@ -589,7 +589,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  349 014e 01       		.uleb128 0x1
  350 014f 9C       		.byte	0x9c
  351 0150 0B       		.uleb128 0xb
- 352 0151 0D010000 		.4byte	.LASF24
+ 352 0151 93010000 		.4byte	.LASF24
  353 0155 01       		.byte	0x1
  354 0156 C6       		.byte	0xc6
  355 0157 6B000000 		.4byte	0x6b
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  358 0163 01       		.uleb128 0x1
  359 0164 9C       		.byte	0x9c
  360 0165 00       		.byte	0
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 11
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 11
 
 
  361              		.section	.debug_abbrev,"",%progbits
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  415 0034 00       		.byte	0
  416 0035 00       		.byte	0
  417 0036 05       		.uleb128 0x5
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 12
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 12
 
 
  418 0037 35       		.uleb128 0x35
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  472 006e 0B       		.uleb128 0xb
  473 006f 3B       		.uleb128 0x3b
  474 0070 0B       		.uleb128 0xb
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 13
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 13
 
 
  475 0071 27       		.uleb128 0x27
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  529 00a8 19       		.uleb128 0x19
  530 00a9 49       		.uleb128 0x49
  531 00aa 13       		.uleb128 0x13
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 14
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 14
 
 
  532 00ab 11       		.uleb128 0x11
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  586 005f 00000000 		.4byte	0
  587              	.LLST3:
  588 0063 0A000000 		.4byte	.LVL3
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 15
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 15
 
 
  589 0067 10000000 		.4byte	.LVL5
@@ -890,160 +890,161 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 1
  631              	.LASF15:
  632 0000 72656733 		.ascii	"reg32\000"
  632      3200
- 633              	.LASF21:
- 634 0006 6D61736B 		.ascii	"maskVal\000"
- 634      56616C00 
- 635              	.LASF23:
- 636 000e 55415254 		.ascii	"UART_PC_SCBCLK_GetDividerRegister\000"
- 636      5F50435F 
- 636      53434243 
- 636      4C4B5F47 
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 16
+ 633              	.LASF27:
+ 634 0006 433A5C55 		.ascii	"C:\\Users\\gcristini\\OneDrive - Datalogic S.p.a\\D"
+ 634      73657273 
+ 634      5C676372 
+ 634      69737469 
+ 634      6E695C4F 
+ 635 0035 6174615C 		.ascii	"ata\\PhytonWorkspace\\SkorpioTemperatureTest\\PSOC-"
+ 635      50687974 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 16
 
 
- 636      65744469 
- 637              	.LASF26:
- 638 0030 47656E65 		.ascii	"Generated_Source\\PSoC4\\UART_PC_SCBCLK.c\000"
- 638      72617465 
- 638      645F536F 
- 638      75726365 
- 638      5C50536F 
- 639              	.LASF16:
- 640 0058 55415254 		.ascii	"UART_PC_SCBCLK_StartEx\000"
+ 635      6F6E576F 
+ 635      726B7370 
+ 635      6163655C 
+ 636 0065 4669726D 		.ascii	"Firmware\\SerialTemperatureSensor.cydsn\000"
+ 636      77617265 
+ 636      5C536572 
+ 636      69616C54 
+ 636      656D7065 
+ 637              	.LASF21:
+ 638 008c 6D61736B 		.ascii	"maskVal\000"
+ 638      56616C00 
+ 639              	.LASF23:
+ 640 0094 55415254 		.ascii	"UART_PC_SCBCLK_GetDividerRegister\000"
  640      5F50435F 
  640      53434243 
- 640      4C4B5F53 
- 640      74617274 
- 641              	.LASF12:
- 642 006f 666C6F61 		.ascii	"float\000"
- 642      7400
- 643              	.LASF1:
- 644 0075 756E7369 		.ascii	"unsigned char\000"
- 644      676E6564 
- 644      20636861 
- 644      7200
- 645              	.LASF5:
- 646 0083 6C6F6E67 		.ascii	"long unsigned int\000"
- 646      20756E73 
- 646      69676E65 
- 646      6420696E 
+ 640      4C4B5F47 
+ 640      65744469 
+ 641              	.LASF26:
+ 642 00b6 47656E65 		.ascii	"Generated_Source\\PSoC4\\UART_PC_SCBCLK.c\000"
+ 642      72617465 
+ 642      645F536F 
+ 642      75726365 
+ 642      5C50536F 
+ 643              	.LASF16:
+ 644 00de 55415254 		.ascii	"UART_PC_SCBCLK_StartEx\000"
+ 644      5F50435F 
+ 644      53434243 
+ 644      4C4B5F53 
+ 644      74617274 
+ 645              	.LASF12:
+ 646 00f5 666C6F61 		.ascii	"float\000"
  646      7400
- 647              	.LASF3:
- 648 0095 73686F72 		.ascii	"short unsigned int\000"
- 648      7420756E 
- 648      7369676E 
- 648      65642069 
- 648      6E7400
- 649              	.LASF19:
- 650 00a8 636C6B44 		.ascii	"clkDivider\000"
- 650      69766964 
- 650      657200
- 651              	.LASF13:
- 652 00b3 646F7562 		.ascii	"double\000"
- 652      6C6500
- 653              	.LASF22:
- 654 00ba 72656756 		.ascii	"regVal\000"
- 654      616C00
- 655              	.LASF18:
- 656 00c1 616C6967 		.ascii	"alignClkDiv\000"
- 656      6E436C6B 
- 656      44697600 
- 657              	.LASF20:
- 658 00cd 636C6B46 		.ascii	"clkFractional\000"
- 658      72616374 
- 658      696F6E61 
- 658      6C00
- 659              	.LASF10:
- 660 00db 75696E74 		.ascii	"uint16\000"
- 660      313600
- 661              	.LASF11:
- 662 00e2 75696E74 		.ascii	"uint32\000"
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 17
+ 647              	.LASF1:
+ 648 00fb 756E7369 		.ascii	"unsigned char\000"
+ 648      676E6564 
+ 648      20636861 
+ 648      7200
+ 649              	.LASF5:
+ 650 0109 6C6F6E67 		.ascii	"long unsigned int\000"
+ 650      20756E73 
+ 650      69676E65 
+ 650      6420696E 
+ 650      7400
+ 651              	.LASF3:
+ 652 011b 73686F72 		.ascii	"short unsigned int\000"
+ 652      7420756E 
+ 652      7369676E 
+ 652      65642069 
+ 652      6E7400
+ 653              	.LASF19:
+ 654 012e 636C6B44 		.ascii	"clkDivider\000"
+ 654      69766964 
+ 654      657200
+ 655              	.LASF13:
+ 656 0139 646F7562 		.ascii	"double\000"
+ 656      6C6500
+ 657              	.LASF22:
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 17
 
 
- 662      333200
- 663              	.LASF8:
- 664 00e9 756E7369 		.ascii	"unsigned int\000"
- 664      676E6564 
- 664      20696E74 
- 664      00
- 665              	.LASF7:
- 666 00f6 6C6F6E67 		.ascii	"long long unsigned int\000"
- 666      206C6F6E 
- 666      6720756E 
- 666      7369676E 
- 666      65642069 
- 667              	.LASF24:
- 668 010d 55415254 		.ascii	"UART_PC_SCBCLK_GetFractionalDividerRegister\000"
- 668      5F50435F 
- 668      53434243 
- 668      4C4B5F47 
- 668      65744672 
- 669              	.LASF6:
- 670 0139 6C6F6E67 		.ascii	"long long int\000"
+ 658 0140 72656756 		.ascii	"regVal\000"
+ 658      616C00
+ 659              	.LASF18:
+ 660 0147 616C6967 		.ascii	"alignClkDiv\000"
+ 660      6E436C6B 
+ 660      44697600 
+ 661              	.LASF20:
+ 662 0153 636C6B46 		.ascii	"clkFractional\000"
+ 662      72616374 
+ 662      696F6E61 
+ 662      6C00
+ 663              	.LASF10:
+ 664 0161 75696E74 		.ascii	"uint16\000"
+ 664      313600
+ 665              	.LASF11:
+ 666 0168 75696E74 		.ascii	"uint32\000"
+ 666      333200
+ 667              	.LASF8:
+ 668 016f 756E7369 		.ascii	"unsigned int\000"
+ 668      676E6564 
+ 668      20696E74 
+ 668      00
+ 669              	.LASF7:
+ 670 017c 6C6F6E67 		.ascii	"long long unsigned int\000"
  670      206C6F6E 
- 670      6720696E 
- 670      7400
- 671              	.LASF14:
- 672 0147 63686172 		.ascii	"char\000"
- 672      00
- 673              	.LASF2:
- 674 014c 73686F72 		.ascii	"short int\000"
- 674      7420696E 
+ 670      6720756E 
+ 670      7369676E 
+ 670      65642069 
+ 671              	.LASF24:
+ 672 0193 55415254 		.ascii	"UART_PC_SCBCLK_GetFractionalDividerRegister\000"
+ 672      5F50435F 
+ 672      53434243 
+ 672      4C4B5F47 
+ 672      65744672 
+ 673              	.LASF6:
+ 674 01bf 6C6F6E67 		.ascii	"long long int\000"
+ 674      206C6F6E 
+ 674      6720696E 
  674      7400
- 675              	.LASF9:
- 676 0156 75696E74 		.ascii	"uint8\000"
- 676      3800
- 677              	.LASF4:
- 678 015c 6C6F6E67 		.ascii	"long int\000"
- 678      20696E74 
- 678      00
- 679              	.LASF25:
- 680 0165 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 680      43313120 
- 680      352E342E 
- 680      31203230 
- 680      31363036 
- 681 0198 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
- 681      20726576 
- 681      6973696F 
- 681      6E203233 
- 681      37373135 
- 682 01cb 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
- 682      67202D66 
- 682      66756E63 
- 682      74696F6E 
- 682      2D736563 
- 683              	.LASF0:
- 684 01f7 7369676E 		.ascii	"signed char\000"
- 684      65642063 
- 684      68617200 
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccy6kPt3.s 			page 18
+ 675              	.LASF14:
+ 676 01cd 63686172 		.ascii	"char\000"
+ 676      00
+ 677              	.LASF2:
+ 678 01d2 73686F72 		.ascii	"short int\000"
+ 678      7420696E 
+ 678      7400
+ 679              	.LASF9:
+ 680 01dc 75696E74 		.ascii	"uint8\000"
+ 680      3800
+ 681              	.LASF4:
+ 682 01e2 6C6F6E67 		.ascii	"long int\000"
+ 682      20696E74 
+ 682      00
+ 683              	.LASF25:
+ 684 01eb 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 684      43313120 
+ 684      352E342E 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccwmPUbs.s 			page 18
 
 
- 685              	.LASF17:
- 686 0203 55415254 		.ascii	"UART_PC_SCBCLK_SetFractionalDividerRegister\000"
- 686      5F50435F 
- 686      53434243 
- 686      4C4B5F53 
- 686      65744672 
- 687              	.LASF27:
- 688 022f 433A5C55 		.ascii	"C:\\Users\\gcristini\\OneDrive - Datalogic S.p.a\\D"
- 688      73657273 
- 688      5C676372 
- 688      69737469 
- 688      6E695C4F 
- 689 025e 6F63756D 		.ascii	"ocuments\\PSoC Creator\\Workspace01\\SerialTemperat"
- 689      656E7473 
- 689      5C50536F 
- 689      43204372 
- 689      6561746F 
- 690 028e 75726553 		.ascii	"ureSensor.cydsn\000"
- 690      656E736F 
- 690      722E6379 
- 690      64736E00 
+ 684      31203230 
+ 684      31363036 
+ 685 021e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 685      20726576 
+ 685      6973696F 
+ 685      6E203233 
+ 685      37373135 
+ 686 0251 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 686      67202D66 
+ 686      66756E63 
+ 686      74696F6E 
+ 686      2D736563 
+ 687              	.LASF0:
+ 688 027d 7369676E 		.ascii	"signed char\000"
+ 688      65642063 
+ 688      68617200 
+ 689              	.LASF17:
+ 690 0289 55415254 		.ascii	"UART_PC_SCBCLK_SetFractionalDividerRegister\000"
+ 690      5F50435F 
+ 690      53434243 
+ 690      4C4B5F53 
+ 690      65744672 
  691              	.LASF28:
- 692 029e 55415254 		.ascii	"UART_PC_SCBCLK_Stop\000"
+ 692 02b5 55415254 		.ascii	"UART_PC_SCBCLK_Stop\000"
  692      5F50435F 
  692      53434243 
  692      4C4B5F53 

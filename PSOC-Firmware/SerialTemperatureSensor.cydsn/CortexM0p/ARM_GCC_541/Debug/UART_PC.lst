@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
   29:Generated_Source\PSoC4/UART_PC.c ****     #include "UART_PC_SPI_UART_PVT.h"
   30:Generated_Source\PSoC4/UART_PC.c **** #endif /* (UART_PC_SCB_MODE_SPI_INC || UART_PC_SCB_MODE_UART_INC) */
   31:Generated_Source\PSoC4/UART_PC.c **** 
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 2
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 2
 
 
   32:Generated_Source\PSoC4/UART_PC.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
   86:Generated_Source\PSoC4/UART_PC.c ****     /** This global variable stores TX interrupt sources after 
   87:Generated_Source\PSoC4/UART_PC.c ****     * UART_PC_Stop() is called. Only these TX interrupt sources 
   88:Generated_Source\PSoC4/UART_PC.c ****     * will be restored on a subsequent UART_PC_Enable() call.
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 3
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 3
 
 
   89:Generated_Source\PSoC4/UART_PC.c ****     */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  143:Generated_Source\PSoC4/UART_PC.c **** 
  144:Generated_Source\PSoC4/UART_PC.c **** #elif (UART_PC_SCB_MODE_EZI2C_CONST_CFG)
  145:Generated_Source\PSoC4/UART_PC.c ****     UART_PC_EzI2CInit();
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 4
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 4
 
 
  146:Generated_Source\PSoC4/UART_PC.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  200:Generated_Source\PSoC4/UART_PC.c **** *  After this function call, the component is enabled and ready for operation.
  201:Generated_Source\PSoC4/UART_PC.c **** *  When configuration is set to "Unconfigured SCB", the component must first be
  202:Generated_Source\PSoC4/UART_PC.c **** *  initialized to operate in one of the following configurations: I2C, SPI, UART
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 5
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 5
 
 
  203:Generated_Source\PSoC4/UART_PC.c **** *  or EZI2C. Otherwise this function does not enable the component.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  257:Generated_Source\PSoC4/UART_PC.c ****     * is disabled.
  258:Generated_Source\PSoC4/UART_PC.c ****     */
  259:Generated_Source\PSoC4/UART_PC.c ****     UART_PC_SetTxInterruptMode(UART_PC_NO_INTR_SOURCES);
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 6
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 6
 
 
  260:Generated_Source\PSoC4/UART_PC.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  314:Generated_Source\PSoC4/UART_PC.c **** }
  315:Generated_Source\PSoC4/UART_PC.c **** 
  316:Generated_Source\PSoC4/UART_PC.c **** 
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 7
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 7
 
 
  317:Generated_Source\PSoC4/UART_PC.c **** #if (UART_PC_SCB_IRQ_INTERNAL)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  363:Generated_Source\PSoC4/UART_PC.c ****             UART_PC_EnableInt();
  364:Generated_Source\PSoC4/UART_PC.c ****         }
  365:Generated_Source\PSoC4/UART_PC.c **** 
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 8
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 8
 
 
  366:Generated_Source\PSoC4/UART_PC.c ****     #else
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  395:Generated_Source\PSoC4/UART_PC.c ****         /* Unknown mode: do nothing */
  396:Generated_Source\PSoC4/UART_PC.c ****     }
  397:Generated_Source\PSoC4/UART_PC.c **** #endif /* (!UART_PC_CY_SCBIP_V1) */
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 9
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 9
 
 
  398:Generated_Source\PSoC4/UART_PC.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  428:Generated_Source\PSoC4/UART_PC.c ****     }
  429:Generated_Source\PSoC4/UART_PC.c **** #if (!UART_PC_CY_SCBIP_V1)
  430:Generated_Source\PSoC4/UART_PC.c ****     else if (UART_PC_SCB_MODE_SPI_RUNTM_CFG)
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 10
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 10
 
 
  431:Generated_Source\PSoC4/UART_PC.c ****     {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  142:Generated_Source\PSoC4/UART_PC.c **** 
  109              		.loc 1 142 0
  110 0002 FFF7FEFF 		bl	UART_PC_UartInit
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 11
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 11
 
 
  111              	.LVL3:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  159              		.global	UART_PC_Start
  160              		.code	16
  161              		.thumb_func
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 12
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 12
 
 
  162              		.type	UART_PC_Start, %function
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  209              		@ args = 0, pretend = 0, frame = 0
  210              		@ frame_needed = 0, uses_anonymous_args = 0
  211 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 13
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 13
 
 
  212              		.cfi_def_cfa_offset 8
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  259              		@ link register save eliminated.
  260              	.LVL11:
  283:Generated_Source\PSoC4/UART_PC.c **** 
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 14
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 14
 
 
  261              		.loc 1 283 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  311:Generated_Source\PSoC4/UART_PC.c **** 
  308              		.loc 1 311 0
  309 0008 0840     		ands	r0, r1
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 15
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 15
 
 
  310              	.LVL19:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  359              		.size	UART_PC_initVar, 1
  360              	UART_PC_initVar:
  361 0000 00       		.space	1
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 16
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 16
 
 
  362 0001 000000   		.space	3
@@ -922,48 +922,48 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  380 0006 00000000 		.4byte	.Ldebug_abbrev0
  381 000a 04       		.byte	0x4
  382 000b 01       		.uleb128 0x1
- 383 000c 44000000 		.4byte	.LASF41
+ 383 000c BF000000 		.4byte	.LASF41
  384 0010 0C       		.byte	0xc
- 385 0011 2C020000 		.4byte	.LASF42
- 386 0015 EE020000 		.4byte	.LASF43
+ 385 0011 B2020000 		.4byte	.LASF42
+ 386 0015 06000000 		.4byte	.LASF43
  387 0019 00000000 		.4byte	.Ldebug_ranges0+0
  388 001d 00000000 		.4byte	0
  389 0021 00000000 		.4byte	.Ldebug_line0
  390 0025 02       		.uleb128 0x2
  391 0026 01       		.byte	0x1
  392 0027 06       		.byte	0x6
- 393 0028 E2020000 		.4byte	.LASF0
+ 393 0028 68030000 		.4byte	.LASF0
  394 002c 02       		.uleb128 0x2
  395 002d 01       		.byte	0x1
  396 002e 08       		.byte	0x8
- 397 002f 1D010000 		.4byte	.LASF1
+ 397 002f 98010000 		.4byte	.LASF1
  398 0033 02       		.uleb128 0x2
  399 0034 02       		.byte	0x2
  400 0035 05       		.byte	0x5
- 401 0036 82010000 		.4byte	.LASF2
+ 401 0036 FD010000 		.4byte	.LASF2
  402 003a 02       		.uleb128 0x2
  403 003b 02       		.byte	0x2
  404 003c 07       		.byte	0x7
- 405 003d 31000000 		.4byte	.LASF3
+ 405 003d AC000000 		.4byte	.LASF3
  406 0041 02       		.uleb128 0x2
  407 0042 04       		.byte	0x4
  408 0043 05       		.byte	0x5
- 409 0044 BC020000 		.4byte	.LASF4
+ 409 0044 42030000 		.4byte	.LASF4
  410 0048 02       		.uleb128 0x2
  411 0049 04       		.byte	0x4
  412 004a 07       		.byte	0x7
- 413 004b 2B010000 		.4byte	.LASF5
+ 413 004b A6010000 		.4byte	.LASF5
  414 004f 02       		.uleb128 0x2
  415 0050 08       		.byte	0x8
  416 0051 05       		.byte	0x5
- 417 0052 1E020000 		.4byte	.LASF6
+ 417 0052 A4020000 		.4byte	.LASF6
  418 0056 02       		.uleb128 0x2
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 17
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 17
 
 
  419 0057 08       		.byte	0x8
  420 0058 07       		.byte	0x7
- 421 0059 C8010000 		.4byte	.LASF7
+ 421 0059 4E020000 		.4byte	.LASF7
  422 005d 03       		.uleb128 0x3
  423 005e 04       		.byte	0x4
  424 005f 05       		.byte	0x5
@@ -971,34 +971,34 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  426 0064 02       		.uleb128 0x2
  427 0065 04       		.byte	0x4
  428 0066 07       		.byte	0x7
- 429 0067 AE010000 		.4byte	.LASF8
+ 429 0067 34020000 		.4byte	.LASF8
  430 006b 04       		.uleb128 0x4
- 431 006c 3D010000 		.4byte	.LASF9
+ 431 006c B8010000 		.4byte	.LASF9
  432 0070 02       		.byte	0x2
  433 0071 F701     		.2byte	0x1f7
  434 0073 2C000000 		.4byte	0x2c
  435 0077 04       		.uleb128 0x4
- 436 0078 8C010000 		.4byte	.LASF10
+ 436 0078 07020000 		.4byte	.LASF10
  437 007c 02       		.byte	0x2
  438 007d F801     		.2byte	0x1f8
  439 007f 3A000000 		.4byte	0x3a
  440 0083 04       		.uleb128 0x4
- 441 0084 93010000 		.4byte	.LASF11
+ 441 0084 19020000 		.4byte	.LASF11
  442 0088 02       		.byte	0x2
  443 0089 F901     		.2byte	0x1f9
  444 008b 48000000 		.4byte	0x48
  445 008f 02       		.uleb128 0x2
  446 0090 04       		.byte	0x4
  447 0091 04       		.byte	0x4
- 448 0092 07010000 		.4byte	.LASF12
+ 448 0092 82010000 		.4byte	.LASF12
  449 0096 02       		.uleb128 0x2
  450 0097 08       		.byte	0x8
  451 0098 04       		.byte	0x4
- 452 0099 54010000 		.4byte	.LASF13
+ 452 0099 CF010000 		.4byte	.LASF13
  453 009d 02       		.uleb128 0x2
  454 009e 01       		.byte	0x1
  455 009f 08       		.byte	0x8
- 456 00a0 C5020000 		.4byte	.LASF14
+ 456 00a0 4B030000 		.4byte	.LASF14
  457 00a4 04       		.uleb128 0x4
  458 00a5 00000000 		.4byte	.LASF15
  459 00a9 02       		.byte	0x2
@@ -1013,16 +1013,16 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  468 00bc 02       		.uleb128 0x2
  469 00bd 08       		.byte	0x8
  470 00be 04       		.byte	0x4
- 471 00bf CA020000 		.4byte	.LASF16
+ 471 00bf 50030000 		.4byte	.LASF16
  472 00c3 02       		.uleb128 0x2
  473 00c4 04       		.byte	0x4
  474 00c5 07       		.byte	0x7
- 475 00c6 15020000 		.4byte	.LASF17
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 18
+ 475 00c6 9B020000 		.4byte	.LASF17
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 18
 
 
  476 00ca 08       		.uleb128 0x8
- 477 00cb 8A020000 		.4byte	.LASF18
+ 477 00cb 10030000 		.4byte	.LASF18
  478 00cf 01       		.byte	0x1
  479 00d0 6401     		.2byte	0x164
  480 00d2 00000000 		.4byte	.LFB8
@@ -1041,7 +1041,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  493 00ee 00       		.byte	0
  494 00ef 00       		.byte	0
  495 00f0 08       		.uleb128 0x8
- 496 00f1 D6000000 		.4byte	.LASF19
+ 496 00f1 51010000 		.4byte	.LASF19
  497 00f5 01       		.byte	0x1
  498 00f6 7D01     		.2byte	0x17d
  499 00f8 00000000 		.4byte	.LFB9
@@ -1054,7 +1054,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  506 010b B1020000 		.4byte	0x2b1
  507 010f 00       		.byte	0
  508 0110 08       		.uleb128 0x8
- 509 0111 9A010000 		.4byte	.LASF20
+ 509 0111 20020000 		.4byte	.LASF20
  510 0115 01       		.byte	0x1
  511 0116 A201     		.2byte	0x1a2
  512 0118 00000000 		.4byte	.LFB10
@@ -1067,7 +1067,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  519 012b BC020000 		.4byte	0x2bc
  520 012f 00       		.byte	0
  521 0130 0C       		.uleb128 0xc
- 522 0131 08020000 		.4byte	.LASF21
+ 522 0131 8E020000 		.4byte	.LASF21
  523 0135 01       		.byte	0x1
  524 0136 7B       		.byte	0x7b
  525 0137 00000000 		.4byte	.LFB1
@@ -1078,12 +1078,12 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  530 0145 0B       		.uleb128 0xb
  531 0146 06000000 		.4byte	.LVL3
  532 014a C7020000 		.4byte	0x2c7
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 19
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 19
 
 
  533 014e 00       		.byte	0
  534 014f 0C       		.uleb128 0xc
- 535 0150 4D020000 		.4byte	.LASF22
+ 535 0150 D3020000 		.4byte	.LASF22
  536 0154 01       		.byte	0x1
  537 0155 AB       		.byte	0xab
  538 0156 00000000 		.4byte	.LFB2
@@ -1099,7 +1099,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  548 0172 F0000000 		.4byte	0xf0
  549 0176 00       		.byte	0
  550 0177 0C       		.uleb128 0xc
- 551 0178 7C020000 		.4byte	.LASF23
+ 551 0178 02030000 		.4byte	.LASF23
  552 017c 01       		.byte	0x1
  553 017d D2       		.byte	0xd2
  554 017e 00000000 		.4byte	.LFB3
@@ -1115,7 +1115,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  564 019a 4F010000 		.4byte	0x14f
  565 019e 00       		.byte	0
  566 019f 0C       		.uleb128 0xc
- 567 01a0 BB010000 		.4byte	.LASF24
+ 567 01a0 41020000 		.4byte	.LASF24
  568 01a4 01       		.byte	0x1
  569 01a5 EF       		.byte	0xef
  570 01a6 00000000 		.4byte	.LFB4
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  587 01cc 10010000 		.4byte	0x110
  588 01d0 09       		.uleb128 0x9
  589 01d1 22000000 		.4byte	.LVL10
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 20
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 20
 
 
  590 01d5 DD020000 		.4byte	0x2dd
@@ -1150,7 +1150,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  596 01de 00       		.byte	0
  597 01df 00       		.byte	0
  598 01e0 0E       		.uleb128 0xe
- 599 01e1 DF010000 		.4byte	.LASF25
+ 599 01e1 65020000 		.4byte	.LASF25
  600 01e5 01       		.byte	0x1
  601 01e6 1701     		.2byte	0x117
  602 01e8 00000000 		.4byte	.LFB5
@@ -1159,20 +1159,20 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  605 01f1 9C       		.byte	0x9c
  606 01f2 17020000 		.4byte	0x217
  607 01f6 0F       		.uleb128 0xf
- 608 01f7 2B000000 		.4byte	.LASF27
+ 608 01f7 A6000000 		.4byte	.LASF27
  609 01fb 01       		.byte	0x1
  610 01fc 1701     		.2byte	0x117
  611 01fe 83000000 		.4byte	0x83
  612 0202 00000000 		.4byte	.LLST0
  613 0206 10       		.uleb128 0x10
- 614 0207 B1020000 		.4byte	.LASF28
+ 614 0207 37030000 		.4byte	.LASF28
  615 020b 01       		.byte	0x1
  616 020c 1901     		.2byte	0x119
  617 020e 83000000 		.4byte	0x83
  618 0212 21000000 		.4byte	.LLST1
  619 0216 00       		.byte	0
  620 0217 0E       		.uleb128 0xe
- 621 0218 5D030000 		.4byte	.LASF26
+ 621 0218 74030000 		.4byte	.LASF26
  622 021c 01       		.byte	0x1
  623 021d 3001     		.2byte	0x130
  624 021f 00000000 		.4byte	.LFB6
@@ -1181,24 +1181,24 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  627 0228 9C       		.byte	0x9c
  628 0229 4E020000 		.4byte	0x24e
  629 022d 0F       		.uleb128 0xf
- 630 022e 2B000000 		.4byte	.LASF27
+ 630 022e A6000000 		.4byte	.LASF27
  631 0232 01       		.byte	0x1
  632 0233 3001     		.2byte	0x130
  633 0235 83000000 		.4byte	0x83
  634 0239 3F000000 		.4byte	.LLST2
  635 023d 10       		.uleb128 0x10
- 636 023e 06000000 		.4byte	.LASF29
+ 636 023e 0E020000 		.4byte	.LASF29
  637 0242 01       		.byte	0x1
  638 0243 3201     		.2byte	0x132
  639 0245 83000000 		.4byte	0x83
  640 0249 60000000 		.4byte	.LLST3
  641 024d 00       		.byte	0
  642 024e 0E       		.uleb128 0xe
- 643 024f 5B010000 		.4byte	.LASF30
+ 643 024f D6010000 		.4byte	.LASF30
  644 0253 01       		.byte	0x1
  645 0254 4F01     		.2byte	0x14f
  646 0256 00000000 		.4byte	.LFB7
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 21
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 21
 
 
  647 025a 0C000000 		.4byte	.LFE7-.LFB7
@@ -1206,7 +1206,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  649 025f 9C       		.byte	0x9c
  650 0260 73020000 		.4byte	0x273
  651 0264 11       		.uleb128 0x11
- 652 0265 7D010000 		.4byte	.LASF31
+ 652 0265 F8010000 		.4byte	.LASF31
  653 0269 01       		.byte	0x1
  654 026a 4F01     		.2byte	0x14f
  655 026c B5000000 		.4byte	0xb5
@@ -1214,7 +1214,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  657 0271 50       		.byte	0x50
  658 0272 00       		.byte	0
  659 0273 12       		.uleb128 0x12
- 660 0274 0D010000 		.4byte	.LASF32
+ 660 0274 88010000 		.4byte	.LASF32
  661 0278 01       		.byte	0x1
  662 0279 51       		.byte	0x51
  663 027a 6B000000 		.4byte	0x6b
@@ -1222,7 +1222,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  665 027f 03       		.byte	0x3
  666 0280 00000000 		.4byte	UART_PC_initVar
  667 0284 12       		.uleb128 0x12
- 668 0285 11000000 		.4byte	.LASF33
+ 668 0285 8C000000 		.4byte	.LASF33
  669 0289 01       		.byte	0x1
  670 028a 61       		.byte	0x61
  671 028b B5000000 		.4byte	0xb5
@@ -1230,7 +1230,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  673 0290 03       		.byte	0x3
  674 0291 00000000 		.4byte	UART_PC_customIntrHandler
  675 0295 12       		.uleb128 0x12
- 676 0296 5C020000 		.4byte	.LASF34
+ 676 0296 E2020000 		.4byte	.LASF34
  677 029a 01       		.byte	0x1
  678 029b 5A       		.byte	0x5a
  679 029c 77000000 		.4byte	0x77
@@ -1238,36 +1238,36 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  681 02a1 03       		.byte	0x3
  682 02a2 00000000 		.4byte	UART_PC_IntrTxMask
  683 02a6 13       		.uleb128 0x13
- 684 02a7 D6020000 		.4byte	.LASF35
- 685 02ab D6020000 		.4byte	.LASF35
+ 684 02a7 5C030000 		.4byte	.LASF35
+ 685 02ab 5C030000 		.4byte	.LASF35
  686 02af 03       		.byte	0x3
  687 02b0 D6       		.byte	0xd6
  688 02b1 13       		.uleb128 0x13
- 689 02b2 F0000000 		.4byte	.LASF36
- 690 02b6 F0000000 		.4byte	.LASF36
+ 689 02b2 6B010000 		.4byte	.LASF36
+ 690 02b6 6B010000 		.4byte	.LASF36
  691 02ba 04       		.byte	0x4
  692 02bb 4C       		.byte	0x4c
  693 02bc 13       		.uleb128 0x13
- 694 02bd 43010000 		.4byte	.LASF37
- 695 02c1 43010000 		.4byte	.LASF37
+ 694 02bd BE010000 		.4byte	.LASF37
+ 695 02c1 BE010000 		.4byte	.LASF37
  696 02c5 04       		.byte	0x4
  697 02c6 4D       		.byte	0x4d
  698 02c7 13       		.uleb128 0x13
- 699 02c8 A0020000 		.4byte	.LASF38
- 700 02cc A0020000 		.4byte	.LASF38
+ 699 02c8 26030000 		.4byte	.LASF38
+ 700 02cc 26030000 		.4byte	.LASF38
  701 02d0 04       		.byte	0x4
  702 02d1 50       		.byte	0x50
  703 02d2 13       		.uleb128 0x13
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 22
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 22
 
 
- 704 02d3 6F020000 		.4byte	.LASF39
- 705 02d7 6F020000 		.4byte	.LASF39
+ 704 02d3 F5020000 		.4byte	.LASF39
+ 705 02d7 F5020000 		.4byte	.LASF39
  706 02db 03       		.byte	0x3
  707 02dc D8       		.byte	0xd8
  708 02dd 13       		.uleb128 0x13
- 709 02de F6010000 		.4byte	.LASF40
- 710 02e2 F6010000 		.4byte	.LASF40
+ 709 02de 7C020000 		.4byte	.LASF40
+ 710 02e2 7C020000 		.4byte	.LASF40
  711 02e6 03       		.byte	0x3
  712 02e7 DB       		.byte	0xdb
  713 02e8 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  758 002a 16       		.uleb128 0x16
  759 002b 00       		.byte	0
  760 002c 03       		.uleb128 0x3
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 23
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 23
 
 
  761 002d 0E       		.uleb128 0xe
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  815 0064 00       		.byte	0
  816 0065 09       		.uleb128 0x9
  817 0066 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 24
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 24
 
 
  818 0069 01       		.byte	0x1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  872 00a7 01       		.uleb128 0x1
  873 00a8 31       		.uleb128 0x31
  874 00a9 13       		.uleb128 0x13
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 25
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 25
 
 
  875 00aa 01       		.uleb128 0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  929 00e1 13       		.uleb128 0x13
  930 00e2 02       		.uleb128 0x2
  931 00e3 17       		.uleb128 0x17
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 26
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 26
 
 
  932 00e4 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  986              	.LLST0:
  987 0000 00000000 		.4byte	.LVL11
  988 0004 0A000000 		.4byte	.LVL14
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 27
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 27
 
 
  989 0008 0100     		.2byte	0x1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  1043 000e 0000     		.2byte	0
  1044 0010 00000000 		.4byte	.LFB8
  1045 0014 0A000000 		.4byte	.LFE8-.LFB8
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 28
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 28
 
 
  1046 0018 00000000 		.4byte	.LFB9
@@ -1675,242 +1675,243 @@ ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 1
  1093              	.LASF15:
  1094 0000 72656733 		.ascii	"reg32\000"
  1094      3200
- 1095              	.LASF29:
- 1096 0006 74784669 		.ascii	"txFifoCtrl\000"
- 1096      666F4374 
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 29
+ 1095              	.LASF43:
+ 1096 0006 433A5C55 		.ascii	"C:\\Users\\gcristini\\OneDrive - Datalogic S.p.a\\D"
+ 1096      73657273 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 29
 
 
- 1096      726C00
- 1097              	.LASF33:
- 1098 0011 55415254 		.ascii	"UART_PC_customIntrHandler\000"
- 1098      5F50435F 
- 1098      63757374 
- 1098      6F6D496E 
- 1098      74724861 
- 1099              	.LASF27:
- 1100 002b 6C657665 		.ascii	"level\000"
- 1100      6C00
- 1101              	.LASF3:
- 1102 0031 73686F72 		.ascii	"short unsigned int\000"
- 1102      7420756E 
- 1102      7369676E 
- 1102      65642069 
- 1102      6E7400
- 1103              	.LASF41:
- 1104 0044 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1104      43313120 
- 1104      352E342E 
- 1104      31203230 
- 1104      31363036 
- 1105 0077 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
- 1105      20726576 
- 1105      6973696F 
- 1105      6E203233 
- 1105      37373135 
- 1106 00aa 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
- 1106      67202D66 
- 1106      66756E63 
- 1106      74696F6E 
- 1106      2D736563 
- 1107              	.LASF19:
- 1108 00d6 55415254 		.ascii	"UART_PC_ScbModePostEnable\000"
- 1108      5F50435F 
- 1108      5363624D 
- 1108      6F646550 
- 1108      6F737445 
- 1109              	.LASF36:
- 1110 00f0 55415254 		.ascii	"UART_PC_UartPostEnable\000"
+ 1096      5C676372 
+ 1096      69737469 
+ 1096      6E695C4F 
+ 1097 0035 6174615C 		.ascii	"ata\\PhytonWorkspace\\SkorpioTemperatureTest\\PSOC-"
+ 1097      50687974 
+ 1097      6F6E576F 
+ 1097      726B7370 
+ 1097      6163655C 
+ 1098 0065 4669726D 		.ascii	"Firmware\\SerialTemperatureSensor.cydsn\000"
+ 1098      77617265 
+ 1098      5C536572 
+ 1098      69616C54 
+ 1098      656D7065 
+ 1099              	.LASF33:
+ 1100 008c 55415254 		.ascii	"UART_PC_customIntrHandler\000"
+ 1100      5F50435F 
+ 1100      63757374 
+ 1100      6F6D496E 
+ 1100      74724861 
+ 1101              	.LASF27:
+ 1102 00a6 6C657665 		.ascii	"level\000"
+ 1102      6C00
+ 1103              	.LASF3:
+ 1104 00ac 73686F72 		.ascii	"short unsigned int\000"
+ 1104      7420756E 
+ 1104      7369676E 
+ 1104      65642069 
+ 1104      6E7400
+ 1105              	.LASF41:
+ 1106 00bf 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1106      43313120 
+ 1106      352E342E 
+ 1106      31203230 
+ 1106      31363036 
+ 1107 00f2 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1107      20726576 
+ 1107      6973696F 
+ 1107      6E203233 
+ 1107      37373135 
+ 1108 0125 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1108      67202D66 
+ 1108      66756E63 
+ 1108      74696F6E 
+ 1108      2D736563 
+ 1109              	.LASF19:
+ 1110 0151 55415254 		.ascii	"UART_PC_ScbModePostEnable\000"
  1110      5F50435F 
- 1110      55617274 
- 1110      506F7374 
- 1110      456E6162 
- 1111              	.LASF12:
- 1112 0107 666C6F61 		.ascii	"float\000"
- 1112      7400
- 1113              	.LASF32:
- 1114 010d 55415254 		.ascii	"UART_PC_initVar\000"
- 1114      5F50435F 
- 1114      696E6974 
- 1114      56617200 
- 1115              	.LASF1:
- 1116 011d 756E7369 		.ascii	"unsigned char\000"
- 1116      676E6564 
- 1116      20636861 
- 1116      7200
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 30
+ 1110      5363624D 
+ 1110      6F646550 
+ 1110      6F737445 
+ 1111              	.LASF36:
+ 1112 016b 55415254 		.ascii	"UART_PC_UartPostEnable\000"
+ 1112      5F50435F 
+ 1112      55617274 
+ 1112      506F7374 
+ 1112      456E6162 
+ 1113              	.LASF12:
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 30
 
 
- 1117              	.LASF5:
- 1118 012b 6C6F6E67 		.ascii	"long unsigned int\000"
- 1118      20756E73 
- 1118      69676E65 
- 1118      6420696E 
- 1118      7400
- 1119              	.LASF9:
- 1120 013d 75696E74 		.ascii	"uint8\000"
- 1120      3800
- 1121              	.LASF37:
- 1122 0143 55415254 		.ascii	"UART_PC_UartStop\000"
- 1122      5F50435F 
- 1122      55617274 
- 1122      53746F70 
- 1122      00
- 1123              	.LASF13:
- 1124 0154 646F7562 		.ascii	"double\000"
- 1124      6C6500
- 1125              	.LASF30:
- 1126 015b 55415254 		.ascii	"UART_PC_SetCustomInterruptHandler\000"
- 1126      5F50435F 
- 1126      53657443 
- 1126      7573746F 
- 1126      6D496E74 
- 1127              	.LASF31:
- 1128 017d 66756E63 		.ascii	"func\000"
- 1128      00
- 1129              	.LASF2:
- 1130 0182 73686F72 		.ascii	"short int\000"
- 1130      7420696E 
- 1130      7400
- 1131              	.LASF10:
- 1132 018c 75696E74 		.ascii	"uint16\000"
- 1132      313600
- 1133              	.LASF11:
- 1134 0193 75696E74 		.ascii	"uint32\000"
- 1134      333200
- 1135              	.LASF20:
- 1136 019a 55415254 		.ascii	"UART_PC_ScbModeStop\000"
- 1136      5F50435F 
- 1136      5363624D 
- 1136      6F646553 
- 1136      746F7000 
- 1137              	.LASF8:
- 1138 01ae 756E7369 		.ascii	"unsigned int\000"
- 1138      676E6564 
- 1138      20696E74 
- 1138      00
- 1139              	.LASF24:
- 1140 01bb 55415254 		.ascii	"UART_PC_Stop\000"
+ 1114 0182 666C6F61 		.ascii	"float\000"
+ 1114      7400
+ 1115              	.LASF32:
+ 1116 0188 55415254 		.ascii	"UART_PC_initVar\000"
+ 1116      5F50435F 
+ 1116      696E6974 
+ 1116      56617200 
+ 1117              	.LASF1:
+ 1118 0198 756E7369 		.ascii	"unsigned char\000"
+ 1118      676E6564 
+ 1118      20636861 
+ 1118      7200
+ 1119              	.LASF5:
+ 1120 01a6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1120      20756E73 
+ 1120      69676E65 
+ 1120      6420696E 
+ 1120      7400
+ 1121              	.LASF9:
+ 1122 01b8 75696E74 		.ascii	"uint8\000"
+ 1122      3800
+ 1123              	.LASF37:
+ 1124 01be 55415254 		.ascii	"UART_PC_UartStop\000"
+ 1124      5F50435F 
+ 1124      55617274 
+ 1124      53746F70 
+ 1124      00
+ 1125              	.LASF13:
+ 1126 01cf 646F7562 		.ascii	"double\000"
+ 1126      6C6500
+ 1127              	.LASF30:
+ 1128 01d6 55415254 		.ascii	"UART_PC_SetCustomInterruptHandler\000"
+ 1128      5F50435F 
+ 1128      53657443 
+ 1128      7573746F 
+ 1128      6D496E74 
+ 1129              	.LASF31:
+ 1130 01f8 66756E63 		.ascii	"func\000"
+ 1130      00
+ 1131              	.LASF2:
+ 1132 01fd 73686F72 		.ascii	"short int\000"
+ 1132      7420696E 
+ 1132      7400
+ 1133              	.LASF10:
+ 1134 0207 75696E74 		.ascii	"uint16\000"
+ 1134      313600
+ 1135              	.LASF29:
+ 1136 020e 74784669 		.ascii	"txFifoCtrl\000"
+ 1136      666F4374 
+ 1136      726C00
+ 1137              	.LASF11:
+ 1138 0219 75696E74 		.ascii	"uint32\000"
+ 1138      333200
+ 1139              	.LASF20:
+ 1140 0220 55415254 		.ascii	"UART_PC_ScbModeStop\000"
  1140      5F50435F 
- 1140      53746F70 
- 1140      00
- 1141              	.LASF7:
- 1142 01c8 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1142      206C6F6E 
- 1142      6720756E 
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 31
+ 1140      5363624D 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 31
 
 
- 1142      7369676E 
- 1142      65642069 
- 1143              	.LASF25:
- 1144 01df 55415254 		.ascii	"UART_PC_SetRxFifoLevel\000"
+ 1140      6F646553 
+ 1140      746F7000 
+ 1141              	.LASF8:
+ 1142 0234 756E7369 		.ascii	"unsigned int\000"
+ 1142      676E6564 
+ 1142      20696E74 
+ 1142      00
+ 1143              	.LASF24:
+ 1144 0241 55415254 		.ascii	"UART_PC_Stop\000"
  1144      5F50435F 
- 1144      53657452 
- 1144      78466966 
- 1144      6F4C6576 
- 1145              	.LASF40:
- 1146 01f6 4379496E 		.ascii	"CyIntClearPending\000"
- 1146      74436C65 
- 1146      61725065 
- 1146      6E64696E 
- 1146      6700
- 1147              	.LASF21:
- 1148 0208 55415254 		.ascii	"UART_PC_Init\000"
+ 1144      53746F70 
+ 1144      00
+ 1145              	.LASF7:
+ 1146 024e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1146      206C6F6E 
+ 1146      6720756E 
+ 1146      7369676E 
+ 1146      65642069 
+ 1147              	.LASF25:
+ 1148 0265 55415254 		.ascii	"UART_PC_SetRxFifoLevel\000"
  1148      5F50435F 
- 1148      496E6974 
- 1148      00
- 1149              	.LASF17:
- 1150 0215 73697A65 		.ascii	"sizetype\000"
- 1150      74797065 
- 1150      00
- 1151              	.LASF6:
- 1152 021e 6C6F6E67 		.ascii	"long long int\000"
- 1152      206C6F6E 
- 1152      6720696E 
- 1152      7400
- 1153              	.LASF42:
- 1154 022c 47656E65 		.ascii	"Generated_Source\\PSoC4\\UART_PC.c\000"
- 1154      72617465 
- 1154      645F536F 
- 1154      75726365 
- 1154      5C50536F 
- 1155              	.LASF22:
- 1156 024d 55415254 		.ascii	"UART_PC_Enable\000"
- 1156      5F50435F 
- 1156      456E6162 
- 1156      6C6500
- 1157              	.LASF34:
- 1158 025c 55415254 		.ascii	"UART_PC_IntrTxMask\000"
- 1158      5F50435F 
- 1158      496E7472 
- 1158      54784D61 
- 1158      736B00
- 1159              	.LASF39:
- 1160 026f 4379496E 		.ascii	"CyIntDisable\000"
- 1160      74446973 
- 1160      61626C65 
- 1160      00
- 1161              	.LASF23:
- 1162 027c 55415254 		.ascii	"UART_PC_Start\000"
+ 1148      53657452 
+ 1148      78466966 
+ 1148      6F4C6576 
+ 1149              	.LASF40:
+ 1150 027c 4379496E 		.ascii	"CyIntClearPending\000"
+ 1150      74436C65 
+ 1150      61725065 
+ 1150      6E64696E 
+ 1150      6700
+ 1151              	.LASF21:
+ 1152 028e 55415254 		.ascii	"UART_PC_Init\000"
+ 1152      5F50435F 
+ 1152      496E6974 
+ 1152      00
+ 1153              	.LASF17:
+ 1154 029b 73697A65 		.ascii	"sizetype\000"
+ 1154      74797065 
+ 1154      00
+ 1155              	.LASF6:
+ 1156 02a4 6C6F6E67 		.ascii	"long long int\000"
+ 1156      206C6F6E 
+ 1156      6720696E 
+ 1156      7400
+ 1157              	.LASF42:
+ 1158 02b2 47656E65 		.ascii	"Generated_Source\\PSoC4\\UART_PC.c\000"
+ 1158      72617465 
+ 1158      645F536F 
+ 1158      75726365 
+ 1158      5C50536F 
+ 1159              	.LASF22:
+ 1160 02d3 55415254 		.ascii	"UART_PC_Enable\000"
+ 1160      5F50435F 
+ 1160      456E6162 
+ 1160      6C6500
+ 1161              	.LASF34:
+ 1162 02e2 55415254 		.ascii	"UART_PC_IntrTxMask\000"
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\cclL0ySJ.s 			page 32
+
+
  1162      5F50435F 
- 1162      53746172 
- 1162      7400
- 1163              	.LASF18:
- 1164 028a 55415254 		.ascii	"UART_PC_ScbEnableIntr\000"
-ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYB1d6i.s 			page 32
-
-
- 1164      5F50435F 
- 1164      53636245 
- 1164      6E61626C 
- 1164      65496E74 
- 1165              	.LASF38:
- 1166 02a0 55415254 		.ascii	"UART_PC_UartInit\000"
+ 1162      496E7472 
+ 1162      54784D61 
+ 1162      736B00
+ 1163              	.LASF39:
+ 1164 02f5 4379496E 		.ascii	"CyIntDisable\000"
+ 1164      74446973 
+ 1164      61626C65 
+ 1164      00
+ 1165              	.LASF23:
+ 1166 0302 55415254 		.ascii	"UART_PC_Start\000"
  1166      5F50435F 
- 1166      55617274 
- 1166      496E6974 
- 1166      00
- 1167              	.LASF28:
- 1168 02b1 72784669 		.ascii	"rxFifoCtrl\000"
- 1168      666F4374 
- 1168      726C00
- 1169              	.LASF4:
- 1170 02bc 6C6F6E67 		.ascii	"long int\000"
- 1170      20696E74 
+ 1166      53746172 
+ 1166      7400
+ 1167              	.LASF18:
+ 1168 0310 55415254 		.ascii	"UART_PC_ScbEnableIntr\000"
+ 1168      5F50435F 
+ 1168      53636245 
+ 1168      6E61626C 
+ 1168      65496E74 
+ 1169              	.LASF38:
+ 1170 0326 55415254 		.ascii	"UART_PC_UartInit\000"
+ 1170      5F50435F 
+ 1170      55617274 
+ 1170      496E6974 
  1170      00
- 1171              	.LASF14:
- 1172 02c5 63686172 		.ascii	"char\000"
- 1172      00
- 1173              	.LASF16:
- 1174 02ca 6C6F6E67 		.ascii	"long double\000"
- 1174      20646F75 
- 1174      626C6500 
- 1175              	.LASF35:
- 1176 02d6 4379496E 		.ascii	"CyIntEnable\000"
- 1176      74456E61 
- 1176      626C6500 
- 1177              	.LASF0:
- 1178 02e2 7369676E 		.ascii	"signed char\000"
- 1178      65642063 
- 1178      68617200 
- 1179              	.LASF43:
- 1180 02ee 433A5C55 		.ascii	"C:\\Users\\gcristini\\OneDrive - Datalogic S.p.a\\D"
- 1180      73657273 
- 1180      5C676372 
- 1180      69737469 
- 1180      6E695C4F 
- 1181 031d 6F63756D 		.ascii	"ocuments\\PSoC Creator\\Workspace01\\SerialTemperat"
- 1181      656E7473 
- 1181      5C50536F 
- 1181      43204372 
- 1181      6561746F 
- 1182 034d 75726553 		.ascii	"ureSensor.cydsn\000"
- 1182      656E736F 
- 1182      722E6379 
- 1182      64736E00 
+ 1171              	.LASF28:
+ 1172 0337 72784669 		.ascii	"rxFifoCtrl\000"
+ 1172      666F4374 
+ 1172      726C00
+ 1173              	.LASF4:
+ 1174 0342 6C6F6E67 		.ascii	"long int\000"
+ 1174      20696E74 
+ 1174      00
+ 1175              	.LASF14:
+ 1176 034b 63686172 		.ascii	"char\000"
+ 1176      00
+ 1177              	.LASF16:
+ 1178 0350 6C6F6E67 		.ascii	"long double\000"
+ 1178      20646F75 
+ 1178      626C6500 
+ 1179              	.LASF35:
+ 1180 035c 4379496E 		.ascii	"CyIntEnable\000"
+ 1180      74456E61 
+ 1180      626C6500 
+ 1181              	.LASF0:
+ 1182 0368 7369676E 		.ascii	"signed char\000"
+ 1182      65642063 
+ 1182      68617200 
  1183              	.LASF26:
- 1184 035d 55415254 		.ascii	"UART_PC_SetTxFifoLevel\000"
+ 1184 0374 55415254 		.ascii	"UART_PC_SetTxFifoLevel\000"
  1184      5F50435F 
  1184      53657454 
  1184      78466966 
