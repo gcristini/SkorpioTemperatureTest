@@ -1,0 +1,999 @@
+Archive member included to satisfy reference by file (symbol)
+
+.\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\main.o (UART_PC_Start)
+.\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o) (UART_PC_UartInit)
+.\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o (CyIntEnable)
+.\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o) (CySysClkWcoEnabled)
+.\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyBootAsmGnu.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o) (CyDelayCycles)
+.\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o) (UART_PC_SpiUartReadRxData)
+.\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o) (UART_PC_SPI_UART_ISR)
+.\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o) (CySysFlashSetWaitCycles)
+c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o) (__aeabi_uidiv)
+c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                              c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o (__errno)
+c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+                              c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (exit)
+c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                              c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o) (_global_impure_ptr)
+c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                              c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (__libc_init_array)
+c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o) (memcpy)
+c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                              c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+rxData              0x64              .\CortexM0p\ARM_GCC_541\Debug\main.o
+command             0x4               .\CortexM0p\ARM_GCC_541\Debug\main.o
+ch                  0x1               .\CortexM0p\ARM_GCC_541\Debug\main.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .data          0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .text          0x00000000       0x78 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .data          0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .text._exit    0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .text._sbrk    0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .text.UART_PC_ScbModeStop
+                0x00000000        0x8 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .text.UART_PC_Stop
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .text.UART_PC_SetRxFifoLevel
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .text.UART_PC_SetTxFifoLevel
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .text.UART_PC_SetCustomInterruptHandler
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartStop
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartSetRxAddress
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartSetRxAddressMask
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartGetByte
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartSetRtsPolarity
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartSetRtsFifoLevel
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartPutCRLF
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartEnableCts
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartDisableCts
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartSetCtsPolarity
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text.UART_PC_UartSendBreakBlocking
+                0x00000000       0x58 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .bss           0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysClkImoStart
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysClkImoStop
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysClkWriteHfclkDirect
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysEnablePumpClock
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysClkGetSysclkSource
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysClkWriteSysclkDiv
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysClkWriteHfclkDiv
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysGetResetReason
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyDisableInts
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyEnableInts
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyIntGetState
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyIntSetPending
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyIntClearPending
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyIntSetSysVector
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyIntGetSysVector
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyIntGetVector
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyIntGetPriority
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySoftwareReset
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyDelayFreq
+                0x00000000       0x4c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickStop
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickEnableInterrupt
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickEnable
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickDisableInterrupt
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickSetReload
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickGetReload
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickGetValue
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickSetClockSource
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickGetClockSource
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickGetCountFlag
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickServiceCallbacks
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickClear
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickInit
+                0x00000000       0x44 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickStart
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickSetCallback
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysTickGetCallback
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CyGetUniqueId
+                0x00000000       0x70 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysSetRamAccessArbPriority
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysSetFlashAccessArbPriority
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysSetDmacAccessArbPriority
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysSetPeripheralAccessArbPriority
+                0x00000000       0x4c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysPrbSetBgGain
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysPrbEnableDeepsleepVddaRef
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysPrbDisableDeepsleepVddaRef
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysPrbEnableVddaRef
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysPrbDisableVddaRef
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysPrbSetBgBufferTrim
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text.CySysPrbGetBgBufferTrim
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkIloStart
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkIloStop
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkIloStartMeasurement
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkIloStopMeasurement
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkIloCompensate
+                0x00000000      0x10c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkWcoStart
+                0x00000000       0x40 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkWcoStop
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkWcoSetPowerMode
+                0x00000000       0x4c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkWcoClockOutSelect
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtGetEnabledStatus
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtEnable
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtSetMatch
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtGetMatch
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtGetCount
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtSetIgnoreBits
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtGetIgnoreBits
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtClearInterrupt
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtMaskInterrupt
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtUnmaskInterrupt
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtSetInterruptCallback
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtGetInterruptCallback
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysWdtIsr
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerGetEnabledStatus
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerSetMode
+                0x00000000       0x40 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerGetMode
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerSetClearOnMatch
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerGetClearOnMatch
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerEnable
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerDisable
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerSetCascade
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerGetCascade
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerSetMatch
+                0x00000000       0x54 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerSetToggleBit
+                0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerGetToggleBit
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerGetMatch
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerGetCount
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerGetInterruptSource
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerSetInterruptCallback
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerGetInterruptCallback
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerEnableIsr
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerDisableIsr
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerResetCounters
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerDelayUntilMatch
+                0x00000000       0x6c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysTimerDelay
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .rodata        0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyBootAsmGnu.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .text.UART_PC_SpiUartClearRxBuffer
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .text.UART_PC_SpiUartPutArray
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .text.UART_PC_SpiUartGetTxBufferSize
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .text.UART_PC_SpiUartClearTxBuffer
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .text.UART_PC_SpiUartDisableIntRx
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .text.UART_PC_SpiUartDisableIntTx
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .bss           0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .text.CySysFlashClockBackup
+                0x00000000       0x64 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .text.CySysFlashClockConfig
+                0x00000000       0x54 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .text.CySysFlashClockRestore
+                0x00000000       0x64 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .text.CySysFlashWriteRow
+                0x00000000      0x118 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .text.CySysSFlashWriteUserRow
+                0x00000000      0x108 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .text          0x00000000      0x114 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .text          0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .text.memcpy   0x00000000       0x12 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .text.memset   0x00000000       0x10 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00008000         xr
+ram              0x20000000         0x00001000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+START GROUP
+LOAD .\CortexM0p\ARM_GCC_541\Debug\main.o
+LOAD .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+LOAD .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+LOAD .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+LOAD .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libnosys.a
+END GROUP
+                0x00000000                CY_APPL_ORIGIN = 0x0
+                0x00000080                CY_FLASH_ROW_SIZE = 0x80
+                0x00000001                CY_APPL_NUM = 0x1
+                0x00000001                CY_APPL_MAX = 0x1
+                0x00000040                CY_METADATA_SIZE = 0x40
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
+                0x00000000                CY_APP_FOR_STACK_AND_COPIER = 0x0
+                [!provide]                PROVIDE (__cy_heap_start, _end)
+                0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
+                0x20001000                PROVIDE (__cy_stack, (ORIGIN (ram) + LENGTH (ram)))
+                [!provide]                PROVIDE (__cy_heap_end, (__cy_stack - 0x400))
+
+.cybootloader   0x00000000        0x0
+ *(.cybootloader)
+                0x00000000                appl1_start = CY_APPL_ORIGIN?CY_APPL_ORIGIN:ALIGN (CY_FLASH_ROW_SIZE)
+                0x00003f80                appl2_start = (appl1_start + ALIGN ((((LENGTH (rom) - appl1_start) - (0x2 * CY_FLASH_ROW_SIZE)) / 0x2), CY_FLASH_ROW_SIZE))
+                0x00000000                appl_start = (CY_APPL_NUM == 0x1)?appl1_start:appl2_start
+                0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
+                0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
+
+.text           0x00000000      0x990
+ CREATE_OBJECT_SYMBOLS
+                0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
+ *(.romvectors)
+ .romvectors    0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x00000000                RomVectors
+                0x00000001                ASSERT ((. != __cy_interrupt_vector), No interrupt vector)
+                0x00000001                ASSERT (CY_APPL_ORIGIN?(SIZEOF (.cybootloader) <= CY_APPL_ORIGIN):0x1, Wrong image location)
+                0x00000010                PROVIDE (__cy_reset, Reset)
+ *(.text.Reset)
+ .text.Reset    0x00000010        0xc .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x00000010                Reset
+                0x00000001                ASSERT ((. != __cy_reset), No reset code)
+ *(.psocinit)
+ .psocinit      0x0000001c       0xac .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000080                cyfitter_cfg
+                0x00000100                . = MAX (., 0x100)
+ *fill*         0x000000c8       0x38 
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x00000100       0x60 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .text.init     0x00000160        0x8 .\CortexM0p\ARM_GCC_541\Debug\main.o
+                0x00000160                init
+ .text.pollUart
+                0x00000168       0x64 .\CortexM0p\ARM_GCC_541\Debug\main.o
+                0x00000168                pollUart
+ .text.main     0x000001cc       0x18 .\CortexM0p\ARM_GCC_541\Debug\main.o
+                0x000001cc                main
+ .text.AnalogSetDefault
+                0x000001e4       0x18 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.IntDefaultHandler
+                0x000001fc       0x10 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x000001fc                IntDefaultHandler
+ .text.Start_c  0x0000020c       0x48 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x0000020c                Start_c
+ .text.initialize_psoc
+                0x00000254       0x40 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x00000254                initialize_psoc
+ .text.UART_PC_ScbEnableIntr
+                0x00000294        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .text.UART_PC_ScbModePostEnable
+                0x000002a0        0x8 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .text.UART_PC_Init
+                0x000002a8        0x8 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+                0x000002a8                UART_PC_Init
+ .text.UART_PC_Enable
+                0x000002b0       0x1c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+                0x000002b0                UART_PC_Enable
+ .text.UART_PC_Start
+                0x000002cc       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+                0x000002cc                UART_PC_Start
+ .text.UART_PC_UartInit
+                0x000002ec       0xc4 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+                0x000002ec                UART_PC_UartInit
+ .text.UART_PC_UartPostEnable
+                0x000003b0       0x2c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+                0x000003b0                UART_PC_UartPostEnable
+ .text.UART_PC_UartGetChar
+                0x000003dc       0x2c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+                0x000003dc                UART_PC_UartGetChar
+ .text.UART_PC_UartPutString
+                0x00000408       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+                0x00000408                UART_PC_UartPutString
+ .text.CySysClkImoDisableWcoLock
+                0x00000420       0x4c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x00000420                CySysClkImoDisableWcoLock
+ .text.CySysClkImoGetWcoLock
+                0x0000046c       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x0000046c                CySysClkImoGetWcoLock
+ .text.CyIntEnable
+                0x00000480       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x00000480                CyIntEnable
+ .text.CyIntDisable
+                0x00000494       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x00000494                CyIntDisable
+ .text.CyHalt   0x000004a8        0x4 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x000004a8                CyHalt
+ .text.CyIntSetVector
+                0x000004ac       0x24 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x000004ac                CyIntSetVector
+ .text.CyIntSetPriority
+                0x000004d0       0x4c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x000004d0                CyIntSetPriority
+ .text.CyDelay  0x0000051c       0x30 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x0000051c                CyDelay
+ .text.CySysClkImoEnableWcoLock
+                0x0000054c       0xd0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x0000054c                CySysClkImoEnableWcoLock
+ .text.CySysClkWriteImoFreq
+                0x0000061c       0xd8 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x0000061c                CySysClkWriteImoFreq
+ .text.CyDelayUs
+                0x000006f4       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x000006f4                CyDelayUs
+ .text.CySysClkGetTimerSource
+                0x00000708       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .text.CySysClkWcoEnabled
+                0x00000718       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+                0x00000718                CySysClkWcoEnabled
+ .text.CySysWdtDisable
+                0x0000072c       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+                0x0000072c                CySysWdtDisable
+ .text.CySysClkSetTimerSource
+                0x0000073c       0x68 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+                0x0000073c                CySysClkSetTimerSource
+ .text.CySysTimerClearInterrupt
+                0x000007a4       0x2c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+                0x000007a4                CySysTimerClearInterrupt
+ .text.CySysTimerIsr
+                0x000007d0       0xa4 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+                0x000007d0                CySysTimerIsr
+ *fill*         0x00000874        0x4 
+ .text          0x00000878       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyBootAsmGnu.o)
+                0x00000878                CyDelayCycles
+                0x0000088a                CyEnterCriticalSection
+                0x00000892                CyExitCriticalSection
+ .text.UART_PC_SpiUartReadRxData
+                0x00000898        0xc .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+                0x00000898                UART_PC_SpiUartReadRxData
+ .text.UART_PC_SpiUartGetRxBufferSize
+                0x000008a4       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+                0x000008a4                UART_PC_SpiUartGetRxBufferSize
+ .text.UART_PC_SpiUartWriteTxData
+                0x000008b4       0x1c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+                0x000008b4                UART_PC_SpiUartWriteTxData
+ .text.UART_PC_SPI_UART_ISR
+                0x000008d0       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+                0x000008d0                UART_PC_SPI_UART_ISR
+ .text.CySysFlashSetWaitCycles
+                0x000008e4       0x54 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+                0x000008e4                CySysFlashSetWaitCycles
+ .text.__errno  0x00000938        0xc c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x00000938                __errno
+ .text.__libc_init_array
+                0x00000944       0x4c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x00000944                __libc_init_array
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00000990        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000990        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000990        0x0 linker stubs
+ *(.bootloader)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x00000990        0x0
+ .v4_bx         0x00000990        0x0 linker stubs
+
+.iplt           0x00000990        0x0
+ .iplt          0x00000990        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x00000990        0x4
+ *(.eh_frame)
+ .eh_frame      0x00000990        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .eh_frame      0x00000990        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+                [!provide]                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000994                __exidx_end = .
+
+.rodata         0x00000994       0x54
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.4
+                0x00000994       0x18 .\CortexM0p\ARM_GCC_541\Debug\main.o
+                                 0x15 (size before relaxing)
+ .rodata.str1.1
+                0x000009ac        0x2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x000009b0                . = ALIGN (0x4)
+ *fill*         0x000009ae        0x2 
+ *(.init)
+ .init          0x000009b0        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x000009b0                _init
+ .init          0x000009b4        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x000009bc                . = ALIGN (0x4)
+                0x000009bc                __preinit_array_start = .
+ *(.preinit_array)
+                0x000009bc                __preinit_array_end = .
+                0x000009bc                . = ALIGN (0x4)
+                0x000009bc                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x000009bc        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .init_array    0x000009c0        0x4 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x000009c4                __init_array_end = .
+                0x000009c4                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x000009c4        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x000009c4                _fini
+ .fini          0x000009c8        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x000009d0                . = ALIGN (0x4)
+                0x000009d0                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x000009d0        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x000009d4                __fini_array_end = .
+                0x000009d4                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x000009d4                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x000009d4                . = ALIGN (0x4)
+                0x000009d4                __cy_regions = .
+                0x000009d4        0x4 LONG 0x9e8 __cy_region_init_ram
+                0x000009d8        0x4 LONG 0x200000a8 __cy_region_start_data
+                0x000009dc        0x4 LONG 0x80 __cy_region_init_size_ram
+                0x000009e0        0x4 LONG 0xb0 __cy_region_zero_size_ram
+                0x000009e4                __cy_regions_end = .
+                0x000009e8                . = ALIGN (0x8)
+ *fill*         0x000009e4        0x4 
+                0x000009e8                _etext = .
+
+.cy_checksum_exclude
+                0x000009e8        0x0
+ *(.cy_checksum_exclude)
+
+.ramvectors     0x20000000       0xa4
+                0x20000000                __cy_region_start_ram = .
+ *(.ramvectors)
+ .ramvectors    0x20000000       0xa4 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x20000000                CyRamVectors
+
+.noinit
+ *(.noinit)
+
+.data           0x200000a8       0x80 load address 0x000009e8
+                0x200000a8                __cy_region_start_data = .
+ *(.jcr)
+ .jcr           0x200000a8        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .jcr           0x200000a8        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x200000ac       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                0x200000ac                CySysClkPumpConfig
+                0x200000b0                cydelay32kMs
+                0x200000b4                cydelayFreqKhz
+                0x200000b8                cydelayFreqMhz
+                0x200000bc                cydelayFreqHz
+ .data          0x200000c0        0x4 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .data.impure_data
+                0x200000c4       0x60 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x20000124        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x20000124                _impure_ptr
+                0x20000128                . = ALIGN (0x8)
+ *(.ram)
+                0x20000128                _edata = .
+
+.igot.plt       0x20000128        0x0 load address 0x00000a68
+ .igot.plt      0x20000128        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+
+.bss            0x20000128       0xb0 load address 0x00000a68
+                0x20000128                PROVIDE (__bss_start__, .)
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x20000128       0x1c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .bss           0x20000144        0x1 .\CortexM0p\ARM_GCC_541\Debug\main.o
+                0x20000144                rxDataIndex
+ *fill*         0x20000145        0x3 
+ .bss           0x20000148        0xa .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+                0x20000148                UART_PC_initVar
+                0x2000014c                UART_PC_customIntrHandler
+                0x20000150                UART_PC_IntrTxMask
+ *fill*         0x20000152        0x2 
+ .bss           0x20000154       0x18 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ *(COMMON)
+ COMMON         0x2000016c       0x69 .\CortexM0p\ARM_GCC_541\Debug\main.o
+                0x2000016c                rxData
+                0x200001d0                command
+                0x200001d4                ch
+                0x200001d8                . = ALIGN (0x8)
+ *fill*         0x200001d5        0x3 
+ *(.ram.b)
+                0x200001d8                _end = .
+                0x200001d8                __end = .
+                0x200001d8                PROVIDE (end, .)
+                0x200001d8                PROVIDE (__bss_end__, .)
+                0x000009e8                __cy_region_init_ram = LOADADDR (.data)
+                0x00000080                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x000000b0                __cy_region_zero_size_ram = (_end - _edata)
+
+.heap           0x200001d8       0x80 load address 0x00000a68
+                0x200001d8                . = _end
+                0x20000258                . = (. + 0x80)
+ *fill*         0x200001d8       0x80 
+                0x20000258                __cy_heap_limit = .
+
+.stack          0x20000c00      0x400
+                0x20000c00                __cy_stack_limit = .
+                0x20001000                . = (. + 0x400)
+ *fill*         0x20000c00      0x400 
+                0x00000001                ASSERT ((__cy_stack_limit >= __cy_heap_limit), region RAM overflowed with stack)
+                0x00000000                cy_checksum_exclude_size = (CY_APPL_LOADABLE == 0x1)?SIZEOF (.cy_checksum_exclude):0x0
+                0x00000001                ASSERT ((cy_checksum_exclude_size <= CY_CHECKSUM_EXCLUDE_SIZE), CY_BOOT: Section .cy_checksum_exclude size exceedes specified limit.)
+                0x00007fc0                cyloadermeta_start = (cy_project_type_bootloader || cy_project_type_app_for_stack_and_copier)?(LENGTH (rom) - CY_METADATA_SIZE):0xf0000000
+
+.cyloadermeta
+ *(.cyloadermeta)
+                0x00007fc0                cyloadablemeta_start = cy_project_type_app_for_stack_and_copier?((LENGTH (rom) - CY_FLASH_ROW_SIZE) - CY_METADATA_SIZE):((LENGTH (rom) - (CY_FLASH_ROW_SIZE * (CY_APPL_NUM - 0x1))) - CY_METADATA_SIZE)
+
+.cyloadablemeta
+ *(.cyloadablemeta)
+
+.cyflashprotect
+                0x90400000       0x20
+ *(.cyflashprotect)
+ .cyflashprotect
+                0x90400000       0x20 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+                0x90400000                cy_meta_flashprotect
+
+.cymeta         0x90500000        0xc
+ *(.cymeta)
+ .cymeta        0x90500000        0xc .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+                0x90500000                cy_metadata
+
+.cychipprotect  0x90600000        0x1
+ *(.cychipprotect)
+ .cychipprotect
+                0x90600000        0x1 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+                0x90600000                cy_meta_chipprotect
+
+.rel.dyn        0x00000a68        0x0 load address 0x90600004
+ .rel.iplt      0x00000a68        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x630
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_aranges
+                0x00000030       0x30 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_aranges
+                0x00000060       0x18 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_aranges
+                0x00000078       0x48 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_aranges
+                0x000000c0       0x68 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .debug_aranges
+                0x00000128       0x90 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .debug_aranges
+                0x000001b8      0x1e8 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .debug_aranges
+                0x000003a0      0x1a8 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .debug_aranges
+                0x00000548       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x00000568       0x60 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .debug_aranges
+                0x000005c8       0x20 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .debug_aranges
+                0x000005e8       0x48 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x313a
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x1ab .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_info    0x000001ab      0x170 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x0000031b       0xf8 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00000413      0x3a5 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_info    0x000007b8      0x2e9 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .debug_info    0x00000aa1      0x421 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .debug_info    0x00000ec2      0xdc0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .debug_info    0x00001c82      0xd06 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .debug_info    0x00002988       0xbd .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyBootAsmGnu.o)
+ .debug_info    0x00002a45      0x220 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .debug_info    0x00002c65       0xbe .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .debug_info    0x00002d23      0x417 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+
+.debug_abbrev   0x00000000      0xdbb
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0xfe .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_abbrev  0x000000fe       0xc6 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x000001c4       0x5d .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x00000221      0x1d0 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_abbrev  0x000003f1      0x118 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .debug_abbrev  0x00000509      0x145 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .debug_abbrev  0x0000064e      0x1f5 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .debug_abbrev  0x00000843      0x207 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .debug_abbrev  0x00000a4a       0x14 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000a5e      0x14f .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .debug_abbrev  0x00000bad       0x70 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .debug_abbrev  0x00000c1d      0x19e .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+
+.debug_line     0x00000000     0x177b
+ *(.debug_line)
+ .debug_line    0x00000000       0xc0 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_line    0x000000c0       0xa6 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x00000166      0x141 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x000002a7      0x247 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_line    0x000004ee      0x142 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .debug_line    0x00000630      0x1e6 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .debug_line    0x00000816      0x5bb .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .debug_line    0x00000dd1      0x5c1 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .debug_line    0x00001392       0x68 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyBootAsmGnu.o)
+ .debug_line    0x000013fa      0x11d .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .debug_line    0x00001517       0x83 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .debug_line    0x0000159a      0x1e1 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+
+.debug_frame    0x00000000      0xf98
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x64 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_frame   0x00000064       0x5c .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x000000c0       0xbc .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_frame   0x0000017c      0x104 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .debug_frame   0x00000280      0x154 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .debug_frame   0x000003d4      0x4e0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .debug_frame   0x000008b4      0x484 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .debug_frame   0x00000d38       0xb0 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .debug_frame   0x00000de8       0x2c .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .debug_frame   0x00000e14       0xa8 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .debug_frame   0x00000ebc       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000edc       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00000efc       0x28 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00000f24       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00000f50       0x28 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00000f78       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+
+.debug_str      0x00000000     0x16c4
+ *(.debug_str)
+ .debug_str     0x00000000      0x1df .\CortexM0p\ARM_GCC_541\Debug\main.o
+                                0x21f (size before relaxing)
+ .debug_str     0x000001df       0xa3 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x24f (size before relaxing)
+ .debug_str     0x00000282       0x63 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+                                0x1f9 (size before relaxing)
+ .debug_str     0x000002e5      0x156 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                                0x340 (size before relaxing)
+ .debug_str     0x0000043b      0x19b .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+                                0x374 (size before relaxing)
+ .debug_str     0x000005d6      0x1fb .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+                                0x468 (size before relaxing)
+ .debug_str     0x000007d1      0x649 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+                                0x8a2 (size before relaxing)
+ .debug_str     0x00000e1a      0x64b .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+                                0x8ca (size before relaxing)
+ .debug_str     0x00001465       0xf8 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+                                0x31d (size before relaxing)
+ .debug_str     0x0000155d       0x43 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+                                0x216 (size before relaxing)
+ .debug_str     0x000015a0      0x124 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+                                0x353 (size before relaxing)
+
+.debug_loc      0x00000000     0x18e6
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x14f .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_loc     0x0000014f       0x7e .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .debug_loc     0x000001cd      0x223 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .debug_loc     0x000003f0      0x81b .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .debug_loc     0x00000c0b      0xa88 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .debug_loc     0x00001693       0x96 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .debug_loc     0x00001729      0x1bd .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000      0x558
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_ranges  0x00000020       0x20 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_ranges  0x00000040       0x38 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_ranges  0x00000078       0x58 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .debug_ranges  0x000000d0       0x80 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .debug_ranges  0x00000150      0x1d8 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .debug_ranges  0x00000328      0x198 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .debug_ranges  0x000004c0       0x50 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .debug_ranges  0x00000510       0x10 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .debug_ranges  0x00000520       0x38 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e .\CortexM0p\ARM_GCC_541\Debug\main.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x28
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1e c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .ARM.attributes
+                0x0000001e       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.attributes
+                0x00000065       0x32 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .ARM.attributes
+                0x00000097       0x32 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .ARM.attributes
+                0x000000c9       0x32 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .ARM.attributes
+                0x000000fb       0x32 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .ARM.attributes
+                0x0000012d       0x32 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC.o)
+ .ARM.attributes
+                0x0000015f       0x32 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_UART.o)
+ .ARM.attributes
+                0x00000191       0x32 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLib.o)
+ .ARM.attributes
+                0x000001c3       0x32 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyLFClk.o)
+ .ARM.attributes
+                0x000001f5       0x22 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyBootAsmGnu.o)
+ .ARM.attributes
+                0x00000217       0x32 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART.o)
+ .ARM.attributes
+                0x00000249       0x32 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(UART_PC_SPI_UART_INT.o)
+ .ARM.attributes
+                0x0000027b       0x32 .\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.a(CyFlash.o)
+ .ARM.attributes
+                0x000002ad       0x1e c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000002cb       0x1e c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x000002e9       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x00000315       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000341       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000036d       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000399       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x000003c5       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000003f1       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .ARM.attributes
+                0x0000041d       0x1e c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn\CortexM0p\ARM_GCC_541\Debug\SerialTemperatureSensor.elf elf32-littlearm)

@@ -1,0 +1,9 @@
+C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SerialTemperatureSensor.cydsn\SerialTemperatureSensor.cyprj|c5e78448-f0bf-44c9-b641-9a0ea1e372f3
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|9ec8eb5a-6790-4bce-96c3-278d9bff7175
+C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|7dbab742-6321-4f2d-b331-8557cf2feb5a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|27e5672f-8e9f-4c47-86da-28b6fa07e7e6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|66cddb07-9006-47f7-8095-bbaaa7c30113
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|eaa2ef35-32d1-4f33-b132-40dc81bbb457
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\dev\psoc4\PSoC4AnalogDevice\psoc4arch.cydsn\psoc4arch.cyprj|90fe1c7d-318c-433c-a146-31c3b96ef2cc
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|5706dbd6-25cb-443e-9800-3d2b5ad8f98d
+C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\Workspace01\SCB_UartComm01.cydsn\SCB_UartComm01.cyprj|fcc4c8b9-eaba-4260-a983-8b5991710056

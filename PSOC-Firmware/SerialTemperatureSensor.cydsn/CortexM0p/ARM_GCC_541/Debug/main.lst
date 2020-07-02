@@ -1,0 +1,941 @@
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.init,"ax",%progbits
+  20              		.align	2
+  21              		.global	init
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	init, %function
+  25              	init:
+  26              	.LFB34:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include <unistd.h>
+  14:main.c        **** #define BUFFER_SIZE 100u
+  15:main.c        **** 
+  16:main.c        **** void init(void);
+  17:main.c        **** void pollUart(void);
+  18:main.c        **** 
+  19:main.c        **** 
+  20:main.c        **** uint8 ch;
+  21:main.c        **** uint8 rxData[BUFFER_SIZE];
+  22:main.c        **** uint8 rxDataIndex = 0u;
+  23:main.c        **** uint8 *command;
+  24:main.c        **** 
+  25:main.c        **** int main(void)
+  26:main.c        **** {
+  27:main.c        ****     
+  28:main.c        ****     /* Initialization */
+  29:main.c        ****     init();
+  30:main.c        ****     
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 2
+
+
+  31:main.c        ****     /* Transmit String through UART TX Line */
+  32:main.c        ****     UART_PC_UartPutString("CY8CKIT-041 USB-UART");
+  33:main.c        ****     
+  34:main.c        ****     for (;;)
+  35:main.c        ****     {
+  36:main.c        ****            
+  37:main.c        ****        pollUart();
+  38:main.c        ****     }
+  39:main.c        **** }
+  40:main.c        **** 
+  41:main.c        **** 
+  42:main.c        **** void init (void)
+  43:main.c        **** {
+  28              		.loc 1 43 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  44:main.c        ****     
+  45:main.c        ****     /* Init UART */
+  46:main.c        ****     UART_PC_Start();
+  36              		.loc 1 46 0
+  37 0002 FFF7FEFF 		bl	UART_PC_Start
+  38              	.LVL0:
+  47:main.c        **** }
+  39              		.loc 1 47 0
+  40              		@ sp needed
+  41 0006 10BD     		pop	{r4, pc}
+  42              		.cfi_endproc
+  43              	.LFE34:
+  44              		.size	init, .-init
+  45              		.section	.text.pollUart,"ax",%progbits
+  46              		.align	2
+  47              		.global	pollUart
+  48              		.code	16
+  49              		.thumb_func
+  50              		.type	pollUart, %function
+  51              	pollUart:
+  52              	.LFB35:
+  48:main.c        **** 
+  49:main.c        **** void pollUart(void)
+  50:main.c        **** {
+  53              		.loc 1 50 0
+  54              		.cfi_startproc
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57 0000 10B5     		push	{r4, lr}
+  58              		.cfi_def_cfa_offset 8
+  59              		.cfi_offset 4, -8
+  60              		.cfi_offset 14, -4
+  51:main.c        ****      /* Get received character or zero if nothing has been received yet */
+  52:main.c        ****         ch = UART_PC_UartGetChar();
+  61              		.loc 1 52 0
+  62 0002 FFF7FEFF 		bl	UART_PC_UartGetChar
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 3
+
+
+  63              	.LVL1:
+  64 0006 C0B2     		uxtb	r0, r0
+  65 0008 124B     		ldr	r3, .L7
+  66 000a 1870     		strb	r0, [r3]
+  53:main.c        ****         if (0u != ch)
+  67              		.loc 1 53 0
+  68 000c 0028     		cmp	r0, #0
+  69 000e 20D0     		beq	.L2
+  54:main.c        ****         {
+  55:main.c        ****             //UART_PC_UartPutChar(ch);
+  56:main.c        ****             
+  57:main.c        ****             /* Store the last received char */
+  58:main.c        ****             rxData[rxDataIndex] = ch;
+  70              		.loc 1 58 0
+  71 0010 114B     		ldr	r3, .L7+4
+  72 0012 1B78     		ldrb	r3, [r3]
+  73 0014 114A     		ldr	r2, .L7+8
+  74 0016 D054     		strb	r0, [r2, r3]
+  59:main.c        ****             
+  60:main.c        ****             
+  61:main.c        ****             if (ch == '\r')
+  75              		.loc 1 61 0
+  76 0018 0D28     		cmp	r0, #13
+  77 001a 16D1     		bne	.L4
+  62:main.c        ****             {  
+  63:main.c        ****                 /* Insert the string terminator character */
+  64:main.c        ****                rxData[rxDataIndex] = '\0'; 
+  78              		.loc 1 64 0
+  79 001c 1000     		movs	r0, r2
+  80 001e 0024     		movs	r4, #0
+  81 0020 D454     		strb	r4, [r2, r3]
+  65:main.c        **** 
+  66:main.c        ****                /* Point to buffer */
+  67:main.c        ****                command = rxData;
+  82              		.loc 1 67 0
+  83 0022 0F4B     		ldr	r3, .L7+12
+  84 0024 1A60     		str	r2, [r3]
+  68:main.c        ****                UART_PC_UartPutString((const char*) command);
+  85              		.loc 1 68 0
+  86 0026 FFF7FEFF 		bl	UART_PC_UartPutString
+  87              	.LVL2:
+  69:main.c        ****             
+  70:main.c        ****                 /* Clear buffer and index */
+  71:main.c        ****                 for (rxDataIndex=0; rxDataIndex <= BUFFER_SIZE; rxDataIndex++)
+  88              		.loc 1 71 0
+  89 002a 0B4B     		ldr	r3, .L7+4
+  90 002c 1C70     		strb	r4, [r3]
+  91 002e 05E0     		b	.L5
+  92              	.L6:
+  72:main.c        ****                 {
+  73:main.c        ****                     rxData[rxDataIndex] = 0u;
+  93              		.loc 1 73 0 discriminator 3
+  94 0030 0021     		movs	r1, #0
+  95 0032 0A4A     		ldr	r2, .L7+8
+  96 0034 D154     		strb	r1, [r2, r3]
+  71:main.c        ****                 {
+  97              		.loc 1 71 0 discriminator 3
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 4
+
+
+  98 0036 0133     		adds	r3, r3, #1
+  99 0038 074A     		ldr	r2, .L7+4
+ 100 003a 1370     		strb	r3, [r2]
+ 101              	.L5:
+  71:main.c        ****                 {
+ 102              		.loc 1 71 0 is_stmt 0 discriminator 1
+ 103 003c 064B     		ldr	r3, .L7+4
+ 104 003e 1B78     		ldrb	r3, [r3]
+ 105 0040 642B     		cmp	r3, #100
+ 106 0042 F5D9     		bls	.L6
+  74:main.c        ****                 }               
+  75:main.c        ****                 
+  76:main.c        ****                 rxDataIndex = -1;
+ 107              		.loc 1 76 0 is_stmt 1
+ 108 0044 FF22     		movs	r2, #255
+ 109 0046 044B     		ldr	r3, .L7+4
+ 110 0048 1A70     		strb	r2, [r3]
+ 111              	.L4:
+  77:main.c        ****                                 
+  78:main.c        ****             }
+  79:main.c        ****             
+  80:main.c        ****             rxDataIndex++;
+ 112              		.loc 1 80 0
+ 113 004a 034A     		ldr	r2, .L7+4
+ 114 004c 1378     		ldrb	r3, [r2]
+ 115 004e 0133     		adds	r3, r3, #1
+ 116 0050 1370     		strb	r3, [r2]
+ 117              	.L2:
+  81:main.c        ****             
+  82:main.c        ****         }
+  83:main.c        **** }
+ 118              		.loc 1 83 0
+ 119              		@ sp needed
+ 120 0052 10BD     		pop	{r4, pc}
+ 121              	.L8:
+ 122              		.align	2
+ 123              	.L7:
+ 124 0054 00000000 		.word	ch
+ 125 0058 00000000 		.word	.LANCHOR0
+ 126 005c 00000000 		.word	rxData
+ 127 0060 00000000 		.word	command
+ 128              		.cfi_endproc
+ 129              	.LFE35:
+ 130              		.size	pollUart, .-pollUart
+ 131              		.section	.text.main,"ax",%progbits
+ 132              		.align	2
+ 133              		.global	main
+ 134              		.code	16
+ 135              		.thumb_func
+ 136              		.type	main, %function
+ 137              	main:
+ 138              	.LFB33:
+  26:main.c        ****     
+ 139              		.loc 1 26 0
+ 140              		.cfi_startproc
+ 141              		@ Volatile: function does not return.
+ 142              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 5
+
+
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144 0000 10B5     		push	{r4, lr}
+ 145              		.cfi_def_cfa_offset 8
+ 146              		.cfi_offset 4, -8
+ 147              		.cfi_offset 14, -4
+  29:main.c        ****     
+ 148              		.loc 1 29 0
+ 149 0002 FFF7FEFF 		bl	init
+ 150              	.LVL3:
+  32:main.c        ****     
+ 151              		.loc 1 32 0
+ 152 0006 0348     		ldr	r0, .L11
+ 153 0008 FFF7FEFF 		bl	UART_PC_UartPutString
+ 154              	.LVL4:
+ 155              	.L10:
+  37:main.c        ****     }
+ 156              		.loc 1 37 0 discriminator 1
+ 157 000c FFF7FEFF 		bl	pollUart
+ 158              	.LVL5:
+ 159 0010 FCE7     		b	.L10
+ 160              	.L12:
+ 161 0012 C046     		.align	2
+ 162              	.L11:
+ 163 0014 00000000 		.word	.LC4
+ 164              		.cfi_endproc
+ 165              	.LFE33:
+ 166              		.size	main, .-main
+ 167              		.comm	command,4,4
+ 168              		.global	rxDataIndex
+ 169              		.comm	rxData,100,4
+ 170              		.comm	ch,1,1
+ 171              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 172              		.align	2
+ 173              	.LC4:
+ 174 0000 43593843 		.ascii	"CY8CKIT-041 USB-UART\000"
+ 174      4B49542D 
+ 174      30343120 
+ 174      5553422D 
+ 174      55415254 
+ 175              		.bss
+ 176              		.set	.LANCHOR0,. + 0
+ 177              		.type	rxDataIndex, %object
+ 178              		.size	rxDataIndex, 1
+ 179              	rxDataIndex:
+ 180 0000 00       		.space	1
+ 181              		.text
+ 182              	.Letext0:
+ 183              		.file 2 "Generated_Source\\PSoC4/UART_PC.h"
+ 184              		.file 3 "Generated_Source\\PSoC4/UART_PC_SPI_UART.h"
+ 185              		.file 4 "Generated_Source\\PSoC4/cytypes.h"
+ 186              		.section	.debug_info,"",%progbits
+ 187              	.Ldebug_info0:
+ 188 0000 A7010000 		.4byte	0x1a7
+ 189 0004 0400     		.2byte	0x4
+ 190 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 191 000a 04       		.byte	0x4
+ 192 000b 01       		.uleb128 0x1
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 6
+
+
+ 193 000c F9000000 		.4byte	.LASF22
+ 194 0010 0C       		.byte	0xc
+ 195 0011 20000000 		.4byte	.LASF23
+ 196 0015 5E000000 		.4byte	.LASF24
+ 197 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 198 001d 00000000 		.4byte	0
+ 199 0021 00000000 		.4byte	.Ldebug_line0
+ 200 0025 02       		.uleb128 0x2
+ 201 0026 01       		.byte	0x1
+ 202 0027 06       		.byte	0x6
+ 203 0028 2C000000 		.4byte	.LASF0
+ 204 002c 02       		.uleb128 0x2
+ 205 002d 01       		.byte	0x1
+ 206 002e 08       		.byte	0x8
+ 207 002f CD000000 		.4byte	.LASF1
+ 208 0033 02       		.uleb128 0x2
+ 209 0034 02       		.byte	0x2
+ 210 0035 05       		.byte	0x5
+ 211 0036 F6010000 		.4byte	.LASF2
+ 212 003a 02       		.uleb128 0x2
+ 213 003b 02       		.byte	0x2
+ 214 003c 07       		.byte	0x7
+ 215 003d C8010000 		.4byte	.LASF3
+ 216 0041 02       		.uleb128 0x2
+ 217 0042 04       		.byte	0x4
+ 218 0043 05       		.byte	0x5
+ 219 0044 A4010000 		.4byte	.LASF4
+ 220 0048 02       		.uleb128 0x2
+ 221 0049 04       		.byte	0x4
+ 222 004a 07       		.byte	0x7
+ 223 004b 3E000000 		.4byte	.LASF5
+ 224 004f 02       		.uleb128 0x2
+ 225 0050 08       		.byte	0x8
+ 226 0051 05       		.byte	0x5
+ 227 0052 00000000 		.4byte	.LASF6
+ 228 0056 02       		.uleb128 0x2
+ 229 0057 08       		.byte	0x8
+ 230 0058 07       		.byte	0x7
+ 231 0059 DB000000 		.4byte	.LASF7
+ 232 005d 03       		.uleb128 0x3
+ 233 005e 04       		.byte	0x4
+ 234 005f 05       		.byte	0x5
+ 235 0060 696E7400 		.ascii	"int\000"
+ 236 0064 02       		.uleb128 0x2
+ 237 0065 04       		.byte	0x4
+ 238 0066 07       		.byte	0x7
+ 239 0067 0E000000 		.4byte	.LASF8
+ 240 006b 04       		.uleb128 0x4
+ 241 006c 38000000 		.4byte	.LASF25
+ 242 0070 04       		.byte	0x4
+ 243 0071 F701     		.2byte	0x1f7
+ 244 0073 2C000000 		.4byte	0x2c
+ 245 0077 02       		.uleb128 0x2
+ 246 0078 04       		.byte	0x4
+ 247 0079 04       		.byte	0x4
+ 248 007a F0010000 		.4byte	.LASF9
+ 249 007e 02       		.uleb128 0x2
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 7
+
+
+ 250 007f 08       		.byte	0x8
+ 251 0080 04       		.byte	0x4
+ 252 0081 B5010000 		.4byte	.LASF10
+ 253 0085 02       		.uleb128 0x2
+ 254 0086 01       		.byte	0x1
+ 255 0087 08       		.byte	0x8
+ 256 0088 8B010000 		.4byte	.LASF11
+ 257 008c 02       		.uleb128 0x2
+ 258 008d 08       		.byte	0x8
+ 259 008e 04       		.byte	0x4
+ 260 008f E4010000 		.4byte	.LASF12
+ 261 0093 02       		.uleb128 0x2
+ 262 0094 04       		.byte	0x4
+ 263 0095 07       		.byte	0x7
+ 264 0096 16020000 		.4byte	.LASF13
+ 265 009a 05       		.uleb128 0x5
+ 266 009b 04       		.byte	0x4
+ 267 009c 6B000000 		.4byte	0x6b
+ 268 00a0 06       		.uleb128 0x6
+ 269 00a1 1B000000 		.4byte	.LASF14
+ 270 00a5 01       		.byte	0x1
+ 271 00a6 2A       		.byte	0x2a
+ 272 00a7 00000000 		.4byte	.LFB34
+ 273 00ab 08000000 		.4byte	.LFE34-.LFB34
+ 274 00af 01       		.uleb128 0x1
+ 275 00b0 9C       		.byte	0x9c
+ 276 00b1 BF000000 		.4byte	0xbf
+ 277 00b5 07       		.uleb128 0x7
+ 278 00b6 06000000 		.4byte	.LVL0
+ 279 00ba 87010000 		.4byte	0x187
+ 280 00be 00       		.byte	0
+ 281 00bf 06       		.uleb128 0x6
+ 282 00c0 DB010000 		.4byte	.LASF15
+ 283 00c4 01       		.byte	0x1
+ 284 00c5 31       		.byte	0x31
+ 285 00c6 00000000 		.4byte	.LFB35
+ 286 00ca 64000000 		.4byte	.LFE35-.LFB35
+ 287 00ce 01       		.uleb128 0x1
+ 288 00cf 9C       		.byte	0x9c
+ 289 00d0 F1000000 		.4byte	0xf1
+ 290 00d4 07       		.uleb128 0x7
+ 291 00d5 06000000 		.4byte	.LVL1
+ 292 00d9 92010000 		.4byte	0x192
+ 293 00dd 08       		.uleb128 0x8
+ 294 00de 2A000000 		.4byte	.LVL2
+ 295 00e2 9E010000 		.4byte	0x19e
+ 296 00e6 09       		.uleb128 0x9
+ 297 00e7 01       		.uleb128 0x1
+ 298 00e8 50       		.byte	0x50
+ 299 00e9 05       		.uleb128 0x5
+ 300 00ea 03       		.byte	0x3
+ 301 00eb 00000000 		.4byte	rxData
+ 302 00ef 00       		.byte	0
+ 303 00f0 00       		.byte	0
+ 304 00f1 0A       		.uleb128 0xa
+ 305 00f2 27000000 		.4byte	.LASF26
+ 306 00f6 01       		.byte	0x1
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 8
+
+
+ 307 00f7 19       		.byte	0x19
+ 308 00f8 5D000000 		.4byte	0x5d
+ 309 00fc 00000000 		.4byte	.LFB33
+ 310 0100 18000000 		.4byte	.LFE33-.LFB33
+ 311 0104 01       		.uleb128 0x1
+ 312 0105 9C       		.byte	0x9c
+ 313 0106 34010000 		.4byte	0x134
+ 314 010a 07       		.uleb128 0x7
+ 315 010b 06000000 		.4byte	.LVL3
+ 316 010f A0000000 		.4byte	0xa0
+ 317 0113 0B       		.uleb128 0xb
+ 318 0114 0C000000 		.4byte	.LVL4
+ 319 0118 9E010000 		.4byte	0x19e
+ 320 011c 2A010000 		.4byte	0x12a
+ 321 0120 09       		.uleb128 0x9
+ 322 0121 01       		.uleb128 0x1
+ 323 0122 50       		.byte	0x50
+ 324 0123 05       		.uleb128 0x5
+ 325 0124 03       		.byte	0x3
+ 326 0125 00000000 		.4byte	.LC4
+ 327 0129 00       		.byte	0
+ 328 012a 07       		.uleb128 0x7
+ 329 012b 10000000 		.4byte	.LVL5
+ 330 012f BF000000 		.4byte	0xbf
+ 331 0133 00       		.byte	0
+ 332 0134 0C       		.uleb128 0xc
+ 333 0135 636800   		.ascii	"ch\000"
+ 334 0138 01       		.byte	0x1
+ 335 0139 14       		.byte	0x14
+ 336 013a 6B000000 		.4byte	0x6b
+ 337 013e 05       		.uleb128 0x5
+ 338 013f 03       		.byte	0x3
+ 339 0140 00000000 		.4byte	ch
+ 340 0144 0D       		.uleb128 0xd
+ 341 0145 6B000000 		.4byte	0x6b
+ 342 0149 54010000 		.4byte	0x154
+ 343 014d 0E       		.uleb128 0xe
+ 344 014e 93000000 		.4byte	0x93
+ 345 0152 63       		.byte	0x63
+ 346 0153 00       		.byte	0
+ 347 0154 0F       		.uleb128 0xf
+ 348 0155 F2000000 		.4byte	.LASF16
+ 349 0159 01       		.byte	0x1
+ 350 015a 15       		.byte	0x15
+ 351 015b 44010000 		.4byte	0x144
+ 352 015f 05       		.uleb128 0x5
+ 353 0160 03       		.byte	0x3
+ 354 0161 00000000 		.4byte	rxData
+ 355 0165 0F       		.uleb128 0xf
+ 356 0166 BC010000 		.4byte	.LASF17
+ 357 016a 01       		.byte	0x1
+ 358 016b 16       		.byte	0x16
+ 359 016c 6B000000 		.4byte	0x6b
+ 360 0170 05       		.uleb128 0x5
+ 361 0171 03       		.byte	0x3
+ 362 0172 00000000 		.4byte	rxDataIndex
+ 363 0176 0F       		.uleb128 0xf
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 9
+
+
+ 364 0177 AD010000 		.4byte	.LASF18
+ 365 017b 01       		.byte	0x1
+ 366 017c 17       		.byte	0x17
+ 367 017d 9A000000 		.4byte	0x9a
+ 368 0181 05       		.uleb128 0x5
+ 369 0182 03       		.byte	0x3
+ 370 0183 00000000 		.4byte	command
+ 371 0187 10       		.uleb128 0x10
+ 372 0188 50000000 		.4byte	.LASF19
+ 373 018c 50000000 		.4byte	.LASF19
+ 374 0190 02       		.byte	0x2
+ 375 0191 72       		.byte	0x72
+ 376 0192 11       		.uleb128 0x11
+ 377 0193 90010000 		.4byte	.LASF20
+ 378 0197 90010000 		.4byte	.LASF20
+ 379 019b 03       		.byte	0x3
+ 380 019c 0F03     		.2byte	0x30f
+ 381 019e 11       		.uleb128 0x11
+ 382 019f 00020000 		.4byte	.LASF21
+ 383 01a3 00020000 		.4byte	.LASF21
+ 384 01a7 03       		.byte	0x3
+ 385 01a8 2A03     		.2byte	0x32a
+ 386 01aa 00       		.byte	0
+ 387              		.section	.debug_abbrev,"",%progbits
+ 388              	.Ldebug_abbrev0:
+ 389 0000 01       		.uleb128 0x1
+ 390 0001 11       		.uleb128 0x11
+ 391 0002 01       		.byte	0x1
+ 392 0003 25       		.uleb128 0x25
+ 393 0004 0E       		.uleb128 0xe
+ 394 0005 13       		.uleb128 0x13
+ 395 0006 0B       		.uleb128 0xb
+ 396 0007 03       		.uleb128 0x3
+ 397 0008 0E       		.uleb128 0xe
+ 398 0009 1B       		.uleb128 0x1b
+ 399 000a 0E       		.uleb128 0xe
+ 400 000b 55       		.uleb128 0x55
+ 401 000c 17       		.uleb128 0x17
+ 402 000d 11       		.uleb128 0x11
+ 403 000e 01       		.uleb128 0x1
+ 404 000f 10       		.uleb128 0x10
+ 405 0010 17       		.uleb128 0x17
+ 406 0011 00       		.byte	0
+ 407 0012 00       		.byte	0
+ 408 0013 02       		.uleb128 0x2
+ 409 0014 24       		.uleb128 0x24
+ 410 0015 00       		.byte	0
+ 411 0016 0B       		.uleb128 0xb
+ 412 0017 0B       		.uleb128 0xb
+ 413 0018 3E       		.uleb128 0x3e
+ 414 0019 0B       		.uleb128 0xb
+ 415 001a 03       		.uleb128 0x3
+ 416 001b 0E       		.uleb128 0xe
+ 417 001c 00       		.byte	0
+ 418 001d 00       		.byte	0
+ 419 001e 03       		.uleb128 0x3
+ 420 001f 24       		.uleb128 0x24
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 10
+
+
+ 421 0020 00       		.byte	0
+ 422 0021 0B       		.uleb128 0xb
+ 423 0022 0B       		.uleb128 0xb
+ 424 0023 3E       		.uleb128 0x3e
+ 425 0024 0B       		.uleb128 0xb
+ 426 0025 03       		.uleb128 0x3
+ 427 0026 08       		.uleb128 0x8
+ 428 0027 00       		.byte	0
+ 429 0028 00       		.byte	0
+ 430 0029 04       		.uleb128 0x4
+ 431 002a 16       		.uleb128 0x16
+ 432 002b 00       		.byte	0
+ 433 002c 03       		.uleb128 0x3
+ 434 002d 0E       		.uleb128 0xe
+ 435 002e 3A       		.uleb128 0x3a
+ 436 002f 0B       		.uleb128 0xb
+ 437 0030 3B       		.uleb128 0x3b
+ 438 0031 05       		.uleb128 0x5
+ 439 0032 49       		.uleb128 0x49
+ 440 0033 13       		.uleb128 0x13
+ 441 0034 00       		.byte	0
+ 442 0035 00       		.byte	0
+ 443 0036 05       		.uleb128 0x5
+ 444 0037 0F       		.uleb128 0xf
+ 445 0038 00       		.byte	0
+ 446 0039 0B       		.uleb128 0xb
+ 447 003a 0B       		.uleb128 0xb
+ 448 003b 49       		.uleb128 0x49
+ 449 003c 13       		.uleb128 0x13
+ 450 003d 00       		.byte	0
+ 451 003e 00       		.byte	0
+ 452 003f 06       		.uleb128 0x6
+ 453 0040 2E       		.uleb128 0x2e
+ 454 0041 01       		.byte	0x1
+ 455 0042 3F       		.uleb128 0x3f
+ 456 0043 19       		.uleb128 0x19
+ 457 0044 03       		.uleb128 0x3
+ 458 0045 0E       		.uleb128 0xe
+ 459 0046 3A       		.uleb128 0x3a
+ 460 0047 0B       		.uleb128 0xb
+ 461 0048 3B       		.uleb128 0x3b
+ 462 0049 0B       		.uleb128 0xb
+ 463 004a 27       		.uleb128 0x27
+ 464 004b 19       		.uleb128 0x19
+ 465 004c 11       		.uleb128 0x11
+ 466 004d 01       		.uleb128 0x1
+ 467 004e 12       		.uleb128 0x12
+ 468 004f 06       		.uleb128 0x6
+ 469 0050 40       		.uleb128 0x40
+ 470 0051 18       		.uleb128 0x18
+ 471 0052 9742     		.uleb128 0x2117
+ 472 0054 19       		.uleb128 0x19
+ 473 0055 01       		.uleb128 0x1
+ 474 0056 13       		.uleb128 0x13
+ 475 0057 00       		.byte	0
+ 476 0058 00       		.byte	0
+ 477 0059 07       		.uleb128 0x7
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 11
+
+
+ 478 005a 898201   		.uleb128 0x4109
+ 479 005d 00       		.byte	0
+ 480 005e 11       		.uleb128 0x11
+ 481 005f 01       		.uleb128 0x1
+ 482 0060 31       		.uleb128 0x31
+ 483 0061 13       		.uleb128 0x13
+ 484 0062 00       		.byte	0
+ 485 0063 00       		.byte	0
+ 486 0064 08       		.uleb128 0x8
+ 487 0065 898201   		.uleb128 0x4109
+ 488 0068 01       		.byte	0x1
+ 489 0069 11       		.uleb128 0x11
+ 490 006a 01       		.uleb128 0x1
+ 491 006b 31       		.uleb128 0x31
+ 492 006c 13       		.uleb128 0x13
+ 493 006d 00       		.byte	0
+ 494 006e 00       		.byte	0
+ 495 006f 09       		.uleb128 0x9
+ 496 0070 8A8201   		.uleb128 0x410a
+ 497 0073 00       		.byte	0
+ 498 0074 02       		.uleb128 0x2
+ 499 0075 18       		.uleb128 0x18
+ 500 0076 9142     		.uleb128 0x2111
+ 501 0078 18       		.uleb128 0x18
+ 502 0079 00       		.byte	0
+ 503 007a 00       		.byte	0
+ 504 007b 0A       		.uleb128 0xa
+ 505 007c 2E       		.uleb128 0x2e
+ 506 007d 01       		.byte	0x1
+ 507 007e 3F       		.uleb128 0x3f
+ 508 007f 19       		.uleb128 0x19
+ 509 0080 03       		.uleb128 0x3
+ 510 0081 0E       		.uleb128 0xe
+ 511 0082 3A       		.uleb128 0x3a
+ 512 0083 0B       		.uleb128 0xb
+ 513 0084 3B       		.uleb128 0x3b
+ 514 0085 0B       		.uleb128 0xb
+ 515 0086 27       		.uleb128 0x27
+ 516 0087 19       		.uleb128 0x19
+ 517 0088 49       		.uleb128 0x49
+ 518 0089 13       		.uleb128 0x13
+ 519 008a 8701     		.uleb128 0x87
+ 520 008c 19       		.uleb128 0x19
+ 521 008d 11       		.uleb128 0x11
+ 522 008e 01       		.uleb128 0x1
+ 523 008f 12       		.uleb128 0x12
+ 524 0090 06       		.uleb128 0x6
+ 525 0091 40       		.uleb128 0x40
+ 526 0092 18       		.uleb128 0x18
+ 527 0093 9742     		.uleb128 0x2117
+ 528 0095 19       		.uleb128 0x19
+ 529 0096 01       		.uleb128 0x1
+ 530 0097 13       		.uleb128 0x13
+ 531 0098 00       		.byte	0
+ 532 0099 00       		.byte	0
+ 533 009a 0B       		.uleb128 0xb
+ 534 009b 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 12
+
+
+ 535 009e 01       		.byte	0x1
+ 536 009f 11       		.uleb128 0x11
+ 537 00a0 01       		.uleb128 0x1
+ 538 00a1 31       		.uleb128 0x31
+ 539 00a2 13       		.uleb128 0x13
+ 540 00a3 01       		.uleb128 0x1
+ 541 00a4 13       		.uleb128 0x13
+ 542 00a5 00       		.byte	0
+ 543 00a6 00       		.byte	0
+ 544 00a7 0C       		.uleb128 0xc
+ 545 00a8 34       		.uleb128 0x34
+ 546 00a9 00       		.byte	0
+ 547 00aa 03       		.uleb128 0x3
+ 548 00ab 08       		.uleb128 0x8
+ 549 00ac 3A       		.uleb128 0x3a
+ 550 00ad 0B       		.uleb128 0xb
+ 551 00ae 3B       		.uleb128 0x3b
+ 552 00af 0B       		.uleb128 0xb
+ 553 00b0 49       		.uleb128 0x49
+ 554 00b1 13       		.uleb128 0x13
+ 555 00b2 3F       		.uleb128 0x3f
+ 556 00b3 19       		.uleb128 0x19
+ 557 00b4 02       		.uleb128 0x2
+ 558 00b5 18       		.uleb128 0x18
+ 559 00b6 00       		.byte	0
+ 560 00b7 00       		.byte	0
+ 561 00b8 0D       		.uleb128 0xd
+ 562 00b9 01       		.uleb128 0x1
+ 563 00ba 01       		.byte	0x1
+ 564 00bb 49       		.uleb128 0x49
+ 565 00bc 13       		.uleb128 0x13
+ 566 00bd 01       		.uleb128 0x1
+ 567 00be 13       		.uleb128 0x13
+ 568 00bf 00       		.byte	0
+ 569 00c0 00       		.byte	0
+ 570 00c1 0E       		.uleb128 0xe
+ 571 00c2 21       		.uleb128 0x21
+ 572 00c3 00       		.byte	0
+ 573 00c4 49       		.uleb128 0x49
+ 574 00c5 13       		.uleb128 0x13
+ 575 00c6 2F       		.uleb128 0x2f
+ 576 00c7 0B       		.uleb128 0xb
+ 577 00c8 00       		.byte	0
+ 578 00c9 00       		.byte	0
+ 579 00ca 0F       		.uleb128 0xf
+ 580 00cb 34       		.uleb128 0x34
+ 581 00cc 00       		.byte	0
+ 582 00cd 03       		.uleb128 0x3
+ 583 00ce 0E       		.uleb128 0xe
+ 584 00cf 3A       		.uleb128 0x3a
+ 585 00d0 0B       		.uleb128 0xb
+ 586 00d1 3B       		.uleb128 0x3b
+ 587 00d2 0B       		.uleb128 0xb
+ 588 00d3 49       		.uleb128 0x49
+ 589 00d4 13       		.uleb128 0x13
+ 590 00d5 3F       		.uleb128 0x3f
+ 591 00d6 19       		.uleb128 0x19
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 13
+
+
+ 592 00d7 02       		.uleb128 0x2
+ 593 00d8 18       		.uleb128 0x18
+ 594 00d9 00       		.byte	0
+ 595 00da 00       		.byte	0
+ 596 00db 10       		.uleb128 0x10
+ 597 00dc 2E       		.uleb128 0x2e
+ 598 00dd 00       		.byte	0
+ 599 00de 3F       		.uleb128 0x3f
+ 600 00df 19       		.uleb128 0x19
+ 601 00e0 3C       		.uleb128 0x3c
+ 602 00e1 19       		.uleb128 0x19
+ 603 00e2 6E       		.uleb128 0x6e
+ 604 00e3 0E       		.uleb128 0xe
+ 605 00e4 03       		.uleb128 0x3
+ 606 00e5 0E       		.uleb128 0xe
+ 607 00e6 3A       		.uleb128 0x3a
+ 608 00e7 0B       		.uleb128 0xb
+ 609 00e8 3B       		.uleb128 0x3b
+ 610 00e9 0B       		.uleb128 0xb
+ 611 00ea 00       		.byte	0
+ 612 00eb 00       		.byte	0
+ 613 00ec 11       		.uleb128 0x11
+ 614 00ed 2E       		.uleb128 0x2e
+ 615 00ee 00       		.byte	0
+ 616 00ef 3F       		.uleb128 0x3f
+ 617 00f0 19       		.uleb128 0x19
+ 618 00f1 3C       		.uleb128 0x3c
+ 619 00f2 19       		.uleb128 0x19
+ 620 00f3 6E       		.uleb128 0x6e
+ 621 00f4 0E       		.uleb128 0xe
+ 622 00f5 03       		.uleb128 0x3
+ 623 00f6 0E       		.uleb128 0xe
+ 624 00f7 3A       		.uleb128 0x3a
+ 625 00f8 0B       		.uleb128 0xb
+ 626 00f9 3B       		.uleb128 0x3b
+ 627 00fa 05       		.uleb128 0x5
+ 628 00fb 00       		.byte	0
+ 629 00fc 00       		.byte	0
+ 630 00fd 00       		.byte	0
+ 631              		.section	.debug_aranges,"",%progbits
+ 632 0000 2C000000 		.4byte	0x2c
+ 633 0004 0200     		.2byte	0x2
+ 634 0006 00000000 		.4byte	.Ldebug_info0
+ 635 000a 04       		.byte	0x4
+ 636 000b 00       		.byte	0
+ 637 000c 0000     		.2byte	0
+ 638 000e 0000     		.2byte	0
+ 639 0010 00000000 		.4byte	.LFB34
+ 640 0014 08000000 		.4byte	.LFE34-.LFB34
+ 641 0018 00000000 		.4byte	.LFB35
+ 642 001c 64000000 		.4byte	.LFE35-.LFB35
+ 643 0020 00000000 		.4byte	.LFB33
+ 644 0024 18000000 		.4byte	.LFE33-.LFB33
+ 645 0028 00000000 		.4byte	0
+ 646 002c 00000000 		.4byte	0
+ 647              		.section	.debug_ranges,"",%progbits
+ 648              	.Ldebug_ranges0:
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 14
+
+
+ 649 0000 00000000 		.4byte	.LFB34
+ 650 0004 08000000 		.4byte	.LFE34
+ 651 0008 00000000 		.4byte	.LFB35
+ 652 000c 64000000 		.4byte	.LFE35
+ 653 0010 00000000 		.4byte	.LFB33
+ 654 0014 18000000 		.4byte	.LFE33
+ 655 0018 00000000 		.4byte	0
+ 656 001c 00000000 		.4byte	0
+ 657              		.section	.debug_line,"",%progbits
+ 658              	.Ldebug_line0:
+ 659 0000 BC000000 		.section	.debug_str,"MS",%progbits,1
+ 659      02006400 
+ 659      00000201 
+ 659      FB0E0D00 
+ 659      01010101 
+ 660              	.LASF6:
+ 661 0000 6C6F6E67 		.ascii	"long long int\000"
+ 661      206C6F6E 
+ 661      6720696E 
+ 661      7400
+ 662              	.LASF8:
+ 663 000e 756E7369 		.ascii	"unsigned int\000"
+ 663      676E6564 
+ 663      20696E74 
+ 663      00
+ 664              	.LASF14:
+ 665 001b 696E6974 		.ascii	"init\000"
+ 665      00
+ 666              	.LASF23:
+ 667 0020 6D61696E 		.ascii	"main.c\000"
+ 667      2E6300
+ 668              	.LASF26:
+ 669 0027 6D61696E 		.ascii	"main\000"
+ 669      00
+ 670              	.LASF0:
+ 671 002c 7369676E 		.ascii	"signed char\000"
+ 671      65642063 
+ 671      68617200 
+ 672              	.LASF25:
+ 673 0038 75696E74 		.ascii	"uint8\000"
+ 673      3800
+ 674              	.LASF5:
+ 675 003e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 675      20756E73 
+ 675      69676E65 
+ 675      6420696E 
+ 675      7400
+ 676              	.LASF19:
+ 677 0050 55415254 		.ascii	"UART_PC_Start\000"
+ 677      5F50435F 
+ 677      53746172 
+ 677      7400
+ 678              	.LASF24:
+ 679 005e 433A5C55 		.ascii	"C:\\Users\\gcristini\\OneDrive - Datalogic S.p.a\\D"
+ 679      73657273 
+ 679      5C676372 
+ 679      69737469 
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 15
+
+
+ 679      6E695C4F 
+ 680 008d 6F63756D 		.ascii	"ocuments\\PSoC Creator\\Workspace01\\SerialTemperat"
+ 680      656E7473 
+ 680      5C50536F 
+ 680      43204372 
+ 680      6561746F 
+ 681 00bd 75726553 		.ascii	"ureSensor.cydsn\000"
+ 681      656E736F 
+ 681      722E6379 
+ 681      64736E00 
+ 682              	.LASF1:
+ 683 00cd 756E7369 		.ascii	"unsigned char\000"
+ 683      676E6564 
+ 683      20636861 
+ 683      7200
+ 684              	.LASF7:
+ 685 00db 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 685      206C6F6E 
+ 685      6720756E 
+ 685      7369676E 
+ 685      65642069 
+ 686              	.LASF16:
+ 687 00f2 72784461 		.ascii	"rxData\000"
+ 687      746100
+ 688              	.LASF22:
+ 689 00f9 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 689      43313120 
+ 689      352E342E 
+ 689      31203230 
+ 689      31363036 
+ 690 012c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 690      20726576 
+ 690      6973696F 
+ 690      6E203233 
+ 690      37373135 
+ 691 015f 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 691      67202D66 
+ 691      66756E63 
+ 691      74696F6E 
+ 691      2D736563 
+ 692              	.LASF11:
+ 693 018b 63686172 		.ascii	"char\000"
+ 693      00
+ 694              	.LASF20:
+ 695 0190 55415254 		.ascii	"UART_PC_UartGetChar\000"
+ 695      5F50435F 
+ 695      55617274 
+ 695      47657443 
+ 695      68617200 
+ 696              	.LASF4:
+ 697 01a4 6C6F6E67 		.ascii	"long int\000"
+ 697      20696E74 
+ 697      00
+ 698              	.LASF18:
+ 699 01ad 636F6D6D 		.ascii	"command\000"
+ 699      616E6400 
+ 700              	.LASF10:
+ARM GAS  C:\Users\GCRIST~1\AppData\Local\Temp\ccYh9fxc.s 			page 16
+
+
+ 701 01b5 646F7562 		.ascii	"double\000"
+ 701      6C6500
+ 702              	.LASF17:
+ 703 01bc 72784461 		.ascii	"rxDataIndex\000"
+ 703      7461496E 
+ 703      64657800 
+ 704              	.LASF3:
+ 705 01c8 73686F72 		.ascii	"short unsigned int\000"
+ 705      7420756E 
+ 705      7369676E 
+ 705      65642069 
+ 705      6E7400
+ 706              	.LASF15:
+ 707 01db 706F6C6C 		.ascii	"pollUart\000"
+ 707      55617274 
+ 707      00
+ 708              	.LASF12:
+ 709 01e4 6C6F6E67 		.ascii	"long double\000"
+ 709      20646F75 
+ 709      626C6500 
+ 710              	.LASF9:
+ 711 01f0 666C6F61 		.ascii	"float\000"
+ 711      7400
+ 712              	.LASF2:
+ 713 01f6 73686F72 		.ascii	"short int\000"
+ 713      7420696E 
+ 713      7400
+ 714              	.LASF21:
+ 715 0200 55415254 		.ascii	"UART_PC_UartPutString\000"
+ 715      5F50435F 
+ 715      55617274 
+ 715      50757453 
+ 715      7472696E 
+ 716              	.LASF13:
+ 717 0216 73697A65 		.ascii	"sizetype\000"
+ 717      74797065 
+ 717      00
+ 718              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
