@@ -19,9 +19,9 @@ void pollUart(void);
 
 
 uint8 ch;
-uint8 rxData[BUFFER_SIZE];
-uint8 rxDataIndex = 0u;
-uint8 *command;
+    uint8 rxData[BUFFER_SIZE];
+    uint8 rxDataIndex = 0u;
+    uint8 *command;
 //int32 temp = 0u;
 
 int main(void)
