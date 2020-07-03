@@ -228,12 +228,13 @@ class TemperatureTestSx5_TS(object):
         else:
             if (self._read_temp_timer.elapsed_time >= int(self._config_dict['TempSensor']['sample_time_s'])):
 
-                # # Read temperature
+                # Read temperature
                 self._serial.serial_write("read_temp")
                 while not (self._serial.bytes_available_rx):
+                    #print ("wait...")
                     pass
-                x = self._serial.serial_read()
-                self._room_temperature = int(ord(x))
+
+                self._room_temperature = int(self._serial.serial_read().strip("\r\n"))
 
                 print("Temperature: {temp}°C".format(temp=self._room_temperature))
 
@@ -343,7 +344,6 @@ class TemperatureTestSx5_TS(object):
             self._temp_test_state = enum.TempTestTS_StatesEnum.TT_STOP
 
         pass
-
 
     def _error_state_manager(self):
         """"""

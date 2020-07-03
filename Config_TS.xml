@@ -37,7 +37,7 @@
     <ThermalChamber>
         <!-- This parameters must be the same set on the thermal chamber -->
         <temp_start>10</temp_start>
-        <temp_stop>40</temp_stop>
+        <temp_stop>30</temp_stop>
         <steps>10</steps>
         <time_platau_s>60</time_platau_s>
 

@@ -22,12 +22,14 @@ class CustomSerial(serial.Serial):
     def serial_write(self, data):
         """ Use 'write' method of Serial class enconding data in UTF-8"""
         self.write(data.encode())
+
         return
 
     def serial_read(self):
         """ Use 'read' method of Serial class enconding data in UTF-8"""
         # TODO controllare codifica!
         self._dataRX = self.read(self._bytes_available_rx).decode('utf-8')
+        #self._dataRX = self.readline()
         return self._dataRX
 
     @property
@@ -38,10 +40,15 @@ class CustomSerial(serial.Serial):
 
 
 if __name__ == '__main__':
+    import time
     test_serial = CustomSerial(port="COM16", baudrate=115200)
     test_serial.serial_init()
+    #test_serial.serial_write("init")
+    time.sleep(1)
 
+    test_serial.serial_write("read_temp")
     while True:
         if test_serial.bytes_available_rx:
             x = test_serial.serial_read()
-            print(type(x))
+            print (x)
+

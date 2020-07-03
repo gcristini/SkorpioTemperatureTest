@@ -9,7 +9,7 @@
 /* **************************************** */
 String inputCommand = "";     // a String to hold incoming data
 int basetime=5; //s
-int tempArray[] = {0, 10, 20, 30, 40}; //°C
+int tempArray[] = {10, 20, 30, 40}; //°C
 int tempIndex;
 int temp=0;
 int startTimer=0;
@@ -32,10 +32,10 @@ void setup()
 void loop() 
 {
   //startTimer=1; //////
-  if (startTimer==1 && timer_s(basetime))
+  if (timer_s(basetime))
   { 
     //Serial.write(temp);
-    if (tempIndex < 5)
+    if (tempIndex < 4)
     {       
       temp = tempArray [tempIndex];
       tempIndex++;
@@ -47,6 +47,7 @@ void loop()
   {    
         
   inputCommand = Serial.readStringUntil('\n');
+ // Serial.println(inputCommand)
   parseCommand (inputCommand);
   
   }
@@ -68,19 +69,14 @@ int timer_s(int time_s)
 
 void parseCommand(String command)
 {
-
- 
-  if (command == "init")
-  {
-    startTimer=1;
-  }
-  else if (command=="read_temp")
+  
+  if (command == "read_temp")
   {    
-    Serial.write(temp);
+    Serial.println(String(temp));
   }
   else
   {
-    Serial.println("nack");
+    /* Misra */
   }
   
 }
