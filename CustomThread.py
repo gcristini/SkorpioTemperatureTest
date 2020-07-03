@@ -2,7 +2,7 @@ from threading import Thread
 import time
 
 def dummy_runnable():
-    print ("ciao")
+    pass
 
 class CustomThread(Thread):
     def __init__(self,
@@ -30,9 +30,6 @@ class CustomThread(Thread):
             self._runnable()
 
         return
-
-        #return True
-
 
 if __name__ == '__main__' :
     def runnable_1():

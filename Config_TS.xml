@@ -5,10 +5,11 @@
         <scan_engine>halogen2</scan_engine>
         <num_of_frame>10</num_of_frame>
         <num_of_loop>200000</num_of_loop>
+        <callback_delay_ms>100</callback_delay_ms>
         <!-- NOT USED >
         <num_of_save_files>20</num_of_save_files>
         <pattern_bitmap> </pattern_bitmap>
-        <wait_ms>  </wait_ms>
+        <wait_ms>500</wait_ms>
         <show_mean_fps> </show_mean_fps>
         <callback_delay_millisecond> </callback_delay_millisecond>
         <watchdog_test> </watchdog_test>
@@ -38,14 +39,14 @@
         <!-- This parameters must be the same set on the thermal chamber -->
         <temp_start>10</temp_start>
         <temp_stop>30</temp_stop>
-        <steps>10</steps>
+        <steps>3</steps>
         <time_platau_s>60</time_platau_s>
 
     </ThermalChamber>
 
     <Acquisition>
-        <wait_to_acq_time_s>1</wait_to_acq_time_s>
-        <frame_acquisition_time_s>1</frame_acquisition_time_s>
+        <wait_to_acq_time_s>5</wait_to_acq_time_s>
+        <frame_acquisition_time_s>20</frame_acquisition_time_s>
     </Acquisition>
 
 </GlobalParams>

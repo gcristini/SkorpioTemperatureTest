@@ -12,6 +12,7 @@ import colorama as cm
 from Timer import Timer
 from CustomThread import CustomThread
 import CustomSerial as cs
+import time
 
 class TemperatureTestSx5_TS(object):
     """ """
@@ -88,6 +89,7 @@ class TemperatureTestSx5_TS(object):
                                 num_loop=self._config_dict['SX5']['num_of_loop'],
                                 num_save_files=int(self._config_dict['SX5']['num_of_frame']) * int(
                                     self._config_dict['SX5']['num_of_loop']),
+                                callback_delay_ms=self._config_dict['SX5']['callback_delay_ms'],
                                 frame_storage_dir=self._config_dict['SX5']['frame_storage_dir'],
                                 pull_dir=self._config_dict['SX5']['adb_pull_base_dir'],
                                 )
@@ -163,6 +165,19 @@ class TemperatureTestSx5_TS(object):
         # Store the last state machine state
         self._last_temp_test_state = self._temp_test_state
 
+    def _kill_app(self):
+        # Run a fake scan to close application
+        self._SX5 = SX5_Manager(scan_engine=self._config_dict['SX5']['scan_engine'],
+                                num_frame=10,
+                                num_loop=1,
+                                num_save_files=0
+                                )
+
+
+        self._SX5.run_scan_engine_app()
+
+        pass
+
     # ----------- State Machine Methods -----------
     def _init_state_manager(self):
         """"""
@@ -190,6 +205,7 @@ class TemperatureTestSx5_TS(object):
         self._update_directories()
 
         # Go to Run scan engine app state
+        self._SX5.clear_frame_storage_dir()
         self._temp_test_state = enum.TempTestTS_StatesEnum.TT_RUN_SCAN_ENGINE_APP
 
         return
@@ -198,11 +214,15 @@ class TemperatureTestSx5_TS(object):
         """"""
         print("-Run Scan Engine App")
 
-        # Start Timer and run and run Scan Engine App Thread
+        # Start Timer and run Scan Engine App Thread
         self._global_timer.start()
-        self._scan_engine_app_thread = CustomThread(runnable=self._SX5.run_scan_engine_app,
+        self._scan_engine_app_thread = CustomThread(thread_name="ScanEngineThread",
+                                                    runnable=self._SX5.run_scan_engine_app,
                                                     num_of_iter=1)
+
         self._scan_engine_app_thread.start()
+
+        #self._SX5.run_scan_engine_app()
 
         # Store the last state
         self._store_last_state()
@@ -267,9 +287,18 @@ class TemperatureTestSx5_TS(object):
 
         else:
             if (self._wait_to_acq_timer.elapsed_time >= int(self._config_dict['Acquisition']['wait_to_acq_time_s'])):
-
-                # Discard all frame on SX5 before the frame acquisition time
+                #self._SX5.stop_scan_engine_app()
+                print("Kill APP")
+                #self._kill_app()
+                #time.sleep(2)
+                self._scan_engine_app_thread = CustomThread(thread_name="ScanEngineThread",
+                                                            runnable=self._SX5.run_scan_engine_app,
+                                                            num_of_iter=1)
+                #self._scan_engine_app_thread._stop()
+                print("Discard Frame")
+                # Discard all frames on SX5 before the frame acquisition time
                 self._SX5.clear_frame_storage_dir()
+                self._scan_engine_app_thread.start()
 
                 # Store the last state
                 self._store_last_state()
@@ -301,7 +330,6 @@ class TemperatureTestSx5_TS(object):
 
                 # Pull image from device and clear the directory
                 ret = self._SX5.pull_images()
-                self._SX5.clear_frame_storage_dir()
 
                 # Convert the pulled images
                 #self._image_manager.convert_images(show=False, save=True)
@@ -361,9 +389,19 @@ class TemperatureTestSx5_TS(object):
         dbg.debug(print, "Stop State", debug=self._gs['debug'])
         # Store the last state
         self._store_last_state()
+
+        #self._SX5.stop_scan_engine_app()
+        self._kill_app();
+        # # Run a fake scan to close application
+        # self._SX5 = SX5_Manager(scan_engine=self._config_dict['SX5']['scan_engine'],
+        #                         num_frame=10,
+        #                         num_loop=1,
+        #                         num_save_files=0
+        #                         )
+        # self._SX5.run_scan_engine_app()
+
         print("-Finished!")
 
-        # TODO: Kill app process ???
         pass
 
     def _temperature_test_state_machine_manager(self):
