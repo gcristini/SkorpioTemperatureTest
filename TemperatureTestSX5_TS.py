@@ -12,7 +12,7 @@ import colorama as cm
 from Timer import Timer
 from CustomThread import CustomThread
 import CustomSerial as cs
-import time
+import sys
 
 class TemperatureTestSx5_TS(object):
     """ """
@@ -165,16 +165,14 @@ class TemperatureTestSx5_TS(object):
         # Store the last state machine state
         self._last_temp_test_state = self._temp_test_state
 
-    def _kill_app(self):
+    def _kill_scan_engine_app(self):
         # Run a fake scan to close application
-        self._SX5 = SX5_Manager(scan_engine=self._config_dict['SX5']['scan_engine'],
+        sx5_dummy = SX5_Manager(scan_engine=self._config_dict['SX5']['scan_engine'],
                                 num_frame=10,
                                 num_loop=1,
                                 num_save_files=0
                                 )
-
-
-        self._SX5.run_scan_engine_app()
+        sx5_dummy.run_scan_engine_app()
 
         pass
 
@@ -222,8 +220,6 @@ class TemperatureTestSx5_TS(object):
 
         self._scan_engine_app_thread.start()
 
-        #self._SX5.run_scan_engine_app()
-
         # Store the last state
         self._store_last_state()
 
@@ -250,8 +246,7 @@ class TemperatureTestSx5_TS(object):
 
                 # Read temperature
                 self._serial.serial_write("read_temp")
-                while not (self._serial.bytes_available_rx):
-                    #print ("wait...")
+                while not self._serial.bytes_available_rx:
                     pass
 
                 self._room_temperature = int(self._serial.serial_read().strip("\r\n"))
@@ -268,7 +263,6 @@ class TemperatureTestSx5_TS(object):
                 else:
                     # Reset timer
                     self._read_temp_timer.reset()
-
         return
 
     def _wait_state_manager(self):
@@ -287,14 +281,12 @@ class TemperatureTestSx5_TS(object):
 
         else:
             if (self._wait_to_acq_timer.elapsed_time >= int(self._config_dict['Acquisition']['wait_to_acq_time_s'])):
-                #self._SX5.stop_scan_engine_app()
-                print("Kill APP")
-                #self._kill_app()
-                #time.sleep(2)
+
+                self._kill_scan_engine_app()
                 self._scan_engine_app_thread = CustomThread(thread_name="ScanEngineThread",
                                                             runnable=self._SX5.run_scan_engine_app,
                                                             num_of_iter=1)
-                #self._scan_engine_app_thread._stop()
+
                 print("Discard Frame")
                 # Discard all frames on SX5 before the frame acquisition time
                 self._SX5.clear_frame_storage_dir()
@@ -390,17 +382,7 @@ class TemperatureTestSx5_TS(object):
         # Store the last state
         self._store_last_state()
 
-        #self._SX5.stop_scan_engine_app()
-        self._kill_app();
-        # # Run a fake scan to close application
-        # self._SX5 = SX5_Manager(scan_engine=self._config_dict['SX5']['scan_engine'],
-        #                         num_frame=10,
-        #                         num_loop=1,
-        #                         num_save_files=0
-        #                         )
-        # self._SX5.run_scan_engine_app()
-
-        print("-Finished!")
+        self._kill_scan_engine_app();
 
         pass
 
@@ -419,13 +401,15 @@ class TemperatureTestSx5_TS(object):
     def run_test(self):
         """ """
         # Initialize all
-        #self._init_state_manager()
 
         while not (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_STOP and
                    self._last_temp_test_state == self._temp_test_state):
 
             # Execute the state machine at the current state
             self._temperature_test_state_machine_manager()
+
+        print("-Finished!")
+        sys.exit()
 
 
 if __name__ == '__main__':

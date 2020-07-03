@@ -45,8 +45,8 @@
     </ThermalChamber>
 
     <Acquisition>
-        <wait_to_acq_time_s>5</wait_to_acq_time_s>
-        <frame_acquisition_time_s>20</frame_acquisition_time_s>
+        <wait_to_acq_time_s>1</wait_to_acq_time_s>
+        <frame_acquisition_time_s>5</frame_acquisition_time_s>
     </Acquisition>
 
 </GlobalParams>
