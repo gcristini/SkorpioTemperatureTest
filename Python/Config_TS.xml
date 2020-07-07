@@ -15,16 +15,16 @@
         <watchdog_test> </watchdog_test>
         -->
         <frame_storage_dir>data/local/tmp</frame_storage_dir>
-        <adb_pull_base_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download</adb_pull_base_dir>
+        <adb_pull_base_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/Python/test/download</adb_pull_base_dir>
     </SX5>
 
     <ImageManager>
-        <output_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/test/download_converted</output_dir>
+        <output_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/Python/test/download_converted</output_dir>
         <img_format>.jpg</img_format>
     </ImageManager>
 
     <TempSensor>
-        <port>COM16</port>
+        <port>COM15</port>
         <baudrate>115200</baudrate>
         <!--- NOT USED
         <bytsize></bytsize>
