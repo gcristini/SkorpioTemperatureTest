@@ -1,8 +1,0 @@
-C:/Users/gcristini/OneDrive\ -\ Datalogic\ S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/PSOC-Firmware/SerialTemperatureSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/Users/gcristini/OneDrive\ -\ Datalogic\ S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/PSOC-Firmware/SerialTemperatureSensor.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s C:/Users/gcristini/OneDrive\ -\ Datalogic\ S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/PSOC-Firmware/SerialTemperatureSensor.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc C:/Users/gcristini/OneDrive\ -\ Datalogic\ S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/PSOC-Firmware/SerialTemperatureSensor.cydsn/Generated_Source/PSoC4/cyfittergnu.inc 
-
-C:/Users/gcristini/OneDrive\ -\ Datalogic\ S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/PSOC-Firmware/SerialTemperatureSensor.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
-
-C:/Users/gcristini/OneDrive\ -\ Datalogic\ S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/PSOC-Firmware/SerialTemperatureSensor.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc : 
-
-C:/Users/gcristini/OneDrive\ -\ Datalogic\ S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/PSOC-Firmware/SerialTemperatureSensor.cydsn/Generated_Source/PSoC4/cyfittergnu.inc : 
-
