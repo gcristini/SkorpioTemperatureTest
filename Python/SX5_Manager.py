@@ -1,7 +1,7 @@
 import os
 import subprocess
 from GlobalVariables import GlobalVariables as gv
-
+import signal
 
 class SX5_Manager(object):
     """ """
@@ -13,6 +13,7 @@ class SX5_Manager(object):
                  num_loop=None,
                  num_frame=None,
                  num_save_files=None,
+                 callback_delay_ms=None,
                  pull_dir=None,
                  frame_storage_dir=None):
         """ Constructor"""
@@ -25,11 +26,13 @@ class SX5_Manager(object):
         self._num_frame = num_frame
         self._num_save_files = num_save_files
         self._num_loop = num_loop
+        self._callback_delay_ms = callback_delay_ms
 
         # Directory Variables
         self._frame_storage_dir = frame_storage_dir
         self._pull_dir = '"{pull_dir}"'.format(pull_dir=pull_dir)  # insert "" for adb purpose
 
+        self._scan_engine_process = None
     # ************************************************* #
     # **************** Public Methods ***************** #
     # ************************************************* #
@@ -40,15 +43,16 @@ class SX5_Manager(object):
         check_string = 'finished'
 
         # Concatenate the scan command
-        scan_command = "{scan_app} -l {num_loop} -n {num_frame} -s {num_save_files}".\
+        scan_command = "{scan_app} -l {num_loop} -n {num_frame} -s {num_save_files} -d {callback_delay_ms}".\
             format(scan_app=self._scan_app,
                    num_loop=self._num_loop,
                    num_frame=self._num_frame,
-                   num_save_files=self._num_save_files)
+                   num_save_files=self._num_save_files,
+                   callback_delay_ms=self._callback_delay_ms)
 
         # Run the scan command
-        scan_engine_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
-        scan_engine_stdout = scan_engine_process.communicate(scan_command.encode())[0].decode('ascii', errors='ignore')
+        self._scan_engine_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
+        scan_engine_stdout = self._scan_engine_process.communicate(scan_command.encode())[0].decode('ascii', errors='ignore')
 
         if (scan_engine_stdout.find(check_string) != -1):
             ret = True
@@ -56,6 +60,11 @@ class SX5_Manager(object):
             pass
 
         return ret
+
+    def stop_scan_engine_app(self):
+        #self._scan_engine_process.send_signal(signal.SIGINT)
+        self._scan_engine_process.send_signal(signal.CTRL_BREAK_EVENT)
+        return
 
     def pull_images(self):
         """ Run the "adb pull" command to download all frames """
@@ -107,6 +116,7 @@ class SX5_Manager(object):
 
 
 if __name__ == "__main__":
+    import time
     # Get Current working directory and set the pull directory
     current_dir = os.getcwd()
     adb_pull_dir = '{current_dir}/test/download/'.format(current_dir=current_dir)
@@ -118,6 +128,9 @@ if __name__ == "__main__":
                        frame_storage_dir='data/local/tmp',
                        pull_dir=adb_pull_dir)
     test.run_scan_engine_app()
+   # time.sleep(10)
+    #test.stop_scan_engine_app()
+
     test.pull_images()
 
     test.clear_frame_storage_dir()

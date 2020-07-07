@@ -2,7 +2,7 @@ from threading import Thread
 import time
 
 def dummy_runnable():
-    print ("ciao")
+    pass
 
 class CustomThread(Thread):
     def __init__(self,
@@ -29,10 +29,9 @@ class CustomThread(Thread):
         for iter in range(self._num_of_iter):
             self._runnable()
 
+        print("Exit from thread")
+
         return
-
-        #return True
-
 
 if __name__ == '__main__' :
     def runnable_1():
@@ -44,11 +43,11 @@ if __name__ == '__main__' :
         time.sleep(1)
 
     thread1 = CustomThread(runnable=runnable_1,
-                           num_of_iter=3)
+                           num_of_iter=2)
     thread1.start()
 
     thread2 = CustomThread(runnable=runnable_2,
-                           num_of_iter=3)
+                           num_of_iter=2)
 
     thread2.start()
 
