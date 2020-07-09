@@ -251,9 +251,12 @@ class TemperatureTestSx5_TS(object):
                 while not self._serial.bytes_available_rx:
                     pass
 
-                self._room_temperature = int(self._serial.serial_read().strip("\r\n"))
+                try:
+                    self._room_temperature = int(self._serial.serial_read().strip("\r\n"))
+                except:
+                    pass
 
-                print("Monitoring temperature: {temp}°C".format(temp=self._room_temperature), end="\r")
+                print("Detected temperature: {temp}°C".format(temp=self._room_temperature), end="\r")
 
                 if (self._room_temperature >= self._target_temp[0]):
 
@@ -284,9 +287,10 @@ class TemperatureTestSx5_TS(object):
 
         else:
             # Get elapsed time in minutes
-            elapsed_time_min = self._wait_to_acq_timer.elapsed_time_min(digits=2)
+            elapsed_time_min = self._wait_to_acq_timer.elapsed_time_min(digits=3)
 
-            print("\t Time: {time}".format(time=dt.timedelta(minutes=elapsed_time_min)), end="\r")
+            #print("\t Time: {time}".format(time=dt.timedelta(minutes=elapsed_time_min)), end="\r")
+            print("\t Time: " + str(dt.timedelta(minutes=elapsed_time_min)).split('.')[0], end="\r")
 
             if (elapsed_time_min >= int(self._config_dict['Acquisition']['wait_to_acq_time_min'])):
 
@@ -326,12 +330,13 @@ class TemperatureTestSx5_TS(object):
 
         else:
 
-            elapsed_time_min = self._frame_acquisition_timer.elapsed_time_min(digits=2)
-            print("\t Time: {time}".format(time=dt.timedelta(minutes=elapsed_time_min)), end="\r")
+            elapsed_time_min = self._frame_acquisition_timer.elapsed_time_min(digits=3)
+            #print("\t Time: {time}".format(time=dt.timedelta(minutes=elapsed_time_min)), end="\r")
+            print("\t Time: " + str(dt.timedelta(minutes=elapsed_time_min)).split('.')[0], end="\r")
 
             # When the time elapsed, download all frames acquired in this time interval
             if (elapsed_time_min >= int(self._config_dict['Acquisition']['frame_acquisition_time_min'])):
-                print("- Download images in {dir}".format(dir=self._SX5.pull_dir))
+                print("- Download frames in {dir}".format(dir=self._SX5.pull_dir))
                 dbg.debug(print, elapsed_time_min, debug=self._gs['debug'])
 
                 # Pull image from device and clear the directory
