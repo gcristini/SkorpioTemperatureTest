@@ -1,8 +1,8 @@
-- fix image conversion --> at the end of script
+
 - reorganize folders of sources
 - close threads!
 - lettura temperatura scan engine e salvataggio in un csv da mettere nella cartella di download
-
+- check cartella download --> vuota -----?
 
 
 

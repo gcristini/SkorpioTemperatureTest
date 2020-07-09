@@ -56,10 +56,11 @@ class TemperatureTestSx5_TS(object):
             enum.TempTestTS_StatesEnum.TT_RUN_SCAN_ENGINE_APP: self._run_scan_engine_app_state_manager,
             enum.TempTestTS_StatesEnum.TT_READ_TEMP: self._read_temperature_state_manager,
             enum.TempTestTS_StatesEnum.TT_WAIT: self._wait_state_manager,
-            enum.TempTestTS_StatesEnum.TT_UPDATE: self._update_target_temp_state_manager,
+            enum.TempTestTS_StatesEnum.TT_UPDATE_TARGET: self._update_target_temp_state_manager,
             enum.TempTestTS_StatesEnum.TT_PULL_IMAGES: self._pull_images_state_manager,
-            enum.TempTestTS_StatesEnum.TT_ERROR: self._error_state_manager,
-            enum.TempTestTS_StatesEnum.TT_STOP: self._stop_state_manager
+            #enum.TempTestTS_StatesEnum.TT_CONVERT_IMAGES: self._convert_images_state_manager,
+            enum.TempTestTS_StatesEnum.TT_STOP: self._stop_state_manager,
+            enum.TempTestTS_StatesEnum.TT_ERROR: self._error_state_manager
         }
 
         # Initialize state machine to INIT state
@@ -96,9 +97,10 @@ class TemperatureTestSx5_TS(object):
                                 )
         pass
 
+
     def _init_temperature_sensor(self):
         """"""
-        # try except.... serial.serialutil.SerialException
+        # TODO try except.... serial.serialutil.SerialException
         self._serial = cs.CustomSerial(port=self._config_dict['TempSensor']['port'],
                                        baudrate=self._config_dict['TempSensor']['baudrate'])
         self._serial.serial_init()
@@ -252,7 +254,7 @@ class TemperatureTestSx5_TS(object):
                     pass
 
                 try:
-                    self._room_temperature = int(self._serial.serial_read().strip("\r\n"))
+                    self._room_temperature = float(self._serial.serial_read().strip("\r\n"))
                 except:
                     pass
 
@@ -289,10 +291,9 @@ class TemperatureTestSx5_TS(object):
             # Get elapsed time in minutes
             elapsed_time_min = self._wait_to_acq_timer.elapsed_time_min(digits=3)
 
-            #print("\t Time: {time}".format(time=dt.timedelta(minutes=elapsed_time_min)), end="\r")
             print("\t Time: " + str(dt.timedelta(minutes=elapsed_time_min)).split('.')[0], end="\r")
 
-            if (elapsed_time_min >= int(self._config_dict['Acquisition']['wait_to_acq_time_min'])):
+            if (elapsed_time_min >= float(self._config_dict['Acquisition']['wait_to_acq_time_min'])):
 
                 self._kill_scan_engine_app()
                 self._scan_engine_app_thread = CustomThread(thread_name="ScanEngineThread",
@@ -300,6 +301,7 @@ class TemperatureTestSx5_TS(object):
                                                             num_of_iter=1)
 
                 dbg.debug(print, "Discard Frame", debug=self._gs['debug'])
+
                 # Discard all frames on SX5 before the frame acquisition time
                 self._SX5.clear_frame_storage_dir()
                 self._scan_engine_app_thread.start()
@@ -317,7 +319,6 @@ class TemperatureTestSx5_TS(object):
         if (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_PULL_IMAGES and
             self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_PULL_IMAGES):
 
-            #print("Wait...{time}s".format(time=self._config_dict['Acquisition']['frame_acquisition_time_s']))
             print("- Acquire frames for {time} minutes"\
                   .format(time=self._config_dict['Acquisition']['frame_acquisition_time_min']))
 
@@ -329,28 +330,29 @@ class TemperatureTestSx5_TS(object):
             self._store_last_state()
 
         else:
-
             elapsed_time_min = self._frame_acquisition_timer.elapsed_time_min(digits=3)
-            #print("\t Time: {time}".format(time=dt.timedelta(minutes=elapsed_time_min)), end="\r")
+
             print("\t Time: " + str(dt.timedelta(minutes=elapsed_time_min)).split('.')[0], end="\r")
 
-            # When the time elapsed, download all frames acquired in this time interval
-            if (elapsed_time_min >= int(self._config_dict['Acquisition']['frame_acquisition_time_min'])):
-                print("- Download frames in {dir}".format(dir=self._SX5.pull_dir))
-                dbg.debug(print, elapsed_time_min, debug=self._gs['debug'])
+            # When the time elapsed, download all frames acquired in this time interval and covert
+            if (elapsed_time_min >= float(self._config_dict['Acquisition']['frame_acquisition_time_min'])):
 
-                # Pull image from device and clear the directory
+                # Pull image from device and clear the device's directory
+                print("- Download frames in {dir}".format(dir=self._SX5.pull_dir))
                 ret = self._SX5.pull_images()
 
                 # Convert the pulled images
-                #self._image_manager.convert_images(show=False, save=True)
+                print("- Convert frames from .raw to {fmt} in {dir}".format(fmt=self._image_manager.output_file_ext,
+                                                                            dir=self._image_manager.output_dir))
+                self._image_manager.convert_images(show=False, save=True)
+
 
                 if ret == True:
                     # Store the last state
                     self._store_last_state()
 
                     # Go to stop state
-                    self._temp_test_state = enum.TempTestTS_StatesEnum.TT_UPDATE
+                    self._temp_test_state = enum.TempTestTS_StatesEnum.TT_UPDATE_TARGET
                 else:
                     # Store the last state
                     self._store_last_state()
@@ -384,6 +386,20 @@ class TemperatureTestSx5_TS(object):
 
         pass
 
+    def _convert_images_state_manager(self):
+
+
+        pass
+    def _stop_state_manager(self):
+        """"""
+        dbg.debug(print, "Stop State", debug=self._gs['debug'])
+        # Store the last state
+        self._store_last_state()
+
+        self._kill_scan_engine_app()
+
+        pass
+
     def _error_state_manager(self):
         """"""
         dbg.debug(print, "Error State", debug=self._gs['debug'])
@@ -393,16 +409,6 @@ class TemperatureTestSx5_TS(object):
 
         # Go to stop state
         self._temp_test_state = enum.TempTestStatesEnum.TT_STOP
-        pass
-
-    def _stop_state_manager(self):
-        """"""
-        dbg.debug(print, "Stop State", debug=self._gs['debug'])
-        # Store the last state
-        self._store_last_state()
-
-        self._kill_scan_engine_app()
-
         pass
 
     def _temperature_test_state_machine_manager(self):

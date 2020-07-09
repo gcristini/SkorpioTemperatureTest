@@ -51,8 +51,9 @@ class SX5_Manager(object):
                    callback_delay_ms=self._callback_delay_ms)
 
         # Run the scan command
-        self._scan_engine_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
+        self._scan_engine_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
         scan_engine_stdout = self._scan_engine_process.communicate(scan_command.encode())[0].decode('ascii', errors='ignore')
+        self._scan_engine_process.kill() #Close Process
 
         if (scan_engine_stdout.find(check_string) != -1):
             ret = True
@@ -61,10 +62,9 @@ class SX5_Manager(object):
 
         return ret
 
-    def stop_scan_engine_app(self):
-        #self._scan_engine_process.send_signal(signal.SIGINT)
-        self._scan_engine_process.send_signal(signal.CTRL_BREAK_EVENT)
-        return
+    # def stop_scan_engine_app(self):
+    #     self._scan_engine_process.send_signal(signal.CTRL_BREAK_EVENT)
+    #     return
 
     def pull_images(self):
         """ Run the "adb pull" command to download all frames """
@@ -97,8 +97,9 @@ class SX5_Manager(object):
         delete_cmd = "rm -v /{dir}/*".format(dir=self._frame_storage_dir)  # Delete command
 
         # Run the delete command
-        delete_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
+        delete_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
         delete_process_stdout = delete_process.communicate(delete_cmd.encode())[0].decode('ascii', errors='ignore')
+        delete_process.terminate() # Close process
 
         if (delete_process_stdout.find(check_string) == -1):
             ret = True

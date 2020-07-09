@@ -1,5 +1,6 @@
 import os
 from PIL import Image
+import gc
 
 
 class ImageManager(object):
@@ -20,23 +21,12 @@ class ImageManager(object):
         self._img_res = dict(width=img_width, height=img_height)
         self._out_ext = out_ext
 
-        # TODO: delete if not used
-        self._image_list_dict = []
-        """ 
-            'name': None,           # Name of image, without extension
-            'ext': None,            # Image file extension
-            'dir_path': None,       # Directory in which is stored the Image
-            'res': None,            # Image resolution
-            'img_data': None,       # Image data
-        """
-
         self._raw_images_list = []
 
         pass
 
     def _search_raw_images(self):
         """ Search for raw images into directory """
-
         # List all .raw files in the directory
         for file in os.listdir(self._input_dir):
             if os.path.splitext(file)[1] == '.raw':
@@ -46,8 +36,15 @@ class ImageManager(object):
 
     def _read_raw(self, file):
         """ Read a raw image """
-        raw_data = open(file, 'rb').read()
+        # Open image
+        img = open(file, 'rb')
+        raw_data = img.read()
+
+        # Read image data
         img_data = Image.frombytes('L', (self._img_res['width'], self._img_res['height']), raw_data)
+
+        # Close image
+        img.close()
 
         return img_data
 
@@ -60,6 +57,9 @@ class ImageManager(object):
             - show: if True show the raw image
             - save: if True save the image in the specified format
         """
+
+        # Clear image list
+        self._raw_images_list = []
 
         # List all raw images
         self._search_raw_images()
@@ -74,21 +74,6 @@ class ImageManager(object):
             # Show Raw data
             if (show == True):
                 img_data.show(title=img)
-
-            # Populate the list of dictionary TODO: delete if not used
-            self._image_list_dict.append(
-                {
-                    # ----- Input ----- #
-                    'name': name,                           # Name of image, without extension
-                    'ext': ext,                             # Image file extension
-                    'input_dir_path': self._input_dir,      # Directory of raw Image
-                    'res': self._img_res,                   # Image resolution
-                    'img_data': img_data,                   # Image data
-                    # ----- Output ----- #
-                    'out_ext': self._out_ext,               # Extension of the saved image
-                    'output_dir_path': self._output_dir,    # Directory in which will be saved the image
-                }
-            )
 
             # Create output directory and save the images
             if (save == True):
@@ -117,6 +102,10 @@ class ImageManager(object):
     @output_dir.setter
     def output_dir(self, directory):
         self._output_dir = directory
+
+    @property
+    def output_file_ext(self):
+        return self._out_ext
 
 
 if __name__ == "__main__":

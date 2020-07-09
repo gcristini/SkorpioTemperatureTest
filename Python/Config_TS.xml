@@ -8,11 +8,11 @@
         <callback_delay_ms>100</callback_delay_ms>
         <!-- NOT USED >
         <num_of_save_files>20</num_of_save_files>
-        <pattern_bitmap> </pattern_bitmap>
+        <pattern_bitmap></pattern_bitmap>
         <wait_ms>500</wait_ms>
-        <show_mean_fps> </show_mean_fps>
-        <callback_delay_millisecond> </callback_delay_millisecond>
-        <watchdog_test> </watchdog_test>
+        <show_mean_fps></show_mean_fps>
+        <callback_delay_millisecond></callback_delay_millisecond>
+        <watchdog_test></watchdog_test>
         -->
         <frame_storage_dir>data/local/tmp</frame_storage_dir>
         <adb_pull_base_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/Python/test/download</adb_pull_base_dir>
@@ -45,8 +45,8 @@
     </ThermalChamber>
 
     <Acquisition>
-        <wait_to_acq_time_min>1</wait_to_acq_time_min>
-        <frame_acquisition_time_min>5</frame_acquisition_time_min>
+        <wait_to_acq_time_min>0.2</wait_to_acq_time_min>
+        <frame_acquisition_time_min>0.5</frame_acquisition_time_min>
     </Acquisition>
 
 </GlobalParams>
