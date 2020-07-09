@@ -13,6 +13,8 @@ from Timer import Timer
 from CustomThread import CustomThread
 import CustomSerial as cs
 import sys
+import datetime as dt
+
 
 class TemperatureTestSx5_TS(object):
     """ """
@@ -78,10 +80,9 @@ class TemperatureTestSx5_TS(object):
 
     def _init_sx5(self):
         """ """
-
         dbg.debug(print, self._config_dict['SX5']['adb_pull_base_dir'], debug=self._gs['debug'])
-        print (int(self._config_dict['SX5']['num_of_frame']) * int(
-                                    self._config_dict['SX5']['num_of_loop']))
+        dbg.debug(print, int(self._config_dict['SX5']['num_of_frame']) * int(
+                                    self._config_dict['SX5']['num_of_loop']), debug=self._gs['debug'])
 
         # Init an SX5 instance
         self._SX5 = SX5_Manager(scan_engine=self._config_dict['SX5']['scan_engine'],
@@ -210,7 +211,7 @@ class TemperatureTestSx5_TS(object):
 
     def _run_scan_engine_app_state_manager(self):
         """"""
-        print("-Run Scan Engine App")
+        dbg.debug(print, "-Run Scan Engine App", debug=self._gs['debug'])
 
         # Start Timer and run Scan Engine App Thread
         self._global_timer.start()
@@ -232,8 +233,9 @@ class TemperatureTestSx5_TS(object):
         """"""
 
         if (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_READ_TEMP and
-            self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_READ_TEMP):
-
+                self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_READ_TEMP):
+            # Print the current temperature
+            print(cm.Fore.CYAN + cm.Style.DIM + "\n--- Test @ {temp}°C ---".format(temp=self._target_temp[0]))
             # Create and run local timer to sample temperature every 1 second
             self._read_temp_timer = Timer()
             self._read_temp_timer.start()
@@ -242,7 +244,7 @@ class TemperatureTestSx5_TS(object):
             self._store_last_state()
 
         else:
-            if (self._read_temp_timer.elapsed_time >= int(self._config_dict['TempSensor']['sample_time_s'])):
+            if (self._read_temp_timer.elapsed_time_s() >= int(self._config_dict['TempSensor']['sample_time_s'])):
 
                 # Read temperature
                 self._serial.serial_write("read_temp")
@@ -251,7 +253,7 @@ class TemperatureTestSx5_TS(object):
 
                 self._room_temperature = int(self._serial.serial_read().strip("\r\n"))
 
-                print("Temperature: {temp}°C".format(temp=self._room_temperature))
+                print("Monitoring temperature: {temp}°C".format(temp=self._room_temperature), end="\r")
 
                 if (self._room_temperature >= self._target_temp[0]):
 
@@ -270,7 +272,8 @@ class TemperatureTestSx5_TS(object):
         if (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_WAIT and
             self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_WAIT):
 
-            print("Wait...{time}s".format(time=self._config_dict['Acquisition']['wait_to_acq_time_s']))
+            print("- Reached target {sp}°C: wait {time} min. before acquire frames" .\
+                   format(sp=self._target_temp[0], time=self._config_dict['Acquisition']['wait_to_acq_time_min']))
 
             # Create and start the timer to wait the frame acquisition
             self._wait_to_acq_timer = Timer()
@@ -280,14 +283,19 @@ class TemperatureTestSx5_TS(object):
             self._store_last_state()
 
         else:
-            if (self._wait_to_acq_timer.elapsed_time >= int(self._config_dict['Acquisition']['wait_to_acq_time_s'])):
+            # Get elapsed time in minutes
+            elapsed_time_min = self._wait_to_acq_timer.elapsed_time_min(digits=2)
+
+            print("\t Time: {time}".format(time=dt.timedelta(minutes=elapsed_time_min)), end="\r")
+
+            if (elapsed_time_min >= int(self._config_dict['Acquisition']['wait_to_acq_time_min'])):
 
                 self._kill_scan_engine_app()
                 self._scan_engine_app_thread = CustomThread(thread_name="ScanEngineThread",
                                                             runnable=self._SX5.run_scan_engine_app,
                                                             num_of_iter=1)
 
-                print("Discard Frame")
+                dbg.debug(print, "Discard Frame", debug=self._gs['debug'])
                 # Discard all frames on SX5 before the frame acquisition time
                 self._SX5.clear_frame_storage_dir()
                 self._scan_engine_app_thread.start()
@@ -305,7 +313,9 @@ class TemperatureTestSx5_TS(object):
         if (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_PULL_IMAGES and
             self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_PULL_IMAGES):
 
-            print("Wait...{time}s".format(time=self._config_dict['Acquisition']['frame_acquisition_time_s']))
+            #print("Wait...{time}s".format(time=self._config_dict['Acquisition']['frame_acquisition_time_s']))
+            print("- Acquire frames for {time} minutes"\
+                  .format(time=self._config_dict['Acquisition']['frame_acquisition_time_min']))
 
             # Create and start the timer to wait the frame acquisition
             self._frame_acquisition_timer = Timer()
@@ -315,10 +325,14 @@ class TemperatureTestSx5_TS(object):
             self._store_last_state()
 
         else:
+
+            elapsed_time_min = self._frame_acquisition_timer.elapsed_time_min(digits=2)
+            print("\t Time: {time}".format(time=dt.timedelta(minutes=elapsed_time_min)), end="\r")
+
             # When the time elapsed, download all frames acquired in this time interval
-            if (self._frame_acquisition_timer.elapsed_time >= int(self._config_dict['Acquisition']['frame_acquisition_time_s'])):
-                print("-Pull images")
-                dbg.debug(print, self._frame_acquisition_timer.elapsed_time, debug=self._gs['debug'])
+            if (elapsed_time_min >= int(self._config_dict['Acquisition']['frame_acquisition_time_min'])):
+                print("- Download images in {dir}".format(dir=self._SX5.pull_dir))
+                dbg.debug(print, elapsed_time_min, debug=self._gs['debug'])
 
                 # Pull image from device and clear the directory
                 ret = self._SX5.pull_images()
@@ -382,7 +396,7 @@ class TemperatureTestSx5_TS(object):
         # Store the last state
         self._store_last_state()
 
-        self._kill_scan_engine_app();
+        self._kill_scan_engine_app()
 
         pass
 
@@ -394,21 +408,28 @@ class TemperatureTestSx5_TS(object):
         fun()
         return
 
-
     # ************************************************ #
     # **************** Public Methods **************** #
     # ************************************************ #
     def run_test(self):
         """ """
-        # Initialize all
+        # Initialize execution timer
+        ex_timer = Timer()
+        ex_timer.start()
 
         while not (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_STOP and
                    self._last_temp_test_state == self._temp_test_state):
+            # Execute State Machine every 10ms
+            if ex_timer.elapsed_time_ms() >= 10:
+                # Execute the state machine at the current state
+                self._temperature_test_state_machine_manager()
+                # Reset timer
+                ex_timer.reset()
+            else:
+                pass
 
-            # Execute the state machine at the current state
-            self._temperature_test_state_machine_manager()
-
-        print("-Finished!")
+        print(cm.Fore.CYAN + cm.Style.DIM + "\n-----------------")
+        print(cm.Fore.CYAN + cm.Style.DIM + "--- Finished! ---")
         sys.exit()
 
 

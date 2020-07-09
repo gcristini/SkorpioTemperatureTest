@@ -37,7 +37,7 @@
 
     <ThermalChamber>
         <!-- This parameters must be the same set on the thermal chamber -->
-        <temp_start>10</temp_start>
+        <temp_start>20</temp_start>
         <temp_stop>30</temp_stop>
         <steps>3</steps>
         <time_platau_s>60</time_platau_s>
@@ -45,8 +45,8 @@
     </ThermalChamber>
 
     <Acquisition>
-        <wait_to_acq_time_s>1</wait_to_acq_time_s>
-        <frame_acquisition_time_s>5</frame_acquisition_time_s>
+        <wait_to_acq_time_min>1</wait_to_acq_time_min>
+        <frame_acquisition_time_min>5</frame_acquisition_time_min>
     </Acquisition>
 
 </GlobalParams>

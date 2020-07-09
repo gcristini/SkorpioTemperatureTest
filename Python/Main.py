@@ -36,13 +36,27 @@ class Main(object):
         self._main_state = enum.MainAppStatesEnum.MAS_INIT
         self._last_main_state = enum.MainAppStatesEnum.MAS_INIT
 
+    # ---------------------------------------------------------------- #
+    # ----------------------- Private Methods ------------------------ #
+    # ---------------------------------------------------------------- #
+    @staticmethod
+    def _print_help():
+        """"""
+        print(cm.Fore.YELLOW + cm.Style.DIM + "\n----------------------------")
+        print(cm.Fore.YELLOW + cm.Style.DIM + "--- Show Usage ---")
+        print(cm.Fore.YELLOW + cm.Style.DIM + "-run: run test")
+        print(cm.Fore.YELLOW + cm.Style.DIM + "-exit: exit from script")
+        print(cm.Fore.YELLOW + cm.Style.DIM + "-help: this help")
+        print(cm.Fore.YELLOW + cm.Style.DIM + "----------------------------\n")
+    pass
+
     # ******** State Machine Functions ******** #
     def _init_state_manager(self):
         """"""
         # Initialize Colorama
         cm.init(autoreset=True)
 
-        print(cm.Fore.GREEN + " ---------- WELCOME! ---------- ")
+        print(cm.Fore.MAGENTA + "---------- WELCOME TO TEMPERATURE TEST SX5! ---------- ")
 
         # Go to Wait State
         self._main_state = enum.MainAppStatesEnum.MAS_WAIT
@@ -50,9 +64,7 @@ class Main(object):
 
     def _wait_state_manager(self):
         """"""
-
-        cmd = input("Please enter a command: ")
-        print('\n')
+        cmd = input("- Please enter a command: ")
 
         if cmd == enum.MainAppCommands.MAC_RUN:
             # Go to run state
@@ -73,7 +85,7 @@ class Main(object):
 
     def _run_state_manager(self):
         """"""
-        print(cm.Fore.CYAN + cm.Style.DIM + "Run Test\n")
+        print(cm.Fore.GREEN + cm.Style.DIM + "\n---------- Run Test ----------")
         #self._TemperatureTestSX5_TC.run_test()
         self._TemperatureTestSX5_TS.run_test()
 
@@ -84,7 +96,8 @@ class Main(object):
 
     def _help_state_manager(self):
         """"""
-        print("HELP USAGE\n\n")
+        # Print Help
+        self._print_help()
 
         # Go to wait state
         self._main_state = enum.MainAppStatesEnum.MAS_WAIT
@@ -92,7 +105,7 @@ class Main(object):
 
     def _exit_state_manager(self):
         """"""
-        print(cm.Fore.LIGHTGREEN_EX + "Exiting...")
+        print(cm.Fore.MAGENTA + "Goodbye!")
         sys.exit()
         pass
 
