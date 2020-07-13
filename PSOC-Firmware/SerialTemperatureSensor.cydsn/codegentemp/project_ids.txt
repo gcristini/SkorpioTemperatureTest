@@ -1,0 +1,6 @@
+C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn\SerialTemperatureSensor.cyprj|3a8a860e-b883-4584-91a6-1c0e61df45f6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|4521369c-20a8-4526-bbbc-afac94b46aa7
+C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|0fd96505-7cc1-48d3-bf67-6b985c1ff841
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|198c7b21-1993-41a8-9e41-6a42127f18fe
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|c86630be-4b7a-4b99-b023-faa05f47d463
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|a0d06312-4b31-4370-976b-7c2ac88228e0

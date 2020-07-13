@@ -12,17 +12,19 @@
 #include "project.h"
 #include <unistd.h>
 #include <stdio.h>
-#define BUFFER_SIZE 100u
+#include "DS18B20.h"
+
+#define BUFFER_SIZE 100
+#define forever for (;;) /* Enjoy :) */
 
 void init(void);
 void pollUart(void);
+void parseCommand(char *command);
+void clearBuffer(uint8 *buffer, uint8 bufferSize);
 
 
-uint8 ch;
-    uint8 rxData[BUFFER_SIZE];
-    uint8 rxDataIndex = 0u;
-    uint8 *command;
-//int32 temp = 0u;
+uint8 temp;
+uint8 tempBuff[BUFFER_SIZE];
 
 int main(void)
 {
@@ -31,12 +33,19 @@ int main(void)
     init();
     
     /* Transmit String through UART TX Line */
-    UART_PC_UartPutString("CY8CKIT-041 USB-UART");
+    UART_PC_UartPutString("WELCOME");
     
-    for (;;)
+    forever
     {
            
        pollUart();
+       temp=(int)DS_get_temp();
+    
+        sprintf((char*)tempBuff, "%d", temp);
+        UART_PC_UartPutString((char*)tempBuff);
+        clearBuffer(tempBuff, BUFFER_SIZE);
+        CyDelay(1000);
+        
     }
 }
 
@@ -46,19 +55,17 @@ void init (void)
     
     /* Init UART */
     UART_PC_Start();
-    
-    PGA_Start();
-    
-    ADC_Temp_Start();
-    ADC_Temp_StartConvert();
+    return;   
     
 }
 
 void pollUart(void)
 {
-    int temp = 0;
-    int voltage = 0;
-    char str[12];
+   static uint8 ch;
+        static uint16 rxDataIndex = 0u;
+        static uint8 rxData[BUFFER_SIZE];
+        static uint8 *rxCommand;
+        
      /* Get received character or zero if nothing has been received yet */
         ch = UART_PC_UartGetChar();
         if (0u != ch)
@@ -73,22 +80,12 @@ void pollUart(void)
                rxData[rxDataIndex] = '\0'; 
 
                /* Point to buffer */
-               command = rxData;
-               UART_PC_UartPutString((const char*) command);
-                
-              voltage=ADC_Temp_GetResult32(0);
-              temp=Thermocouple_1_GetTemperature(voltage);
-              sprintf(str, "%d", (int)temp);
-            
-            
-              UART_PC_UartPutString(str);
-            
+               rxCommand = rxData;
+               UART_PC_UartPutString((const char*) rxCommand);
+             
             
                 /* Clear buffer and index */
-                for (rxDataIndex=0; rxDataIndex < BUFFER_SIZE; rxDataIndex++)
-                {
-                    rxData[rxDataIndex] = 0u;
-                }               
+                clearBuffer(rxData, BUFFER_SIZE);            
                 
                 rxDataIndex = -1;
                                 
@@ -98,9 +95,12 @@ void pollUart(void)
             
         }
 }
-
-void getTemp(void)
-{
-    
-}
-/* [] END OF FILE */
+   void clearBuffer(uint8 *buffer, uint8 bufferSize)
+    {
+        uint8 i;
+        for (i = 0; i < bufferSize; i++)
+        {
+            buffer[i] = 0u;
+        }
+    }
+ /*] END OF FILE */
