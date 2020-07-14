@@ -4,9 +4,17 @@
 
 #include "DS18B20.h"
 #include "CyLib.h"
-#define LS_BIT_MASK 0x01
-#define SCRATCHPAD_SIZE 64u
-#define SCRATCH_TEMP_SIZE 12u
+#include <stdio.h>
+
+#define LS_BIT_MASK                 0x01
+#define SCRATCHPAD_TEMP_MASK        0xFFFF
+#define SCRATCHPAD_TEMP_ABS_MASK    0x0FFF
+#define SCRATCHPAD_TEMP_SIGN_MASK   0xF000
+
+#define SCRATCHPAD_SIZE             64u
+#define SCRATCH_TEMP_SIZE           12u
+
+
 //#define SCRATCH_TEMP_SIGN 15u
 
 void DS_v_ResetPulse(void) 
@@ -99,127 +107,88 @@ void DS_WriteByte(uint8 TxData)
 
 
 
-float binary_to_float(int array_hex[]) {
-    /* Convert a Binary Array to a Float Element */
+// float convert_temp_int(uint8 scratchpad[])
+// {
+//     int u8_index = 0u;
+//     int u16_temp = 0;
+//     float res;
+//     uint8* pointer;
+
+//     pointer = scratchpad;
+//     /* Get Temperature and sign from scratchpad */
+//     for (u8_index = 0; u8_index < SCRATCH_TEMP_SIZE; u8_index++)
+//     {   
+//         /* LS bits become MS bit */
+//         u16_temp = u16_temp + (*pointer << u8_index);   
+//         *pointer++;
+//     }
+
+//     /* Do 2-complement if necessary */
+//     /*if (scratchpad [15] == 1)
+//     {
+//         u16_temp = ~u16_temp + 1u;
+//     }
+//     else
+//     {
+      
+//     }
+//     */
     
-    float sum = 0;
-    int i = 0;
-    for (i = 0; i < 12; i++) {
-        sum = sum + (array_hex[i] << i);
-    }
-    return sum;
-}
+//     /* Divide by 16 */
+//     res = u16_temp / 16u;
 
-int two_complement(int array[]) {
-    /* Do Two's Complement on a Binary Array */
+//     return res;
+
+// }
+
+    int16   i16_ScrathpadTemperature;
+    uint16  u16_TempAbs;
+    uint8   u8_TempSign;
+    uint8   u8_Temperature[10];
+    float32 f32_Temperature;
     
-    int i;
-    //One's Complement
-    for (i = 0; i < 12; i++) {
-        if (array[i] == 0)
-            array[i] = 1;
-        else
-            array[i] = 0;
-    }
-    //Sum '1'
-    int riporto = 1;
-    while (riporto == 1) {
-        if (array[i] == 1 && riporto == 1) {
-            array[i] = 0;
-            riporto = 1;
-            i++;
-        } else {
-            array[i] = 1;
-            riporto = 0;
-        }
-    }
-    return array;
-}
-
-
-float convert_temp_int(uint8 scratchpad[])
+float_t DS_f_GetTempFromScratch(int64 scratchpad, uint8 pu8_Temperature[])
 {
-    int u8_index = 0u;
-    int u16_temp = 0;
-    float res;
-    uint8* pointer;
+    //int16   i16_ScrathpadTemperature;
+    //uint16  u16_TempAbs;
+    //uint8   u8_TempSign;
+    //uint8   u8_Temperature[10];
 
-    pointer = scratchpad;
-    /* Get Temperature and sign from scratchpad */
-    for (u8_index = 0; u8_index < SCRATCH_TEMP_SIZE; u8_index++)
-    {   
-        /* LS bits become MS bit */
-        u16_temp = u16_temp + (*pointer << u8_index);   
-        *pointer++;
-    }
+    /* Get 16 bits temperature rom scratchpad */
+    i16_ScrathpadTemperature = scratchpad & SCRATCHPAD_TEMP_MASK;
+    
+    /* Get sign of temperature [15:0] */
+    u8_TempSign = (uint8)(i16_ScrathpadTemperature & SCRATCHPAD_TEMP_SIGN_MASK);
 
-    /* Do 2-complement if necessary */
-    /*if (scratchpad [15] == 1)
+    /* Get absolute value [11:0] and do 2's complement if needed */
+    if (u8_TempSign == 0xF000)
     {
-        u16_temp = ~u16_temp + 1u;
+        u16_TempAbs = (uint16)((~(i16_ScrathpadTemperature & SCRATCHPAD_TEMP_ABS_MASK) + 1u)/16u);
+        f32_Temperature = (float32)((~(i16_ScrathpadTemperature & SCRATCHPAD_TEMP_ABS_MASK) + 1u)/16u);
     }
     else
     {
-      
+        u16_TempAbs = (uint16)((i16_ScrathpadTemperature & SCRATCHPAD_TEMP_ABS_MASK)/16u);
+        f32_Temperature = (float32)(i16_ScrathpadTemperature & SCRATCHPAD_TEMP_ABS_MASK)/16u;
     }
-    */
     
-    /* Divide by 16 */
-    res = u16_temp / 16u;
-
-    return res;
-
+    sprintf((char*)pu8_Temperature, "%d", u16_TempAbs);
+    
+    return f32_Temperature; 
 }
 
-float convert_temp_int_OLD(uint8 out_scratchpad[]) {
-    /* Convert Temperature From Binary to Float*/
-    
-    //RICORDARSI DI TRASMETTERE FLAG
-    uint8 flag_neg; //'0' If Positive Temperature, '1' if Negative
-    uint8 i = 0; //Index
-    uint8 bit_temp[SCRATCH_TEMP_SIZE]; //Temperature Array (12 Bits)
-    float celsius; //Celsius Degree Temperature 
-    float temp_raw; //Raw Temperature
+int64 pippo;
 
-    /* Isolate Temperature's Bits from Scratchpad Data (First 8 Bits) */
-    for (i = 0; i < SCRATCH_TEMP_SIZE; i++) {
-        bit_temp[i] = out_scratchpad[i];
-    }
-    
-    flag_neg = out_scratchpad[15]; //Bits 15-to-12 are Sign-Bits 
-    
-    //Two's Complement If Negative
-   /* if (flag_neg == 1) {
-        out_scratchpad = two_complement(out_scratchpad);
-    }
-     */
-    //for(i=0; i<12; i++){
-    //    while (U1STAbits.UTXBF); //resto fermo ad aspettare che il precedente dato sia letto
-    //    IEC0bits.U1TXIE = 0;
-    //    U1TXREG=bit_temp[i];
-    //}
-
-    //Binary to Float Conversione
-    
-    temp_raw = binary_to_float(out_scratchpad); 
-    
-    //Set Negative Sign if Binary Number Was Negative
-    if (flag_neg == 1) {
-        temp_raw=-temp_raw;
-    }
-    
-    //Celsius-Degree Conversion
-    celsius = temp_raw / 16;
-    return celsius;
-}
-
-float DS_get_temp(void)  
+float_t DS_get_temp(void)  
 {
     /* Send Commands to Sensor in Orde to Obtain the Temperature Value */
     
     int index = 0; //Index
-    int scratch[SCRATCHPAD_SIZE]; //Scratchpad Data
-    float temp_celsius; //Temperature in Celsius Degree
+    //int scratch[SCRATCHPAD_SIZE]; //Scratchpad Data
+    int64 int64_scratch = 0x00000000u;
+    float_t Temperature;
+    uint8 temperature[10];
+   // float temp_celsius; //Temperature in Celsius Degree
     
     /*--------- STEP I: Temperature Internal Conversion --------- */
     /* Reset Command */
@@ -246,10 +215,14 @@ float DS_get_temp(void)
     /* Read Scratchapd */
     DS_WriteByte(READ_SCRATCHPAD_DS18B20); 
     for (index = 0; index < SCRATCHPAD_SIZE; index++) {
-        scratch[index] = DS_v_ReadBit();
+        //scratch[index] = DS_v_ReadBit();
+        int64_scratch += DS_v_ReadBit() << index;
     }
     
     /* --------STEP III: CONVERSION TO CELSIUS DEGREE----------------- */
-    temp_celsius = convert_temp_int(scratch);
-    return temp_celsius;
+    //temp_celsius = convert_temp_int(scratch);
+    Temperature = DS_f_GetTempFromScratch(int64_scratch, temperature);
+    //return temp_celsius;
+
+    return Temperature;
 }

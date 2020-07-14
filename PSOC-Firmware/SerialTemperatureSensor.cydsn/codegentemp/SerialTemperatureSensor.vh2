@@ -2,7 +2,7 @@
 --	Conversion of SerialTemperatureSensor.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Jul 13 15:35:03 2020
+--	Tue Jul 14 11:30:33 2020
 --
 
 USE cypress.cypress.all;

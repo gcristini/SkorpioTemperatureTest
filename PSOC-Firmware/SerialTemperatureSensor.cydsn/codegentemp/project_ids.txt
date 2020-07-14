@@ -1,6 +1,6 @@
-C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn\SerialTemperatureSensor.cyprj|3a8a860e-b883-4584-91a6-1c0e61df45f6
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|4521369c-20a8-4526-bbbc-afac94b46aa7
-C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|0fd96505-7cc1-48d3-bf67-6b985c1ff841
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|198c7b21-1993-41a8-9e41-6a42127f18fe
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|c86630be-4b7a-4b99-b023-faa05f47d463
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|a0d06312-4b31-4370-976b-7c2ac88228e0
+C:\Users\gcristini\OneDrive - Datalogic S.p.a\Data\PhytonWorkspace\SkorpioTemperatureTest\PSOC-Firmware\SerialTemperatureSensor.cydsn\SerialTemperatureSensor.cyprj|4ad8342b-2a57-42ee-ba8d-f22c40d3148b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|fe333690-b692-472f-810f-df114caaaa49
+C:\Users\gcristini\OneDrive - Datalogic S.p.a\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|9b874acf-ac33-45fc-8917-2ee4a126f95a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|84e7c7ea-f5a8-4b00-ba89-129b335288cb
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|e8877f0b-fc61-4be1-bdda-0cb429ce381a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ab626c24-2b88-43dd-93da-606d64a86c83
