@@ -5,9 +5,12 @@
 #include "DS18B20.h"
 #include "CyLib.h"
 #define LS_BIT_MASK 0x01
+#define SCRATCHPAD_SIZE 64u
+#define SCRATCH_TEMP_SIZE 12u
+//#define SCRATCH_TEMP_SIGN 15u
 
-
-void DS_v_ResetPulse(void) {
+void DS_v_ResetPulse(void) 
+{
     /* Reset Command for Sensor */    
     
     /* Low for 480us */
@@ -16,15 +19,19 @@ void DS_v_ResetPulse(void) {
 
     /* High for 70us */
     Pin_DS18B20_DQ_Write(HIGH);
+   
     //Pin_DS18B20_DQ_Read();
     CyDelayUs(70);
+
+    return;
 }
 
-void DS_v_WriteBit(uint8 bit) {
-
+void DS_v_WriteBit(uint8 bit)
+{
     /* Write a Bit on Bus*/
       
-    if (bit == 0) {
+    if (bit == 0) 
+    {
         /* Low for 60 us */
         Pin_DS18B20_DQ_Write(LOW);
         CyDelayUs(60);
@@ -33,7 +40,8 @@ void DS_v_WriteBit(uint8 bit) {
         Pin_DS18B20_DQ_Write(HIGH);
         CyDelayUs(10);
 
-    } else {
+    } else 
+    {
         /* Low for 6us */
         Pin_DS18B20_DQ_Write(LOW);
         CyDelayUs(6);
@@ -45,22 +53,10 @@ void DS_v_WriteBit(uint8 bit) {
     }
 
     return;
-
 }
 
-void DS_WriteByte(uint8 TxData) {
-    /* Iterate OW_vrite_bit() to Write a Byte */
-    
-    uint8 i = 0u;
-    for (i = 0; i < 8; i++) {
-        DS_v_WriteBit(TxData & LS_BIT_MASK); //Sending LS-bit first
-        TxData >>= 1; // shift the data byte for the next bit to send
-    }
-
-    return;
-}
-
-uint8 DS_v_ReadBit(void) {
+uint8 DS_v_ReadBit(void)
+ {
     /* Read a Bit After Sensor Response (Timing by Datasheet) */    
     
     uint8 read_bit;
@@ -71,6 +67,7 @@ uint8 DS_v_ReadBit(void) {
 
     /* High for 10 us */
     Pin_DS18B20_DQ_Write(HIGH);
+
     //Pin_DS18B20_DQ_Read();
 
     /* Wait for 10us */    
@@ -84,6 +81,22 @@ uint8 DS_v_ReadBit(void) {
 
     return read_bit;
 }
+
+void DS_WriteByte(uint8 TxData) 
+{
+    /* Iterate OW_vrite_bit() to Write a Byte */
+    
+    uint8 i = 0u;
+
+    for (i = 0; i < 8; i++) {
+        DS_v_WriteBit(TxData & LS_BIT_MASK); //Sending LS-bit first
+        TxData >>= 1; // shift the data byte for the next bit to send
+    }
+
+    return;
+}
+
+
 
 
 float binary_to_float(int array_hex[]) {
@@ -123,28 +136,63 @@ int two_complement(int array[]) {
     return array;
 }
 
-float convert_temp_int(int out_scratchpad[]) {
+
+float convert_temp_int(uint8 scratchpad[])
+{
+    int u8_index = 0u;
+    int u16_temp = 0;
+    float res;
+    uint8* pointer;
+
+    pointer = scratchpad;
+    /* Get Temperature and sign from scratchpad */
+    for (u8_index = 0; u8_index < SCRATCH_TEMP_SIZE; u8_index++)
+    {   
+        /* LS bits become MS bit */
+        u16_temp = u16_temp + (*pointer << u8_index);   
+        *pointer++;
+    }
+
+    /* Do 2-complement if necessary */
+    /*if (scratchpad [15] == 1)
+    {
+        u16_temp = ~u16_temp + 1u;
+    }
+    else
+    {
+      
+    }
+    */
+    
+    /* Divide by 16 */
+    res = u16_temp / 16u;
+
+    return res;
+
+}
+
+float convert_temp_int_OLD(uint8 out_scratchpad[]) {
     /* Convert Temperature From Binary to Float*/
     
     //RICORDARSI DI TRASMETTERE FLAG
-    unsigned char flag_neg; //'0' If Positive Temperature, '1' if Negative
-    int i = 0; //Index
-    int bit_temp[12]; //Temperature Array (12 Bits)
+    uint8 flag_neg; //'0' If Positive Temperature, '1' if Negative
+    uint8 i = 0; //Index
+    uint8 bit_temp[SCRATCH_TEMP_SIZE]; //Temperature Array (12 Bits)
     float celsius; //Celsius Degree Temperature 
     float temp_raw; //Raw Temperature
 
-    //Isolate Temperature's Bits from Scratchpad Data (First 8 Bits)
-    for (i = 0; i < 12; i++) {
+    /* Isolate Temperature's Bits from Scratchpad Data (First 8 Bits) */
+    for (i = 0; i < SCRATCH_TEMP_SIZE; i++) {
         bit_temp[i] = out_scratchpad[i];
     }
     
     flag_neg = out_scratchpad[15]; //Bits 15-to-12 are Sign-Bits 
     
     //Two's Complement If Negative
-    if (flag_neg == 1) {
+   /* if (flag_neg == 1) {
         out_scratchpad = two_complement(out_scratchpad);
     }
-     
+     */
     //for(i=0; i<12; i++){
     //    while (U1STAbits.UTXBF); //resto fermo ad aspettare che il precedente dato sia letto
     //    IEC0bits.U1TXIE = 0;
@@ -170,40 +218,38 @@ float DS_get_temp(void)
     /* Send Commands to Sensor in Orde to Obtain the Temperature Value */
     
     int index = 0; //Index
-    int scratch[64]; //Scratchpad Data
+    int scratch[SCRATCHPAD_SIZE]; //Scratchpad Data
     float temp_celsius; //Temperature in Celsius Degree
     
     /*--------- STEP I: Temperature Internal Conversion --------- */
-    //Reset Command
+    /* Reset Command */
     DS_v_ResetPulse(); 
     CyDelayUs(500);
     
-    //Skip Rom Command
+    /* Skip Rom Command */
     DS_WriteByte(SKIP_ROM_DS18B20); 
     CyDelayUs(500);
 
-    DS_WriteByte(CONVERT_T_DS18B20); //Conversione Temperatura
+    /* Initialize Temperature Conversion */
+    DS_WriteByte(CONVERT_T_DS18B20); 
     CyDelayUs(1000);
-
-    //   flag=OW_read_bit(); 
-    //   while (flag==0); //Aspetto Sia Pronta La Conversione
-
+  
     /*---------STEP II: Read Temperature --------- */
-    //Reset
+    /* Reset */
     DS_v_ResetPulse(); 
     CyDelayUs(500);
 
-    //Skip Rom
+    /* Skip Rom */
     DS_WriteByte(SKIP_ROM_DS18B20); 
     CyDelayUs(500);
     
-    //Read Scratchapd
+    /* Read Scratchapd */
     DS_WriteByte(READ_SCRATCHPAD_DS18B20); 
-    for (index = 0; index < 64; index++) {
+    for (index = 0; index < SCRATCHPAD_SIZE; index++) {
         scratch[index] = DS_v_ReadBit();
     }
     
-    /*--------STEP III: CONVERSION TO CELSIUS DEGREE-----------------*/
+    /* --------STEP III: CONVERSION TO CELSIUS DEGREE----------------- */
     temp_celsius = convert_temp_int(scratch);
     return temp_celsius;
 }
