@@ -41,14 +41,26 @@ class CustomSerial(serial.Serial):
 
 if __name__ == '__main__':
     import time
-    test_serial = CustomSerial(port="COM16", baudrate=115200)
+    from datetime import datetime
+    from Timer import Timer
+    test_serial = CustomSerial(port="COM14", baudrate=115200)
     test_serial.serial_init()
     #test_serial.serial_write("init")
-    time.sleep(1)
+    #test_serial.serial_write('read_tempiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
+    counter = 0
 
-    test_serial.serial_write("read_temp")
+    tm=Timer()
+    tm.start()
+
     while True:
-        if test_serial.bytes_available_rx:
-            x = test_serial.serial_read()
-            print (x)
+        test_serial.serial_write('read_temp\r')
+
+        while not test_serial.bytes_available_rx:
+            pass
+
+        x = test_serial.serial_read().strip("\r\n")
+        print ((counter , tm.elapsed_time_s(2), x))
+        counter = counter +1
+        time.sleep(1)
+
 

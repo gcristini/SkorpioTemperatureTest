@@ -24,7 +24,7 @@
     </ImageManager>
 
     <TempSensor>
-        <port>COM15</port>
+        <port>COM14</port>
         <baudrate>115200</baudrate>
         <!--- NOT USED
         <bytsize></bytsize>
@@ -37,8 +37,8 @@
 
     <ThermalChamber>
         <!-- This parameters must be the same set on the thermal chamber -->
-        <temp_start>20</temp_start>
-        <temp_stop>30</temp_stop>
+        <temp_start>40</temp_start>
+        <temp_stop>80</temp_stop>
         <steps>3</steps>
         <time_platau_s>60</time_platau_s>
 

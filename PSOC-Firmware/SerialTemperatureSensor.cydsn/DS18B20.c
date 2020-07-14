@@ -306,7 +306,7 @@ void DS_v_FloatToStringTemp(float32 f32_TempValue, uint8 *pu8_TempStringValue)
     f32_TempFrac = (float32)(f32_TempValue - i16_TempInt);
     i16_TempDec = (int16)(f32_TempFrac * pow(10, TEMP_RESOLUTION));
 
-    sprintf((char *)pu8_TempStringValue, "%s%d.%d\n", pu8_TempSign, i16_TempInt, i16_TempDec);
+    sprintf((char *)pu8_TempStringValue, "%s%d.%d", pu8_TempSign, i16_TempInt, i16_TempDec);
 
     return;
 }

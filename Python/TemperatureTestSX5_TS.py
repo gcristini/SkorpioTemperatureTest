@@ -104,7 +104,7 @@ class TemperatureTestSx5_TS(object):
         self._serial = cs.CustomSerial(port=self._config_dict['TempSensor']['port'],
                                        baudrate=self._config_dict['TempSensor']['baudrate'])
         self._serial.serial_init()
-        self._serial.serial_write("init")
+        #self._serial.serial_write("init")
 
         pass
 
@@ -249,7 +249,7 @@ class TemperatureTestSx5_TS(object):
             if (self._read_temp_timer.elapsed_time_s() >= int(self._config_dict['TempSensor']['sample_time_s'])):
 
                 # Read temperature
-                self._serial.serial_write("read_temp")
+                self._serial.serial_write('read_temp\r')
                 while not self._serial.bytes_available_rx:
                     pass
 
@@ -258,7 +258,9 @@ class TemperatureTestSx5_TS(object):
                 except:
                     pass
 
+                sys.stdout.write("\033[K")  # Clear to the end of line
                 print("Detected temperature: {temp}°C".format(temp=self._room_temperature), end="\r")
+
 
                 if (self._room_temperature >= self._target_temp[0]):
 
