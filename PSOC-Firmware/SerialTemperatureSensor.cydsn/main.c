@@ -1,106 +1,198 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
-#include "project.h"
+/* **********************************************************************/ /**
+ \file      \arg  Main.c
+ \brief  
+ \date		\arg  Created on: July 13.20
+			\arg  Last Edit: July 14.20
+ \author	\arg  Gabriele Cristini
+			\arg  \b 
+ */
+
+/* ***********************************************************************/
+/* **********************************************************************/
+/* ***              System and library files included                 ***/
+/* **********************************************************************/
 #include <unistd.h>
 #include <stdio.h>
+
+/* **********************************************************************/
+/* ***                 Other components included                      ***/
+/* **********************************************************************/
+#include "project.h"
 #include "DS18B20.h"
 
-#define BUFFER_SIZE 100
+/* **********************************************************************/
+/* ***                Definition of local macros                      ***/
+/* **********************************************************************/
+#define UART_RX_BUFFER_SIZE 100u
+#define UART_TX_BUFFER_SIZE 20u
+
 #define forever for (;;) /* Enjoy :) */
 
-void init(void);
-void pollUart(void);
-void parseCommand(char *command);
-void clearBuffer(uint8 *buffer, uint8 bufferSize);
+/* **********************************************************************/
+/* ***             Declaration of local functions                     ***/
+/* **********************************************************************/
+void MAIN_v_PollUart                (void);
+void MAIN_v_ParseCommand            (uint8 *pu8_Command);
+void MAIN_v_ClearBuffer             (uint8 *pu8_Buffer, uint8 u8_BufferSize);
+void MAIN_v_ReadTemperatureCommand  (void);
+
+/* **********************************************************************/
+/* ***             Definition of local functions                      ***/
+/* **********************************************************************/
+/* *********************************************************************************/ /**
+   \fn      	void MAIN_v_PollUart(void)
+   \brief   	Poll Uart \n
+            	Scope: Local
+   \return  	void
+   \author		\arg Gabriele Cristini
+   \date		\arg Creation:  July 13.20
+				\arg Last Edit: July 14.20
+ */
+/* **********************************************************************************/
+
+void MAIN_v_PollUart(void)
+{
+    static uint8    u8_Char;
+    static uint8    u8_RxDataIndex = 0u;
+    static uint8    u8_RxData[UART_RX_BUFFER_SIZE];
+    static uint8*   pu8_RxCommand;
+
+    /* Get received character or zero if nothing has been received yet */
+    u8_Char = UART_PC_UartGetChar();
+
+    if (u8_Char != 0u)
+    {
+        /* Store the last received char */
+        u8_RxData[u8_RxDataIndex] = u8_Char;
+
+        if (u8_Char == '\r')
+        {
+            /* Insert the string terminator character */
+            u8_RxData[u8_RxDataIndex] = '\0';
+
+            /* Point to buffer */
+            pu8_RxCommand = u8_RxData;
+            
+            MAIN_v_ParseCommand(pu8_RxCommand);
+
+            /* Clear buffer and reset index */
+            MAIN_v_ClearBuffer(u8_RxData, UART_RX_BUFFER_SIZE);
+
+            u8_RxDataIndex = -1;
+        }
+
+        u8_RxDataIndex++;
+    }
+
+    return;
+}
+
+/* *********************************************************************************/ /**
+   \fn      	void MAIN_v_ClearBuffer(uint8 *pu8_Buffer, uint8 u8_BufferSize)
+   \brief   	Clear a buffer \n
+            	Scope: Local
+   \return  	void
+   \author		\arg Gabriele Cristini
+   \date		\arg Creation:  July 13.20
+				\arg Last Edit: July 14.20
+ */
+/* **********************************************************************************/
+void MAIN_v_ClearBuffer(uint8 *pu8_Buffer, uint8 u8_BufferSize)
+{   
+    /* Variables */
+    uint8 u8_i;
+
+    /* Clear Buffer */
+    for (u8_i = 0; u8_i < u8_BufferSize; u8_i++)
+    {
+        pu8_Buffer[u8_i] = 0u;
+    }
+
+    return;
+}
+
+/* *********************************************************************************/ /**
+   \fn      	void MAIN_v_ParseCommand (uint8 *pu8_Command)
+   \brief   	Parse command \n
+            	Scope: Local
+   \return  	void
+   \author		\arg Gabriele Cristini
+   \date		\arg Creation:  July 13.20
+				\arg Last Edit: July 14.20
+ */
+/* **********************************************************************************/
+void MAIN_v_ParseCommand(uint8 *pu8_Command)
+{
+    /* Get Temperature */
+    if (!strcmp((const char*)pu8_Command, "read_temp"))
+    {   
+        /* Read temperature from DS18B20 and send result to PC */
+        MAIN_v_ReadTemperatureCommand();
+    }    
+    else    
+    {
+        /* MISRA */
+    }
+    
+    return;
+}
+
+/* *********************************************************************************/ /**
+   \fn      	void MAIN_v_ReadTemperatureCommand(void)
+   \brief   	Read temperature from DS18B20 and send result to PC \n
+            	Scope: Local
+   \return  	void
+   \author		\arg Gabriele Cristini
+   \date		\arg Creation:  July 13.20
+				\arg Last Edit: July 14.20
+ */
+/* **********************************************************************************/
+void MAIN_v_ReadTemperatureCommand(void)
+{   
+    /* Variables */
+    uint8 u8_TempBuff[UART_TX_BUFFER_SIZE];
+    
+    /* Read Temperature from DS18B20 and convert into string */
+    DS_v_FloatToStringTemp((float32)DS_f32_ReadTemperature(), u8_TempBuff);
+
+    /* Send result to PC */
+    UART_PC_UartPutString((char *)u8_TempBuff);
+
+    /* Clear Buffer */
+    MAIN_v_ClearBuffer(u8_TempBuff, UART_TX_BUFFER_SIZE);
 
 
-uint8 temp;
-uint8 tempBuff[BUFFER_SIZE];
+    return;
+}
+
+/* **********************************************************************/
+/* ***            Definition of global functions                      ***/
+/* **********************************************************************/
+
+
+/* *********************************************************************************/ /**
+   \fn      	int main(void)
+   \brief   	main program \n
+            	Scope: Local
+   \return  	void
+   \author		\arg Gabriele Cristini
+   \date		\arg Creation:  July 13.20
+				\arg Last Edit: July 14.20
+ */
+/* **********************************************************************************/
 
 int main(void)
 {
-    
-    /* Initialization */
-    init();
-    
-    /* Transmit String through UART TX Line */
-    UART_PC_UartPutString("WELCOME");
-    
-    forever
-    {
-           
-       pollUart();
-       temp=(int)DS_get_temp();
-    
-        sprintf((char*)tempBuff, "%d", temp);
-        UART_PC_UartPutString((char*)tempBuff);
-        clearBuffer(tempBuff, BUFFER_SIZE);
-        CyDelay(1000);
-        
-    }
-}
-
-
-void init (void)
-{
-    
     /* Init UART */
     UART_PC_Start();
-    return;   
-    
-}
 
-void pollUart(void)
-{
-   static uint8 ch;
-        static uint16 rxDataIndex = 0u;
-        static uint8 rxData[BUFFER_SIZE];
-        static uint8 *rxCommand;
-        
-     /* Get received character or zero if nothing has been received yet */
-        ch = UART_PC_UartGetChar();
-        if (0u != ch)
-        {
-                        
-            /* Store the last received char */
-            rxData[rxDataIndex] = ch;
-                        
-            if (ch == '\r')
-            {  
-                /* Insert the string terminator character */
-               rxData[rxDataIndex] = '\0'; 
-
-               /* Point to buffer */
-               rxCommand = rxData;
-               UART_PC_UartPutString((const char*) rxCommand);
-             
-            
-                /* Clear buffer and index */
-                clearBuffer(rxData, BUFFER_SIZE);            
-                
-                rxDataIndex = -1;
-                                
-            }
-            
-            rxDataIndex++;
-            
-        }
-}
-   void clearBuffer(uint8 *buffer, uint8 bufferSize)
+    forever
     {
-        uint8 i;
-        for (i = 0; i < bufferSize; i++)
-        {
-            buffer[i] = 0u;
-        }
+        /* Poll Uart */
+        MAIN_v_PollUart();        
     }
- /*] END OF FILE */
+
+    return 0;
+}
+
+/*] END OF FILE */
