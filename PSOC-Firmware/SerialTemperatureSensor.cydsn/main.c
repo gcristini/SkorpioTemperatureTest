@@ -2,7 +2,7 @@
  \file      \arg  Main.c
  \brief  
  \date		\arg  Created on: July 13.20
-			\arg  Last Edit: July 14.20
+			\arg  Last Edit: July 15.20
  \author	\arg  Gabriele Cristini
 			\arg  \b 
  */
@@ -191,13 +191,16 @@ void MAIN_v_ReadTemperatureCommand(void)
 				\arg Last Edit: July 14.20
  */
 /* **********************************************************************************/
-
 int main(void)
-{
+{    
+    /* ---------- INIT ---------- */
     /* Init UART */
     UART_FTDI_Start();
+    
+    /* Enable Global Interrupts */
     CyGlobalIntEnable;
     
+    /* ------- Main Loop -------- */
     forever
     {
         /* Poll Uart */
