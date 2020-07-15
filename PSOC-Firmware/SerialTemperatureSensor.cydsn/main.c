@@ -58,14 +58,14 @@ void MAIN_v_PollUart(void)
     static uint8*   pu8_RxCommand;
 
     /* Get received character or zero if nothing has been received yet */
-    u8_Char = UART_PC_UartGetChar();
+    u8_Char = UART_FTDI_UartGetChar();
 
     if (u8_Char != 0u)
     {
         /* Store the last received char */
         u8_RxData[u8_RxDataIndex] = u8_Char;    
-        //UART_PC_UartPutChar(u8_Char);
-                
+        
+        /* If a complete string is received... */
         if (u8_Char == '\r')
         {
             /* Insert the string terminator character */
@@ -135,8 +135,7 @@ void MAIN_v_ParseCommand(uint8 *pu8_Command)
     if (!strcmp((const char*)pu8_Command, "read_temp"))
     {   
         /* Read temperature from DS18B20 and send result to PC */
-        //MAIN_v_ReadTemperatureCommand();
-        UART_PC_UartPutString("test");
+        MAIN_v_ReadTemperatureCommand();       
     }    
     else    
     {
@@ -160,15 +159,15 @@ void MAIN_v_ReadTemperatureCommand(void)
 {   
     /* Variables */
     static uint8 u8_TempBuff[UART_TX_BUFFER_SIZE];
-    static uint64 counter = 0;
-    
+        
     /* Read Temperature from DS18B20 and convert into string */
     DS_v_FloatToStringTemp((float32)DS_f32_ReadTemperature(), u8_TempBuff);
     
+    /* Add newline and carriage return at the end of the string */
     sprintf((char*)u8_TempBuff, "%s\r\n", u8_TempBuff);
     
     /* Send result to PC */
-    UART_PC_UartPutString((char *)u8_TempBuff);
+    UART_FTDI_UartPutString((char *)u8_TempBuff);
     
     /* Clear Buffer */
     MAIN_v_ClearBuffer(u8_TempBuff, UART_TX_BUFFER_SIZE);
@@ -196,15 +195,13 @@ void MAIN_v_ReadTemperatureCommand(void)
 int main(void)
 {
     /* Init UART */
-    UART_PC_Start();
+    UART_FTDI_Start();
     CyGlobalIntEnable;
     
     forever
     {
         /* Poll Uart */
         MAIN_v_PollUart();   
-        //UART_PC_UartPutString("Prova\r\n");
-        
     }
 
     return 0;

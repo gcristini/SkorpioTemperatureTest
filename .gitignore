@@ -153,3 +153,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+PSOC-Firmware/SerialTemperatureSensor.cydsn/codegentemp/
+PSOC-Firmware/SerialTemperatureSensor.cydsn/Generated_Source/

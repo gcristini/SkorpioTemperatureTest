@@ -43,7 +43,7 @@ if __name__ == '__main__':
     import time
     from datetime import datetime
     from Timer import Timer
-    test_serial = CustomSerial(port="COM14", baudrate=115200)
+    test_serial = CustomSerial(port="COM19", baudrate=115200)
     test_serial.serial_init()
     #test_serial.serial_write("init")
     #test_serial.serial_write('read_tempiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
@@ -56,11 +56,12 @@ if __name__ == '__main__':
         test_serial.serial_write('read_temp\r')
 
         while not test_serial.bytes_available_rx:
+
             pass
 
         x = test_serial.serial_read().strip("\r\n")
         print ((counter , tm.elapsed_time_s(2), x))
         counter = counter +1
-        time.sleep(1)
+        time.sleep(0.1)
 
 
