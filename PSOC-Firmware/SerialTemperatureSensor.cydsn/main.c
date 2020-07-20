@@ -197,9 +197,13 @@ int main(void)
     /* Init UART */
     UART_FTDI_Start();
     
+    /* User Led ON */ 
+    Pin_UserLed_Write(1);
+    
     /* Enable Global Interrupts */
     CyGlobalIntEnable;
     
+        
     /* ------- Main Loop -------- */
     forever
     {
