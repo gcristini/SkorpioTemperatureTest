@@ -34,7 +34,8 @@
 void MAIN_v_PollUart                (void);
 void MAIN_v_ParseCommand            (uint8 *pu8_Command);
 void MAIN_v_ClearBuffer             (uint8 *pu8_Buffer, uint8 u8_BufferSize);
-void MAIN_v_ReadTemperatureCommand  (void);
+void MAIN_v_ReadTemperatureCommand  (EN_DS18B20_TEMP_ENUM_TYPE en_Sensor);
+void MAIN_v_Init                    (void);
 
 /* **********************************************************************/
 /* ***             Definition of local functions                      ***/
@@ -49,7 +50,6 @@ void MAIN_v_ReadTemperatureCommand  (void);
 				\arg Last Edit: July 14.20
  */
 /* **********************************************************************************/
-
 void MAIN_v_PollUart(void)
 {
     static uint8    u8_Char;
@@ -68,9 +68,10 @@ void MAIN_v_PollUart(void)
         /* If a complete string is received... */
         if (u8_Char == '\r')
         {
+            
             /* Insert the string terminator character */
             u8_RxData[u8_RxDataIndex] = '\0';
-
+            
             /* Point to buffer */
             pu8_RxCommand = u8_RxData;
             
@@ -132,11 +133,16 @@ void MAIN_v_ClearBuffer(uint8 *pu8_Buffer, uint8 u8_BufferSize)
 void MAIN_v_ParseCommand(uint8 *pu8_Command)
 {
     /* Get Temperature */
-    if (!strcmp((const char*)pu8_Command, "read_temp"))
+    if (!strcmp((const char*)pu8_Command, "read_env_temp"))
     {   
-        /* Read temperature from DS18B20 and send result to PC */
-        MAIN_v_ReadTemperatureCommand();       
-    }    
+        /* Read temperature from Environment DS18B20 and send result to PC */
+        MAIN_v_ReadTemperatureCommand(DS_ENVIRONMENT);       
+    }
+    else if (!strcmp((const char*)pu8_Command, "read_se_temp"))
+    {
+        /* Read temperature from Scan Engine DS18B20 and send result to PC */
+        MAIN_v_ReadTemperatureCommand(DS_SCAN_ENGINE);      
+    }
     else    
     {
         /* MISRA */
@@ -146,7 +152,7 @@ void MAIN_v_ParseCommand(uint8 *pu8_Command)
 }
 
 /* *********************************************************************************/ /**
-   \fn      	void MAIN_v_ReadTemperatureCommand(void)
+   \fn      	void MAIN_v_ReadTemperatureCommand(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
    \brief   	Read temperature from DS18B20 and send result to PC \n
             	Scope: Local
    \return  	void
@@ -155,13 +161,13 @@ void MAIN_v_ParseCommand(uint8 *pu8_Command)
 				\arg Last Edit: July 14.20
  */
 /* **********************************************************************************/
-void MAIN_v_ReadTemperatureCommand(void)
+void MAIN_v_ReadTemperatureCommand(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
 {   
-    /* Variables */
-    static uint8 u8_TempBuff[UART_TX_BUFFER_SIZE];
+    /* Variables */    
+    uint8 u8_TempBuff[UART_TX_BUFFER_SIZE];
         
     /* Read Temperature from DS18B20 and convert into string */
-    DS_v_FloatToStringTemp((float32)DS_f32_ReadTemperature(), u8_TempBuff);
+    DS_v_FloatToStringTemp((float32)DS_f32_ReadTemperature(en_Sensor), u8_TempBuff);
     
     /* Add newline and carriage return at the end of the string */
     sprintf((char*)u8_TempBuff, "%s\r\n", u8_TempBuff);
@@ -169,18 +175,36 @@ void MAIN_v_ReadTemperatureCommand(void)
     /* Send result to PC */
     UART_FTDI_UartPutString((char *)u8_TempBuff);
     
-    /* Clear Buffer */
-    MAIN_v_ClearBuffer(u8_TempBuff, UART_TX_BUFFER_SIZE);
-
-
+    
     return;
 }
 
 /* **********************************************************************/
 /* ***            Definition of global functions                      ***/
 /* **********************************************************************/
-
-
+/* *********************************************************************************/ /**
+   \fn      	void MAIN_v_Init(void)
+   \brief   	Main init \n
+            	Scope: Local
+   \return  	void
+   \author		\arg Gabriele Cristini
+   \date		\arg Creation:  July 30.20
+				\arg Last Edit: July 30.20
+ */
+/* **********************************************************************************/
+void MAIN_v_Init(void)
+{
+    /* Init UART */
+    UART_FTDI_Start();
+    
+    /* User Led ON */ 
+    PIN_DrivePin(PIN_USER_LED, PIN_HIGH);
+    
+    /* Enable Global Interrupts */
+    CyGlobalIntEnable;
+    
+    return;
+}
 /* *********************************************************************************/ /**
    \fn      	int main(void)
    \brief   	main program \n
@@ -193,18 +217,10 @@ void MAIN_v_ReadTemperatureCommand(void)
 /* **********************************************************************************/
 int main(void)
 {    
-    /* ---------- INIT ---------- */
-    /* Init UART */
-    UART_FTDI_Start();
-    
-    /* User Led ON */ 
-    Pin_UserLed_Write(1);
-    
-    /* Enable Global Interrupts */
-    CyGlobalIntEnable;
-    
+    /* Init */
+    MAIN_v_Init();
         
-    /* ------- Main Loop -------- */
+    /*  Main Loop  */
     forever
     {
         /* Poll Uart */

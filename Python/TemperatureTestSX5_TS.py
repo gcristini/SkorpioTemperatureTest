@@ -233,7 +233,6 @@ class TemperatureTestSx5_TS(object):
 
     def _read_temperature_state_manager(self):
         """"""
-
         if (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_READ_TEMP and
                 self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_READ_TEMP):
             # Print the current temperature
@@ -249,7 +248,7 @@ class TemperatureTestSx5_TS(object):
             if (self._read_temp_timer.elapsed_time_s() >= int(self._config_dict['TempSensor']['sample_time_s'])):
 
                 # Read temperature
-                self._serial.serial_write('read_temp\r')
+                self._serial.serial_write('read_env_temp\r')
                 while not self._serial.bytes_available_rx:
                     pass
 
@@ -260,7 +259,6 @@ class TemperatureTestSx5_TS(object):
 
                 sys.stdout.write("\033[K")  # Clear to the end of line
                 print("Detected temperature: {temp}°C".format(temp=self._room_temperature), end="\r")
-
 
                 if (self._room_temperature >= self._target_temp[0]):
 

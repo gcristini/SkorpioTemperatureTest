@@ -16,15 +16,25 @@
 /* **********************************************************************/
 #include <stdlib.h>
 
+
 /* **********************************************************************/
 /* ***                 Other components included                      ***/
 /* **********************************************************************/
-#include <Pin_DS18B20_DQ.h>
+#include "PinManager.h"
+#include "cylib.h"
+/* **********************************************************************/
+/* ***                Definition of global types                       ***/
+/* **********************************************************************/
+typedef enum{
+	DS_ENVIRONMENT = 0,
+	DS_SCAN_ENGINE = 1,
+	DS_MAX_ENUM
+}EN_DS18B20_TEMP_ENUM_TYPE;
 
-
-
-
-float32 DS_f32_ReadTemperature  (void);
+/* **********************************************************************/
+/* ***             Declaration of global functions                    ***/
+/* **********************************************************************/
+float32 DS_f32_ReadTemperature	(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor);
 void    DS_v_FloatToStringTemp  (float32 f32_TempValue, uint8* pu8_TempStringValue);
 
 #endif /* _DS18B20_H */

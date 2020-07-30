@@ -72,11 +72,11 @@ class ImageManager(object):
             img_data = self._read_raw(self._input_dir +'/' +img)
 
             # Show Raw data
-            if (show == True):
+            if (show is True):
                 img_data.show(title=img)
 
             # Create output directory and save the images
-            if (save == True):
+            if (save is True):
                 try:
                     if not os.path.exists(self._output_dir):
                         os.mkdir(self._output_dir)

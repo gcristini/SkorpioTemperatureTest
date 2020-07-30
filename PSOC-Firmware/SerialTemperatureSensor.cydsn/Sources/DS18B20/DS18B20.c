@@ -42,56 +42,96 @@
 
 #define TEMP_RESOLUTION             4u      /* Resolution up to 4 digits */
 
-/* Others */
-#define	HIGH	1
-#define	LOW		0
-
-
-
 
 /* **********************************************************************/
 /* ***                Definition of local types                       ***/
 /* **********************************************************************/
 
 /* **********************************************************************/
+/* ***                     Local variables                            ***/
+/* **********************************************************************/
+
+
+/* **********************************************************************/
 /* ***             Declaration of local functions                     ***/
 /* **********************************************************************/
-void        DS_v_ResetPulse                 (void);
-void        DS_v_WriteBit                   (uint8 u8_bit);
-uint8       DS_v_ReadBit                    (void);
-void        DS_v_WriteByte                  (uint8 u8_TxByte);
-float32     DS_f32_GetTempFromScratchpad    (uint64 u64_scratchpad);
+EN_PIN_ENUM_TYPE    DS_en_GetSensorFromPin          (EN_DS18B20_TEMP_ENUM_TYPE en_Sensor);
+void                DS_v_ResetPulse                 (EN_DS18B20_TEMP_ENUM_TYPE en_Sensor);
+void                DS_v_WriteBit                   (EN_DS18B20_TEMP_ENUM_TYPE en_Sensor, uint8 u8_bit);
+uint8               DS_v_ReadBit                    (EN_DS18B20_TEMP_ENUM_TYPE en_Sensor);
+void                DS_v_WriteByte                  (EN_DS18B20_TEMP_ENUM_TYPE en_Sensor, uint8 u8_TxByte);
+float32             DS_f32_GetTempFromScratchpad    (uint64 u64_scratchpad);
 
 /* **********************************************************************/
 /* ***             Definition of local functions                      ***/
 /* **********************************************************************/
 /* *********************************************************************************/ /**
-   \fn      	void DS_v_ResetPulse(void) 
+   \fn      	EN_PIN_ENUM_TYPE DS_en_GetSensorFromPin(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
+   \brief   	Get Pin from Sensor enumerative \n
+            	Scope: Local
+   \return  	void
+   \author		\arg Gabriele Cristini
+   \date		\arg Creation:  July 30.20
+				\arg Last Edit: July 30.20
+ */
+/* **********************************************************************************/
+EN_PIN_ENUM_TYPE DS_en_GetSensorFromPin(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
+{
+    EN_PIN_ENUM_TYPE en_Pin;
+    
+    switch (en_Sensor)
+    {   
+        case DS_ENVIRONMENT:
+            en_Pin = PIN_DS_ENVIRONMENT_DQ;
+            break;
+
+        case DS_SCAN_ENGINE:
+            en_Pin = PIN_DS_SCAN_ENGINE_DQ;
+            break;
+
+        default:
+            /* MISRA */
+        break;
+    }
+
+    return en_Pin;
+}
+
+
+/* *********************************************************************************/ /**
+   \fn      	void DS_v_ResetPulse(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor) 
    \brief   	Reset command to sensor \n
             	Scope: Local
    \return  	void
    \author		\arg Gabriele Cristini
    \date		\arg Creation:  July 13.20
-				\arg Last Edit: July 14.20
+				\arg Last Edit: July 30.20
  */
 /* **********************************************************************************/
-void DS_v_ResetPulse(void)
-{
+void DS_v_ResetPulse(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
+{   
+    /* Variables */
+    EN_PIN_ENUM_TYPE en_Pin;
+    
+    /* Get pin from sensor enum */
+    en_Pin = DS_en_GetSensorFromPin(en_Sensor);    
+    
     /* Low for 480us */
-    Pin_DS18B20_DQ_Write(LOW);
+    PIN_DrivePin(en_Pin, PIN_LOW);
     CyDelayUs(480);
 
     /* High for 70us */
-    Pin_DS18B20_DQ_Write(HIGH);
+    PIN_DrivePin(en_Pin, PIN_HIGH);
 
     /* Wait for 70 us */
     CyDelayUs(70);
+    
 
     return;
 }
 
 /* *********************************************************************************/ /**
-   \fn      	void DS_v_WriteBit(uint8 u8_bit)
+   \fn      	void DS_v_WriteBit(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor, uint8 u8_bit)
    \brief   	Write a bit on Bus \n
             	Scope: Local
    \return  	void
@@ -100,27 +140,32 @@ void DS_v_ResetPulse(void)
 				\arg Last Edit: July 14.20
  */
 /* **********************************************************************************/
-void DS_v_WriteBit(uint8 u8_bit)
+void DS_v_WriteBit(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor, uint8 u8_bit)
 {
+    /* Variables */
+    EN_PIN_ENUM_TYPE en_Pin;
+    
+    /* Get pin from sensor enum */
+    en_Pin = DS_en_GetSensorFromPin(en_Sensor); 
 
     if (u8_bit)
     {
-       /* Low for 6us */
-        Pin_DS18B20_DQ_Write(LOW);
+        /* Low for 6us */
+        PIN_DrivePin(en_Pin, PIN_LOW);
         CyDelayUs(6);
 
         /* High for 64 us */
-        Pin_DS18B20_DQ_Write(HIGH);
+        PIN_DrivePin(en_Pin, PIN_HIGH);
         CyDelayUs(64);
     }
     else
     {
         /* Low for 60 us */
-        Pin_DS18B20_DQ_Write(LOW);
+        PIN_DrivePin(en_Pin, PIN_LOW);
         CyDelayUs(60);
 
         /* High for 10 us */
-        Pin_DS18B20_DQ_Write(HIGH);
+        PIN_DrivePin(en_Pin, PIN_HIGH);
         CyDelayUs(10);
     }
 
@@ -137,23 +182,27 @@ void DS_v_WriteBit(uint8 u8_bit)
 				\arg Last Edit: July 14.20
  */
 /* **********************************************************************************/
-uint8 DS_v_ReadBit(void)
+uint8 DS_v_ReadBit(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
 {
     /* Variables */
-    uint8 u8_ReadBit;
-
+    EN_PIN_ENUM_TYPE    en_Pin;
+    uint8               u8_ReadBit;
+    
+    /* Get pin from sensor enum */
+    en_Pin = DS_en_GetSensorFromPin(en_Sensor); 
+    
     /* Low for 1 us */
-    Pin_DS18B20_DQ_Write(LOW);
+    PIN_DrivePin(en_Pin, PIN_LOW);
     CyDelayUs(3);
 
     /* High for 10 us */
-    Pin_DS18B20_DQ_Write(HIGH);
+    PIN_DrivePin(en_Pin, PIN_HIGH);
 
     /* Wait for 10us */
     CyDelayUs(10);
 
     /* Get bit */
-    u8_ReadBit = Pin_DS18B20_DQ_Read();
+    u8_ReadBit = PIN_ReadPin(en_Pin);
 
     /* Wait for 53 us */
     CyDelayUs(53);
@@ -171,7 +220,7 @@ uint8 DS_v_ReadBit(void)
 				\arg Last Edit: July 14.20
  */
 /* **********************************************************************************/
-void DS_v_WriteByte(uint8 u8_TxByte)
+void DS_v_WriteByte(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor, uint8 u8_TxByte)
 {
     /* Variables */
     uint8 u8_i;
@@ -179,7 +228,8 @@ void DS_v_WriteByte(uint8 u8_TxByte)
     for (u8_i = 0u; u8_i < 8u; u8_i++)
     {
         /* Sending LS-bit first */
-        DS_v_WriteBit(u8_TxByte & LS_BIT_MASK);
+        DS_v_WriteBit(en_Sensor, u8_TxByte & LS_BIT_MASK);
+
         /* Shift the data byte for the next bit to send */
         u8_TxByte >>= 1u;
     }
@@ -237,7 +287,7 @@ float32 DS_f32_GetTempFromScratchpad(uint64 u64_scratchpad)
 				\arg Last Edit: July 14.20
  */
 /* **********************************************************************************/
-float32 DS_f32_ReadTemperature(void)
+float32 DS_f32_ReadTemperature(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
 {
     /* Variables */
     uint8   u8_Index;
@@ -246,31 +296,31 @@ float32 DS_f32_ReadTemperature(void)
 
     /*--------- STEP I: Temperature Internal Conversion --------- */
     /* Reset Command */
-    DS_v_ResetPulse();
+    DS_v_ResetPulse(en_Sensor);
     CyDelayUs(500);
 
     /* Skip Rom Command */
-    DS_v_WriteByte(SKIP_ROM_DS18B20);
+    DS_v_WriteByte(en_Sensor, SKIP_ROM_DS18B20);
     CyDelayUs(500);
 
     /* Initialize Temperature Conversion */
-    DS_v_WriteByte(CONVERT_T_DS18B20);
+    DS_v_WriteByte(en_Sensor, CONVERT_T_DS18B20);
     CyDelayUs(1000);
 
     /*---------STEP II: Read Temperature --------- */
     /* Reset */
-    DS_v_ResetPulse();
+    DS_v_ResetPulse(en_Sensor);
     CyDelayUs(500);
 
     /* Skip Rom */
-    DS_v_WriteByte(SKIP_ROM_DS18B20);
+    DS_v_WriteByte(en_Sensor, SKIP_ROM_DS18B20);
     CyDelayUs(500);
 
     /* Read Scratchapd */
-    DS_v_WriteByte(READ_SCRATCHPAD_DS18B20);
+    DS_v_WriteByte(en_Sensor, READ_SCRATCHPAD_DS18B20);
     for (u8_Index = 0; u8_Index < SCRATCHPAD_SIZE; u8_Index++)
     {
-        int64_Scratch += DS_v_ReadBit() << u8_Index;
+        int64_Scratch += DS_v_ReadBit(en_Sensor) << u8_Index;
     }
 
     /* --------STEP III: CONVERSION TO CELSIUS DEGREE----------------- */
