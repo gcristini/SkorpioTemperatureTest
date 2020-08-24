@@ -28,13 +28,12 @@ class TemperatureTestSx5_TS(object):
         # Global settings/variables
         self._gv_scan_engine = gv().scan_engine_dict
         self._gs = gs().global_settings
-        self._config_dict = {}
+        self._config_dict: dict
 
         # Modules Manager
-        self._SX5 = None
-        self._image_manager = None
-        self._thermal_chamber = None
-        self._serial = None
+        self._SX5: SX5_Manager
+        self._image_manager: ImageManager
+        self._serial: cs
 
         # Timers
         self._timer_dict = {
@@ -45,25 +44,25 @@ class TemperatureTestSx5_TS(object):
         }
 
         # Scan Engine Thread
-        self._scan_engine_app_thread = None
+        self._scan_engine_app_thread: CustomThread
+        self._read_temperature_thread: CustomThread
+        self._csv_log_thread: CustomThread
 
         # Dictionary for steps of iterations
-        self._step_dict = {}
-        self._target_temp = None
+        self._step_dict: dict
+        self._target_temp: float
 
         # Temperature
         self._temperature_dict = {
             'Room': {
                 'command': 'read_env_temp\r',
-                'value': 0
+                'value': 0.0
             },
             'ScanEngine': {
                 'command': 'read_se_temp\r',
-                'value': 0
+                'value': 0.0
             }
         }
-
-        self._read_temperature_thread = None
 
         # Dictionary with state and "pointer to function" for the state machine
         self._temp_test_fun_dict = {
@@ -80,7 +79,7 @@ class TemperatureTestSx5_TS(object):
 
         # Initialize state machine to INIT state
         self._temp_test_state = enum.TempTestTS_StatesEnum.TT_INIT
-        self._last_temp_test_state = None
+        self._last_temp_test_state: enum.TempTestTS_StatesEnum
 
         self._csv_log_dict = {
             "filename": None,
@@ -196,16 +195,12 @@ class TemperatureTestSx5_TS(object):
                 self._temperature_dict[sensor]['value'] = temp
             finally:
                 time.sleep(0.0)
-
-        # Update csv file
-        self._update_csv_log()
-
         return
 
-    def _update_csv_log(self):
+    def _update_csv_log_runnable(self):
         """"""
         # Populate csv dictionary
-        self._csv_log_dict['log_data']['time [s]'] = self._timer_dict['Global'].elapsed_time_s(digits=2)
+        self._csv_log_dict['log_data']['time [s]'] = self._timer_dict['Global'].elapsed_time_s(digits=1)
         self._csv_log_dict["log_data"]['room [°C]'] = self._temperature_dict['Room']['value']
         self._csv_log_dict["log_data"]['scan Engine [°C]'] = self._temperature_dict['ScanEngine']['value']
 
@@ -286,8 +281,11 @@ class TemperatureTestSx5_TS(object):
         self._read_temperature_thread = CustomThread(thread_name="ReadTemperatureThread",
                                                      runnable=self._read_temperature_sensor_thread_runnable,
                                                      timing_ms=500,
-                                                     num_of_iter='inf',
-                                                     )
+                                                     num_of_iter='inf')
+        self._csv_log_thread = CustomThread(thread_name="CsvLogThread",
+                                            runnable=self._update_csv_log_runnable,
+                                            timing_ms=float(self._config_dict["Log"]["sample_time_s"])*1000,
+                                            num_of_iter='inf')
 
         # Create CSV Log file
         self._csv_log_dict['filename'] = self._config_dict['Log']['csv_filename']  # TODO move to test folder
@@ -312,6 +310,7 @@ class TemperatureTestSx5_TS(object):
         # Start threads
         self._scan_engine_app_thread.start()
         self._read_temperature_thread.start()
+        self._csv_log_thread.start()
 
         # Store the last state
         self._store_last_state()
@@ -492,6 +491,8 @@ class TemperatureTestSx5_TS(object):
 
         # Stop read temperature thread
         self._read_temperature_thread.stop()
+        self._csv_log_thread.stop()
+        self._scan_engine_app_thread.stop()
 
         pass
 

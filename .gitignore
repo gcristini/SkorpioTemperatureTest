@@ -155,3 +155,5 @@ dmypy.json
 .pyre/
 PSOC-Firmware/SerialTemperatureSensor.cydsn/codegentemp/
 PSOC-Firmware/SerialTemperatureSensor.cydsn/Generated_Source/
+Python/Log.csv
+Python/test.py
