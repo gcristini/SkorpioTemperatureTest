@@ -16,7 +16,7 @@ import sys
 import datetime as dt
 import csv
 import time
-
+import os
 
 class TemperatureTestSx5_TS(object):
     """ """
@@ -43,13 +43,19 @@ class TemperatureTestSx5_TS(object):
             'FrameAcq': Timer
         }
 
+        self._dir_dict = {
+            "BaseDir": "",
+            "DownloadBaseDir": "",
+            "ConvertBaseDir": ""
+        }
+
         # Scan Engine Thread
         self._scan_engine_app_thread: CustomThread
         self._read_temperature_thread: CustomThread
         self._csv_log_thread: CustomThread
 
         # Dictionary for steps of iterations
-        self._step_dict: dict
+        self._step_dict: dict = {}
         self._target_temp: float
 
         # Temperature
@@ -102,11 +108,13 @@ class TemperatureTestSx5_TS(object):
         # Read Configuration file and store it into dictionary
         self._config_dict = XmlDictConfig(ElementTree.parse(self._gs['ConfigFile_TS_Test']).getroot())
 
+        # Update the output directory field with the complete path
+        self._config_dict["SX5"]["output_dir_name"] = os.getcwd() + "/" + self._config_dict["SX5"]["output_dir_name"]
         pass
 
     def _init_sx5(self):
         """ """
-        dbg.debug(print, self._config_dict['SX5']['adb_pull_base_dir'], debug=self._gs['debug'])
+        dbg.debug(print, self._config_dict['SX5']['output_dir_name'], debug=self._gs['debug'])
         dbg.debug(print, int(self._config_dict['SX5']['num_of_frame']) * int(
                                     self._config_dict['SX5']['num_of_loop']), debug=self._gs['debug'])
 
@@ -118,7 +126,7 @@ class TemperatureTestSx5_TS(object):
                                     self._config_dict['SX5']['num_of_loop']),
                                 callback_delay_ms=self._config_dict['SX5']['callback_delay_ms'],
                                 frame_storage_dir=self._config_dict['SX5']['frame_storage_dir'],
-                                pull_dir=self._config_dict['SX5']['adb_pull_base_dir'],
+                                pull_dir="",
                                 )
         # Disable scan service
         self._SX5.disable_scan_service()
@@ -160,10 +168,29 @@ class TemperatureTestSx5_TS(object):
 
         pass
 
-    def _init_image_manager(self):
+    def _init_output_directory(self):
+        """"""
 
-        self._image_manager = ImageManager(input_dir=self._config_dict['SX5']['adb_pull_base_dir'],
-                                           output_dir=self._config_dict['ImageManager']['output_dir'],
+        try:
+            # Check if output folder exist
+            dir_files = os.listdir(self._config_dict["SX5"]["output_dir_name"])
+        except FileNotFoundError:
+            # Create folder if not exist
+            os.mkdir(self._config_dict["SX5"]["output_dir_name"])
+        else:
+            # If output directory exist check if is empty
+            if dir_files:
+                input("Output directory is not empty: please choose another directory")
+                sys.exit()
+            else:
+                pass
+
+        pass
+
+    def _init_image_manager(self):
+        """"""
+        self._image_manager = ImageManager(input_dir="",
+                                           output_dir="",
                                            img_width=self._gv_scan_engine[self._config_dict['SX5']['scan_engine']][
                                                'width'],
                                            img_height=self._gv_scan_engine[self._config_dict['SX5']['scan_engine']][
@@ -221,14 +248,14 @@ class TemperatureTestSx5_TS(object):
         temp = self._target_temp[0]
 
         # Update ADB pull directory
-        self._SX5.pull_dir = '{base_dir}_T={temp}°C'.format(base_dir=self._config_dict['SX5']['adb_pull_base_dir'],
-                                                            temp=temp)
-        self._image_manager.input_dir = '{base_dir}_T={temp}°C'.format(base_dir=self._config_dict['SX5']['adb_pull_base_dir'],
-                                                                       temp=temp)
+        self._SX5.pull_dir = '{base_dir}/raw_T={temp}°C'.format(base_dir=self._config_dict['SX5']['output_dir_name'],
+                                                                temp=temp)
+
+        self._image_manager.input_dir = self._SX5.pull_dir
 
         # Update the converted images directory
-        self._image_manager.output_dir = '{base_dir}_T={temp}°C'.format(base_dir=self._config_dict['ImageManager']['output_dir'],
-                                                                        temp=temp)
+        self._image_manager.output_dir = '{base_dir}/converted_T={temp}°C'.format(base_dir=self._config_dict['SX5']['output_dir_name'],
+                                                                                  temp=temp)
 
         return
 
@@ -254,6 +281,9 @@ class TemperatureTestSx5_TS(object):
 
         # Parse config file
         self._parse_config_file()
+
+        # Init directory
+        self._init_output_directory()
 
         # Init SX5
         self._init_sx5()
@@ -282,13 +312,14 @@ class TemperatureTestSx5_TS(object):
                                                      runnable=self._read_temperature_sensor_thread_runnable,
                                                      timing_ms=500,
                                                      num_of_iter='inf')
+
         self._csv_log_thread = CustomThread(thread_name="CsvLogThread",
                                             runnable=self._update_csv_log_runnable,
                                             timing_ms=float(self._config_dict["Log"]["sample_time_s"])*1000,
                                             num_of_iter='inf')
 
         # Create CSV Log file
-        self._csv_log_dict['filename'] = self._config_dict['Log']['csv_filename']  # TODO move to test folder
+        self._csv_log_dict['filename'] = self._config_dict['SX5']['output_dir_name'] + "/" + self._config_dict['Log']['csv_filename']
         self._csv_log_dict['file'] = open(file=self._csv_log_dict['filename'], mode='w', newline='')
         self._csv_log_dict['csv_writer'] = csv.writer(self._csv_log_dict['file'])
         self._csv_log_dict['csv_writer'].writerow(self._csv_log_dict["log_data"].keys())
@@ -326,7 +357,7 @@ class TemperatureTestSx5_TS(object):
                 self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_READ_TEMP):
             # Print the current temperature
             print(cm.Fore.CYAN + cm.Style.DIM + "\n--- Test @ {temp}°C ---".format(temp=self._target_temp[0]))
-            # Create and run local timer to sample temperature every 1 second
+            # Start local timer to sample temperature every 1 second
             self._timer_dict['ReadTemp'].start()
 
             # Store the last state
@@ -336,8 +367,8 @@ class TemperatureTestSx5_TS(object):
             if (self._timer_dict['ReadTemp'].elapsed_time_s() >= int(self._config_dict['TempSensor']['sample_time_s'])):
 
                 sys.stdout.write("\033[K")  # Clear to the end of line
-                print("Detected temperatures: Room={room}°C\t Scan Engine= {se}°C".format(room=self._temperature_dict['Room']['value'],
-                                                                                          se=self._temperature_dict['ScanEngine']['value']), end="\r")
+                print("Detected temperatures: Room= {room}°C\t Scan Engine= {se}°C".format(room=self._temperature_dict['Room']['value'],
+                                                                                           se=self._temperature_dict['ScanEngine']['value']), end="\r")
 
                 if self._temperature_dict['Room']['value'] >= self._target_temp[0]:
 
@@ -357,47 +388,50 @@ class TemperatureTestSx5_TS(object):
     def _wait_state_manager(self):
         """ """
         if (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_WAIT and
-            self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_WAIT):
-
+                self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_WAIT):
             sys.stdout.write("\033[K")  # Clear to the end of line
-            print("- Reached target {sp}°C: wait {time} min. before acquire frames" .\
-                   format(sp=self._target_temp[0], time=self._config_dict['Acquisition']['wait_to_acq_time_min']))
+            print("- Reached target {sp}°C in the room: wait until scan engine reached the same temperature before acquire frames". \
+                  format(sp=self._target_temp[0]))
 
-            # Start the timer to wait the frame acquisition
-            self._timer_dict['WaitToAcq'].start()
+            # Start local timer to sample temperature every 1 second
+            self._timer_dict['ReadTemp'].start()
 
             # Store the last state
             self._store_last_state()
-
         else:
-            # Get elapsed time in minutes
-            elapsed_time_min = self._timer_dict['WaitToAcq'].elapsed_time_min(digits=3)
+            if (self._timer_dict['ReadTemp'].elapsed_time_s() >= int(self._config_dict['TempSensor']['sample_time_s'])):
 
-            print("\t Time: " + str(dt.timedelta(minutes=elapsed_time_min)).split('.')[0], end="\r")
+                sys.stdout.write("\033[K")  # Clear to the end of line
+                print("Detected temperatures: Room= {room}°C\t Scan Engine= {se}°C".format(
+                        room=self._temperature_dict['Room']['value'],
+                        se=self._temperature_dict['ScanEngine']['value']), end="\r")
 
-            if (elapsed_time_min >= float(self._config_dict['Acquisition']['wait_to_acq_time_min'])):
+                if self._temperature_dict['ScanEngine']['value'] >= self._target_temp[0]:
 
-                self._kill_scan_engine_app()
-                self._scan_engine_app_thread = CustomThread(thread_name="ScanEngineThread",
-                                                            runnable=self._SX5.run_scan_engine_app,
-                                                            num_of_iter=1)
+                    sys.stdout.write("\033[K")
+                    print("- Reached target {sp}°C on the scan engine".format(sp=self._target_temp[0]))
 
-                dbg.debug(print, "Discard Frame", debug=self._gs['debug'])
+                    self._kill_scan_engine_app()
+                    self._scan_engine_app_thread = CustomThread(thread_name="ScanEngineThread",
+                                                                runnable=self._SX5.run_scan_engine_app,
+                                                                num_of_iter=1)
 
-                # Discard all frames on SX5 before the frame acquisition time
-                self._SX5.clear_frame_storage_dir()
-                self._scan_engine_app_thread.start()
+                    # Discard all frames on SX5 before the frame acquisition time
+                    self._SX5.clear_frame_storage_dir()
+                    self._scan_engine_app_thread.start()
 
-                # Stop timer
-                self._timer_dict['WaitToAcq'].stop()
+                    # Stop timer
+                    self._timer_dict['ReadTemp'].stop()
 
-                # Store the last state
-                self._store_last_state()
+                    # Store the last state
+                    self._store_last_state()
 
-                # Go to Pull Images
-                self._temp_test_state = enum.TempTestTS_StatesEnum.TT_PULL_IMAGES
-
-        return
+                    # Go to wait state
+                    self._temp_test_state = enum.TempTestTS_StatesEnum.TT_PULL_IMAGES
+                else:
+                    # Reset timer
+                    self._timer_dict['ReadTemp'].reset()
+        pass
 
     def _pull_images_state_manager(self):
         """"""

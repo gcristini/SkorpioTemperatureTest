@@ -41,7 +41,7 @@ class SX5_Manager(object):
     def disable_scan_service(self):
         """"""
         cmd = 'dl-cli scanservice stop'
-
+        devnull = open(os.devnull, 'w')
         self._scan_engine_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
         self._scan_engine_process.communicate(cmd.encode())[0].decode('ascii', errors='ignore')
 
@@ -120,7 +120,7 @@ class SX5_Manager(object):
 
     @property
     def pull_dir(self):
-        return self._pull_dir
+        return self._pull_dir.split('"')[1]
 
     @pull_dir.setter
     def pull_dir(self, directory):

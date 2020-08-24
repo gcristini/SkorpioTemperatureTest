@@ -2,7 +2,7 @@
 <!-- Body -->
 <GlobalParams>
     <SX5>
-        <scan_engine>halogen2</scan_engine>
+        <scan_engine>neon2</scan_engine>
         <num_of_frame>10</num_of_frame>
         <num_of_loop>200000</num_of_loop>
         <callback_delay_ms>100</callback_delay_ms>
@@ -15,11 +15,10 @@
         <watchdog_test></watchdog_test>
         -->
         <frame_storage_dir>data/local/tmp</frame_storage_dir>
-        <adb_pull_base_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/Python/test/download</adb_pull_base_dir>
+        <output_dir_name>test</output_dir_name>
     </SX5>
 
     <ImageManager>
-        <output_dir>C:/Users/gcristini/OneDrive - Datalogic S.p.a/Data/PhytonWorkspace/SkorpioTemperatureTest/Python/test/download_converted</output_dir>
         <img_format>.jpg</img_format>
     </ImageManager>
 
@@ -38,19 +37,17 @@
     <ThermalChamber>
         <!-- This parameters must be the same set on the thermal chamber -->
         <temp_start>40</temp_start>
-        <temp_stop>70</temp_stop>
-        <steps>3</steps>
-        <time_platau_s>60</time_platau_s>
+        <temp_stop>45</temp_stop>
+        <steps>2</steps>
     </ThermalChamber>
 
      <Log>
-         <path></path>
          <csv_filename>Log.csv</csv_filename>
+         <sample_time_s>1</sample_time_s>       <!-- min. 1s -->
      </Log>
 
     <Acquisition>
-        <wait_to_acq_time_min>0.2</wait_to_acq_time_min>
-        <frame_acquisition_time_min>0.5</frame_acquisition_time_min>
+        <frame_acquisition_time_min>0.1</frame_acquisition_time_min>
     </Acquisition>
 
 </GlobalParams>
