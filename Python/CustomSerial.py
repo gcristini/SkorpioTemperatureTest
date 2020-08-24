@@ -28,8 +28,12 @@ class CustomSerial(serial.Serial):
     def serial_read(self):
         """ Use 'read' method of Serial class enconding data in UTF-8"""
         # TODO controllare codifica!
-        self._dataRX = self.read(self._bytes_available_rx).decode('utf-8')
+        self._dataRX = self.read(self._bytes_available_rx).decode('ascii')
         #self._dataRX = self.readline()
+        return self._dataRX
+
+    def serial_readline(self):
+        self._dataRX = self.readline().decode('ascii')
         return self._dataRX
 
     @property

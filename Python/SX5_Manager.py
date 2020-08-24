@@ -33,9 +33,20 @@ class SX5_Manager(object):
         self._pull_dir = '"{pull_dir}"'.format(pull_dir=pull_dir)  # insert "" for adb purpose
 
         self._scan_engine_process = None
+
     # ************************************************* #
     # **************** Public Methods ***************** #
     # ************************************************* #
+
+    def disable_scan_service(self):
+        """"""
+        cmd = 'dl-cli scanservice stop'
+
+        self._scan_engine_process = subprocess.Popen("adb shell", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
+        self._scan_engine_process.communicate(cmd.encode())[0].decode('ascii', errors='ignore')
+
+        return
+
     def run_scan_engine_app(self):
         """ Launch the scan engine app on the device """
         # Return value

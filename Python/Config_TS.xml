@@ -41,8 +41,12 @@
         <temp_stop>70</temp_stop>
         <steps>3</steps>
         <time_platau_s>60</time_platau_s>
-
     </ThermalChamber>
+
+     <Log>
+         <path></path>
+         <csv_filename>Log.csv</csv_filename>
+     </Log>
 
     <Acquisition>
         <wait_to_acq_time_min>0.2</wait_to_acq_time_min>

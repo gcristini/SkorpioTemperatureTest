@@ -14,6 +14,8 @@ from CustomThread import CustomThread
 import CustomSerial as cs
 import sys
 import datetime as dt
+import csv
+import time
 
 
 class TemperatureTestSx5_TS(object):
@@ -35,10 +37,12 @@ class TemperatureTestSx5_TS(object):
         self._serial = None
 
         # Timers
-        self._global_timer = None
-        self._read_temp_timer = None
-        self._wait_to_acq_timer = None
-        self._frame_acquisition_timer = None
+        self._timer_dict = {
+            'Global': Timer,
+            'ReadTemp': Timer,
+            'WaitToAcq': Timer,
+            'FrameAcq': Timer
+        }
 
         # Scan Engine Thread
         self._scan_engine_app_thread = None
@@ -48,7 +52,18 @@ class TemperatureTestSx5_TS(object):
         self._target_temp = None
 
         # Temperature
-        self._room_temperature = None
+        self._temperature_dict = {
+            'Room': {
+                'command': 'read_env_temp\r',
+                'value': 0
+            },
+            'ScanEngine': {
+                'command': 'read_se_temp\r',
+                'value': 0
+            }
+        }
+
+        self._read_temperature_thread = None
 
         # Dictionary with state and "pointer to function" for the state machine
         self._temp_test_fun_dict = {
@@ -66,6 +81,17 @@ class TemperatureTestSx5_TS(object):
         # Initialize state machine to INIT state
         self._temp_test_state = enum.TempTestTS_StatesEnum.TT_INIT
         self._last_temp_test_state = None
+
+        self._csv_log_dict = {
+            "filename": None,
+            "file": None,
+            "csv_writer": None,
+            "log_data": {
+                'time [s]': None,
+                'room [°C]': None,
+                'scan Engine [°C]': None,
+            }
+        }
 
         # Initialize Colorama library
         cm.init(autoreset=True)
@@ -95,8 +121,9 @@ class TemperatureTestSx5_TS(object):
                                 frame_storage_dir=self._config_dict['SX5']['frame_storage_dir'],
                                 pull_dir=self._config_dict['SX5']['adb_pull_base_dir'],
                                 )
+        # Disable scan service
+        self._SX5.disable_scan_service()
         pass
-
 
     def _init_temperature_sensor(self):
         """"""
@@ -104,6 +131,9 @@ class TemperatureTestSx5_TS(object):
         self._serial = cs.CustomSerial(port=self._config_dict['TempSensor']['port'],
                                        baudrate=self._config_dict['TempSensor']['baudrate'])
         self._serial.serial_init()
+        self._serial.flushInput()
+        self._serial.flushOutput()
+
         #self._serial.serial_write("init")
 
         pass
@@ -127,7 +157,7 @@ class TemperatureTestSx5_TS(object):
             self._step_dict['Step ' + str(i)] = round(start_temp + (step_size * i), 2)
 
         # Copy all values from dictionary in a list with all targets temperature
-        self._target_temp=list(self._step_dict.values())
+        self._target_temp = list(self._step_dict.values())
 
         pass
 
@@ -143,10 +173,53 @@ class TemperatureTestSx5_TS(object):
 
         pass
 
-    def _init_global_timer(self):
-        self._global_timer = Timer()
-
+    def _init_timers(self):
+        for timer in list(self._timer_dict):
+            self._timer_dict[timer] = Timer()
         pass
+
+    def _read_temperature_sensor_thread_runnable(self):
+        """ Read temperature from all sensors """
+        for sensor in list(self._temperature_dict.keys()):
+            """"""
+            temp = 0
+            # Read temperature
+            self._serial.reset_input_buffer()
+            self._serial.serial_write(self._temperature_dict[sensor]['command'])
+            while not self._serial.bytes_available_rx:
+                pass
+            try:
+                temp = float(self._serial.serial_readline().strip("\r\n"))
+            except:
+                pass
+            else:
+                self._temperature_dict[sensor]['value'] = temp
+            finally:
+                time.sleep(0.0)
+
+        # Update csv file
+        self._update_csv_log()
+
+        return
+
+    def _update_csv_log(self):
+        """"""
+        # Populate csv dictionary
+        self._csv_log_dict['log_data']['time [s]'] = self._timer_dict['Global'].elapsed_time_s(digits=2)
+        self._csv_log_dict["log_data"]['room [°C]'] = self._temperature_dict['Room']['value']
+        self._csv_log_dict["log_data"]['scan Engine [°C]'] = self._temperature_dict['ScanEngine']['value']
+
+        # Open csv
+        self._csv_log_dict['file'] = open(file=self._csv_log_dict['filename'], mode='a', newline='')
+        self._csv_log_dict['csv_writer'] = csv.writer(self._csv_log_dict['file'])
+
+        # Update csv
+        self._csv_log_dict['csv_writer'].writerow(self._csv_log_dict["log_data"].values())
+
+        # Close csv
+        self._csv_log_dict['file'].close()
+
+        return
 
     def _update_directories(self):
         # Get the target temperature
@@ -196,14 +269,32 @@ class TemperatureTestSx5_TS(object):
         # Init Image Manager
         self._init_image_manager()
 
-        # Init Timer
-        self._init_global_timer()
+        # Init Timers
+        self._init_timers()
 
         # Init Step Dictionary
         self._init_step_dictionary()
 
         # Update Directories
         self._update_directories()
+
+        # Init Threads
+        self._scan_engine_app_thread = CustomThread(thread_name="ScanEngineThread",
+                                                    runnable=self._SX5.run_scan_engine_app,
+                                                    num_of_iter=1)
+
+        self._read_temperature_thread = CustomThread(thread_name="ReadTemperatureThread",
+                                                     runnable=self._read_temperature_sensor_thread_runnable,
+                                                     timing_ms=500,
+                                                     num_of_iter='inf',
+                                                     )
+
+        # Create CSV Log file
+        self._csv_log_dict['filename'] = self._config_dict['Log']['csv_filename']  # TODO move to test folder
+        self._csv_log_dict['file'] = open(file=self._csv_log_dict['filename'], mode='w', newline='')
+        self._csv_log_dict['csv_writer'] = csv.writer(self._csv_log_dict['file'])
+        self._csv_log_dict['csv_writer'].writerow(self._csv_log_dict["log_data"].keys())
+        self._csv_log_dict['file'].close()
 
         # Go to Run scan engine app state
         self._SX5.clear_frame_storage_dir()
@@ -216,12 +307,11 @@ class TemperatureTestSx5_TS(object):
         dbg.debug(print, "-Run Scan Engine App", debug=self._gs['debug'])
 
         # Start Timer and run Scan Engine App Thread
-        self._global_timer.start()
-        self._scan_engine_app_thread = CustomThread(thread_name="ScanEngineThread",
-                                                    runnable=self._SX5.run_scan_engine_app,
-                                                    num_of_iter=1)
+        self._timer_dict['Global'].start()
 
+        # Start threads
         self._scan_engine_app_thread.start()
+        self._read_temperature_thread.start()
 
         # Store the last state
         self._store_last_state()
@@ -238,29 +328,22 @@ class TemperatureTestSx5_TS(object):
             # Print the current temperature
             print(cm.Fore.CYAN + cm.Style.DIM + "\n--- Test @ {temp}°C ---".format(temp=self._target_temp[0]))
             # Create and run local timer to sample temperature every 1 second
-            self._read_temp_timer = Timer()
-            self._read_temp_timer.start()
+            self._timer_dict['ReadTemp'].start()
 
             # Store the last state
             self._store_last_state()
 
         else:
-            if (self._read_temp_timer.elapsed_time_s() >= int(self._config_dict['TempSensor']['sample_time_s'])):
-
-                # Read temperature
-                self._serial.serial_write('read_env_temp\r')
-                while not self._serial.bytes_available_rx:
-                    pass
-
-                try:
-                    self._room_temperature = float(self._serial.serial_read().strip("\r\n"))
-                except:
-                    pass
+            if (self._timer_dict['ReadTemp'].elapsed_time_s() >= int(self._config_dict['TempSensor']['sample_time_s'])):
 
                 sys.stdout.write("\033[K")  # Clear to the end of line
-                print("Detected temperature: {temp}°C".format(temp=self._room_temperature), end="\r")
+                print("Detected temperatures: Room={room}°C\t Scan Engine= {se}°C".format(room=self._temperature_dict['Room']['value'],
+                                                                                          se=self._temperature_dict['ScanEngine']['value']), end="\r")
 
-                if (self._room_temperature >= self._target_temp[0]):
+                if self._temperature_dict['Room']['value'] >= self._target_temp[0]:
+
+                    # Stop timer
+                    self._timer_dict['ReadTemp'].stop()
 
                     # Store the last state
                     self._store_last_state()
@@ -269,7 +352,7 @@ class TemperatureTestSx5_TS(object):
                     self._temp_test_state = enum.TempTestTS_StatesEnum.TT_WAIT
                 else:
                     # Reset timer
-                    self._read_temp_timer.reset()
+                    self._timer_dict['ReadTemp'].reset()
         return
 
     def _wait_state_manager(self):
@@ -277,19 +360,19 @@ class TemperatureTestSx5_TS(object):
         if (self._temp_test_state == enum.TempTestTS_StatesEnum.TT_WAIT and
             self._last_temp_test_state != enum.TempTestTS_StatesEnum.TT_WAIT):
 
+            sys.stdout.write("\033[K")  # Clear to the end of line
             print("- Reached target {sp}°C: wait {time} min. before acquire frames" .\
                    format(sp=self._target_temp[0], time=self._config_dict['Acquisition']['wait_to_acq_time_min']))
 
-            # Create and start the timer to wait the frame acquisition
-            self._wait_to_acq_timer = Timer()
-            self._wait_to_acq_timer.start()
+            # Start the timer to wait the frame acquisition
+            self._timer_dict['WaitToAcq'].start()
 
             # Store the last state
             self._store_last_state()
 
         else:
             # Get elapsed time in minutes
-            elapsed_time_min = self._wait_to_acq_timer.elapsed_time_min(digits=3)
+            elapsed_time_min = self._timer_dict['WaitToAcq'].elapsed_time_min(digits=3)
 
             print("\t Time: " + str(dt.timedelta(minutes=elapsed_time_min)).split('.')[0], end="\r")
 
@@ -305,6 +388,9 @@ class TemperatureTestSx5_TS(object):
                 # Discard all frames on SX5 before the frame acquisition time
                 self._SX5.clear_frame_storage_dir()
                 self._scan_engine_app_thread.start()
+
+                # Stop timer
+                self._timer_dict['WaitToAcq'].stop()
 
                 # Store the last state
                 self._store_last_state()
@@ -322,15 +408,14 @@ class TemperatureTestSx5_TS(object):
             print("- Acquire frames for {time} minutes"\
                   .format(time=self._config_dict['Acquisition']['frame_acquisition_time_min']))
 
-            # Create and start the timer to wait the frame acquisition
-            self._frame_acquisition_timer = Timer()
-            self._frame_acquisition_timer.start()
+            # Stop the timer to wait the frame acquisition
+            self._timer_dict['FrameAcq'].start()
 
             # Store the last state
             self._store_last_state()
 
         else:
-            elapsed_time_min = self._frame_acquisition_timer.elapsed_time_min(digits=3)
+            elapsed_time_min = self._timer_dict['FrameAcq'].elapsed_time_min(digits=3)
 
             print("\t Time: " + str(dt.timedelta(minutes=elapsed_time_min)).split('.')[0], end="\r")
 
@@ -346,14 +431,19 @@ class TemperatureTestSx5_TS(object):
                                                                             dir=self._image_manager.output_dir))
                 self._image_manager.convert_images(show=False, save=True)
 
+                if ret:
+                    # Stop timer
+                    self._timer_dict['FrameAcq'].stop()
 
-                if ret == True:
                     # Store the last state
                     self._store_last_state()
 
                     # Go to stop state
                     self._temp_test_state = enum.TempTestTS_StatesEnum.TT_UPDATE_TARGET
                 else:
+                    # Stop timer
+                    self._timer_dict['FrameAcq'].stop()
+
                     # Store the last state
                     self._store_last_state()
 
@@ -370,11 +460,6 @@ class TemperatureTestSx5_TS(object):
             # Update directories
             self._update_directories()
 
-            # Store the last state
-            self._store_last_state()
-
-            # Go to Read temperature state with new target temperature
-            self._temp_test_state = enum.TempTestTS_StatesEnum.TT_READ_TEMP
         except IndexError:
             # There is no other target temperature.
 
@@ -384,12 +469,19 @@ class TemperatureTestSx5_TS(object):
             # Go to stop state
             self._temp_test_state = enum.TempTestTS_StatesEnum.TT_STOP
 
+        else:
+            # Store the last state
+            self._store_last_state()
+
+            # Go to Read temperature state with new target temperature
+            self._temp_test_state = enum.TempTestTS_StatesEnum.TT_READ_TEMP
+
         pass
 
     def _convert_images_state_manager(self):
 
-
         pass
+
     def _stop_state_manager(self):
         """"""
         dbg.debug(print, "Stop State", debug=self._gs['debug'])
@@ -397,6 +489,9 @@ class TemperatureTestSx5_TS(object):
         self._store_last_state()
 
         self._kill_scan_engine_app()
+
+        # Stop read temperature thread
+        self._read_temperature_thread.stop()
 
         pass
 

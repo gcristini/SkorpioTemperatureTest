@@ -23,8 +23,8 @@
 /* **********************************************************************/
 /* ***                Definition of local macros                      ***/
 /* **********************************************************************/
-#define UART_RX_BUFFER_SIZE 15u
-#define UART_TX_BUFFER_SIZE 20u
+#define UART_RX_BUFFER_SIZE 100u
+#define UART_TX_BUFFER_SIZE 100u
 
 #define forever for (;;) /* Enjoy :) */
 
@@ -53,7 +53,7 @@ void MAIN_v_Init                    (void);
 void MAIN_v_PollUart(void)
 {
     static uint8    u8_Char;
-    static uint8    u8_RxDataIndex = 0u;
+    static uint16   u16_RxDataIndex = 0u;
     static uint8    u8_RxData[UART_RX_BUFFER_SIZE];
     static uint8*   pu8_RxCommand;
 
@@ -63,14 +63,14 @@ void MAIN_v_PollUart(void)
     if (u8_Char != 0u)
     {
         /* Store the last received char */
-        u8_RxData[u8_RxDataIndex] = u8_Char;    
+        u8_RxData[u16_RxDataIndex] = u8_Char;    
         
         /* If a complete string is received... */
         if (u8_Char == '\r')
         {
             
             /* Insert the string terminator character */
-            u8_RxData[u8_RxDataIndex] = '\0';
+            u8_RxData[u16_RxDataIndex] = '\0';
             
             /* Point to buffer */
             pu8_RxCommand = u8_RxData;
@@ -80,17 +80,19 @@ void MAIN_v_PollUart(void)
 
             /* Clear buffer and reset index */
             MAIN_v_ClearBuffer(u8_RxData, UART_RX_BUFFER_SIZE);
-            u8_RxDataIndex = -1;
+            u16_RxDataIndex = -1;
         }
         
-        else if (u8_RxDataIndex == UART_RX_BUFFER_SIZE-1)
+        /*
+        else if (u16_RxDataIndex == UART_RX_BUFFER_SIZE-1)
         {
-          /* Clear buffer and reset index */
+          // Clear buffer and reset index 
           MAIN_v_ClearBuffer(u8_RxData, UART_RX_BUFFER_SIZE);
-          u8_RxDataIndex = -1;
-        }        
+          u16_RxDataIndex = -1;
+        } 
+        */
         
-        u8_RxDataIndex++;
+        u16_RxDataIndex++;
     }
 
     return;
@@ -170,11 +172,10 @@ void MAIN_v_ReadTemperatureCommand(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
     DS_v_FloatToStringTemp((float32)DS_f32_ReadTemperature(en_Sensor), u8_TempBuff);
     
     /* Add newline and carriage return at the end of the string */
-    sprintf((char*)u8_TempBuff, "%s\r\n", u8_TempBuff);
+    sprintf((char*)u8_TempBuff, "%s\n", u8_TempBuff);
     
     /* Send result to PC */
     UART_FTDI_UartPutString((char *)u8_TempBuff);
-    
     
     return;
 }
@@ -194,11 +195,14 @@ void MAIN_v_ReadTemperatureCommand(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
 /* **********************************************************************************/
 void MAIN_v_Init(void)
 {
-    /* Init UART */
-    UART_FTDI_Start();
-    
+    /* Init DS18B20 */
+    DS_v_Init();
+
     /* User Led ON */ 
     PIN_DrivePin(PIN_USER_LED, PIN_HIGH);
+
+    /* Init UART */
+    UART_FTDI_Start();
     
     /* Enable Global Interrupts */
     CyGlobalIntEnable;

@@ -42,6 +42,8 @@
 
 #define TEMP_RESOLUTION             4u      /* Resolution up to 4 digits */
 
+#define DISCARDED_VALUES            10u     /* Discard first 10 values in init */
+
 
 /* **********************************************************************/
 /* ***                Definition of local types                       ***/
@@ -77,7 +79,7 @@ float32             DS_f32_GetTempFromScratchpad    (uint64 u64_scratchpad);
 /* **********************************************************************************/
 EN_PIN_ENUM_TYPE DS_en_GetSensorFromPin(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
 {
-    EN_PIN_ENUM_TYPE en_Pin;
+    EN_PIN_ENUM_TYPE en_Pin = (EN_PIN_ENUM_TYPE)0u;
     
     switch (en_Sensor)
     {   
@@ -291,7 +293,7 @@ float32 DS_f32_ReadTemperature(EN_DS18B20_TEMP_ENUM_TYPE en_Sensor)
 {
     /* Variables */
     uint8   u8_Index;
-    uint64   int64_Scratch = 0;
+    uint64  int64_Scratch = 0;
     float32 f32_Temperature;
 
     /*--------- STEP I: Temperature Internal Conversion --------- */
@@ -357,6 +359,34 @@ void DS_v_FloatToStringTemp(float32 f32_TempValue, uint8 *pu8_TempStringValue)
     i16_TempDec = (int16)(f32_TempFrac * pow(10, TEMP_RESOLUTION));
 
     sprintf((char *)pu8_TempStringValue, "%s%d.%d", pu8_TempSign, i16_TempInt, i16_TempDec);
+
+    return;
+}
+
+/* *********************************************************************************/ /**
+   \fn      	void DS_v_Init (void)
+   \brief   	Initialize sensors discarding firsts read values \n
+            	Scope: Global
+   \return  	void
+   \author		\arg Gabriele Cristini
+   \date		\arg Creation:  July 13.20
+				\arg Last Edit: July 14.20
+ */
+/* **********************************************************************************/
+void DS_v_Init (void)
+{
+    /* Variables */
+    EN_DS18B20_TEMP_ENUM_TYPE   en_sensor;
+    uint8                       u8_i;    
+
+    /* Read data from sensors to discard firsts values */
+    for (u8_i = 0u; u8_i < DISCARDED_VALUES; u8_i++)
+    {
+        for (en_sensor = (EN_DS18B20_TEMP_ENUM_TYPE)0u; en_sensor < DS_MAX_ENUM; en_sensor++)
+        {
+            (void)DS_f32_ReadTemperature (en_sensor);
+        }
+    }
 
     return;
 }

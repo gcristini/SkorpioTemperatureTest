@@ -94,7 +94,7 @@ void PIN_DrivePin(EN_PIN_ENUM_TYPE en_Pin, uint8 u8_State)
 /* **********************************************************************************/
 uint8 PIN_ReadPin(EN_PIN_ENUM_TYPE en_Pin)
 {
-    uint8 u8_val;
+    uint8 u8_val = 0u;
 
     switch (en_Pin)
     {

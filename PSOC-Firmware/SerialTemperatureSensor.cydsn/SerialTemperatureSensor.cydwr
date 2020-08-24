@@ -21,7 +21,7 @@
       <Data key="263d5096-84e0-4e38-9823-0a3f3e81e07a" value="PIN_ScanEngineTempDQ" />
       <Data key="264be2d3-9481-494b-8d9c-c1905a45e9cc" value="PIN_EnvTempDQ" />
       <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="Thermocouple_Input_P" />
-      <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="Pin_UserLed" />
+      <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="PIN_UserLed" />
     </Group>
   </Group>
   <Group key="FlashSecurity">

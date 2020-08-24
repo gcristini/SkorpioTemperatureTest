@@ -34,7 +34,7 @@ class GlobalVariables(object):
                 'hw_acc_pixels': 128,
             },
             'neon2': {
-                'app': 'neon_mipi_cli2',
+                'app': 'neon2_cli2',
                 'width': 1408,
                 'height': 804,
                 'hw_acc_pixels': 128,
