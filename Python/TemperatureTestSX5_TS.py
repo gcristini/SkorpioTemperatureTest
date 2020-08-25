@@ -18,6 +18,7 @@ import csv
 import time
 import os
 
+
 class TemperatureTestSx5_TS(object):
     """ """
 
@@ -41,12 +42,6 @@ class TemperatureTestSx5_TS(object):
             'ReadTemp': Timer,
             'WaitToAcq': Timer,
             'FrameAcq': Timer
-        }
-
-        self._dir_dict = {
-            "BaseDir": "",
-            "DownloadBaseDir": "",
-            "ConvertBaseDir": ""
         }
 
         # Scan Engine Thread
@@ -170,7 +165,6 @@ class TemperatureTestSx5_TS(object):
 
     def _init_output_directory(self):
         """"""
-
         try:
             # Check if output folder exist
             dir_files = os.listdir(self._config_dict["SX5"]["output_dir_name"])
@@ -195,6 +189,8 @@ class TemperatureTestSx5_TS(object):
                                                'width'],
                                            img_height=self._gv_scan_engine[self._config_dict['SX5']['scan_engine']][
                                                'height'],
+                                           img_hw_acc_pixel=self._gv_scan_engine[self._config_dict['SX5']['scan_engine']][
+                                               'hw_acc_pixels'],
                                            out_ext=self._config_dict['ImageManager']['img_format'])
 
         pass
@@ -571,7 +567,7 @@ class TemperatureTestSx5_TS(object):
 
         print(cm.Fore.CYAN + cm.Style.DIM + "\n-----------------")
         print(cm.Fore.CYAN + cm.Style.DIM + "--- Finished! ---")
-        sys.exit()
+        os._exit(0)
 
 
 if __name__ == '__main__':

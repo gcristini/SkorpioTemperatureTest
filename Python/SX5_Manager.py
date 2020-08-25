@@ -1,7 +1,6 @@
 import os
 import subprocess
 from GlobalVariables import GlobalVariables as gv
-import signal
 
 class SX5_Manager(object):
     """ """

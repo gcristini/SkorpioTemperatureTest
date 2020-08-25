@@ -12,13 +12,14 @@ class ImageManager(object):
                  output_dir=None,
                  img_width=None,
                  img_height=None,
+                 img_hw_acc_pixel=None,
                  out_ext=None):
         """ Constructor """
 
         # Global Variables
         self._input_dir = input_dir
         self._output_dir = output_dir
-        self._img_res = dict(width=img_width, height=img_height)
+        self._img_res_dict = dict(width=img_width, height=img_height, hw_acc_pixel=img_hw_acc_pixel)
         self._out_ext = out_ext
 
         self._raw_images_list = []
@@ -41,7 +42,7 @@ class ImageManager(object):
         raw_data = img.read()
 
         # Read image data
-        img_data = Image.frombytes('L', (self._img_res['width'], self._img_res['height']), raw_data)
+        img_data = Image.frombytes('L', (self._img_res_dict['width'], self._img_res_dict['height']), raw_data)
 
         # Close image
         img.close()
@@ -72,11 +73,15 @@ class ImageManager(object):
             img_data = self._read_raw(self._input_dir +'/' +img)
 
             # Show Raw data
-            if (show is True):
+            if show is True:
                 img_data.show(title=img)
 
+            # Cut hw acceleration data
+            if type(self._img_res_dict["hw_acc_pixel"]) is int:
+                img_data = img_data.crop((0, 0, self._img_res_dict["width"] - self._img_res_dict["hw_acc_pixel"], self._img_res_dict["height"]))
+
             # Create output directory and save the images
-            if (save is True):
+            if save is True:
                 try:
                     if not os.path.exists(self._output_dir):
                         os.mkdir(self._output_dir)
