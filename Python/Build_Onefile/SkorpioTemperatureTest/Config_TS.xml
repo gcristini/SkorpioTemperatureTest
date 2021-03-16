@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Body -->
+<GlobalParams>
+    <SX5>
+        <scan_engine>neon2</scan_engine>
+        <num_of_frame>10</num_of_frame>
+        <num_of_loop>200000</num_of_loop>
+        <callback_delay_ms>100</callback_delay_ms>
+        <!-- NOT USED >
+        <num_of_save_files>20</num_of_save_files>
+        <pattern_bitmap></pattern_bitmap>
+        <wait_ms>500</wait_ms>
+        <show_mean_fps></show_mean_fps>
+        <callback_delay_millisecond></callback_delay_millisecond>
+        <watchdog_test></watchdog_test>
+        -->
+        <frame_storage_dir>data/local/tmp</frame_storage_dir>
+        <output_dir_name>test</output_dir_name>
+    </SX5>
+
+    <ImageManager>
+        <img_format>.jpg</img_format>
+    </ImageManager>
+
+    <TempSensor>
+        <port>COM19</port>
+        <baudrate>115200</baudrate>
+        <!--- NOT USED
+        <bytsize></bytsize>
+        <parity></parity>
+        <stopbits></stopbits>
+        <timeout></timeout>
+        -->
+        <sample_time_s>2</sample_time_s>
+    </TempSensor>
+
+    <ThermalChamber>
+        <!-- This parameters must be the same set on the thermal chamber -->
+        <temp_start>40</temp_start>
+        <temp_stop>45</temp_stop>
+        <steps>2</steps>
+    </ThermalChamber>
+
+     <Log>
+         <csv_filename>Log.csv</csv_filename>
+         <sample_time_s>1</sample_time_s>       <!-- min. 1s -->
+     </Log>
+
+    <Acquisition>
+        <frame_acquisition_time_min>0.1</frame_acquisition_time_min>
+    </Acquisition>
+
+</GlobalParams>
